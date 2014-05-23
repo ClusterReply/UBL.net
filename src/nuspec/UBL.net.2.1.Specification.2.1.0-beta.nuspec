@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2011/10/nuspec.xsd">
+    <metadata>
+        <id>UBL.net.2.1.Specification</id>
+        <version>2.1.0-beta</version>
+        <title>UBL Specifications 2.1</title>
+        <authors>Cluster Reply</authors>
+        <owners>Cluster Reply</owners>
+        <projectUrl>http://www.reply.eu/</projectUrl>
+        <iconUrl>http://b.vimeocdn.com/ps/329/760/3297601_300.jpg</iconUrl>
+        <requireLicenseAcceptance>false</requireLicenseAcceptance>
+        <description>Specification of UBL 2.1 as found on UBL website (http://ubl.xml.org/news/general-availability-of-ubl-21-oasis-standard) packaged as nuget package, useful to keep specification complete with xsd, examples and documentation directly in project solution.</description>
+        <summary>Complete Specification of UBL 2.1 as nuget package (warning 55 mb of data)</summary>
+        <releaseNotes>First version up-to-date with general availability of standard as approved 4 November 2013</releaseNotes>
+        <copyright>Copyright 2014 Cluster Reply Srl</copyright>
+        <language>en-US</language>
+        <tags>ubl oasis</tags>
+    </metadata>
+    <files>
+        <file src="spec\**\*.*" target="content\UBL-Specs" />
+    </files>
+</package>
