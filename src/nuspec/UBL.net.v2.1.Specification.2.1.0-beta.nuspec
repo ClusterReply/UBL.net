@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <package xmlns="http://schemas.microsoft.com/packaging/2011/10/nuspec.xsd">
     <metadata>
-        <id>UBL.net.2.1.Specification</id>
+        <id>UBL.net.v2.1.Specification</id>
         <version>2.1.0-beta</version>
         <title>UBL Specifications 2.1</title>
         <authors>Cluster Reply</authors>
