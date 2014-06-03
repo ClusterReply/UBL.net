@@ -151,7 +151,7 @@ namespace Oasis.Ubl.v21 {
             }
         }
         
-        [System.Xml.Serialization.XmlTextAttribute(DataType="base64Binary")]
+        [System.Xml.Serialization.XmlAttribute(DataType="base64Binary")]
         public byte[] Value {
             get {
                 return this.valueField;
@@ -296,7 +296,7 @@ namespace Oasis.Ubl.v21 {
         
         private System.DateTime valueField;
         
-        [System.Xml.Serialization.XmlTextAttribute()]
+        [System.Xml.Serialization.XmlAttribute()]
         public System.DateTime Value {
             get {
                 return this.valueField;
@@ -326,7 +326,7 @@ namespace Oasis.Ubl.v21 {
         
         private System.DateTime valueField;
         
-        [System.Xml.Serialization.XmlTextAttribute(DataType="time")]
+        [System.Xml.Serialization.XmlAttribute(DataType="time")]
         public System.DateTime Value {
             get {
                 return this.valueField;
@@ -438,7 +438,7 @@ namespace Oasis.Ubl.v21 {
         
         private bool valueField;
         
-        [System.Xml.Serialization.XmlTextAttribute()]
+        [System.Xml.Serialization.XmlAttribute()]
         public bool Value {
             get {
                 return this.valueField;
@@ -512,7 +512,7 @@ namespace Oasis.Ubl.v21 {
             }
         }
         
-        [System.Xml.Serialization.XmlTextAttribute()]
+        [System.Xml.Serialization.XmlAttribute()]
         public decimal Value {
             get {
                 return this.valueField;

@@ -2140,7 +2140,7 @@ namespace Oasis.Ubl.v21 {
         
         private System.DateTime valueField;
         
-        [System.Xml.Serialization.XmlTextAttribute(DataType="date")]
+        [System.Xml.Serialization.XmlAttribute(DataType="date")]
         public System.DateTime Value {
             get {
                 return this.valueField;
@@ -2520,7 +2520,7 @@ namespace Oasis.Ubl.v21 {
             }
         }
         
-        [System.Xml.Serialization.XmlTextAttribute()]
+        [System.Xml.Serialization.XmlAttribute()]
         public decimal Value {
             get {
                 return this.valueField;
@@ -2821,7 +2821,7 @@ namespace Oasis.Ubl.v21 {
             }
         }
         
-        [System.Xml.Serialization.XmlTextAttribute()]
+        [System.Xml.Serialization.XmlAttribute()]
         public decimal Value {
             get {
                 return this.valueField;
@@ -3226,7 +3226,7 @@ namespace Oasis.Ubl.v21 {
             }
         }
         
-        [System.Xml.Serialization.XmlTextAttribute()]
+        [System.Xml.Serialization.XmlAttribute()]
         public decimal Value {
             get {
                 return this.valueField;

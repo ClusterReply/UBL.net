@@ -41,9 +41,11 @@ namespace Oasis.Ubl.v21 {
             this.anyAttrField = new ObservableCollection<System.Xml.XmlAttribute>();
             this.anyField = new ObservableCollection<System.Xml.XmlNode>();
         }
-        
-        [System.Xml.Serialization.XmlTextAttribute()]
+
+        [System.Xml.Serialization.XmlAnyAttributeAttribute()]
         [System.Xml.Serialization.XmlAnyElementAttribute()]
+        
+       
         public ObservableCollection<System.Xml.XmlNode> Any {
             get {
                 return this.anyField;
@@ -54,6 +56,7 @@ namespace Oasis.Ubl.v21 {
         }
         
         [System.Xml.Serialization.XmlAnyAttributeAttribute()]
+        
         public ObservableCollection<System.Xml.XmlAttribute> AnyAttr {
             get {
                 return this.anyAttrField;
@@ -132,7 +135,7 @@ namespace Oasis.Ubl.v21 {
             }
         }
         
-        [System.Xml.Serialization.XmlTextAttribute(DataType="anyURI")]
+        [System.Xml.Serialization.XmlAttribute(DataType="anyURI")]
         public string Value {
             get {
                 return this.valueField;
@@ -196,7 +199,7 @@ namespace Oasis.Ubl.v21 {
             }
         }
         
-        [System.Xml.Serialization.XmlTextAttribute(DataType="base64Binary")]
+        [System.Xml.Serialization.XmlAttribute(DataType="base64Binary")]
         public byte[] Value {
             get {
                 return this.valueField;

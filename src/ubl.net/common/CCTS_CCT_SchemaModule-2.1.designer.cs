@@ -252,7 +252,7 @@ namespace Oasis.Ubl.v21 {
             }
         }
         
-        [System.Xml.Serialization.XmlTextAttribute(DataType="normalizedString")]
+        [System.Xml.Serialization.XmlAttribute(DataType="normalizedString")]
         public string Value {
             get {
                 return this.valueField;

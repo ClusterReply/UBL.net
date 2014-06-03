@@ -31,8 +31,13 @@ namespace Oasis.Ubl.v21 {
     using System.IO;
     using System.Text;
     using System.Collections.ObjectModel;
-    
-    
+
+
+
+
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace = "urn:oasis:names:specification:ubl:schema:xsd:Order-2")]
+    [System.Xml.Serialization.XmlRootAttribute("Order", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:Order-2", IsNullable = false)]
+
     public partial class OrderType : System.ComponentModel.INotifyPropertyChanged {
         
         private ObservableCollection<UBLExtensionType> uBLExtensionsField;
@@ -132,6 +137,8 @@ namespace Oasis.Ubl.v21 {
         private ObservableCollection<OrderLineType> orderLineField;
         
         private static System.Xml.Serialization.XmlSerializer serializer;
+
+
         
         public OrderType() {
             this.orderLineField = new ObservableCollection<OrderLineType>();
