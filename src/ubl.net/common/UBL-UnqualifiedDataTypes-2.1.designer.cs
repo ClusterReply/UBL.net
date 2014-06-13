@@ -178,6 +178,7 @@ namespace Oasis.Ubl.v21 {
     }
 
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(CodeType1))]
+
     public partial class CodeType { }
     /*    
         private string listIDField;
@@ -326,7 +327,7 @@ namespace Oasis.Ubl.v21 {
         
         private System.DateTime valueField;
         
-        [System.Xml.Serialization.XmlAttribute(DataType="time")]
+        [System.Xml.Serialization.XmlTextAttribute(DataType="time")]
         public System.DateTime Value {
             get {
                 return this.valueField;
@@ -436,10 +437,10 @@ namespace Oasis.Ubl.v21 {
     */
     public partial class IndicatorType {
         
-        private bool valueField;
-        
-        [System.Xml.Serialization.XmlAttribute()]
-        public bool Value {
+        private string valueField;
+
+        [System.Xml.Serialization.XmlTextAttribute()]
+        public string Value {
             get {
                 return this.valueField;
             }
@@ -447,6 +448,9 @@ namespace Oasis.Ubl.v21 {
                 this.valueField = value;
             }
         }
+
+
+
     }
     
     public partial class MeasureType1 : MeasureType {

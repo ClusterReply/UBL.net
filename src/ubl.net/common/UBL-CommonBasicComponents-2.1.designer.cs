@@ -451,8 +451,8 @@ namespace Oasis.Ubl.v21 {
                 this.languageLocaleIDField = value;
             }
         }
-        
-        [System.Xml.Serialization.XmlTextAttribute()]
+
+       [System.Xml.Serialization.XmlTextAttribute(DataType = "normalizedString")]
         public string Value {
             get {
                 return this.valueField;
@@ -1982,6 +1982,7 @@ namespace Oasis.Ubl.v21 {
     
     public partial class IdentificationIDType : IdentifierType1 {
     }
+
     
     public partial class IDType : IdentifierType1 {
     }
@@ -2139,8 +2140,8 @@ namespace Oasis.Ubl.v21 {
     public partial class DateType {
         
         private System.DateTime valueField;
-        
-        [System.Xml.Serialization.XmlAttribute(DataType="date")]
+
+        [System.Xml.Serialization.XmlTextAttribute(DataType = "date")]
         public System.DateTime Value {
             get {
                 return this.valueField;
@@ -2483,7 +2484,9 @@ namespace Oasis.Ubl.v21 {
         private string unitCodeListAgencyNameField;
         
         private decimal valueField;
-        
+
+
+        [System.Xml.Serialization.XmlAttributeAttribute(DataType = "normalizedString")]
         public string unitCode {
             get {
                 return this.unitCodeField;
@@ -2492,7 +2495,8 @@ namespace Oasis.Ubl.v21 {
                 this.unitCodeField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlAttributeAttribute(DataType = "normalizedString")]
         public string unitCodeListID {
             get {
                 return this.unitCodeListIDField;
@@ -2501,7 +2505,8 @@ namespace Oasis.Ubl.v21 {
                 this.unitCodeListIDField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlAttributeAttribute(DataType = "normalizedString")]
         public string unitCodeListAgencyID {
             get {
                 return this.unitCodeListAgencyIDField;
@@ -2510,7 +2515,8 @@ namespace Oasis.Ubl.v21 {
                 this.unitCodeListAgencyIDField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlAttributeAttribute(DataType = "normalizedString")]
         public string unitCodeListAgencyName {
             get {
                 return this.unitCodeListAgencyNameField;
@@ -2519,8 +2525,8 @@ namespace Oasis.Ubl.v21 {
                 this.unitCodeListAgencyNameField = value;
             }
         }
-        
-        [System.Xml.Serialization.XmlAttribute()]
+
+        [System.Xml.Serialization.XmlTextAttribute()]
         public decimal Value {
             get {
                 return this.valueField;
@@ -2801,8 +2807,10 @@ namespace Oasis.Ubl.v21 {
         
         private string currencyCodeListVersionIDField;
         
-        private decimal valueField;
-        
+        private string valueField;
+
+
+        [System.Xml.Serialization.XmlAttributeAttribute(DataType = "normalizedString")]
         public string currencyID {
             get {
                 return this.currencyIDField;
@@ -2811,7 +2819,8 @@ namespace Oasis.Ubl.v21 {
                 this.currencyIDField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlAttributeAttribute(DataType = "normalizedString")]
         public string currencyCodeListVersionID {
             get {
                 return this.currencyCodeListVersionIDField;
@@ -2820,9 +2829,9 @@ namespace Oasis.Ubl.v21 {
                 this.currencyCodeListVersionIDField = value;
             }
         }
-        
-        [System.Xml.Serialization.XmlAttribute()]
-        public decimal Value {
+
+        [System.Xml.Serialization.XmlTextAttribute()]
+        public string Value {
             get {
                 return this.valueField;
             }

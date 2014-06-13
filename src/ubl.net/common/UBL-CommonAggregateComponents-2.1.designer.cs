@@ -57,6 +57,7 @@ namespace Oasis.Ubl.v21 {
         
         private ObservableCollection<PeriodType> periodField;
         
+        /*
         public TransportEventType() {
             this.periodField = new ObservableCollection<PeriodType>();
             this.signatureField = new SignatureType();
@@ -71,6 +72,7 @@ namespace Oasis.Ubl.v21 {
             this.occurrenceDateField = new OccurrenceDateType();
             this.identificationIDField = new IdentificationIDType();
         }
+         * */
         
         public IdentificationIDType IdentificationID {
             get {
@@ -107,7 +109,9 @@ namespace Oasis.Ubl.v21 {
                 this.transportEventTypeCodeField = value;
             }
         }
-        
+
+
+        [System.Xml.Serialization.XmlArrayAttribute()]
         public ObservableCollection<DescriptionType> Description {
             get {
                 return this.descriptionField;
@@ -134,7 +138,8 @@ namespace Oasis.Ubl.v21 {
                 this.reportedShipmentField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlArrayAttribute()]
         public ObservableCollection<StatusType> CurrentStatus {
             get {
                 return this.currentStatusField;
@@ -143,7 +148,8 @@ namespace Oasis.Ubl.v21 {
                 this.currentStatusField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlArrayAttribute()]
         public ObservableCollection<ContactType> Contact {
             get {
                 return this.contactField;
@@ -170,7 +176,8 @@ namespace Oasis.Ubl.v21 {
                 this.signatureField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlArrayAttribute()]
         public ObservableCollection<PeriodType> Period {
             get {
                 return this.periodField;
@@ -185,9 +192,11 @@ namespace Oasis.Ubl.v21 {
         
         private WeekDayCodeType weekDayCodeField;
         
+        /*
         public ServiceFrequencyType() {
             this.weekDayCodeField = new WeekDayCodeType();
         }
+         */
         
         public WeekDayCodeType WeekDayCode {
             get {
@@ -209,10 +218,12 @@ namespace Oasis.Ubl.v21 {
         
         private LocationType1 measurementToLocationField;
         
+        /*
         public EmissionCalculationMethodType() {
             this.measurementToLocationField = new LocationType1();
             this.measurementFromLocationField = new LocationType1();
         }
+         */
         
         public CalculationMethodCodeType CalculationMethodCode {
             get {
@@ -277,19 +288,33 @@ namespace Oasis.Ubl.v21 {
         
         private ObservableCollection<LocationCoordinateType> locationCoordinateField;
         
+        /*
         public LocationType1() {
-            this.locationCoordinateField = new ObservableCollection<LocationCoordinateType>();
-            this.subsidiaryLocationField = new ObservableCollection<LocationType1>();
-            this.addressField = new AddressType();
-            this.validityPeriodField = new ObservableCollection<PeriodType>();
-            this.nameField = new NameType1();
-            this.informationURIField = new InformationURIType();
-            this.countrySubentityField = new CountrySubentityType();
-            this.conditionsField = new ObservableCollection<ConditionsType>();
-            this.descriptionField = new ObservableCollection<DescriptionType>();
+            //circular reference issue
+            if(this.locationCoordinateField==null)
+                this.locationCoordinateField = new ObservableCollection<LocationCoordinateType>();
+            if(this.subsidiaryLocationField==null)
+                this.subsidiaryLocationField = new ObservableCollection<LocationType1>();
+            if(this.addressField==null)
+                this.addressField = new AddressType();
+            if(this.validityPeriodField==null)
+                this.validityPeriodField = new ObservableCollection<PeriodType>();
+            if(this.nameField==null)
+                this.nameField = new NameType1();
+            if(this.informationURIField==null)
+                this.informationURIField = new InformationURIType();
+            if(this.countrySubentityField==null)
+                this.countrySubentityField = new CountrySubentityType();
+            if(this.conditionsField==null)
+                this.conditionsField = new ObservableCollection<ConditionsType>();
+            if(this.descriptionField==null)
+                this.descriptionField = new ObservableCollection<DescriptionType>();
+            if (this.idField==null)
             this.idField = new IDType();
         }
+         */
         
+
         public IDType ID {
             get {
                 return this.idField;
@@ -298,7 +323,8 @@ namespace Oasis.Ubl.v21 {
                 this.idField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlArrayAttribute()]
         public ObservableCollection<DescriptionType> Description {
             get {
                 return this.descriptionField;
@@ -307,7 +333,8 @@ namespace Oasis.Ubl.v21 {
                 this.descriptionField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlArrayAttribute()]
         public ObservableCollection<ConditionsType> Conditions {
             get {
                 return this.conditionsField;
@@ -361,7 +388,8 @@ namespace Oasis.Ubl.v21 {
                 this.nameField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlArrayAttribute()]
         public ObservableCollection<PeriodType> ValidityPeriod {
             get {
                 return this.validityPeriodField;
@@ -379,7 +407,8 @@ namespace Oasis.Ubl.v21 {
                 this.addressField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlArrayAttribute()]
         public ObservableCollection<LocationType1> SubsidiaryLocation {
             get {
                 return this.subsidiaryLocationField;
@@ -388,7 +417,8 @@ namespace Oasis.Ubl.v21 {
                 this.subsidiaryLocationField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlArrayAttribute()]
         public ObservableCollection<LocationCoordinateType> LocationCoordinate {
             get {
                 return this.locationCoordinateField;
@@ -424,6 +454,7 @@ namespace Oasis.Ubl.v21 {
         
         private ObservableCollection<DescriptionType> descriptionField;
         
+        /*
         public PeriodType() {
             this.descriptionField = new ObservableCollection<DescriptionType>();
             this.descriptionCodeField = new ObservableCollection<DescriptionCodeType>();
@@ -433,6 +464,7 @@ namespace Oasis.Ubl.v21 {
             this.startTimeField = new StartTimeType();
             this.startDateField = new StartDateType();
         }
+         */
         
         public StartDateType StartDate {
             get {
@@ -451,7 +483,8 @@ namespace Oasis.Ubl.v21 {
                 this.startTimeField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlElementAttribute(Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
         public EndDateType EndDate {
             get {
                 return this.endDateField;
@@ -478,7 +511,8 @@ namespace Oasis.Ubl.v21 {
                 this.durationMeasureField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlArrayAttribute()]
         public ObservableCollection<DescriptionCodeType> DescriptionCode {
             get {
                 return this.descriptionCodeField;
@@ -487,7 +521,8 @@ namespace Oasis.Ubl.v21 {
                 this.descriptionCodeField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlArrayAttribute()]
         public ObservableCollection<DescriptionType> Description {
             get {
                 return this.descriptionField;
@@ -554,11 +589,16 @@ namespace Oasis.Ubl.v21 {
         
         private ObservableCollection<LocationCoordinateType> locationCoordinateField;
         
+        /*
         public AddressType() {
-            this.locationCoordinateField = new ObservableCollection<LocationCoordinateType>();
-            this.countryField = new CountryType();
-            this.addressLineField = new ObservableCollection<AddressLineType>();
+            if(this.locationCoordinateField==null)
+                this.locationCoordinateField = new ObservableCollection<LocationCoordinateType>();
+            if(this.countryField==null)
+                this.countryField = new CountryType();
+            if (this.addressLineField==null)
+                this.addressLineField = new ObservableCollection<AddressLineType>();
         }
+         */
         
         public IDType ID {
             get {
@@ -775,7 +815,8 @@ namespace Oasis.Ubl.v21 {
                 this.timezoneOffsetField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlArrayAttribute()]
         public ObservableCollection<AddressLineType> AddressLine {
             get {
                 return this.addressLineField;
@@ -793,7 +834,8 @@ namespace Oasis.Ubl.v21 {
                 this.countryField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlArrayAttribute()]
         public ObservableCollection<LocationCoordinateType> LocationCoordinate {
             get {
                 return this.locationCoordinateField;
@@ -944,10 +986,12 @@ namespace Oasis.Ubl.v21 {
         
         private ObservableCollection<EmissionCalculationMethodType> emissionCalculationMethodField;
         
+        /*
         public EnvironmentalEmissionType() {
             this.emissionCalculationMethodField = new ObservableCollection<EmissionCalculationMethodType>();
             this.descriptionField = new ObservableCollection<DescriptionType>();
         }
+         */
         
         public EnvironmentalEmissionTypeCodeType EnvironmentalEmissionTypeCode {
             get {
@@ -966,7 +1010,8 @@ namespace Oasis.Ubl.v21 {
                 this.valueMeasureField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlArrayAttribute()]
         public ObservableCollection<DescriptionType> Description {
             get {
                 return this.descriptionField;
@@ -975,7 +1020,8 @@ namespace Oasis.Ubl.v21 {
                 this.descriptionField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlArrayAttribute()]
         public ObservableCollection<EmissionCalculationMethodType> EmissionCalculationMethod {
             get {
                 return this.emissionCalculationMethodField;
@@ -1110,6 +1156,7 @@ namespace Oasis.Ubl.v21 {
         
         private PersonType shipsSurgeonPersonField;
         
+        /*
         public ShipmentStageType() {
             this.shipsSurgeonPersonField = new PersonType();
             this.masterPersonField = new PersonType();
@@ -1165,6 +1212,7 @@ namespace Oasis.Ubl.v21 {
             this.onCarriageIndicatorField = new OnCarriageIndicatorType();
             this.preCarriageIndicatorField = new PreCarriageIndicatorType();
         }
+         */
         
         public IDType ID {
             get {
@@ -1273,7 +1321,8 @@ namespace Oasis.Ubl.v21 {
                 this.successiveSequenceIDField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlArrayAttribute()]
         public ObservableCollection<InstructionsType> Instructions {
             get {
                 return this.instructionsField;
@@ -1282,7 +1331,8 @@ namespace Oasis.Ubl.v21 {
                 this.instructionsField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlArrayAttribute()]
         public ObservableCollection<DemurrageInstructionsType> DemurrageInstructions {
             get {
                 return this.demurrageInstructionsField;
@@ -1318,7 +1368,8 @@ namespace Oasis.Ubl.v21 {
                 this.transitPeriodField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlArrayAttribute()]
         public ObservableCollection<PartyType> CarrierParty {
             get {
                 return this.carrierPartyField;
@@ -1516,7 +1567,8 @@ namespace Oasis.Ubl.v21 {
                 this.estimatedTransitPeriodField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlArrayAttribute()]
         public ObservableCollection<AllowanceChargeType> FreightAllowanceCharge {
             get {
                 return this.freightAllowanceChargeField;
@@ -1534,7 +1586,8 @@ namespace Oasis.Ubl.v21 {
                 this.freightChargeLocationField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlArrayAttribute()]
         public ObservableCollection<TransportEventType> DetentionTransportEvent {
             get {
                 return this.detentionTransportEventField;
@@ -1561,7 +1614,8 @@ namespace Oasis.Ubl.v21 {
                 this.requestedArrivalTransportEventField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlArrayAttribute()]
         public ObservableCollection<TransportEventType> RequestedWaypointTransportEvent {
             get {
                 return this.requestedWaypointTransportEventField;
@@ -1588,7 +1642,8 @@ namespace Oasis.Ubl.v21 {
                 this.plannedArrivalTransportEventField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlArrayAttribute()]
         public ObservableCollection<TransportEventType> PlannedWaypointTransportEvent {
             get {
                 return this.plannedWaypointTransportEventField;
@@ -1624,7 +1679,8 @@ namespace Oasis.Ubl.v21 {
                 this.actualArrivalTransportEventField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlArrayAttribute()]
         public ObservableCollection<TransportEventType> TransportEvent {
             get {
                 return this.transportEventField;
@@ -1651,7 +1707,8 @@ namespace Oasis.Ubl.v21 {
                 this.estimatedArrivalTransportEventField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlArrayAttribute()]
         public ObservableCollection<PersonType> PassengerPerson {
             get {
                 return this.passengerPersonField;
@@ -1660,7 +1717,8 @@ namespace Oasis.Ubl.v21 {
                 this.passengerPersonField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlArrayAttribute()]
         public ObservableCollection<PersonType> DriverPerson {
             get {
                 return this.driverPersonField;
@@ -1678,7 +1736,8 @@ namespace Oasis.Ubl.v21 {
                 this.reportingPersonField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlArrayAttribute()]
         public ObservableCollection<PersonType> CrewMemberPerson {
             get {
                 return this.crewMemberPersonField;
@@ -1756,25 +1815,46 @@ namespace Oasis.Ubl.v21 {
         
         private FinancialAccountType financialAccountField;
         
+        /*
         public PartyType() {
-            this.financialAccountField = new FinancialAccountType();
-            this.powerOfAttorneyField = new ObservableCollection<PowerOfAttorneyType>();
-            this.serviceProviderPartyField = new ObservableCollection<ServiceProviderPartyType>();
-            this.agentPartyField = new PartyType();
-            this.personField = new ObservableCollection<PersonType>();
-            this.contactField = new ContactType();
-            this.partyLegalEntityField = new ObservableCollection<PartyLegalEntityType>();
-            this.partyTaxSchemeField = new ObservableCollection<PartyTaxSchemeType>();
-            this.physicalLocationField = new LocationType1();
-            this.postalAddressField = new AddressType();
-            this.languageField = new LanguageType();
-            this.partyNameField = new ObservableCollection<PartyNameType>();
-            this.partyIdentificationField = new ObservableCollection<PartyIdentificationType>();
-            this.endpointIDField = new EndpointIDType();
-            this.logoReferenceIDField = new LogoReferenceIDType();
-            this.websiteURIField = new WebsiteURIType();
+            // Circular reference issue
+            
+            if(this.financialAccountField==null)
+                this.financialAccountField = new FinancialAccountType();
+            if(this.powerOfAttorneyField==null)
+                this.powerOfAttorneyField = new ObservableCollection<PowerOfAttorneyType>();
+            if(this.serviceProviderPartyField==null)
+                this.serviceProviderPartyField = new ObservableCollection<ServiceProviderPartyType>();
+            if(this.agentPartyField==null)
+                this.agentPartyField =  new PartyType();
+            if(this.personField==null)
+                this.personField = new ObservableCollection<PersonType>();
+            if(this.contactField==null)
+                this.contactField = new ContactType();
+            if(this.partyLegalEntityField==null)
+                this.partyLegalEntityField = new ObservableCollection<PartyLegalEntityType>();
+            if(this.partyTaxSchemeField==null)
+                this.partyTaxSchemeField = new ObservableCollection<PartyTaxSchemeType>();
+            if(this.physicalLocationField==null)
+                this.physicalLocationField = new LocationType1();
+            if(this.postalAddressField==null)
+                this.postalAddressField = new AddressType();
+            if(this.languageField==null)
+                this.languageField = new LanguageType();
+            if(this.partyNameField==null)
+                this.partyNameField = new ObservableCollection<PartyNameType>();
+            if(this.partyIdentificationField==null)
+                this.partyIdentificationField = new ObservableCollection<PartyIdentificationType>();
+            if(this.endpointIDField==null)
+                this.endpointIDField = new EndpointIDType();
+            if(this.logoReferenceIDField==null)
+                this.logoReferenceIDField = new LogoReferenceIDType();
+            if (this.websiteURIField==null)
+                this.websiteURIField = new WebsiteURIType();                 
         }
-        
+         */
+
+        [System.Xml.Serialization.XmlElementAttribute(Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
         public MarkCareIndicatorType MarkCareIndicator {
             get {
                 return this.markCareIndicatorField;
@@ -1783,7 +1863,8 @@ namespace Oasis.Ubl.v21 {
                 this.markCareIndicatorField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlElementAttribute(Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
         public MarkAttentionIndicatorType MarkAttentionIndicator {
             get {
                 return this.markAttentionIndicatorField;
@@ -1792,7 +1873,8 @@ namespace Oasis.Ubl.v21 {
                 this.markAttentionIndicatorField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlElementAttribute(Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
         public WebsiteURIType WebsiteURI {
             get {
                 return this.websiteURIField;
@@ -1801,7 +1883,8 @@ namespace Oasis.Ubl.v21 {
                 this.websiteURIField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlElementAttribute(Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
         public LogoReferenceIDType LogoReferenceID {
             get {
                 return this.logoReferenceIDField;
@@ -1810,7 +1893,8 @@ namespace Oasis.Ubl.v21 {
                 this.logoReferenceIDField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlElementAttribute(Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
         public EndpointIDType EndpointID {
             get {
                 return this.endpointIDField;
@@ -1819,7 +1903,8 @@ namespace Oasis.Ubl.v21 {
                 this.endpointIDField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlElementAttribute(Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
         public IndustryClassificationCodeType IndustryClassificationCode {
             get {
                 return this.industryClassificationCodeField;
@@ -1828,7 +1913,8 @@ namespace Oasis.Ubl.v21 {
                 this.industryClassificationCodeField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlArrayAttribute(Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2")]
         public ObservableCollection<PartyIdentificationType> PartyIdentification {
             get {
                 return this.partyIdentificationField;
@@ -1837,7 +1923,8 @@ namespace Oasis.Ubl.v21 {
                 this.partyIdentificationField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlElementAttribute(Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2")]
         public ObservableCollection<PartyNameType> PartyName {
             get {
                 return this.partyNameField;
@@ -1846,7 +1933,8 @@ namespace Oasis.Ubl.v21 {
                 this.partyNameField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlElementAttribute(Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2")]
         public LanguageType Language {
             get {
                 return this.languageField;
@@ -1855,7 +1943,8 @@ namespace Oasis.Ubl.v21 {
                 this.languageField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlElementAttribute(Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2")]
         public AddressType PostalAddress {
             get {
                 return this.postalAddressField;
@@ -1864,7 +1953,8 @@ namespace Oasis.Ubl.v21 {
                 this.postalAddressField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlElementAttribute(Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2")]
         public LocationType1 PhysicalLocation {
             get {
                 return this.physicalLocationField;
@@ -1873,7 +1963,8 @@ namespace Oasis.Ubl.v21 {
                 this.physicalLocationField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlArrayAttribute(Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2")]
         public ObservableCollection<PartyTaxSchemeType> PartyTaxScheme {
             get {
                 return this.partyTaxSchemeField;
@@ -1882,7 +1973,8 @@ namespace Oasis.Ubl.v21 {
                 this.partyTaxSchemeField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlArrayAttribute(Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2")]
         public ObservableCollection<PartyLegalEntityType> PartyLegalEntity {
             get {
                 return this.partyLegalEntityField;
@@ -1891,7 +1983,8 @@ namespace Oasis.Ubl.v21 {
                 this.partyLegalEntityField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlElementAttribute(Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2")]
         public ContactType Contact {
             get {
                 return this.contactField;
@@ -1900,7 +1993,8 @@ namespace Oasis.Ubl.v21 {
                 this.contactField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlArrayAttribute(Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2")]
         public ObservableCollection<PersonType> Person {
             get {
                 return this.personField;
@@ -1909,7 +2003,8 @@ namespace Oasis.Ubl.v21 {
                 this.personField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlElementAttribute(Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2")]
         public PartyType AgentParty {
             get {
                 return this.agentPartyField;
@@ -1918,7 +2013,8 @@ namespace Oasis.Ubl.v21 {
                 this.agentPartyField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlArrayAttribute(Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2")]
         public ObservableCollection<ServiceProviderPartyType> ServiceProviderParty {
             get {
                 return this.serviceProviderPartyField;
@@ -1927,7 +2023,8 @@ namespace Oasis.Ubl.v21 {
                 this.serviceProviderPartyField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlArrayAttribute(Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2")]
         public ObservableCollection<PowerOfAttorneyType> PowerOfAttorney {
             get {
                 return this.powerOfAttorneyField;
@@ -1936,7 +2033,8 @@ namespace Oasis.Ubl.v21 {
                 this.powerOfAttorneyField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlElementAttribute(Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2")]
         public FinancialAccountType FinancialAccount {
             get {
                 return this.financialAccountField;
@@ -2027,12 +2125,14 @@ namespace Oasis.Ubl.v21 {
         
         private TaxSchemeType taxSchemeField;
         
+        /*
         public PartyTaxSchemeType() {
             this.taxSchemeField = new TaxSchemeType();
             this.registrationAddressField = new AddressType();
             this.exemptionReasonField = new ObservableCollection<ExemptionReasonType>();
             this.companyIDField = new CompanyIDType();
         }
+         */
         
         public RegistrationNameType RegistrationName {
             get {
@@ -2069,7 +2169,8 @@ namespace Oasis.Ubl.v21 {
                 this.exemptionReasonCodeField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlArrayAttribute()]
         public ObservableCollection<ExemptionReasonType> ExemptionReason {
             get {
                 return this.exemptionReasonField;
@@ -2110,9 +2211,11 @@ namespace Oasis.Ubl.v21 {
         
         private ObservableCollection<AddressType> jurisdictionRegionAddressField;
         
+        /*
         public TaxSchemeType() {
             this.jurisdictionRegionAddressField = new ObservableCollection<AddressType>();
         }
+         */
         
         public IDType ID {
             get {
@@ -2149,7 +2252,8 @@ namespace Oasis.Ubl.v21 {
                 this.currencyCodeField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlArrayAttribute()]
         public ObservableCollection<AddressType> JurisdictionRegionAddress {
             get {
                 return this.jurisdictionRegionAddressField;
@@ -2190,6 +2294,7 @@ namespace Oasis.Ubl.v21 {
         
         private ObservableCollection<ShareholderPartyType> shareholderPartyField;
         
+        /*
         public PartyLegalEntityType() {
             this.shareholderPartyField = new ObservableCollection<ShareholderPartyType>();
             this.headOfficePartyField = new PartyType();
@@ -2197,7 +2302,9 @@ namespace Oasis.Ubl.v21 {
             this.registrationAddressField = new AddressType();
             this.corporateStockAmountField = new CorporateStockAmountType();
         }
-        
+         */
+
+        [System.Xml.Serialization.XmlElementAttribute(Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
         public RegistrationNameType RegistrationName {
             get {
                 return this.registrationNameField;
@@ -2206,7 +2313,8 @@ namespace Oasis.Ubl.v21 {
                 this.registrationNameField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlElementAttribute(Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
         public CompanyIDType CompanyID {
             get {
                 return this.companyIDField;
@@ -2215,7 +2323,8 @@ namespace Oasis.Ubl.v21 {
                 this.companyIDField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlElementAttribute(Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
         public RegistrationDateType RegistrationDate {
             get {
                 return this.registrationDateField;
@@ -2224,7 +2333,8 @@ namespace Oasis.Ubl.v21 {
                 this.registrationDateField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlElementAttribute(Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
         public RegistrationExpirationDateType RegistrationExpirationDate {
             get {
                 return this.registrationExpirationDateField;
@@ -2233,7 +2343,8 @@ namespace Oasis.Ubl.v21 {
                 this.registrationExpirationDateField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlElementAttribute(Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
         public CompanyLegalFormCodeType CompanyLegalFormCode {
             get {
                 return this.companyLegalFormCodeField;
@@ -2242,7 +2353,8 @@ namespace Oasis.Ubl.v21 {
                 this.companyLegalFormCodeField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlElementAttribute(Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
         public CompanyLegalFormType CompanyLegalForm {
             get {
                 return this.companyLegalFormField;
@@ -2251,7 +2363,8 @@ namespace Oasis.Ubl.v21 {
                 this.companyLegalFormField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlElementAttribute(Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
         public SoleProprietorshipIndicatorType SoleProprietorshipIndicator {
             get {
                 return this.soleProprietorshipIndicatorField;
@@ -2260,7 +2373,8 @@ namespace Oasis.Ubl.v21 {
                 this.soleProprietorshipIndicatorField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlElementAttribute(Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
         public CompanyLiquidationStatusCodeType CompanyLiquidationStatusCode {
             get {
                 return this.companyLiquidationStatusCodeField;
@@ -2269,7 +2383,8 @@ namespace Oasis.Ubl.v21 {
                 this.companyLiquidationStatusCodeField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlElementAttribute(Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
         public CorporateStockAmountType CorporateStockAmount {
             get {
                 return this.corporateStockAmountField;
@@ -2278,7 +2393,8 @@ namespace Oasis.Ubl.v21 {
                 this.corporateStockAmountField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlElementAttribute(Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
         public FullyPaidSharesIndicatorType FullyPaidSharesIndicator {
             get {
                 return this.fullyPaidSharesIndicatorField;
@@ -2287,7 +2403,8 @@ namespace Oasis.Ubl.v21 {
                 this.fullyPaidSharesIndicatorField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlElementAttribute(Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2")]
         public AddressType RegistrationAddress {
             get {
                 return this.registrationAddressField;
@@ -2296,7 +2413,8 @@ namespace Oasis.Ubl.v21 {
                 this.registrationAddressField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlElementAttribute(Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2")]
         public CorporateRegistrationSchemeType CorporateRegistrationScheme {
             get {
                 return this.corporateRegistrationSchemeField;
@@ -2305,7 +2423,8 @@ namespace Oasis.Ubl.v21 {
                 this.corporateRegistrationSchemeField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlElementAttribute(Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2")]
         public PartyType HeadOfficeParty {
             get {
                 return this.headOfficePartyField;
@@ -2314,7 +2433,8 @@ namespace Oasis.Ubl.v21 {
                 this.headOfficePartyField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlArrayAttribute(Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2")]
         public ObservableCollection<ShareholderPartyType> ShareholderParty {
             get {
                 return this.shareholderPartyField;
@@ -2335,9 +2455,11 @@ namespace Oasis.Ubl.v21 {
         
         private ObservableCollection<AddressType> jurisdictionRegionAddressField;
         
+        /*
         public CorporateRegistrationSchemeType() {
             this.jurisdictionRegionAddressField = new ObservableCollection<AddressType>();
         }
+         */
         
         public IDType ID {
             get {
@@ -2365,7 +2487,8 @@ namespace Oasis.Ubl.v21 {
                 this.corporateRegistrationTypeCodeField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlArrayAttribute()]
         public ObservableCollection<AddressType> JurisdictionRegionAddress {
             get {
                 return this.jurisdictionRegionAddressField;
@@ -2382,10 +2505,12 @@ namespace Oasis.Ubl.v21 {
         
         private PartyType partyField;
         
+        /*
         public ShareholderPartyType() {
             this.partyField = new PartyType();
             this.partecipationPercentField = new PartecipationPercentType();
         }
+         */
         
         public PartecipationPercentType PartecipationPercent {
             get {
@@ -2422,10 +2547,12 @@ namespace Oasis.Ubl.v21 {
         
         private ObservableCollection<CommunicationType> otherCommunicationField;
         
+        /*
         public ContactType() {
             this.otherCommunicationField = new ObservableCollection<CommunicationType>();
             this.noteField = new ObservableCollection<NoteType>();
         }
+         */
         
         public IDType ID {
             get {
@@ -2471,7 +2598,8 @@ namespace Oasis.Ubl.v21 {
                 this.electronicMailField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlArrayAttribute()]
         public ObservableCollection<NoteType> Note {
             get {
                 return this.noteField;
@@ -2480,7 +2608,8 @@ namespace Oasis.Ubl.v21 {
                 this.noteField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlArrayAttribute()]
         public ObservableCollection<CommunicationType> OtherCommunication {
             get {
                 return this.otherCommunicationField;
@@ -2563,6 +2692,7 @@ namespace Oasis.Ubl.v21 {
         
         private AddressType residenceAddressField;
         
+        /*
         public PersonType() {
             this.residenceAddressField = new AddressType();
             this.identityDocumentReferenceField = new ObservableCollection<DocumentReferenceType>();
@@ -2570,6 +2700,7 @@ namespace Oasis.Ubl.v21 {
             this.contactField = new ContactType();
             this.nationalityIDField = new NationalityIDType();
         }
+         */
         
         public IDType ID {
             get {
@@ -2705,7 +2836,8 @@ namespace Oasis.Ubl.v21 {
                 this.financialAccountField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlArrayAttribute()]
         public ObservableCollection<DocumentReferenceType> IdentityDocumentReference {
             get {
                 return this.identityDocumentReferenceField;
@@ -2745,11 +2877,13 @@ namespace Oasis.Ubl.v21 {
         
         private CountryType countryField;
         
+        /*
         public FinancialAccountType() {
             this.countryField = new CountryType();
             this.financialInstitutionBranchField = new BranchType();
             this.paymentNoteField = new ObservableCollection<PaymentNoteType>();
         }
+         */
         
         public IDType ID {
             get {
@@ -2804,7 +2938,8 @@ namespace Oasis.Ubl.v21 {
                 this.currencyCodeField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlArrayAttribute()]
         public ObservableCollection<PaymentNoteType> PaymentNote {
             get {
                 return this.paymentNoteField;
@@ -2843,11 +2978,12 @@ namespace Oasis.Ubl.v21 {
         
         private AddressType addressField;
         
+        /*
         public BranchType() {
             this.addressField = new AddressType();
             this.financialInstitutionField = new FinancialInstitutionType();
         }
-        
+        */
         public IDType ID {
             get {
                 return this.idField;
@@ -2893,9 +3029,11 @@ namespace Oasis.Ubl.v21 {
         
         private AddressType addressField;
         
+        /*
         public FinancialInstitutionType() {
             this.addressField = new AddressType();
         }
+         */
         
         public IDType ID {
             get {
@@ -2961,6 +3099,7 @@ namespace Oasis.Ubl.v21 {
         
         private ResultOfVerificationType resultOfVerificationField;
         
+        /*
         public DocumentReferenceType() {
             this.resultOfVerificationField = new ResultOfVerificationType();
             this.issuerPartyField = new PartyType();
@@ -2972,7 +3111,9 @@ namespace Oasis.Ubl.v21 {
             this.xPathField = new ObservableCollection<XPathType>();
             this.uUIDField = new UUIDType();
         }
-        
+         */
+
+        [System.Xml.Serialization.XmlElementAttribute(Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
         public IDType ID {
             get {
                 return this.idField;
@@ -2981,7 +3122,8 @@ namespace Oasis.Ubl.v21 {
                 this.idField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlElementAttribute(Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
         public CopyIndicatorType CopyIndicator {
             get {
                 return this.copyIndicatorField;
@@ -2990,7 +3132,8 @@ namespace Oasis.Ubl.v21 {
                 this.copyIndicatorField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlElementAttribute(Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
         public UUIDType UUID {
             get {
                 return this.uUIDField;
@@ -2999,7 +3142,8 @@ namespace Oasis.Ubl.v21 {
                 this.uUIDField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlElementAttribute(Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
         public IssueDateType IssueDate {
             get {
                 return this.issueDateField;
@@ -3008,7 +3152,8 @@ namespace Oasis.Ubl.v21 {
                 this.issueDateField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlElementAttribute(Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]  
         public IssueTimeType IssueTime {
             get {
                 return this.issueTimeField;
@@ -3017,7 +3162,8 @@ namespace Oasis.Ubl.v21 {
                 this.issueTimeField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlElementAttribute(Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")] 
         public DocumentTypeCodeType DocumentTypeCode {
             get {
                 return this.documentTypeCodeField;
@@ -3026,7 +3172,8 @@ namespace Oasis.Ubl.v21 {
                 this.documentTypeCodeField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlElementAttribute(Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
         public DocumentTypeType DocumentType {
             get {
                 return this.documentTypeField;
@@ -3035,7 +3182,8 @@ namespace Oasis.Ubl.v21 {
                 this.documentTypeField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlArrayAttribute(Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
         public ObservableCollection<XPathType> XPath {
             get {
                 return this.xPathField;
@@ -3044,7 +3192,8 @@ namespace Oasis.Ubl.v21 {
                 this.xPathField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlElementAttribute(Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
         public LanguageIDType LanguageID {
             get {
                 return this.languageIDField;
@@ -3053,7 +3202,8 @@ namespace Oasis.Ubl.v21 {
                 this.languageIDField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlElementAttribute(Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
         public LocaleCodeType LocaleCode {
             get {
                 return this.localeCodeField;
@@ -3062,7 +3212,8 @@ namespace Oasis.Ubl.v21 {
                 this.localeCodeField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlElementAttribute(Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
         public VersionIDType VersionID {
             get {
                 return this.versionIDField;
@@ -3071,7 +3222,8 @@ namespace Oasis.Ubl.v21 {
                 this.versionIDField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlElementAttribute(Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
         public DocumentStatusCodeType DocumentStatusCode {
             get {
                 return this.documentStatusCodeField;
@@ -3080,7 +3232,8 @@ namespace Oasis.Ubl.v21 {
                 this.documentStatusCodeField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlArrayAttribute(Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
         public ObservableCollection<DocumentDescriptionType> DocumentDescription {
             get {
                 return this.documentDescriptionField;
@@ -3089,7 +3242,8 @@ namespace Oasis.Ubl.v21 {
                 this.documentDescriptionField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlElementAttribute(Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2")]
         public AttachmentType Attachment {
             get {
                 return this.attachmentField;
@@ -3098,7 +3252,8 @@ namespace Oasis.Ubl.v21 {
                 this.attachmentField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlElementAttribute(Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2")]
         public PeriodType ValidityPeriod {
             get {
                 return this.validityPeriodField;
@@ -3107,7 +3262,8 @@ namespace Oasis.Ubl.v21 {
                 this.validityPeriodField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlElementAttribute(Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2")]
         public PartyType IssuerParty {
             get {
                 return this.issuerPartyField;
@@ -3116,7 +3272,8 @@ namespace Oasis.Ubl.v21 {
                 this.issuerPartyField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlElementAttribute(Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2")]
         public ResultOfVerificationType ResultOfVerification {
             get {
                 return this.resultOfVerificationField;
@@ -3133,10 +3290,12 @@ namespace Oasis.Ubl.v21 {
         
         private ExternalReferenceType externalReferenceField;
         
+        /*
         public AttachmentType() {
             this.externalReferenceField = new ExternalReferenceType();
             this.embeddedDocumentBinaryObjectField = new EmbeddedDocumentBinaryObjectType();
         }
+         */
         
         public EmbeddedDocumentBinaryObjectType EmbeddedDocumentBinaryObject {
             get {
@@ -3181,10 +3340,12 @@ namespace Oasis.Ubl.v21 {
         
         private ObservableCollection<DescriptionType> descriptionField;
         
+        /*
         public ExternalReferenceType() {
             this.descriptionField = new ObservableCollection<DescriptionType>();
             this.uRIField = new URIType();
         }
+         */
         
         public URIType URI {
             get {
@@ -3275,7 +3436,8 @@ namespace Oasis.Ubl.v21 {
                 this.fileNameField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlArrayAttribute()]
         public ObservableCollection<DescriptionType> Description {
             get {
                 return this.descriptionField;
@@ -3304,10 +3466,12 @@ namespace Oasis.Ubl.v21 {
         
         private PartyType signatoryPartyField;
         
+        /*
         public ResultOfVerificationType() {
             this.signatoryPartyField = new PartyType();
             this.validatorIDField = new ValidatorIDType();
         }
+         */
         
         public ValidatorIDType ValidatorID {
             get {
@@ -3393,12 +3557,14 @@ namespace Oasis.Ubl.v21 {
         private PartyType partyField;
         
         private ContactType sellerContactField;
-        
+       
+        /*
         public ServiceProviderPartyType() {
             this.sellerContactField = new ContactType();
             this.partyField = new PartyType();
             this.serviceTypeField = new ObservableCollection<ServiceTypeType>();
         }
+         */
         
         public IDType ID {
             get {
@@ -3417,7 +3583,8 @@ namespace Oasis.Ubl.v21 {
                 this.serviceTypeCodeField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlArrayAttribute()]
         public ObservableCollection<ServiceTypeType> ServiceType {
             get {
                 return this.serviceTypeField;
@@ -3464,6 +3631,7 @@ namespace Oasis.Ubl.v21 {
         
         private ObservableCollection<DocumentReferenceType> mandateDocumentReferenceField;
         
+        /*
         public PowerOfAttorneyType() {
             this.mandateDocumentReferenceField = new ObservableCollection<DocumentReferenceType>();
             this.witnessPartyField = new ObservableCollection<PartyType>();
@@ -3471,6 +3639,7 @@ namespace Oasis.Ubl.v21 {
             this.notaryPartyField = new PartyType();
             this.descriptionField = new ObservableCollection<DescriptionType>();
         }
+         */
         
         public IDType ID {
             get {
@@ -3498,7 +3667,8 @@ namespace Oasis.Ubl.v21 {
                 this.issueTimeField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlArrayAttribute()]
         public ObservableCollection<DescriptionType> Description {
             get {
                 return this.descriptionField;
@@ -3525,7 +3695,8 @@ namespace Oasis.Ubl.v21 {
                 this.agentPartyField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlArrayAttribute()]
         public ObservableCollection<PartyType> WitnessParty {
             get {
                 return this.witnessPartyField;
@@ -3534,7 +3705,8 @@ namespace Oasis.Ubl.v21 {
                 this.witnessPartyField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlArrayAttribute()]
         public ObservableCollection<DocumentReferenceType> MandateDocumentReference {
             get {
                 return this.mandateDocumentReferenceField;
@@ -3573,6 +3745,7 @@ namespace Oasis.Ubl.v21 {
         
         private ObservableCollection<DimensionType> measurementDimensionField;
         
+        /*
         public TransportMeansType() {
             this.measurementDimensionField = new ObservableCollection<DimensionType>();
             this.ownerPartyField = new PartyType();
@@ -3585,6 +3758,7 @@ namespace Oasis.Ubl.v21 {
             this.registrationNationalityIDField = new RegistrationNationalityIDType();
             this.journeyIDField = new JourneyIDType();
         }
+         */
         
         public JourneyIDType JourneyID {
             get {
@@ -3603,7 +3777,8 @@ namespace Oasis.Ubl.v21 {
                 this.registrationNationalityIDField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlArrayAttribute()]
         public ObservableCollection<RegistrationNationalityType> RegistrationNationality {
             get {
                 return this.registrationNationalityField;
@@ -3693,7 +3868,8 @@ namespace Oasis.Ubl.v21 {
                 this.ownerPartyField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlArrayAttribute()]
         public ObservableCollection<DimensionType> MeasurementDimension {
             get {
                 return this.measurementDimensionField;
@@ -3712,11 +3888,13 @@ namespace Oasis.Ubl.v21 {
         
         private ObservableCollection<DimensionType> measurementDimensionField;
         
+        /*
         public StowageType() {
             this.measurementDimensionField = new ObservableCollection<DimensionType>();
             this.locationField = new ObservableCollection<LocationType>();
             this.locationIDField = new LocationIDType();
         }
+         */
         
         public LocationIDType LocationID {
             get {
@@ -3726,7 +3904,8 @@ namespace Oasis.Ubl.v21 {
                 this.locationIDField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlArrayAttribute()]
         public ObservableCollection<LocationType> Location {
             get {
                 return this.locationField;
@@ -3735,7 +3914,8 @@ namespace Oasis.Ubl.v21 {
                 this.locationField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlArrayAttribute()]
         public ObservableCollection<DimensionType> MeasurementDimension {
             get {
                 return this.measurementDimensionField;
@@ -3758,10 +3938,13 @@ namespace Oasis.Ubl.v21 {
         
         private MaximumMeasureType maximumMeasureField;
         
+        /*
         public DimensionType() {
             this.descriptionField = new ObservableCollection<DescriptionType>();
             this.attributeIDField = new AttributeIDType();
         }
+         */
+
         
         public AttributeIDType AttributeID {
             get {
@@ -3780,7 +3963,8 @@ namespace Oasis.Ubl.v21 {
                 this.measureField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlArrayAttribute()]
         public ObservableCollection<DescriptionType> Description {
             get {
                 return this.descriptionField;
@@ -3813,9 +3997,9 @@ namespace Oasis.Ubl.v21 {
         
         private AircraftIDType aircraftIDField;
         
-        public AirTransportType() {
-            this.aircraftIDField = new AircraftIDType();
-        }
+        //public AirTransportType() {
+        //    this.aircraftIDField = new AircraftIDType();
+        //}
         
         public AircraftIDType AircraftID {
             get {
@@ -3831,9 +4015,11 @@ namespace Oasis.Ubl.v21 {
         
         private LicensePlateIDType licensePlateIDField;
         
+        /*
         public RoadTransportType() {
             this.licensePlateIDField = new LicensePlateIDType();
         }
+         */
         
         public LicensePlateIDType LicensePlateID {
             get {
@@ -3850,11 +4036,11 @@ namespace Oasis.Ubl.v21 {
         private TrainIDType trainIDField;
         
         private RailCarIDType railCarIDField;
-        
-        public RailTransportType() {
-            this.railCarIDField = new RailCarIDType();
-            this.trainIDField = new TrainIDType();
-        }
+
+        //public RailTransportType() {
+        //    this.railCarIDField = new RailCarIDType();
+        //    this.trainIDField = new TrainIDType();
+        //}
         
         public TrainIDType TrainID {
             get {
@@ -3893,13 +4079,13 @@ namespace Oasis.Ubl.v21 {
         
         private LocationType1 registryPortLocationField;
         
-        public MaritimeTransportType() {
-            this.registryPortLocationField = new LocationType1();
-            this.registryCertificateDocumentReferenceField = new DocumentReferenceType();
-            this.shipsRequirementsField = new ObservableCollection<ShipsRequirementsType>();
-            this.radioCallSignIDField = new RadioCallSignIDType();
-            this.vesselIDField = new VesselIDType();
-        }
+        //public MaritimeTransportType() {
+        //    this.registryPortLocationField = new LocationType1();
+        //    this.registryCertificateDocumentReferenceField = new DocumentReferenceType();
+        //    this.shipsRequirementsField = new ObservableCollection<ShipsRequirementsType>();
+        //    this.radioCallSignIDField = new RadioCallSignIDType();
+        //    this.vesselIDField = new VesselIDType();
+        //}
         
         public VesselIDType VesselID {
             get {
@@ -3927,7 +4113,8 @@ namespace Oasis.Ubl.v21 {
                 this.radioCallSignIDField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlArrayAttribute()]
         public ObservableCollection<ShipsRequirementsType> ShipsRequirements {
             get {
                 return this.shipsRequirementsField;
@@ -3973,7 +4160,11 @@ namespace Oasis.Ubl.v21 {
             }
         }
     }
-    
+
+
+    [System.SerializableAttribute()]
+    [System.Xml.Serialization.XmlRootAttribute("AllowanceCharge", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2", IsNullable = false)]
+
     public partial class AllowanceChargeType {
         
         private IDType idField;
@@ -4006,12 +4197,12 @@ namespace Oasis.Ubl.v21 {
         
         private ObservableCollection<PaymentMeansType> paymentMeansField;
         
-        public AllowanceChargeType() {
-            this.paymentMeansField = new ObservableCollection<PaymentMeansType>();
-            this.taxTotalField = new TaxTotalType();
-            this.taxCategoryField = new ObservableCollection<TaxCategoryType>();
-            this.allowanceChargeReasonField = new ObservableCollection<AllowanceChargeReasonType>();
-        }
+        //public AllowanceChargeType() {
+        //    this.paymentMeansField = new ObservableCollection<PaymentMeansType>();
+        //    this.taxTotalField = new TaxTotalType();
+        //    this.taxCategoryField = new ObservableCollection<TaxCategoryType>();
+        //    this.allowanceChargeReasonField = new ObservableCollection<AllowanceChargeReasonType>();
+        //}
         
         public IDType ID {
             get {
@@ -4021,7 +4212,8 @@ namespace Oasis.Ubl.v21 {
                 this.idField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlElementAttribute(Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
         public ChargeIndicatorType ChargeIndicator {
             get {
                 return this.chargeIndicatorField;
@@ -4030,7 +4222,8 @@ namespace Oasis.Ubl.v21 {
                 this.chargeIndicatorField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlElementAttribute(Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
         public AllowanceChargeReasonCodeType AllowanceChargeReasonCode {
             get {
                 return this.allowanceChargeReasonCodeField;
@@ -4039,7 +4232,8 @@ namespace Oasis.Ubl.v21 {
                 this.allowanceChargeReasonCodeField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlElementAttribute(Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
         public ObservableCollection<AllowanceChargeReasonType> AllowanceChargeReason {
             get {
                 return this.allowanceChargeReasonField;
@@ -4048,7 +4242,8 @@ namespace Oasis.Ubl.v21 {
                 this.allowanceChargeReasonField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlElementAttribute(Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
         public MultiplierFactorNumericType MultiplierFactorNumeric {
             get {
                 return this.multiplierFactorNumericField;
@@ -4057,7 +4252,8 @@ namespace Oasis.Ubl.v21 {
                 this.multiplierFactorNumericField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlElementAttribute(Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
         public PrepaidIndicatorType PrepaidIndicator {
             get {
                 return this.prepaidIndicatorField;
@@ -4066,7 +4262,8 @@ namespace Oasis.Ubl.v21 {
                 this.prepaidIndicatorField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlElementAttribute(Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
         public SequenceNumericType SequenceNumeric {
             get {
                 return this.sequenceNumericField;
@@ -4075,7 +4272,8 @@ namespace Oasis.Ubl.v21 {
                 this.sequenceNumericField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlElementAttribute(Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
         public AmountType2 Amount {
             get {
                 return this.amountField;
@@ -4084,7 +4282,8 @@ namespace Oasis.Ubl.v21 {
                 this.amountField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlElementAttribute(Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
         public BaseAmountType BaseAmount {
             get {
                 return this.baseAmountField;
@@ -4093,7 +4292,8 @@ namespace Oasis.Ubl.v21 {
                 this.baseAmountField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlElementAttribute(Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
         public AccountingCostCodeType AccountingCostCode {
             get {
                 return this.accountingCostCodeField;
@@ -4102,7 +4302,8 @@ namespace Oasis.Ubl.v21 {
                 this.accountingCostCodeField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlElementAttribute(Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
         public AccountingCostType AccountingCost {
             get {
                 return this.accountingCostField;
@@ -4111,7 +4312,8 @@ namespace Oasis.Ubl.v21 {
                 this.accountingCostField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlElementAttribute(Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
         public PerUnitAmountType PerUnitAmount {
             get {
                 return this.perUnitAmountField;
@@ -4120,7 +4322,8 @@ namespace Oasis.Ubl.v21 {
                 this.perUnitAmountField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlArrayAttribute()]
         public ObservableCollection<TaxCategoryType> TaxCategory {
             get {
                 return this.taxCategoryField;
@@ -4138,7 +4341,8 @@ namespace Oasis.Ubl.v21 {
                 this.taxTotalField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlArrayAttribute()]
         public ObservableCollection<PaymentMeansType> PaymentMeans {
             get {
                 return this.paymentMeansField;
@@ -4171,10 +4375,10 @@ namespace Oasis.Ubl.v21 {
         
         private TaxSchemeType taxSchemeField;
         
-        public TaxCategoryType() {
-            this.taxSchemeField = new TaxSchemeType();
-            this.taxExemptionReasonField = new ObservableCollection<TaxExemptionReasonType>();
-        }
+        //public TaxCategoryType() {
+        //    this.taxSchemeField = new TaxSchemeType();
+        //    this.taxExemptionReasonField = new ObservableCollection<TaxExemptionReasonType>();
+        //}
         
         public IDType ID {
             get {
@@ -4229,7 +4433,8 @@ namespace Oasis.Ubl.v21 {
                 this.taxExemptionReasonCodeField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlArrayAttribute()]
         public ObservableCollection<TaxExemptionReasonType> TaxExemptionReason {
             get {
                 return this.taxExemptionReasonField;
@@ -4266,7 +4471,8 @@ namespace Oasis.Ubl.v21 {
             }
         }
     }
-    
+
+
     public partial class TaxTotalType {
         
         private TaxAmountType taxAmountField;
@@ -4279,10 +4485,11 @@ namespace Oasis.Ubl.v21 {
         
         private ObservableCollection<TaxSubtotalType> taxSubtotalField;
         
-        public TaxTotalType() {
-            this.taxSubtotalField = new ObservableCollection<TaxSubtotalType>();
-        }
-        
+        //public TaxTotalType() {
+        //    this.taxSubtotalField = new ObservableCollection<TaxSubtotalType>();
+        //}
+
+        [System.Xml.Serialization.XmlElementAttribute(Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
         public TaxAmountType TaxAmount {
             get {
                 return this.taxAmountField;
@@ -4291,7 +4498,9 @@ namespace Oasis.Ubl.v21 {
                 this.taxAmountField = value;
             }
         }
-        
+
+
+        [System.Xml.Serialization.XmlElementAttribute(Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
         public RoundingAmountType RoundingAmount {
             get {
                 return this.roundingAmountField;
@@ -4300,7 +4509,8 @@ namespace Oasis.Ubl.v21 {
                 this.roundingAmountField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlElementAttribute(Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
         public TaxEvidenceIndicatorType TaxEvidenceIndicator {
             get {
                 return this.taxEvidenceIndicatorField;
@@ -4309,7 +4519,8 @@ namespace Oasis.Ubl.v21 {
                 this.taxEvidenceIndicatorField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlElementAttribute(Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
         public TaxIncludedIndicatorType TaxIncludedIndicator {
             get {
                 return this.taxIncludedIndicatorField;
@@ -4318,7 +4529,8 @@ namespace Oasis.Ubl.v21 {
                 this.taxIncludedIndicatorField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlArrayAttribute()]
         public ObservableCollection<TaxSubtotalType> TaxSubtotal {
             get {
                 return this.taxSubtotalField;
@@ -4351,9 +4563,9 @@ namespace Oasis.Ubl.v21 {
         
         private TaxCategoryType taxCategoryField;
         
-        public TaxSubtotalType() {
-            this.taxCategoryField = new TaxCategoryType();
-        }
+        //public TaxSubtotalType() {
+        //    this.taxCategoryField = new TaxCategoryType();
+        //}
         
         public TaxableAmountType TaxableAmount {
             get {
@@ -4474,17 +4686,17 @@ namespace Oasis.Ubl.v21 {
         
         private TradeFinancingType tradeFinancingField;
         
-        public PaymentMeansType() {
-            this.tradeFinancingField = new TradeFinancingType();
-            this.paymentMandateField = new PaymentMandateType();
-            this.creditAccountField = new CreditAccountType();
-            this.payeeFinancialAccountField = new FinancialAccountType();
-            this.payerFinancialAccountField = new FinancialAccountType();
-            this.cardAccountField = new CardAccountType();
-            this.paymentIDField = new ObservableCollection<PaymentIDType>();
-            this.instructionNoteField = new ObservableCollection<InstructionNoteType>();
-            this.instructionIDField = new InstructionIDType();
-        }
+        //public PaymentMeansType() {
+        //    this.tradeFinancingField = new TradeFinancingType();
+        //    this.paymentMandateField = new PaymentMandateType();
+        //    this.creditAccountField = new CreditAccountType();
+        //    this.payeeFinancialAccountField = new FinancialAccountType();
+        //    this.payerFinancialAccountField = new FinancialAccountType();
+        //    this.cardAccountField = new CardAccountType();
+        //    this.paymentIDField = new ObservableCollection<PaymentIDType>();
+        //    this.instructionNoteField = new ObservableCollection<InstructionNoteType>();
+        //    this.instructionIDField = new InstructionIDType();
+        //}
         
         public IDType ID {
             get {
@@ -4530,7 +4742,8 @@ namespace Oasis.Ubl.v21 {
                 this.instructionIDField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlArrayAttribute()]
         public ObservableCollection<InstructionNoteType> InstructionNote {
             get {
                 return this.instructionNoteField;
@@ -4539,7 +4752,8 @@ namespace Oasis.Ubl.v21 {
                 this.instructionNoteField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlArrayAttribute()]
         public ObservableCollection<PaymentIDType> PaymentID {
             get {
                 return this.paymentIDField;
@@ -4628,14 +4842,14 @@ namespace Oasis.Ubl.v21 {
         
         private HolderNameType holderNameField;
         
-        public CardAccountType() {
-            this.chipApplicationIDField = new ChipApplicationIDType();
-            this.cV2IDField = new CV2IDType();
-            this.issueNumberIDField = new IssueNumberIDType();
-            this.issuerIDField = new IssuerIDType();
-            this.networkIDField = new NetworkIDType();
-            this.primaryAccountNumberIDField = new PrimaryAccountNumberIDType();
-        }
+        //public CardAccountType() {
+        //    this.chipApplicationIDField = new ChipApplicationIDType();
+        //    this.cV2IDField = new CV2IDType();
+        //    this.issueNumberIDField = new IssueNumberIDType();
+        //    this.issuerIDField = new IssuerIDType();
+        //    this.networkIDField = new NetworkIDType();
+        //    this.primaryAccountNumberIDField = new PrimaryAccountNumberIDType();
+        //}
         
         public PrimaryAccountNumberIDType PrimaryAccountNumberID {
             get {
@@ -4741,9 +4955,9 @@ namespace Oasis.Ubl.v21 {
         
         private AccountIDType accountIDField;
         
-        public CreditAccountType() {
-            this.accountIDField = new AccountIDType();
-        }
+        //public CreditAccountType() {
+        //    this.accountIDField = new AccountIDType();
+        //}
         
         public AccountIDType AccountID {
             get {
@@ -4777,14 +4991,14 @@ namespace Oasis.Ubl.v21 {
         
         private ObservableCollection<ClauseType> clauseField;
         
-        public PaymentMandateType() {
-            this.clauseField = new ObservableCollection<ClauseType>();
-            this.paymentReversalPeriodField = new PeriodType();
-            this.validityPeriodField = new PeriodType();
-            this.payerFinancialAccountField = new FinancialAccountType();
-            this.payerPartyField = new PartyType();
-            this.signatureIDField = new SignatureIDType();
-        }
+        //public PaymentMandateType() {
+        //    this.clauseField = new ObservableCollection<ClauseType>();
+        //    this.paymentReversalPeriodField = new PeriodType();
+        //    this.validityPeriodField = new PeriodType();
+        //    this.payerFinancialAccountField = new FinancialAccountType();
+        //    this.payerPartyField = new PartyType();
+        //    this.signatureIDField = new SignatureIDType();
+        //}
         
         public IDType ID {
             get {
@@ -4866,7 +5080,8 @@ namespace Oasis.Ubl.v21 {
                 this.paymentReversalPeriodField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlArrayAttribute()]
         public ObservableCollection<ClauseType> Clause {
             get {
                 return this.clauseField;
@@ -4883,9 +5098,9 @@ namespace Oasis.Ubl.v21 {
         
         private ObservableCollection<ContentType> contentField;
         
-        public ClauseType() {
-            this.contentField = new ObservableCollection<ContentType>();
-        }
+        //public ClauseType() {
+        //    this.contentField = new ObservableCollection<ContentType>();
+        //}
         
         public IDType ID {
             get {
@@ -4895,7 +5110,8 @@ namespace Oasis.Ubl.v21 {
                 this.idField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlArrayAttribute()]
         public ObservableCollection<ContentType> Content {
             get {
                 return this.contentField;
@@ -4922,13 +5138,13 @@ namespace Oasis.Ubl.v21 {
         
         private ObservableCollection<ClauseType> clauseField;
         
-        public TradeFinancingType() {
-            this.clauseField = new ObservableCollection<ClauseType>();
-            this.financingFinancialAccountField = new FinancialAccountType();
-            this.financingPartyField = new PartyType();
-            this.documentReferenceField = new ObservableCollection<DocumentReferenceType>();
-            this.contractDocumentReferenceField = new DocumentReferenceType();
-        }
+        //public TradeFinancingType() {
+        //    this.clauseField = new ObservableCollection<ClauseType>();
+        //    this.financingFinancialAccountField = new FinancialAccountType();
+        //    this.financingPartyField = new PartyType();
+        //    this.documentReferenceField = new ObservableCollection<DocumentReferenceType>();
+        //    this.contractDocumentReferenceField = new DocumentReferenceType();
+        //}
         
         public IDType ID {
             get {
@@ -4956,7 +5172,8 @@ namespace Oasis.Ubl.v21 {
                 this.contractDocumentReferenceField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlArrayAttribute()]
         public ObservableCollection<DocumentReferenceType> DocumentReference {
             get {
                 return this.documentReferenceField;
@@ -4983,7 +5200,8 @@ namespace Oasis.Ubl.v21 {
                 this.financingFinancialAccountField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlArrayAttribute()]
         public ObservableCollection<ClauseType> Clause {
             get {
                 return this.clauseField;
@@ -5036,15 +5254,15 @@ namespace Oasis.Ubl.v21 {
         
         private ObservableCollection<ShipmentType> shipmentField;
         
-        public ReceiptLineType() {
-            this.shipmentField = new ObservableCollection<ShipmentType>();
-            this.itemField = new ObservableCollection<ItemType>();
-            this.documentReferenceField = new ObservableCollection<DocumentReferenceType>();
-            this.despatchLineReferenceField = new ObservableCollection<LineReferenceType>();
-            this.orderLineReferenceField = new OrderLineReferenceType();
-            this.rejectReasonField = new ObservableCollection<RejectReasonType>();
-            this.noteField = new ObservableCollection<NoteType>();
-        }
+        //public ReceiptLineType() {
+        //    this.shipmentField = new ObservableCollection<ShipmentType>();
+        //    this.itemField = new ObservableCollection<ItemType>();
+        //    this.documentReferenceField = new ObservableCollection<DocumentReferenceType>();
+        //    this.despatchLineReferenceField = new ObservableCollection<LineReferenceType>();
+        //    this.orderLineReferenceField = new OrderLineReferenceType();
+        //    this.rejectReasonField = new ObservableCollection<RejectReasonType>();
+        //    this.noteField = new ObservableCollection<NoteType>();
+        //}
         
         public IDType ID {
             get {
@@ -5063,7 +5281,8 @@ namespace Oasis.Ubl.v21 {
                 this.uUIDField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlArrayAttribute()]
         public ObservableCollection<NoteType> Note {
             get {
                 return this.noteField;
@@ -5117,7 +5336,8 @@ namespace Oasis.Ubl.v21 {
                 this.rejectReasonCodeField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlArrayAttribute()]
         public ObservableCollection<RejectReasonType> RejectReason {
             get {
                 return this.rejectReasonField;
@@ -5189,7 +5409,8 @@ namespace Oasis.Ubl.v21 {
                 this.orderLineReferenceField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlArrayAttribute()]
         public ObservableCollection<LineReferenceType> DespatchLineReference {
             get {
                 return this.despatchLineReferenceField;
@@ -5198,7 +5419,8 @@ namespace Oasis.Ubl.v21 {
                 this.despatchLineReferenceField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlArrayAttribute()]
         public ObservableCollection<DocumentReferenceType> DocumentReference {
             get {
                 return this.documentReferenceField;
@@ -5207,7 +5429,8 @@ namespace Oasis.Ubl.v21 {
                 this.documentReferenceField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlArrayAttribute()]
         public ObservableCollection<ItemType> Item {
             get {
                 return this.itemField;
@@ -5216,7 +5439,8 @@ namespace Oasis.Ubl.v21 {
                 this.itemField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlArrayAttribute()]
         public ObservableCollection<ShipmentType> Shipment {
             get {
                 return this.shipmentField;
@@ -5226,8 +5450,9 @@ namespace Oasis.Ubl.v21 {
             }
         }
     }
-    
-    public partial class OrderLineReferenceType {
+
+
+     public partial class OrderLineReferenceType {
         
         private LineIDType lineIDField;
         
@@ -5239,12 +5464,13 @@ namespace Oasis.Ubl.v21 {
         
         private OrderReferenceType orderReferenceField;
         
-        public OrderLineReferenceType() {
-            this.orderReferenceField = new OrderReferenceType();
-            this.salesOrderLineIDField = new SalesOrderLineIDType();
-            this.lineIDField = new LineIDType();
-        }
-        
+        //public OrderLineReferenceType() {
+        //    this.orderReferenceField = new OrderReferenceType();
+        //    this.salesOrderLineIDField = new SalesOrderLineIDType();
+        //    this.lineIDField = new LineIDType();
+        //}
+
+        [System.Xml.Serialization.XmlElementAttribute(Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
         public LineIDType LineID {
             get {
                 return this.lineIDField;
@@ -5253,7 +5479,8 @@ namespace Oasis.Ubl.v21 {
                 this.lineIDField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlElementAttribute(Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
         public SalesOrderLineIDType SalesOrderLineID {
             get {
                 return this.salesOrderLineIDField;
@@ -5262,7 +5489,8 @@ namespace Oasis.Ubl.v21 {
                 this.salesOrderLineIDField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlElementAttribute(Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
         public UUIDType UUID {
             get {
                 return this.uUIDField;
@@ -5271,7 +5499,8 @@ namespace Oasis.Ubl.v21 {
                 this.uUIDField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlElementAttribute(Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
         public LineStatusCodeType LineStatusCode {
             get {
                 return this.lineStatusCodeField;
@@ -5280,7 +5509,8 @@ namespace Oasis.Ubl.v21 {
                 this.lineStatusCodeField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlElementAttribute(Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
         public OrderReferenceType OrderReference {
             get {
                 return this.orderReferenceField;
@@ -5311,11 +5541,12 @@ namespace Oasis.Ubl.v21 {
         
         private DocumentReferenceType documentReferenceField;
         
-        public OrderReferenceType() {
-            this.documentReferenceField = new DocumentReferenceType();
-            this.salesOrderIDField = new SalesOrderIDType();
-        }
-        
+        //public OrderReferenceType() {
+        //    this.documentReferenceField = new DocumentReferenceType();
+        //    this.salesOrderIDField = new SalesOrderIDType();
+        //}
+
+        [System.Xml.Serialization.XmlElementAttribute(Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
         public IDType ID {
             get {
                 return this.idField;
@@ -5324,7 +5555,8 @@ namespace Oasis.Ubl.v21 {
                 this.idField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlElementAttribute(Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
         public SalesOrderIDType SalesOrderID {
             get {
                 return this.salesOrderIDField;
@@ -5333,7 +5565,8 @@ namespace Oasis.Ubl.v21 {
                 this.salesOrderIDField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlElementAttribute(Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
         public CopyIndicatorType CopyIndicator {
             get {
                 return this.copyIndicatorField;
@@ -5342,7 +5575,8 @@ namespace Oasis.Ubl.v21 {
                 this.copyIndicatorField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlElementAttribute(Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
         public UUIDType UUID {
             get {
                 return this.uUIDField;
@@ -5351,7 +5585,8 @@ namespace Oasis.Ubl.v21 {
                 this.uUIDField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlElementAttribute(Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
         public IssueDateType IssueDate {
             get {
                 return this.issueDateField;
@@ -5360,7 +5595,8 @@ namespace Oasis.Ubl.v21 {
                 this.issueDateField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlElementAttribute(Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
         public IssueTimeType IssueTime {
             get {
                 return this.issueTimeField;
@@ -5369,7 +5605,8 @@ namespace Oasis.Ubl.v21 {
                 this.issueTimeField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlElementAttribute(Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
         public CustomerReferenceType CustomerReference {
             get {
                 return this.customerReferenceField;
@@ -5378,7 +5615,8 @@ namespace Oasis.Ubl.v21 {
                 this.customerReferenceField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlElementAttribute(Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
         public OrderTypeCodeType OrderTypeCode {
             get {
                 return this.orderTypeCodeField;
@@ -5387,7 +5625,8 @@ namespace Oasis.Ubl.v21 {
                 this.orderTypeCodeField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlElementAttribute(Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2")]
         public DocumentReferenceType DocumentReference {
             get {
                 return this.documentReferenceField;
@@ -5408,9 +5647,9 @@ namespace Oasis.Ubl.v21 {
         
         private DocumentReferenceType documentReferenceField;
         
-        public LineReferenceType() {
-            this.documentReferenceField = new DocumentReferenceType();
-        }
+        //public LineReferenceType() {
+        //    this.documentReferenceField = new DocumentReferenceType();
+        //}
         
         public LineIDType LineID {
             get {
@@ -5511,33 +5750,33 @@ namespace Oasis.Ubl.v21 {
         
         private ObservableCollection<DimensionType> dimensionField;
         
-        public ItemType() {
-            this.dimensionField = new ObservableCollection<DimensionType>();
-            this.certificateField = new ObservableCollection<CertificateType>();
-            this.itemInstanceField = new ObservableCollection<ItemInstanceType>();
-            this.originAddressField = new ObservableCollection<AddressType>();
-            this.informationContentProviderPartyField = new PartyType();
-            this.manufacturerPartyField = new ObservableCollection<PartyType>();
-            this.additionalItemPropertyField = new ObservableCollection<ItemPropertyType>();
-            this.classifiedTaxCategoryField = new ObservableCollection<TaxCategoryType>();
-            this.hazardousItemField = new ObservableCollection<HazardousItemType>();
-            this.transactionConditionsField = new ObservableCollection<TransactionConditionsType>();
-            this.commodityClassificationField = new ObservableCollection<CommodityClassificationType>();
-            this.originCountryField = new CountryType();
-            this.itemSpecificationDocumentReferenceField = new ObservableCollection<DocumentReferenceType>();
-            this.catalogueDocumentReferenceField = new DocumentReferenceType();
-            this.additionalItemIdentificationField = new ObservableCollection<ItemIdentificationType>();
-            this.catalogueItemIdentificationField = new ItemIdentificationType();
-            this.standardItemIdentificationField = new ItemIdentificationType();
-            this.manufacturersItemIdentificationField = new ObservableCollection<ItemIdentificationType>();
-            this.sellersItemIdentificationField = new ItemIdentificationType();
-            this.buyersItemIdentificationField = new ItemIdentificationType();
-            this.modelNameField = new ObservableCollection<ModelNameType>();
-            this.brandNameField = new ObservableCollection<BrandNameType>();
-            this.keywordField = new ObservableCollection<KeywordType>();
-            this.additionalInformationField = new ObservableCollection<AdditionalInformationType>();
-            this.descriptionField = new ObservableCollection<DescriptionType>();
-        }
+        //public ItemType() {
+        //    this.dimensionField = new ObservableCollection<DimensionType>();
+        //    this.certificateField = new ObservableCollection<CertificateType>();
+        //    this.itemInstanceField = new ObservableCollection<ItemInstanceType>();
+        //    this.originAddressField = new ObservableCollection<AddressType>();
+        //    this.informationContentProviderPartyField = new PartyType();
+        //    this.manufacturerPartyField = new ObservableCollection<PartyType>();
+        //    this.additionalItemPropertyField = new ObservableCollection<ItemPropertyType>();
+        //    this.classifiedTaxCategoryField = new ObservableCollection<TaxCategoryType>();
+        //    this.hazardousItemField = new ObservableCollection<HazardousItemType>();
+        //    this.transactionConditionsField = new ObservableCollection<TransactionConditionsType>();
+        //    this.commodityClassificationField = new ObservableCollection<CommodityClassificationType>();
+        //    this.originCountryField = new CountryType();
+        //    this.itemSpecificationDocumentReferenceField = new ObservableCollection<DocumentReferenceType>();
+        //    this.catalogueDocumentReferenceField = new DocumentReferenceType();
+        //    this.additionalItemIdentificationField = new ObservableCollection<ItemIdentificationType>();
+        //    this.catalogueItemIdentificationField = new ItemIdentificationType();
+        //    this.standardItemIdentificationField = new ItemIdentificationType();
+        //    this.manufacturersItemIdentificationField = new ObservableCollection<ItemIdentificationType>();
+        //    this.sellersItemIdentificationField = new ItemIdentificationType();
+        //    this.buyersItemIdentificationField = new ItemIdentificationType();
+        //    this.modelNameField = new ObservableCollection<ModelNameType>();
+        //    this.brandNameField = new ObservableCollection<BrandNameType>();
+        //    this.keywordField = new ObservableCollection<KeywordType>();
+        //    this.additionalInformationField = new ObservableCollection<AdditionalInformationType>();
+        //    this.descriptionField = new ObservableCollection<DescriptionType>();
+        //}
         
         public ObservableCollection<DescriptionType> Description {
             get {
@@ -5592,7 +5831,8 @@ namespace Oasis.Ubl.v21 {
                 this.hazardousRiskIndicatorField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlArrayAttribute()]
         public ObservableCollection<AdditionalInformationType> AdditionalInformation {
             get {
                 return this.additionalInformationField;
@@ -5601,7 +5841,8 @@ namespace Oasis.Ubl.v21 {
                 this.additionalInformationField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlArrayAttribute()]
         public ObservableCollection<KeywordType> Keyword {
             get {
                 return this.keywordField;
@@ -5610,7 +5851,8 @@ namespace Oasis.Ubl.v21 {
                 this.keywordField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlArrayAttribute()]
         public ObservableCollection<BrandNameType> BrandName {
             get {
                 return this.brandNameField;
@@ -5619,7 +5861,8 @@ namespace Oasis.Ubl.v21 {
                 this.brandNameField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlArrayAttribute()]
         public ObservableCollection<ModelNameType> ModelName {
             get {
                 return this.modelNameField;
@@ -5646,7 +5889,8 @@ namespace Oasis.Ubl.v21 {
                 this.sellersItemIdentificationField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlArrayAttribute()]
         public ObservableCollection<ItemIdentificationType> ManufacturersItemIdentification {
             get {
                 return this.manufacturersItemIdentificationField;
@@ -5673,7 +5917,8 @@ namespace Oasis.Ubl.v21 {
                 this.catalogueItemIdentificationField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlArrayAttribute()]
         public ObservableCollection<ItemIdentificationType> AdditionalItemIdentification {
             get {
                 return this.additionalItemIdentificationField;
@@ -5691,7 +5936,8 @@ namespace Oasis.Ubl.v21 {
                 this.catalogueDocumentReferenceField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlArrayAttribute()]
         public ObservableCollection<DocumentReferenceType> ItemSpecificationDocumentReference {
             get {
                 return this.itemSpecificationDocumentReferenceField;
@@ -5709,7 +5955,8 @@ namespace Oasis.Ubl.v21 {
                 this.originCountryField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlArrayAttribute()]
         public ObservableCollection<CommodityClassificationType> CommodityClassification {
             get {
                 return this.commodityClassificationField;
@@ -5718,7 +5965,8 @@ namespace Oasis.Ubl.v21 {
                 this.commodityClassificationField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlArrayAttribute()]
         public ObservableCollection<TransactionConditionsType> TransactionConditions {
             get {
                 return this.transactionConditionsField;
@@ -5727,7 +5975,8 @@ namespace Oasis.Ubl.v21 {
                 this.transactionConditionsField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlArrayAttribute()]
         public ObservableCollection<HazardousItemType> HazardousItem {
             get {
                 return this.hazardousItemField;
@@ -5736,7 +5985,8 @@ namespace Oasis.Ubl.v21 {
                 this.hazardousItemField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlArrayAttribute()]
         public ObservableCollection<TaxCategoryType> ClassifiedTaxCategory {
             get {
                 return this.classifiedTaxCategoryField;
@@ -5745,7 +5995,8 @@ namespace Oasis.Ubl.v21 {
                 this.classifiedTaxCategoryField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlArrayAttribute()]
         public ObservableCollection<ItemPropertyType> AdditionalItemProperty {
             get {
                 return this.additionalItemPropertyField;
@@ -5754,7 +6005,8 @@ namespace Oasis.Ubl.v21 {
                 this.additionalItemPropertyField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlArrayAttribute()]
         public ObservableCollection<PartyType> ManufacturerParty {
             get {
                 return this.manufacturerPartyField;
@@ -5772,7 +6024,8 @@ namespace Oasis.Ubl.v21 {
                 this.informationContentProviderPartyField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlArrayAttribute()]
         public ObservableCollection<AddressType> OriginAddress {
             get {
                 return this.originAddressField;
@@ -5781,7 +6034,8 @@ namespace Oasis.Ubl.v21 {
                 this.originAddressField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlArrayAttribute()]
         public ObservableCollection<ItemInstanceType> ItemInstance {
             get {
                 return this.itemInstanceField;
@@ -5790,7 +6044,8 @@ namespace Oasis.Ubl.v21 {
                 this.itemInstanceField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlArrayAttribute()]
         public ObservableCollection<CertificateType> Certificate {
             get {
                 return this.certificateField;
@@ -5799,7 +6054,8 @@ namespace Oasis.Ubl.v21 {
                 this.certificateField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlArrayAttribute()]
         public ObservableCollection<DimensionType> Dimension {
             get {
                 return this.dimensionField;
@@ -5824,13 +6080,13 @@ namespace Oasis.Ubl.v21 {
         
         private PartyType issuerPartyField;
         
-        public ItemIdentificationType() {
-            this.issuerPartyField = new PartyType();
-            this.measurementDimensionField = new ObservableCollection<DimensionType>();
-            this.physicalAttributeField = new ObservableCollection<PhysicalAttributeType>();
-            this.barcodeSymbologyIDField = new BarcodeSymbologyIDType();
-            this.extendedIDField = new ExtendedIDType();
-        }
+        //public ItemIdentificationType() {
+        //    this.issuerPartyField = new PartyType();
+        //    this.measurementDimensionField = new ObservableCollection<DimensionType>();
+        //    this.physicalAttributeField = new ObservableCollection<PhysicalAttributeType>();
+        //    this.barcodeSymbologyIDField = new BarcodeSymbologyIDType();
+        //    this.extendedIDField = new ExtendedIDType();
+        //}
         
         public IDType ID {
             get {
@@ -5858,7 +6114,8 @@ namespace Oasis.Ubl.v21 {
                 this.barcodeSymbologyIDField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlArrayAttribute()]
         public ObservableCollection<PhysicalAttributeType> PhysicalAttribute {
             get {
                 return this.physicalAttributeField;
@@ -5867,7 +6124,8 @@ namespace Oasis.Ubl.v21 {
                 this.physicalAttributeField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlArrayAttribute()]
         public ObservableCollection<DimensionType> MeasurementDimension {
             get {
                 return this.measurementDimensionField;
@@ -5897,9 +6155,9 @@ namespace Oasis.Ubl.v21 {
         
         private ObservableCollection<DescriptionType> descriptionField;
         
-        public PhysicalAttributeType() {
-            this.descriptionField = new ObservableCollection<DescriptionType>();
-        }
+        //public PhysicalAttributeType() {
+        //    this.descriptionField = new ObservableCollection<DescriptionType>();
+        //}
         
         public AttributeIDType AttributeID {
             get {
@@ -5927,7 +6185,8 @@ namespace Oasis.Ubl.v21 {
                 this.descriptionCodeField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlArrayAttribute()]
         public ObservableCollection<DescriptionType> Description {
             get {
                 return this.descriptionField;
@@ -5995,10 +6254,10 @@ namespace Oasis.Ubl.v21 {
         
         private ObservableCollection<DocumentReferenceType> documentReferenceField;
         
-        public TransactionConditionsType() {
-            this.documentReferenceField = new ObservableCollection<DocumentReferenceType>();
-            this.descriptionField = new ObservableCollection<DescriptionType>();
-        }
+        //public TransactionConditionsType() {
+        //    this.documentReferenceField = new ObservableCollection<DocumentReferenceType>();
+        //    this.descriptionField = new ObservableCollection<DescriptionType>();
+        //}
         
         public IDType ID {
             get {
@@ -6017,7 +6276,8 @@ namespace Oasis.Ubl.v21 {
                 this.actionCodeField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlArrayAttribute()]
         public ObservableCollection<DescriptionType> Description {
             get {
                 return this.descriptionField;
@@ -6026,7 +6286,8 @@ namespace Oasis.Ubl.v21 {
                 this.descriptionField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlArrayAttribute()]
         public ObservableCollection<DocumentReferenceType> DocumentReference {
             get {
                 return this.documentReferenceField;
@@ -6085,19 +6346,19 @@ namespace Oasis.Ubl.v21 {
         
         private ObservableCollection<TemperatureType> additionalTemperatureField;
         
-        public HazardousItemType() {
-            this.additionalTemperatureField = new ObservableCollection<TemperatureType>();
-            this.flashpointTemperatureField = new TemperatureType();
-            this.emergencyTemperatureField = new TemperatureType();
-            this.hazardousGoodsTransitField = new ObservableCollection<HazardousGoodsTransitType>();
-            this.secondaryHazardField = new ObservableCollection<SecondaryHazardType>();
-            this.contactPartyField = new PartyType();
-            this.hazardClassIDField = new HazardClassIDType();
-            this.markingIDField = new MarkingIDType();
-            this.lowerOrangeHazardPlacardIDField = new LowerOrangeHazardPlacardIDType();
-            this.upperOrangeHazardPlacardIDField = new UpperOrangeHazardPlacardIDType();
-            this.additionalInformationField = new ObservableCollection<AdditionalInformationType>();
-        }
+        //public HazardousItemType() {
+        //    this.additionalTemperatureField = new ObservableCollection<TemperatureType>();
+        //    this.flashpointTemperatureField = new TemperatureType();
+        //    this.emergencyTemperatureField = new TemperatureType();
+        //    this.hazardousGoodsTransitField = new ObservableCollection<HazardousGoodsTransitType>();
+        //    this.secondaryHazardField = new ObservableCollection<SecondaryHazardType>();
+        //    this.contactPartyField = new PartyType();
+        //    this.hazardClassIDField = new HazardClassIDType();
+        //    this.markingIDField = new MarkingIDType();
+        //    this.lowerOrangeHazardPlacardIDField = new LowerOrangeHazardPlacardIDType();
+        //    this.upperOrangeHazardPlacardIDField = new UpperOrangeHazardPlacardIDType();
+        //    this.additionalInformationField = new ObservableCollection<AdditionalInformationType>();
+        //}
         
         public IDType ID {
             get {
@@ -6125,7 +6386,8 @@ namespace Oasis.Ubl.v21 {
                 this.placardEndorsementField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlArrayAttribute()]
         public ObservableCollection<AdditionalInformationType> AdditionalInformation {
             get {
                 return this.additionalInformationField;
@@ -6260,7 +6522,8 @@ namespace Oasis.Ubl.v21 {
                 this.contactPartyField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlArrayAttribute()]
         public ObservableCollection<SecondaryHazardType> SecondaryHazard {
             get {
                 return this.secondaryHazardField;
@@ -6269,7 +6532,8 @@ namespace Oasis.Ubl.v21 {
                 this.secondaryHazardField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlArrayAttribute()]
         public ObservableCollection<HazardousGoodsTransitType> HazardousGoodsTransit {
             get {
                 return this.hazardousGoodsTransitField;
@@ -6296,7 +6560,8 @@ namespace Oasis.Ubl.v21 {
                 this.flashpointTemperatureField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlArrayAttribute()]
         public ObservableCollection<TemperatureType> AdditionalTemperature {
             get {
                 return this.additionalTemperatureField;
@@ -6319,9 +6584,9 @@ namespace Oasis.Ubl.v21 {
         
         private ObservableCollection<ExtensionType> extensionField;
         
-        public SecondaryHazardType() {
-            this.extensionField = new ObservableCollection<ExtensionType>();
-        }
+        //public SecondaryHazardType() {
+        //    this.extensionField = new ObservableCollection<ExtensionType>();
+        //}
         
         public IDType ID {
             get {
@@ -6358,7 +6623,8 @@ namespace Oasis.Ubl.v21 {
                 this.emergencyProceduresCodeField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlArrayAttribute()]
         public ObservableCollection<ExtensionType> Extension {
             get {
                 return this.extensionField;
@@ -6385,10 +6651,10 @@ namespace Oasis.Ubl.v21 {
         
         private TemperatureType minimumTemperatureField;
         
-        public HazardousGoodsTransitType() {
-            this.minimumTemperatureField = new TemperatureType();
-            this.maximumTemperatureField = new TemperatureType();
-        }
+        //public HazardousGoodsTransitType() {
+        //    this.minimumTemperatureField = new TemperatureType();
+        //    this.maximumTemperatureField = new TemperatureType();
+        //}
         
         public TransportEmergencyCardCodeType TransportEmergencyCardCode {
             get {
@@ -6462,9 +6728,9 @@ namespace Oasis.Ubl.v21 {
         
         private ObservableCollection<DescriptionType> descriptionField;
         
-        public TemperatureType() {
-            this.descriptionField = new ObservableCollection<DescriptionType>();
-        }
+        //public TemperatureType() {
+        //    this.descriptionField = new ObservableCollection<DescriptionType>();
+        //}
         
         public AttributeIDType AttributeID {
             get {
@@ -6483,7 +6749,8 @@ namespace Oasis.Ubl.v21 {
                 this.measureField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlArrayAttribute()]
         public ObservableCollection<DescriptionType> Description {
             get {
                 return this.descriptionField;
@@ -6522,14 +6789,14 @@ namespace Oasis.Ubl.v21 {
         
         private ItemPropertyRangeType itemPropertyRangeField;
         
-        public ItemPropertyType() {
-            this.itemPropertyRangeField = new ItemPropertyRangeType();
-            this.rangeDimensionField = new DimensionType();
-            this.itemPropertyGroupField = new ObservableCollection<ItemPropertyGroupType>();
-            this.usabilityPeriodField = new PeriodType();
-            this.listValueField = new ObservableCollection<ListValueType>();
-            this.valueQualifierField = new ObservableCollection<ValueQualifierType>();
-        }
+        //public ItemPropertyType() {
+        //    this.itemPropertyRangeField = new ItemPropertyRangeType();
+        //    this.rangeDimensionField = new DimensionType();
+        //    this.itemPropertyGroupField = new ObservableCollection<ItemPropertyGroupType>();
+        //    this.usabilityPeriodField = new PeriodType();
+        //    this.listValueField = new ObservableCollection<ListValueType>();
+        //    this.valueQualifierField = new ObservableCollection<ValueQualifierType>();
+        //}
         
         public IDType ID {
             get {
@@ -6584,7 +6851,8 @@ namespace Oasis.Ubl.v21 {
                 this.valueQuantityField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlArrayAttribute()]
         public ObservableCollection<ValueQualifierType> ValueQualifier {
             get {
                 return this.valueQualifierField;
@@ -6602,7 +6870,8 @@ namespace Oasis.Ubl.v21 {
                 this.importanceCodeField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlArrayAttribute()]
         public ObservableCollection<ListValueType> ListValue {
             get {
                 return this.listValueField;
@@ -6620,7 +6889,8 @@ namespace Oasis.Ubl.v21 {
                 this.usabilityPeriodField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlArrayAttribute()]
         public ObservableCollection<ItemPropertyGroupType> ItemPropertyGroup {
             get {
                 return this.itemPropertyGroupField;
@@ -6728,13 +6998,13 @@ namespace Oasis.Ubl.v21 {
         
         private LotIdentificationType lotIdentificationField;
         
-        public ItemInstanceType() {
-            this.lotIdentificationField = new LotIdentificationType();
-            this.additionalItemPropertyField = new ObservableCollection<ItemPropertyType>();
-            this.serialIDField = new SerialIDType();
-            this.registrationIDField = new RegistrationIDType();
-            this.productTraceIDField = new ProductTraceIDType();
-        }
+        //public ItemInstanceType() {
+        //    this.lotIdentificationField = new LotIdentificationType();
+        //    this.additionalItemPropertyField = new ObservableCollection<ItemPropertyType>();
+        //    this.serialIDField = new SerialIDType();
+        //    this.registrationIDField = new RegistrationIDType();
+        //    this.productTraceIDField = new ProductTraceIDType();
+        //}
         
         public ProductTraceIDType ProductTraceID {
             get {
@@ -6789,7 +7059,8 @@ namespace Oasis.Ubl.v21 {
                 this.serialIDField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlArrayAttribute()]
         public ObservableCollection<ItemPropertyType> AdditionalItemProperty {
             get {
                 return this.additionalItemPropertyField;
@@ -6817,10 +7088,10 @@ namespace Oasis.Ubl.v21 {
         
         private ObservableCollection<ItemPropertyType> additionalItemPropertyField;
         
-        public LotIdentificationType() {
-            this.additionalItemPropertyField = new ObservableCollection<ItemPropertyType>();
-            this.lotNumberIDField = new LotNumberIDType();
-        }
+        //public LotIdentificationType() {
+        //    this.additionalItemPropertyField = new ObservableCollection<ItemPropertyType>();
+        //    this.lotNumberIDField = new LotNumberIDType();
+        //}
         
         public LotNumberIDType LotNumberID {
             get {
@@ -6839,7 +7110,8 @@ namespace Oasis.Ubl.v21 {
                 this.expiryDateField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlArrayAttribute()]
         public ObservableCollection<ItemPropertyType> AdditionalItemProperty {
             get {
                 return this.additionalItemPropertyField;
@@ -6866,12 +7138,12 @@ namespace Oasis.Ubl.v21 {
         
         private ObservableCollection<SignatureType> signatureField;
         
-        public CertificateType() {
-            this.signatureField = new ObservableCollection<SignatureType>();
-            this.documentReferenceField = new ObservableCollection<DocumentReferenceType>();
-            this.issuerPartyField = new PartyType();
-            this.remarksField = new ObservableCollection<RemarksType>();
-        }
+        //public CertificateType() {
+        //    this.signatureField = new ObservableCollection<SignatureType>();
+        //    this.documentReferenceField = new ObservableCollection<DocumentReferenceType>();
+        //    this.issuerPartyField = new PartyType();
+        //    this.remarksField = new ObservableCollection<RemarksType>();
+        //}
         
         public IDType ID {
             get {
@@ -6899,7 +7171,8 @@ namespace Oasis.Ubl.v21 {
                 this.certificateType1Field = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlArrayAttribute()]
         public ObservableCollection<RemarksType> Remarks {
             get {
                 return this.remarksField;
@@ -6917,7 +7190,8 @@ namespace Oasis.Ubl.v21 {
                 this.issuerPartyField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlArrayAttribute()]
         public ObservableCollection<DocumentReferenceType> DocumentReference {
             get {
                 return this.documentReferenceField;
@@ -6926,7 +7200,8 @@ namespace Oasis.Ubl.v21 {
                 this.documentReferenceField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlArrayAttribute()]
         public ObservableCollection<SignatureType> Signature {
             get {
                 return this.signatureField;
@@ -6974,7 +7249,8 @@ namespace Oasis.Ubl.v21 {
         //        this.idField = value;
         //    }
         //}
-        
+
+        [System.Xml.Serialization.XmlArrayAttribute()]
         public ObservableCollection<NoteType> Note {
             get {
                 return this.noteField;
@@ -7056,7 +7332,12 @@ namespace Oasis.Ubl.v21 {
             }
         }
     }
+
     
+    [System.SerializableAttribute()]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2")]
+    [System.Xml.Serialization.XmlRootAttribute("OrderedShipment", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2", IsNullable = false)]
+ 
     public partial class ShipmentType {
         
         private IDType idField;
@@ -7122,24 +7403,43 @@ namespace Oasis.Ubl.v21 {
         private CountryType exportCountryField;
         
         private ObservableCollection<AllowanceChargeType> freightAllowanceChargeField;
-        
+         
+        /*
         public ShipmentType() {
-            this.freightAllowanceChargeField = new ObservableCollection<AllowanceChargeType>();
-            this.exportCountryField = new CountryType();
-            this.lastExitPortLocationField = new LocationType1();
-            this.firstArrivalPortLocationField = new LocationType1();
-            this.originAddressField = new AddressType();
-            this.returnAddressField = new AddressType();
-            this.transportHandlingUnitField = new ObservableCollection<TransportHandlingUnitType>();
-            this.deliveryField = new DeliveryType();
-            this.shipmentStageField = new ObservableCollection<ShipmentStageType>();
-            this.goodsItemField = new ObservableCollection<GoodsItemType>();
-            this.consignmentField = new ObservableCollection<ConsignmentType>();
-            this.deliveryInstructionsField = new ObservableCollection<DeliveryInstructionsType>();
-            this.specialInstructionsField = new ObservableCollection<SpecialInstructionsType>();
-            this.informationField = new ObservableCollection<InformationType>();
-            this.handlingInstructionsField = new ObservableCollection<HandlingInstructionsType>();
+            // circular reference issue
+            if (this.freightAllowanceChargeField == null)
+                this.freightAllowanceChargeField = new ObservableCollection<AllowanceChargeType>();
+            if (this.exportCountryField==null)
+                this.exportCountryField = new CountryType();
+            if (this.lastExitPortLocationField==null)
+                this.lastExitPortLocationField = new LocationType1();
+            if (this.firstArrivalPortLocationField==null)
+                this.firstArrivalPortLocationField = new LocationType1();
+            if(this.originAddressField == null)
+                this.originAddressField = new AddressType();
+            if (this.returnAddressField==null)
+                this.returnAddressField = new AddressType();
+            if (this.transportHandlingUnitField==null)
+                this.transportHandlingUnitField = new ObservableCollection<TransportHandlingUnitType>();
+            if (this.deliveryField==null)
+                this.deliveryField =  new DeliveryType();
+            if (this.shipmentStageField==null)
+                this.shipmentStageField = new ObservableCollection<ShipmentStageType>();
+            if (this.goodsItemField==null)
+                this.goodsItemField = new ObservableCollection<GoodsItemType>();
+            if (this.consignmentField==null)
+                this.consignmentField = new ObservableCollection<ConsignmentType>();
+            if (this.deliveryInstructionsField==null)
+                this.deliveryInstructionsField = new ObservableCollection<DeliveryInstructionsType>();
+            if (this.specialInstructionsField==null)
+                this.specialInstructionsField = new ObservableCollection<SpecialInstructionsType>();
+            if (this.informationField==null)
+                this.informationField = new ObservableCollection<InformationType>();
+            if (this.handlingInstructionsField==null)
+                this.handlingInstructionsField = new ObservableCollection<HandlingInstructionsType>();
         }
+         */
+
         
         public IDType ID {
             get {
@@ -7167,7 +7467,9 @@ namespace Oasis.Ubl.v21 {
                 this.handlingCodeField = value;
             }
         }
-        
+
+
+        [System.Xml.Serialization.XmlArrayAttribute()]
         public ObservableCollection<HandlingInstructionsType> HandlingInstructions {
             get {
                 return this.handlingInstructionsField;
@@ -7176,7 +7478,8 @@ namespace Oasis.Ubl.v21 {
                 this.handlingInstructionsField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlArrayAttribute()]
         public ObservableCollection<InformationType> Information {
             get {
                 return this.informationField;
@@ -7293,7 +7596,9 @@ namespace Oasis.Ubl.v21 {
                 this.freeOnBoardValueAmountField = value;
             }
         }
-        
+
+
+        [System.Xml.Serialization.XmlArrayAttribute()]
         public ObservableCollection<SpecialInstructionsType> SpecialInstructions {
             get {
                 return this.specialInstructionsField;
@@ -7302,7 +7607,9 @@ namespace Oasis.Ubl.v21 {
                 this.specialInstructionsField = value;
             }
         }
-        
+
+
+        [System.Xml.Serialization.XmlArrayAttribute()]
         public ObservableCollection<DeliveryInstructionsType> DeliveryInstructions {
             get {
                 return this.deliveryInstructionsField;
@@ -7329,7 +7636,9 @@ namespace Oasis.Ubl.v21 {
                 this.consignmentQuantityField = value;
             }
         }
-        
+
+
+        [System.Xml.Serialization.XmlArrayAttribute()]
         public ObservableCollection<ConsignmentType> Consignment {
             get {
                 return this.consignmentField;
@@ -7338,7 +7647,9 @@ namespace Oasis.Ubl.v21 {
                 this.consignmentField = value;
             }
         }
-        
+
+
+        [System.Xml.Serialization.XmlArrayAttribute()]
         public ObservableCollection<GoodsItemType> GoodsItem {
             get {
                 return this.goodsItemField;
@@ -7347,7 +7658,9 @@ namespace Oasis.Ubl.v21 {
                 this.goodsItemField = value;
             }
         }
-        
+
+
+        [System.Xml.Serialization.XmlArrayAttribute()]
         public ObservableCollection<ShipmentStageType> ShipmentStage {
             get {
                 return this.shipmentStageField;
@@ -7365,7 +7678,9 @@ namespace Oasis.Ubl.v21 {
                 this.deliveryField = value;
             }
         }
-        
+
+
+        [System.Xml.Serialization.XmlArrayAttribute()]
         public ObservableCollection<TransportHandlingUnitType> TransportHandlingUnit {
             get {
                 return this.transportHandlingUnitField;
@@ -7419,7 +7734,9 @@ namespace Oasis.Ubl.v21 {
                 this.exportCountryField = value;
             }
         }
-        
+
+
+        [System.Xml.Serialization.XmlArrayAttribute()]
         public ObservableCollection<AllowanceChargeType> FreightAllowanceCharge {
             get {
                 return this.freightAllowanceChargeField;
@@ -7429,7 +7746,12 @@ namespace Oasis.Ubl.v21 {
             }
         }
     }
-    
+
+
+    [System.SerializableAttribute()]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2")]
+    [System.Xml.Serialization.XmlRootAttribute("ChildConsignment", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2", IsNullable = false)]
+  
     public partial class ConsignmentType {
         
         private IDType idField;
@@ -7632,73 +7954,73 @@ namespace Oasis.Ubl.v21 {
         
         private LocationType1 lastExitPortLocationField;
         
-        public ConsignmentType() {
-            this.lastExitPortLocationField = new LocationType1();
-            this.firstArrivalPortLocationField = new LocationType1();
-            this.transportHandlingUnitField = new ObservableCollection<TransportHandlingUnitType>();
-            this.onCarriageShipmentStageField = new ObservableCollection<ShipmentStageType>();
-            this.preCarriageShipmentStageField = new ObservableCollection<ShipmentStageType>();
-            this.mainCarriageShipmentStageField = new ObservableCollection<ShipmentStageType>();
-            this.extraAllowanceChargeField = new ObservableCollection<AllowanceChargeType>();
-            this.freightAllowanceChargeField = new ObservableCollection<AllowanceChargeType>();
-            this.prepaidPaymentTermsField = new PaymentTermsType();
-            this.disbursementPaymentTermsField = new PaymentTermsType();
-            this.collectPaymentTermsField = new PaymentTermsType();
-            this.paymentTermsField = new PaymentTermsType();
-            this.deliveryTermsField = new DeliveryTermsType();
-            this.finalDeliveryTransportationServiceField = new TransportationServiceType();
-            this.originalDespatchTransportationServiceField = new TransportationServiceType();
-            this.transportEventField = new ObservableCollection<TransportEventType>();
-            this.transportContractField = new ContractType();
-            this.transitCountryField = new ObservableCollection<CountryType>();
-            this.finalDestinationCountryField = new CountryType();
-            this.originalDepartureCountryField = new CountryType();
-            this.billOfLadingHolderPartyField = new PartyType();
-            this.mortgageHolderPartyField = new PartyType();
-            this.insurancePartyField = new PartyType();
-            this.hazardousItemNotificationPartyField = new PartyType();
-            this.transportAdvisorPartyField = new PartyType();
-            this.logisticsOperatorPartyField = new PartyType();
-            this.substituteCarrierPartyField = new PartyType();
-            this.performingCarrierPartyField = new PartyType();
-            this.finalDeliveryPartyField = new PartyType();
-            this.originalDespatchPartyField = new PartyType();
-            this.notifyPartyField = new PartyType();
-            this.freightForwarderPartyField = new PartyType();
-            this.carrierPartyField = new PartyType();
-            this.importerPartyField = new PartyType();
-            this.consignorPartyField = new PartyType();
-            this.exporterPartyField = new PartyType();
-            this.consigneePartyField = new PartyType();
-            this.childConsignmentField = new ObservableCollection<ConsignmentType>();
-            this.statusField = new ObservableCollection<StatusType>();
-            this.plannedDeliveryTransportEventField = new TransportEventType();
-            this.plannedPickupTransportEventField = new TransportEventType();
-            this.requestedDeliveryTransportEventField = new TransportEventType();
-            this.requestedPickupTransportEventField = new TransportEventType();
-            this.customsDeclarationField = new ObservableCollection<CustomsDeclarationType>();
-            this.consolidatedShipmentField = new ObservableCollection<ShipmentType>();
-            this.haulageInstructionsField = new ObservableCollection<HaulageInstructionsType>();
-            this.deliveryInstructionsField = new ObservableCollection<DeliveryInstructionsType>();
-            this.specialInstructionsField = new ObservableCollection<SpecialInstructionsType>();
-            this.informationField = new ObservableCollection<InformationType>();
-            this.handlingInstructionsField = new ObservableCollection<HandlingInstructionsType>();
-            this.sequenceIDField = new SequenceIDType();
-            this.specialServiceInstructionsField = new ObservableCollection<SpecialServiceInstructionsType>();
-            this.forwarderServiceInstructionsField = new ObservableCollection<ForwarderServiceInstructionsType>();
-            this.customsClearanceServiceInstructionsField = new ObservableCollection<CustomsClearanceServiceInstructionsType>();
-            this.carrierServiceInstructionsField = new ObservableCollection<CarrierServiceInstructionsType>();
-            this.remarksField = new ObservableCollection<RemarksType>();
-            this.tariffDescriptionField = new ObservableCollection<TariffDescriptionType>();
-            this.summaryDescriptionField = new ObservableCollection<SummaryDescriptionType>();
-            this.performingCarrierAssignedIDField = new PerformingCarrierAssignedIDType();
-            this.contractedCarrierAssignedIDField = new ContractedCarrierAssignedIDType();
-            this.brokerAssignedIDField = new BrokerAssignedIDType();
-            this.freightForwarderAssignedIDField = new FreightForwarderAssignedIDType();
-            this.consignorAssignedIDField = new ConsignorAssignedIDType();
-            this.consigneeAssignedIDField = new ConsigneeAssignedIDType();
-            this.carrierAssignedIDField = new CarrierAssignedIDType();
-        }
+        //public ConsignmentType() {
+        //    this.lastExitPortLocationField = new LocationType1();
+        //    this.firstArrivalPortLocationField = new LocationType1();
+        //    this.transportHandlingUnitField = new ObservableCollection<TransportHandlingUnitType>();
+        //    this.onCarriageShipmentStageField = new ObservableCollection<ShipmentStageType>();
+        //    this.preCarriageShipmentStageField = new ObservableCollection<ShipmentStageType>();
+        //    this.mainCarriageShipmentStageField = new ObservableCollection<ShipmentStageType>();
+        //    this.extraAllowanceChargeField = new ObservableCollection<AllowanceChargeType>();
+        //    this.freightAllowanceChargeField = new ObservableCollection<AllowanceChargeType>();
+        //    this.prepaidPaymentTermsField = new PaymentTermsType();
+        //    this.disbursementPaymentTermsField = new PaymentTermsType();
+        //    this.collectPaymentTermsField = new PaymentTermsType();
+        //    this.paymentTermsField = new PaymentTermsType();
+        //    this.deliveryTermsField = new DeliveryTermsType();
+        //    this.finalDeliveryTransportationServiceField = new TransportationServiceType();
+        //    this.originalDespatchTransportationServiceField = new TransportationServiceType();
+        //    this.transportEventField = new ObservableCollection<TransportEventType>();
+        //    this.transportContractField = new ContractType();
+        //    this.transitCountryField = new ObservableCollection<CountryType>();
+        //    this.finalDestinationCountryField = new CountryType();
+        //    this.originalDepartureCountryField = new CountryType();
+        //    this.billOfLadingHolderPartyField = new PartyType();
+        //    this.mortgageHolderPartyField = new PartyType();
+        //    this.insurancePartyField = new PartyType();
+        //    this.hazardousItemNotificationPartyField = new PartyType();
+        //    this.transportAdvisorPartyField = new PartyType();
+        //    this.logisticsOperatorPartyField = new PartyType();
+        //    this.substituteCarrierPartyField = new PartyType();
+        //    this.performingCarrierPartyField = new PartyType();
+        //    this.finalDeliveryPartyField = new PartyType();
+        //    this.originalDespatchPartyField = new PartyType();
+        //    this.notifyPartyField = new PartyType();
+        //    this.freightForwarderPartyField = new PartyType();
+        //    this.carrierPartyField = new PartyType();
+        //    this.importerPartyField = new PartyType();
+        //    this.consignorPartyField = new PartyType();
+        //    this.exporterPartyField = new PartyType();
+        //    this.consigneePartyField = new PartyType();
+        //    this.childConsignmentField = new ObservableCollection<ConsignmentType>();
+        //    this.statusField = new ObservableCollection<StatusType>();
+        //    this.plannedDeliveryTransportEventField = new TransportEventType();
+        //    this.plannedPickupTransportEventField = new TransportEventType();
+        //    this.requestedDeliveryTransportEventField = new TransportEventType();
+        //    this.requestedPickupTransportEventField = new TransportEventType();
+        //    this.customsDeclarationField = new ObservableCollection<CustomsDeclarationType>();
+        //    this.consolidatedShipmentField = new ObservableCollection<ShipmentType>();
+        //    this.haulageInstructionsField = new ObservableCollection<HaulageInstructionsType>();
+        //    this.deliveryInstructionsField = new ObservableCollection<DeliveryInstructionsType>();
+        //    this.specialInstructionsField = new ObservableCollection<SpecialInstructionsType>();
+        //    this.informationField = new ObservableCollection<InformationType>();
+        //    this.handlingInstructionsField = new ObservableCollection<HandlingInstructionsType>();
+        //    this.sequenceIDField = new SequenceIDType();
+        //    this.specialServiceInstructionsField = new ObservableCollection<SpecialServiceInstructionsType>();
+        //    this.forwarderServiceInstructionsField = new ObservableCollection<ForwarderServiceInstructionsType>();
+        //    this.customsClearanceServiceInstructionsField = new ObservableCollection<CustomsClearanceServiceInstructionsType>();
+        //    this.carrierServiceInstructionsField = new ObservableCollection<CarrierServiceInstructionsType>();
+        //    this.remarksField = new ObservableCollection<RemarksType>();
+        //    this.tariffDescriptionField = new ObservableCollection<TariffDescriptionType>();
+        //    this.summaryDescriptionField = new ObservableCollection<SummaryDescriptionType>();
+        //    this.performingCarrierAssignedIDField = new PerformingCarrierAssignedIDType();
+        //    this.contractedCarrierAssignedIDField = new ContractedCarrierAssignedIDType();
+        //    this.brokerAssignedIDField = new BrokerAssignedIDType();
+        //    this.freightForwarderAssignedIDField = new FreightForwarderAssignedIDType();
+        //    this.consignorAssignedIDField = new ConsignorAssignedIDType();
+        //    this.consigneeAssignedIDField = new ConsigneeAssignedIDType();
+        //    this.carrierAssignedIDField = new CarrierAssignedIDType();
+        //}
         
         public IDType ID {
             get {
@@ -7708,7 +8030,7 @@ namespace Oasis.Ubl.v21 {
                 this.idField = value;
             }
         }
-        
+
         public CarrierAssignedIDType CarrierAssignedID {
             get {
                 return this.carrierAssignedIDField;
@@ -7771,7 +8093,9 @@ namespace Oasis.Ubl.v21 {
                 this.performingCarrierAssignedIDField = value;
             }
         }
-        
+
+
+        [System.Xml.Serialization.XmlArrayAttribute()]
         public ObservableCollection<SummaryDescriptionType> SummaryDescription {
             get {
                 return this.summaryDescriptionField;
@@ -7798,7 +8122,8 @@ namespace Oasis.Ubl.v21 {
                 this.declaredCustomsValueAmountField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlArrayAttribute()]
         public ObservableCollection<TariffDescriptionType> TariffDescription {
             get {
                 return this.tariffDescriptionField;
@@ -7888,7 +8213,8 @@ namespace Oasis.Ubl.v21 {
                 this.loadingLengthMeasureField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlArrayAttribute()]
         public ObservableCollection<RemarksType> Remarks {
             get {
                 return this.remarksField;
@@ -7978,7 +8304,8 @@ namespace Oasis.Ubl.v21 {
                 this.thirdPartyPayerIndicatorField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlArrayAttribute()]
         public ObservableCollection<CarrierServiceInstructionsType> CarrierServiceInstructions {
             get {
                 return this.carrierServiceInstructionsField;
@@ -7987,7 +8314,8 @@ namespace Oasis.Ubl.v21 {
                 this.carrierServiceInstructionsField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlArrayAttribute()]
         public ObservableCollection<CustomsClearanceServiceInstructionsType> CustomsClearanceServiceInstructions {
             get {
                 return this.customsClearanceServiceInstructionsField;
@@ -7996,7 +8324,8 @@ namespace Oasis.Ubl.v21 {
                 this.customsClearanceServiceInstructionsField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlArrayAttribute()]
         public ObservableCollection<ForwarderServiceInstructionsType> ForwarderServiceInstructions {
             get {
                 return this.forwarderServiceInstructionsField;
@@ -8005,7 +8334,8 @@ namespace Oasis.Ubl.v21 {
                 this.forwarderServiceInstructionsField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlArrayAttribute()]
         public ObservableCollection<SpecialServiceInstructionsType> SpecialServiceInstructions {
             get {
                 return this.specialServiceInstructionsField;
@@ -8041,7 +8371,8 @@ namespace Oasis.Ubl.v21 {
                 this.handlingCodeField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlArrayAttribute()]
         public ObservableCollection<HandlingInstructionsType> HandlingInstructions {
             get {
                 return this.handlingInstructionsField;
@@ -8050,7 +8381,8 @@ namespace Oasis.Ubl.v21 {
                 this.handlingInstructionsField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlArrayAttribute()]
         public ObservableCollection<InformationType> Information {
             get {
                 return this.informationField;
@@ -8113,7 +8445,8 @@ namespace Oasis.Ubl.v21 {
                 this.freeOnBoardValueAmountField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlArrayAttribute()]
         public ObservableCollection<SpecialInstructionsType> SpecialInstructions {
             get {
                 return this.specialInstructionsField;
@@ -8131,7 +8464,8 @@ namespace Oasis.Ubl.v21 {
                 this.splitConsignmentIndicatorField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlArrayAttribute()]
         public ObservableCollection<DeliveryInstructionsType> DeliveryInstructions {
             get {
                 return this.deliveryInstructionsField;
@@ -8158,7 +8492,8 @@ namespace Oasis.Ubl.v21 {
                 this.consolidatableIndicatorField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlArrayAttribute()]
         public ObservableCollection<HaulageInstructionsType> HaulageInstructions {
             get {
                 return this.haulageInstructionsField;
@@ -8194,7 +8529,8 @@ namespace Oasis.Ubl.v21 {
                 this.totalPackagesQuantityField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlArrayAttribute()]
         public ObservableCollection<ShipmentType> ConsolidatedShipment {
             get {
                 return this.consolidatedShipmentField;
@@ -8203,7 +8539,8 @@ namespace Oasis.Ubl.v21 {
                 this.consolidatedShipmentField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlArrayAttribute()]
         public ObservableCollection<CustomsDeclarationType> CustomsDeclaration {
             get {
                 return this.customsDeclarationField;
@@ -8248,7 +8585,8 @@ namespace Oasis.Ubl.v21 {
                 this.plannedDeliveryTransportEventField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlArrayAttribute()]
         public ObservableCollection<StatusType> Status {
             get {
                 return this.statusField;
@@ -8257,7 +8595,8 @@ namespace Oasis.Ubl.v21 {
                 this.statusField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlArrayAttribute()]
         public ObservableCollection<ConsignmentType> ChildConsignment {
             get {
                 return this.childConsignmentField;
@@ -8437,7 +8776,8 @@ namespace Oasis.Ubl.v21 {
                 this.finalDestinationCountryField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlArrayAttribute()]
         public ObservableCollection<CountryType> TransitCountry {
             get {
                 return this.transitCountryField;
@@ -8455,7 +8795,8 @@ namespace Oasis.Ubl.v21 {
                 this.transportContractField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlArrayAttribute()]
         public ObservableCollection<TransportEventType> TransportEvent {
             get {
                 return this.transportEventField;
@@ -8527,7 +8868,8 @@ namespace Oasis.Ubl.v21 {
                 this.prepaidPaymentTermsField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlArrayAttribute()]
         public ObservableCollection<AllowanceChargeType> FreightAllowanceCharge {
             get {
                 return this.freightAllowanceChargeField;
@@ -8536,7 +8878,8 @@ namespace Oasis.Ubl.v21 {
                 this.freightAllowanceChargeField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlArrayAttribute()]
         public ObservableCollection<AllowanceChargeType> ExtraAllowanceCharge {
             get {
                 return this.extraAllowanceChargeField;
@@ -8545,7 +8888,8 @@ namespace Oasis.Ubl.v21 {
                 this.extraAllowanceChargeField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlArrayAttribute()]
         public ObservableCollection<ShipmentStageType> MainCarriageShipmentStage {
             get {
                 return this.mainCarriageShipmentStageField;
@@ -8554,7 +8898,8 @@ namespace Oasis.Ubl.v21 {
                 this.mainCarriageShipmentStageField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlArrayAttribute()]
         public ObservableCollection<ShipmentStageType> PreCarriageShipmentStage {
             get {
                 return this.preCarriageShipmentStageField;
@@ -8563,7 +8908,8 @@ namespace Oasis.Ubl.v21 {
                 this.preCarriageShipmentStageField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlArrayAttribute()]
         public ObservableCollection<ShipmentStageType> OnCarriageShipmentStage {
             get {
                 return this.onCarriageShipmentStageField;
@@ -8572,7 +8918,8 @@ namespace Oasis.Ubl.v21 {
                 this.onCarriageShipmentStageField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlArrayAttribute()]
         public ObservableCollection<TransportHandlingUnitType> TransportHandlingUnit {
             get {
                 return this.transportHandlingUnitField;
@@ -8607,9 +8954,9 @@ namespace Oasis.Ubl.v21 {
         
         private PartyType issuerPartyField;
         
-        public CustomsDeclarationType() {
-            this.issuerPartyField = new PartyType();
-        }
+        //public CustomsDeclarationType() {
+        //    this.issuerPartyField = new PartyType();
+        //}
         
         public IDType ID {
             get {
@@ -8656,12 +9003,12 @@ namespace Oasis.Ubl.v21 {
         
         private ObservableCollection<ConditionType1> conditionField;
         
-        public StatusType() {
-            this.conditionField = new ObservableCollection<ConditionType1>();
-            this.textField = new ObservableCollection<TextType2>();
-            this.statusReasonField = new ObservableCollection<StatusReasonType>();
-            this.descriptionField = new ObservableCollection<DescriptionType>();
-        }
+        //public StatusType() {
+        //    this.conditionField = new ObservableCollection<ConditionType1>();
+        //    this.textField = new ObservableCollection<TextType2>();
+        //    this.statusReasonField = new ObservableCollection<StatusReasonType>();
+        //    this.descriptionField = new ObservableCollection<DescriptionType>();
+        //}
         
         public ConditionCodeType ConditionCode {
             get {
@@ -8689,7 +9036,8 @@ namespace Oasis.Ubl.v21 {
                 this.referenceTimeField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlArrayAttribute()]
         public ObservableCollection<DescriptionType> Description {
             get {
                 return this.descriptionField;
@@ -8707,7 +9055,8 @@ namespace Oasis.Ubl.v21 {
                 this.statusReasonCodeField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlArrayAttribute()]
         public ObservableCollection<StatusReasonType> StatusReason {
             get {
                 return this.statusReasonField;
@@ -8725,7 +9074,8 @@ namespace Oasis.Ubl.v21 {
                 this.sequenceIDField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlArrayAttribute()]
         public ObservableCollection<TextType2> Text {
             get {
                 return this.textField;
@@ -8761,7 +9111,8 @@ namespace Oasis.Ubl.v21 {
                 this.reliabilityPercentField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlArrayAttribute()]
         public ObservableCollection<ConditionType1> Condition {
             get {
                 return this.conditionField;
@@ -8784,9 +9135,11 @@ namespace Oasis.Ubl.v21 {
         
         private MaximumMeasureType maximumMeasureField;
         
+        /*
         public ConditionType1() {
             this.descriptionField = new ObservableCollection<DescriptionType>();
         }
+         */
         
         public AttributeIDType AttributeID {
             get {
@@ -8805,7 +9158,8 @@ namespace Oasis.Ubl.v21 {
                 this.measureField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlArrayAttribute()]
         public ObservableCollection<DescriptionType> Description {
             get {
                 return this.descriptionField;
@@ -8864,14 +9218,14 @@ namespace Oasis.Ubl.v21 {
         
         private DeliveryType contractualDeliveryField;
         
-        public ContractType() {
-            this.contractualDeliveryField = new DeliveryType();
-            this.nominationPeriodField = new PeriodType();
-            this.contractDocumentReferenceField = new ObservableCollection<DocumentReferenceType>();
-            this.validityPeriodField = new PeriodType();
-            this.descriptionField = new ObservableCollection<DescriptionType>();
-            this.noteField = new ObservableCollection<NoteType>();
-        }
+        //public ContractType() {
+        //    this.contractualDeliveryField = new DeliveryType();
+        //    this.nominationPeriodField = new PeriodType();
+        //    this.contractDocumentReferenceField = new ObservableCollection<DocumentReferenceType>();
+        //    this.validityPeriodField = new PeriodType();
+        //    this.descriptionField = new ObservableCollection<DescriptionType>();
+        //    this.noteField = new ObservableCollection<NoteType>();
+        //}
         
         public IDType ID {
             get {
@@ -8935,7 +9289,8 @@ namespace Oasis.Ubl.v21 {
                 this.contractType1Field = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlArrayAttribute()]
         public ObservableCollection<NoteType> Note {
             get {
                 return this.noteField;
@@ -8953,7 +9308,8 @@ namespace Oasis.Ubl.v21 {
                 this.versionIDField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlArrayAttribute()]
         public ObservableCollection<DescriptionType> Description {
             get {
                 return this.descriptionField;
@@ -8971,7 +9327,8 @@ namespace Oasis.Ubl.v21 {
                 this.validityPeriodField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlArrayAttribute()]
         public ObservableCollection<DocumentReferenceType> ContractDocumentReference {
             get {
                 return this.contractDocumentReferenceField;
@@ -9050,25 +9407,26 @@ namespace Oasis.Ubl.v21 {
         
         private ShipmentType shipmentField;
         
-        public DeliveryType() {
-            this.shipmentField = new ShipmentType();
-            this.maximumDeliveryUnitField = new DeliveryUnitType();
-            this.minimumDeliveryUnitField = new DeliveryUnitType();
-            this.deliveryTermsField = new ObservableCollection<DeliveryTermsType>();
-            this.despatchField = new DespatchType();
-            this.notifyPartyField = new ObservableCollection<PartyType>();
-            this.deliveryPartyField = new PartyType();
-            this.carrierPartyField = new PartyType();
-            this.estimatedDeliveryPeriodField = new PeriodType();
-            this.promisedDeliveryPeriodField = new PeriodType();
-            this.requestedDeliveryPeriodField = new PeriodType();
-            this.alternativeDeliveryLocationField = new LocationType1();
-            this.deliveryLocationField = new LocationType1();
-            this.deliveryAddressField = new AddressType();
-            this.trackingIDField = new TrackingIDType();
-            this.releaseIDField = new ReleaseIDType();
-        }
-        
+        //public DeliveryType() {
+        //    this.shipmentField = new ShipmentType();
+        //    this.maximumDeliveryUnitField = new DeliveryUnitType();
+        //    this.minimumDeliveryUnitField = new DeliveryUnitType();
+        //    this.deliveryTermsField = new ObservableCollection<DeliveryTermsType>();
+        //    this.despatchField = new DespatchType();
+        //    this.notifyPartyField = new ObservableCollection<PartyType>();
+        //    this.deliveryPartyField = new PartyType();
+        //    this.carrierPartyField = new PartyType();
+        //    this.estimatedDeliveryPeriodField = new PeriodType();
+        //    this.promisedDeliveryPeriodField = new PeriodType();
+        //    this.requestedDeliveryPeriodField = new PeriodType();
+        //    this.alternativeDeliveryLocationField = new LocationType1();
+        //    this.deliveryLocationField = new LocationType1();
+        //    this.deliveryAddressField = new AddressType();
+        //    this.trackingIDField = new TrackingIDType();
+        //    this.releaseIDField = new ReleaseIDType();
+        //}
+
+        [System.Xml.Serialization.XmlElementAttribute(Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
         public IDType ID {
             get {
                 return this.idField;
@@ -9077,7 +9435,8 @@ namespace Oasis.Ubl.v21 {
                 this.idField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlElementAttribute(Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
         public QuantityType2 Quantity {
             get {
                 return this.quantityField;
@@ -9086,7 +9445,8 @@ namespace Oasis.Ubl.v21 {
                 this.quantityField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlElementAttribute(Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
         public MinimumQuantityType MinimumQuantity {
             get {
                 return this.minimumQuantityField;
@@ -9095,7 +9455,8 @@ namespace Oasis.Ubl.v21 {
                 this.minimumQuantityField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlElementAttribute(Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
         public MaximumQuantityType MaximumQuantity {
             get {
                 return this.maximumQuantityField;
@@ -9104,7 +9465,8 @@ namespace Oasis.Ubl.v21 {
                 this.maximumQuantityField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlElementAttribute(Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
         public ActualDeliveryDateType ActualDeliveryDate {
             get {
                 return this.actualDeliveryDateField;
@@ -9113,7 +9475,8 @@ namespace Oasis.Ubl.v21 {
                 this.actualDeliveryDateField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlElementAttribute(Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
         public ActualDeliveryTimeType ActualDeliveryTime {
             get {
                 return this.actualDeliveryTimeField;
@@ -9122,7 +9485,8 @@ namespace Oasis.Ubl.v21 {
                 this.actualDeliveryTimeField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlElementAttribute(Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
         public LatestDeliveryDateType LatestDeliveryDate {
             get {
                 return this.latestDeliveryDateField;
@@ -9131,7 +9495,8 @@ namespace Oasis.Ubl.v21 {
                 this.latestDeliveryDateField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlElementAttribute(Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
         public LatestDeliveryTimeType LatestDeliveryTime {
             get {
                 return this.latestDeliveryTimeField;
@@ -9140,7 +9505,8 @@ namespace Oasis.Ubl.v21 {
                 this.latestDeliveryTimeField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlElementAttribute(Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
         public ReleaseIDType ReleaseID {
             get {
                 return this.releaseIDField;
@@ -9149,7 +9515,8 @@ namespace Oasis.Ubl.v21 {
                 this.releaseIDField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlElementAttribute(Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
         public TrackingIDType TrackingID {
             get {
                 return this.trackingIDField;
@@ -9158,7 +9525,8 @@ namespace Oasis.Ubl.v21 {
                 this.trackingIDField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlElementAttribute(Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2")]
         public AddressType DeliveryAddress {
             get {
                 return this.deliveryAddressField;
@@ -9167,7 +9535,8 @@ namespace Oasis.Ubl.v21 {
                 this.deliveryAddressField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlElementAttribute(Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2")]
         public LocationType1 DeliveryLocation {
             get {
                 return this.deliveryLocationField;
@@ -9176,7 +9545,8 @@ namespace Oasis.Ubl.v21 {
                 this.deliveryLocationField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlElementAttribute(Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2")]
         public LocationType1 AlternativeDeliveryLocation {
             get {
                 return this.alternativeDeliveryLocationField;
@@ -9185,7 +9555,8 @@ namespace Oasis.Ubl.v21 {
                 this.alternativeDeliveryLocationField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlElementAttribute(Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2")]
         public PeriodType RequestedDeliveryPeriod {
             get {
                 return this.requestedDeliveryPeriodField;
@@ -9194,7 +9565,8 @@ namespace Oasis.Ubl.v21 {
                 this.requestedDeliveryPeriodField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlElementAttribute(Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2")]
         public PeriodType PromisedDeliveryPeriod {
             get {
                 return this.promisedDeliveryPeriodField;
@@ -9203,7 +9575,8 @@ namespace Oasis.Ubl.v21 {
                 this.promisedDeliveryPeriodField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlElementAttribute(Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2")]
         public PeriodType EstimatedDeliveryPeriod {
             get {
                 return this.estimatedDeliveryPeriodField;
@@ -9212,7 +9585,8 @@ namespace Oasis.Ubl.v21 {
                 this.estimatedDeliveryPeriodField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlElementAttribute(Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2")]
         public PartyType CarrierParty {
             get {
                 return this.carrierPartyField;
@@ -9221,7 +9595,8 @@ namespace Oasis.Ubl.v21 {
                 this.carrierPartyField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlElementAttribute(Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2")]
         public PartyType DeliveryParty {
             get {
                 return this.deliveryPartyField;
@@ -9230,7 +9605,8 @@ namespace Oasis.Ubl.v21 {
                 this.deliveryPartyField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlArrayAttribute(Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2")]
         public ObservableCollection<PartyType> NotifyParty {
             get {
                 return this.notifyPartyField;
@@ -9239,7 +9615,8 @@ namespace Oasis.Ubl.v21 {
                 this.notifyPartyField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlElementAttribute(Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2")]
         public DespatchType Despatch {
             get {
                 return this.despatchField;
@@ -9248,7 +9625,8 @@ namespace Oasis.Ubl.v21 {
                 this.despatchField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlArrayAttribute(Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2")]
         public ObservableCollection<DeliveryTermsType> DeliveryTerms {
             get {
                 return this.deliveryTermsField;
@@ -9257,7 +9635,8 @@ namespace Oasis.Ubl.v21 {
                 this.deliveryTermsField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlElementAttribute(Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2")]
         public DeliveryUnitType MinimumDeliveryUnit {
             get {
                 return this.minimumDeliveryUnitField;
@@ -9266,7 +9645,8 @@ namespace Oasis.Ubl.v21 {
                 this.minimumDeliveryUnitField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlElementAttribute(Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2")]
         public DeliveryUnitType MaximumDeliveryUnit {
             get {
                 return this.maximumDeliveryUnitField;
@@ -9275,7 +9655,8 @@ namespace Oasis.Ubl.v21 {
                 this.maximumDeliveryUnitField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlElementAttribute(Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2")]
         public ShipmentType Shipment {
             get {
                 return this.shipmentField;
@@ -9326,17 +9707,17 @@ namespace Oasis.Ubl.v21 {
         
         private PeriodType requestedDespatchPeriodField;
         
-        public DespatchType() {
-            this.requestedDespatchPeriodField = new PeriodType();
-            this.estimatedDespatchPeriodField = new PeriodType();
-            this.contactField = new ContactType();
-            this.notifyPartyField = new ObservableCollection<PartyType>();
-            this.carrierPartyField = new PartyType();
-            this.despatchPartyField = new PartyType();
-            this.despatchLocationField = new LocationType1();
-            this.despatchAddressField = new AddressType();
-            this.instructionsField = new ObservableCollection<InstructionsType>();
-        }
+        //public DespatchType() {
+        //    this.requestedDespatchPeriodField = new PeriodType();
+        //    this.estimatedDespatchPeriodField = new PeriodType();
+        //    this.contactField = new ContactType();
+        //    this.notifyPartyField = new ObservableCollection<PartyType>();
+        //    this.carrierPartyField = new PartyType();
+        //    this.despatchPartyField = new PartyType();
+        //    this.despatchLocationField = new LocationType1();
+        //    this.despatchAddressField = new AddressType();
+        //    this.instructionsField = new ObservableCollection<InstructionsType>();
+        //}
         
         public IDType ID {
             get {
@@ -9427,7 +9808,8 @@ namespace Oasis.Ubl.v21 {
                 this.releaseIDField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlArrayAttribute()]
         public ObservableCollection<InstructionsType> Instructions {
             get {
                 return this.instructionsField;
@@ -9472,7 +9854,8 @@ namespace Oasis.Ubl.v21 {
                 this.carrierPartyField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlArrayAttribute()]
         public ObservableCollection<PartyType> NotifyParty {
             get {
                 return this.notifyPartyField;
@@ -9526,12 +9909,12 @@ namespace Oasis.Ubl.v21 {
         
         private AllowanceChargeType allowanceChargeField;
         
-        public DeliveryTermsType() {
-            this.allowanceChargeField = new AllowanceChargeType();
-            this.deliveryLocationField = new LocationType1();
-            this.lossRiskField = new ObservableCollection<LossRiskType>();
-            this.specialTermsField = new ObservableCollection<SpecialTermsType>();
-        }
+        //public DeliveryTermsType() {
+        //    this.allowanceChargeField = new AllowanceChargeType();
+        //    this.deliveryLocationField = new LocationType1();
+        //    this.lossRiskField = new ObservableCollection<LossRiskType>();
+        //    this.specialTermsField = new ObservableCollection<SpecialTermsType>();
+        //}
         
         public IDType ID {
             get {
@@ -9541,7 +9924,8 @@ namespace Oasis.Ubl.v21 {
                 this.idField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlArrayAttribute()]
         public ObservableCollection<SpecialTermsType> SpecialTerms {
             get {
                 return this.specialTermsField;
@@ -9559,7 +9943,8 @@ namespace Oasis.Ubl.v21 {
                 this.lossRiskResponsibilityCodeField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlArrayAttribute()]
         public ObservableCollection<LossRiskType> LossRisk {
             get {
                 return this.lossRiskField;
@@ -9632,7 +10017,11 @@ namespace Oasis.Ubl.v21 {
             }
         }
     }
-    
+
+  
+    [System.SerializableAttribute()]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2")]
+    [System.Xml.Serialization.XmlRootAttribute("AdditionalTransportationService", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2", IsNullable = false)]
     public partial class TransportationServiceType {
         
         private TransportServiceCodeType transportServiceCodeField;
@@ -9681,23 +10070,23 @@ namespace Oasis.Ubl.v21 {
         
         private ObservableCollection<ServiceFrequencyType> scheduledServiceFrequencyField;
         
-        public TransportationServiceType() {
-            this.scheduledServiceFrequencyField = new ObservableCollection<ServiceFrequencyType>();
-            this.estimatedDurationPeriodField = new PeriodType();
-            this.environmentalEmissionField = new ObservableCollection<EnvironmentalEmissionType>();
-            this.responsibleTransportServiceProviderPartyField = new PartyType();
-            this.transportEventField = new ObservableCollection<TransportEventType>();
-            this.shipmentStageField = new ObservableCollection<ShipmentStageType>();
-            this.totalCapacityDimensionField = new DimensionType();
-            this.unsupportedCommodityClassificationField = new ObservableCollection<CommodityClassificationType>();
-            this.supportedCommodityClassificationField = new ObservableCollection<CommodityClassificationType>();
-            this.commodityClassificationField = new ObservableCollection<CommodityClassificationType>();
-            this.unsupportedTransportEquipmentField = new ObservableCollection<TransportEquipmentType>();
-            this.supportedTransportEquipmentField = new ObservableCollection<TransportEquipmentType>();
-            this.transportEquipmentField = new ObservableCollection<TransportEquipmentType>();
-            this.transportationServiceDetailsURIField = new TransportationServiceDetailsURIType();
-            this.transportationServiceDescriptionField = new ObservableCollection<TransportationServiceDescriptionType>();
-        }
+        //public TransportationServiceType() {
+        //    this.scheduledServiceFrequencyField = new ObservableCollection<ServiceFrequencyType>();
+        //    this.estimatedDurationPeriodField = new PeriodType();
+        //    this.environmentalEmissionField = new ObservableCollection<EnvironmentalEmissionType>();
+        //    this.responsibleTransportServiceProviderPartyField = new PartyType();
+        //    this.transportEventField = new ObservableCollection<TransportEventType>();
+        //    this.shipmentStageField = new ObservableCollection<ShipmentStageType>();
+        //    this.totalCapacityDimensionField = new DimensionType();
+        //    this.unsupportedCommodityClassificationField = new ObservableCollection<CommodityClassificationType>();
+        //    this.supportedCommodityClassificationField = new ObservableCollection<CommodityClassificationType>();
+        //    this.commodityClassificationField = new ObservableCollection<CommodityClassificationType>();
+        //    this.unsupportedTransportEquipmentField = new ObservableCollection<TransportEquipmentType>();
+        //    this.supportedTransportEquipmentField = new ObservableCollection<TransportEquipmentType>();
+        //    this.transportEquipmentField = new ObservableCollection<TransportEquipmentType>();
+        //    this.transportationServiceDetailsURIField = new TransportationServiceDetailsURIType();
+        //    this.transportationServiceDescriptionField = new ObservableCollection<TransportationServiceDescriptionType>();
+        //}
         
         public TransportServiceCodeType TransportServiceCode {
             get {
@@ -9734,7 +10123,9 @@ namespace Oasis.Ubl.v21 {
                 this.freightRateClassCodeField = value;
             }
         }
-        
+
+
+        [System.Xml.Serialization.XmlArrayAttribute()]
         public ObservableCollection<TransportationServiceDescriptionType> TransportationServiceDescription {
             get {
                 return this.transportationServiceDescriptionField;
@@ -9788,7 +10179,8 @@ namespace Oasis.Ubl.v21 {
                 this.sequenceNumericField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlArrayAttribute()]
         public ObservableCollection<TransportEquipmentType> TransportEquipment {
             get {
                 return this.transportEquipmentField;
@@ -9797,7 +10189,8 @@ namespace Oasis.Ubl.v21 {
                 this.transportEquipmentField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlArrayAttribute()]
         public ObservableCollection<TransportEquipmentType> SupportedTransportEquipment {
             get {
                 return this.supportedTransportEquipmentField;
@@ -9806,7 +10199,8 @@ namespace Oasis.Ubl.v21 {
                 this.supportedTransportEquipmentField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlArrayAttribute()]
         public ObservableCollection<TransportEquipmentType> UnsupportedTransportEquipment {
             get {
                 return this.unsupportedTransportEquipmentField;
@@ -9815,7 +10209,8 @@ namespace Oasis.Ubl.v21 {
                 this.unsupportedTransportEquipmentField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlArrayAttribute()]
         public ObservableCollection<CommodityClassificationType> CommodityClassification {
             get {
                 return this.commodityClassificationField;
@@ -9824,7 +10219,8 @@ namespace Oasis.Ubl.v21 {
                 this.commodityClassificationField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlArrayAttribute()]
         public ObservableCollection<CommodityClassificationType> SupportedCommodityClassification {
             get {
                 return this.supportedCommodityClassificationField;
@@ -9833,7 +10229,8 @@ namespace Oasis.Ubl.v21 {
                 this.supportedCommodityClassificationField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlArrayAttribute()]
         public ObservableCollection<CommodityClassificationType> UnsupportedCommodityClassification {
             get {
                 return this.unsupportedCommodityClassificationField;
@@ -9851,7 +10248,8 @@ namespace Oasis.Ubl.v21 {
                 this.totalCapacityDimensionField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlArrayAttribute()]
         public ObservableCollection<ShipmentStageType> ShipmentStage {
             get {
                 return this.shipmentStageField;
@@ -9860,7 +10258,8 @@ namespace Oasis.Ubl.v21 {
                 this.shipmentStageField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlArrayAttribute()]
         public ObservableCollection<TransportEventType> TransportEvent {
             get {
                 return this.transportEventField;
@@ -9878,7 +10277,8 @@ namespace Oasis.Ubl.v21 {
                 this.responsibleTransportServiceProviderPartyField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlArrayAttribute()]
         public ObservableCollection<EnvironmentalEmissionType> EnvironmentalEmission {
             get {
                 return this.environmentalEmissionField;
@@ -9896,7 +10296,8 @@ namespace Oasis.Ubl.v21 {
                 this.estimatedDurationPeriodField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlArrayAttribute()]
         public ObservableCollection<ServiceFrequencyType> ScheduledServiceFrequency {
             get {
                 return this.scheduledServiceFrequencyField;
@@ -9906,7 +10307,12 @@ namespace Oasis.Ubl.v21 {
             }
         }
     }
+
     
+    [System.SerializableAttribute()]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2")]
+    [System.Xml.Serialization.XmlRootAttribute("AttachedTransportEquipment", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2", IsNullable = false)]
+
     public partial class TransportEquipmentType {
         
         private IDType idField;
@@ -10031,47 +10437,47 @@ namespace Oasis.Ubl.v21 {
         
         private ObservableCollection<GoodsItemType> goodsItemField;
         
-        public TransportEquipmentType() {
-            this.goodsItemField = new ObservableCollection<GoodsItemType>();
-            this.packageField = new ObservableCollection<PackageType>();
-            this.containedInTransportEquipmentField = new ObservableCollection<TransportEquipmentType>();
-            this.shipmentDocumentReferenceField = new ObservableCollection<DocumentReferenceType>();
-            this.despatchField = new DespatchType();
-            this.pickupField = new PickupType();
-            this.deliveryField = new DeliveryType();
-            this.attachedTransportEquipmentField = new ObservableCollection<TransportEquipmentType>();
-            this.freightAllowanceChargeField = new ObservableCollection<AllowanceChargeType>();
-            this.serviceAllowanceChargeField = new ObservableCollection<AllowanceChargeType>();
-            this.packagedTransportHandlingUnitField = new ObservableCollection<TransportHandlingUnitType>();
-            this.hazardousGoodsTransitField = new ObservableCollection<HazardousGoodsTransitType>();
-            this.haulageTradingTermsField = new ObservableCollection<TradingTermsType>();
-            this.applicableTransportMeansField = new TransportMeansType();
-            this.transportEventField = new ObservableCollection<TransportEventType>();
-            this.loadingTransportEventField = new ObservableCollection<TransportEventType>();
-            this.handlingTransportEventField = new ObservableCollection<TransportEventType>();
-            this.pickupTransportEventField = new ObservableCollection<TransportEventType>();
-            this.deliveryTransportEventField = new ObservableCollection<TransportEventType>();
-            this.quarantineTransportEventField = new ObservableCollection<TransportEventType>();
-            this.positioningTransportEventField = new ObservableCollection<TransportEventType>();
-            this.storageLocationField = new LocationType1();
-            this.unloadingLocationField = new LocationType1();
-            this.loadingLocationField = new LocationType1();
-            this.operatingPartyField = new PartyType();
-            this.ownerPartyField = new PartyType();
-            this.supplierPartyField = new SupplierPartyType();
-            this.loadingProofPartyField = new PartyType();
-            this.providerPartyField = new PartyType();
-            this.maximumTemperatureField = new TemperatureType();
-            this.minimumTemperatureField = new TemperatureType();
-            this.transportEquipmentSealField = new ObservableCollection<TransportEquipmentSealType>();
-            this.measurementDimensionField = new ObservableCollection<DimensionType>();
-            this.traceIDField = new TraceIDType();
-            this.specialTransportRequirementsField = new ObservableCollection<SpecialTransportRequirementsType>();
-            this.descriptionField = new ObservableCollection<DescriptionType>();
-            this.damageRemarksField = new ObservableCollection<DamageRemarksType>();
-            this.informationField = new ObservableCollection<InformationType>();
-            this.referencedConsignmentIDField = new ObservableCollection<ReferencedConsignmentIDType>();
-        }
+        //public TransportEquipmentType() {
+        //    this.goodsItemField = new ObservableCollection<GoodsItemType>();
+        //    this.packageField = new ObservableCollection<PackageType>();
+        //    this.containedInTransportEquipmentField = new ObservableCollection<TransportEquipmentType>();
+        //    this.shipmentDocumentReferenceField = new ObservableCollection<DocumentReferenceType>();
+        //    this.despatchField = new DespatchType();
+        //    this.pickupField = new PickupType();
+        //    this.deliveryField = new DeliveryType();
+        //    this.attachedTransportEquipmentField = new ObservableCollection<TransportEquipmentType>();
+        //    this.freightAllowanceChargeField = new ObservableCollection<AllowanceChargeType>();
+        //    this.serviceAllowanceChargeField = new ObservableCollection<AllowanceChargeType>();
+        //    this.packagedTransportHandlingUnitField = new ObservableCollection<TransportHandlingUnitType>();
+        //    this.hazardousGoodsTransitField = new ObservableCollection<HazardousGoodsTransitType>();
+        //    this.haulageTradingTermsField = new ObservableCollection<TradingTermsType>();
+        //    this.applicableTransportMeansField = new TransportMeansType();
+        //    this.transportEventField = new ObservableCollection<TransportEventType>();
+        //    this.loadingTransportEventField = new ObservableCollection<TransportEventType>();
+        //    this.handlingTransportEventField = new ObservableCollection<TransportEventType>();
+        //    this.pickupTransportEventField = new ObservableCollection<TransportEventType>();
+        //    this.deliveryTransportEventField = new ObservableCollection<TransportEventType>();
+        //    this.quarantineTransportEventField = new ObservableCollection<TransportEventType>();
+        //    this.positioningTransportEventField = new ObservableCollection<TransportEventType>();
+        //    this.storageLocationField = new LocationType1();
+        //    this.unloadingLocationField = new LocationType1();
+        //    this.loadingLocationField = new LocationType1();
+        //    this.operatingPartyField = new PartyType();
+        //    this.ownerPartyField = new PartyType();
+        //    this.supplierPartyField = new SupplierPartyType();
+        //    this.loadingProofPartyField = new PartyType();
+        //    this.providerPartyField = new PartyType();
+        //    this.maximumTemperatureField = new TemperatureType();
+        //    this.minimumTemperatureField = new TemperatureType();
+        //    this.transportEquipmentSealField = new ObservableCollection<TransportEquipmentSealType>();
+        //    this.measurementDimensionField = new ObservableCollection<DimensionType>();
+        //    this.traceIDField = new TraceIDType();
+        //    this.specialTransportRequirementsField = new ObservableCollection<SpecialTransportRequirementsType>();
+        //    this.descriptionField = new ObservableCollection<DescriptionType>();
+        //    this.damageRemarksField = new ObservableCollection<DamageRemarksType>();
+        //    this.informationField = new ObservableCollection<InformationType>();
+        //    this.referencedConsignmentIDField = new ObservableCollection<ReferencedConsignmentIDType>();
+        //}
         
         public IDType ID {
             get {
@@ -10081,7 +10487,9 @@ namespace Oasis.Ubl.v21 {
                 this.idField = value;
             }
         }
-        
+
+
+        [System.Xml.Serialization.XmlArrayAttribute()]
         public ObservableCollection<ReferencedConsignmentIDType> ReferencedConsignmentID {
             get {
                 return this.referencedConsignmentIDField;
@@ -10153,7 +10561,8 @@ namespace Oasis.Ubl.v21 {
                 this.refrigerationOnIndicatorField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlArrayAttribute()]
         public ObservableCollection<InformationType> Information {
             get {
                 return this.informationField;
@@ -10243,7 +10652,8 @@ namespace Oasis.Ubl.v21 {
                 this.characteristicsField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlArrayAttribute()]
         public ObservableCollection<DamageRemarksType> DamageRemarks {
             get {
                 return this.damageRemarksField;
@@ -10252,7 +10662,8 @@ namespace Oasis.Ubl.v21 {
                 this.damageRemarksField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlArrayAttribute()]
         public ObservableCollection<DescriptionType> Description {
             get {
                 return this.descriptionField;
@@ -10261,7 +10672,8 @@ namespace Oasis.Ubl.v21 {
                 this.descriptionField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlArrayAttribute()]
         public ObservableCollection<SpecialTransportRequirementsType> SpecialTransportRequirements {
             get {
                 return this.specialTransportRequirementsField;
@@ -10324,7 +10736,8 @@ namespace Oasis.Ubl.v21 {
                 this.traceIDField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlArrayAttribute()]
         public ObservableCollection<DimensionType> MeasurementDimension {
             get {
                 return this.measurementDimensionField;
@@ -10333,7 +10746,8 @@ namespace Oasis.Ubl.v21 {
                 this.measurementDimensionField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlArrayAttribute()]
         public ObservableCollection<TransportEquipmentSealType> TransportEquipmentSeal {
             get {
                 return this.transportEquipmentSealField;
@@ -10432,7 +10846,8 @@ namespace Oasis.Ubl.v21 {
                 this.storageLocationField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlArrayAttribute()]
         public ObservableCollection<TransportEventType> PositioningTransportEvent {
             get {
                 return this.positioningTransportEventField;
@@ -10441,7 +10856,8 @@ namespace Oasis.Ubl.v21 {
                 this.positioningTransportEventField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlArrayAttribute()]
         public ObservableCollection<TransportEventType> QuarantineTransportEvent {
             get {
                 return this.quarantineTransportEventField;
@@ -10450,7 +10866,8 @@ namespace Oasis.Ubl.v21 {
                 this.quarantineTransportEventField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlArrayAttribute()]
         public ObservableCollection<TransportEventType> DeliveryTransportEvent {
             get {
                 return this.deliveryTransportEventField;
@@ -10459,7 +10876,8 @@ namespace Oasis.Ubl.v21 {
                 this.deliveryTransportEventField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlArrayAttribute()]
         public ObservableCollection<TransportEventType> PickupTransportEvent {
             get {
                 return this.pickupTransportEventField;
@@ -10468,7 +10886,8 @@ namespace Oasis.Ubl.v21 {
                 this.pickupTransportEventField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlArrayAttribute()]
         public ObservableCollection<TransportEventType> HandlingTransportEvent {
             get {
                 return this.handlingTransportEventField;
@@ -10477,7 +10896,8 @@ namespace Oasis.Ubl.v21 {
                 this.handlingTransportEventField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlArrayAttribute()]
         public ObservableCollection<TransportEventType> LoadingTransportEvent {
             get {
                 return this.loadingTransportEventField;
@@ -10486,7 +10906,8 @@ namespace Oasis.Ubl.v21 {
                 this.loadingTransportEventField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlArrayAttribute()]
         public ObservableCollection<TransportEventType> TransportEvent {
             get {
                 return this.transportEventField;
@@ -10504,7 +10925,8 @@ namespace Oasis.Ubl.v21 {
                 this.applicableTransportMeansField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlArrayAttribute()]
         public ObservableCollection<TradingTermsType> HaulageTradingTerms {
             get {
                 return this.haulageTradingTermsField;
@@ -10513,7 +10935,8 @@ namespace Oasis.Ubl.v21 {
                 this.haulageTradingTermsField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlArrayAttribute()]
         public ObservableCollection<HazardousGoodsTransitType> HazardousGoodsTransit {
             get {
                 return this.hazardousGoodsTransitField;
@@ -10522,7 +10945,8 @@ namespace Oasis.Ubl.v21 {
                 this.hazardousGoodsTransitField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlArrayAttribute()]
         public ObservableCollection<TransportHandlingUnitType> PackagedTransportHandlingUnit {
             get {
                 return this.packagedTransportHandlingUnitField;
@@ -10531,7 +10955,8 @@ namespace Oasis.Ubl.v21 {
                 this.packagedTransportHandlingUnitField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlArrayAttribute()]
         public ObservableCollection<AllowanceChargeType> ServiceAllowanceCharge {
             get {
                 return this.serviceAllowanceChargeField;
@@ -10540,7 +10965,8 @@ namespace Oasis.Ubl.v21 {
                 this.serviceAllowanceChargeField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlArrayAttribute()]
         public ObservableCollection<AllowanceChargeType> FreightAllowanceCharge {
             get {
                 return this.freightAllowanceChargeField;
@@ -10549,7 +10975,8 @@ namespace Oasis.Ubl.v21 {
                 this.freightAllowanceChargeField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlArrayAttribute()]
         public ObservableCollection<TransportEquipmentType> AttachedTransportEquipment {
             get {
                 return this.attachedTransportEquipmentField;
@@ -10585,7 +11012,8 @@ namespace Oasis.Ubl.v21 {
                 this.despatchField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlArrayAttribute()]
         public ObservableCollection<DocumentReferenceType> ShipmentDocumentReference {
             get {
                 return this.shipmentDocumentReferenceField;
@@ -10594,7 +11022,8 @@ namespace Oasis.Ubl.v21 {
                 this.shipmentDocumentReferenceField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlArrayAttribute()]
         public ObservableCollection<TransportEquipmentType> ContainedInTransportEquipment {
             get {
                 return this.containedInTransportEquipmentField;
@@ -10603,7 +11032,8 @@ namespace Oasis.Ubl.v21 {
                 this.containedInTransportEquipmentField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlArrayAttribute()]
         public ObservableCollection<PackageType> Package {
             get {
                 return this.packageField;
@@ -10612,7 +11042,8 @@ namespace Oasis.Ubl.v21 {
                 this.packageField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlArrayAttribute()]
         public ObservableCollection<GoodsItemType> GoodsItem {
             get {
                 return this.goodsItemField;
@@ -10635,9 +11066,9 @@ namespace Oasis.Ubl.v21 {
         
         private SealingPartyTypeType sealingPartyTypeField;
         
-        public TransportEquipmentSealType() {
-            this.conditionField = new ConditionType();
-        }
+        //public TransportEquipmentSealType() {
+        //    this.conditionField = new ConditionType();
+        //}
         
         public IDType ID {
             get {
@@ -10701,14 +11132,14 @@ namespace Oasis.Ubl.v21 {
         
         private ContactType sellerContactField;
         
-        public SupplierPartyType() {
-            this.sellerContactField = new ContactType();
-            this.accountingContactField = new ContactType();
-            this.despatchContactField = new ContactType();
-            this.partyField = new PartyType();
-            this.additionalAccountIDField = new ObservableCollection<AdditionalAccountIDType>();
-            this.customerAssignedAccountIDField = new CustomerAssignedAccountIDType();
-        }
+        //public SupplierPartyType() {
+        //    this.sellerContactField = new ContactType();
+        //    this.accountingContactField = new ContactType();
+        //    this.despatchContactField = new ContactType();
+        //    this.partyField = new PartyType();
+        //    this.additionalAccountIDField = new ObservableCollection<AdditionalAccountIDType>();
+        //    this.customerAssignedAccountIDField = new CustomerAssignedAccountIDType();
+        //}
         
         public CustomerAssignedAccountIDType CustomerAssignedAccountID {
             get {
@@ -10718,7 +11149,8 @@ namespace Oasis.Ubl.v21 {
                 this.customerAssignedAccountIDField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlArrayAttribute()]
         public ObservableCollection<AdditionalAccountIDType> AdditionalAccountID {
             get {
                 return this.additionalAccountIDField;
@@ -10782,11 +11214,12 @@ namespace Oasis.Ubl.v21 {
         
         private AddressType applicableAddressField;
         
-        public TradingTermsType() {
-            this.applicableAddressField = new AddressType();
-            this.informationField = new ObservableCollection<InformationType>();
-        }
-        
+        //public TradingTermsType() {
+        //    this.applicableAddressField = new AddressType();
+        //    this.informationField = new ObservableCollection<InformationType>();
+        //}
+
+        [System.Xml.Serialization.XmlArrayAttribute()]
         public ObservableCollection<InformationType> Information {
             get {
                 return this.informationField;
@@ -10814,7 +11247,11 @@ namespace Oasis.Ubl.v21 {
             }
         }
     }
-    
+
+    [System.SerializableAttribute()]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2")]
+    [System.Xml.Serialization.XmlRootAttribute("PackagedTransportHandlingUnit", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2", IsNullable = false)]
+
     public partial class TransportHandlingUnitType {
         
         private IDType idField;
@@ -10871,28 +11308,28 @@ namespace Oasis.Ubl.v21 {
         
         private ObservableCollection<PackageType> packageField;
         
-        public TransportHandlingUnitType() {
-            this.packageField = new ObservableCollection<PackageType>();
-            this.referencedShipmentField = new ObservableCollection<ShipmentType>();
-            this.customsDeclarationField = new ObservableCollection<CustomsDeclarationType>();
-            this.statusField = new ObservableCollection<StatusType>();
-            this.shipmentDocumentReferenceField = new ObservableCollection<DocumentReferenceType>();
-            this.palletSpaceMeasurementDimensionField = new DimensionType();
-            this.floorSpaceMeasurementDimensionField = new DimensionType();
-            this.goodsItemField = new ObservableCollection<GoodsItemType>();
-            this.maximumTemperatureField = new TemperatureType();
-            this.minimumTemperatureField = new TemperatureType();
-            this.measurementDimensionField = new ObservableCollection<DimensionType>();
-            this.hazardousGoodsTransitField = new ObservableCollection<HazardousGoodsTransitType>();
-            this.transportMeansField = new ObservableCollection<TransportMeansType>();
-            this.transportEquipmentField = new ObservableCollection<TransportEquipmentType>();
-            this.receivedHandlingUnitReceiptLineField = new ObservableCollection<ReceiptLineType>();
-            this.actualPackageField = new ObservableCollection<PackageType>();
-            this.handlingUnitDespatchLineField = new ObservableCollection<DespatchLineType>();
-            this.shippingMarksField = new ObservableCollection<ShippingMarksType>();
-            this.damageRemarksField = new ObservableCollection<DamageRemarksType>();
-            this.handlingInstructionsField = new ObservableCollection<HandlingInstructionsType>();
-        }
+        //public TransportHandlingUnitType() {
+        //    this.packageField = new ObservableCollection<PackageType>();
+        //    this.referencedShipmentField = new ObservableCollection<ShipmentType>();
+        //    this.customsDeclarationField = new ObservableCollection<CustomsDeclarationType>();
+        //    this.statusField = new ObservableCollection<StatusType>();
+        //    this.shipmentDocumentReferenceField = new ObservableCollection<DocumentReferenceType>();
+        //    this.palletSpaceMeasurementDimensionField = new DimensionType();
+        //    this.floorSpaceMeasurementDimensionField = new DimensionType();
+        //    this.goodsItemField = new ObservableCollection<GoodsItemType>();
+        //    this.maximumTemperatureField = new TemperatureType();
+        //    this.minimumTemperatureField = new TemperatureType();
+        //    this.measurementDimensionField = new ObservableCollection<DimensionType>();
+        //    this.hazardousGoodsTransitField = new ObservableCollection<HazardousGoodsTransitType>();
+        //    this.transportMeansField = new ObservableCollection<TransportMeansType>();
+        //    this.transportEquipmentField = new ObservableCollection<TransportEquipmentType>();
+        //    this.receivedHandlingUnitReceiptLineField = new ObservableCollection<ReceiptLineType>();
+        //    this.actualPackageField = new ObservableCollection<PackageType>();
+        //    this.handlingUnitDespatchLineField = new ObservableCollection<DespatchLineType>();
+        //    this.shippingMarksField = new ObservableCollection<ShippingMarksType>();
+        //    this.damageRemarksField = new ObservableCollection<DamageRemarksType>();
+        //    this.handlingInstructionsField = new ObservableCollection<HandlingInstructionsType>();
+        //}
         
         public IDType ID {
             get {
@@ -10920,7 +11357,9 @@ namespace Oasis.Ubl.v21 {
                 this.handlingCodeField = value;
             }
         }
-        
+
+
+        [System.Xml.Serialization.XmlArrayAttribute()]
         public ObservableCollection<HandlingInstructionsType> HandlingInstructions {
             get {
                 return this.handlingInstructionsField;
@@ -10956,7 +11395,8 @@ namespace Oasis.Ubl.v21 {
                 this.totalPackageQuantityField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlArrayAttribute()]
         public ObservableCollection<DamageRemarksType> DamageRemarks {
             get {
                 return this.damageRemarksField;
@@ -10965,7 +11405,8 @@ namespace Oasis.Ubl.v21 {
                 this.damageRemarksField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlArrayAttribute()]
         public ObservableCollection<ShippingMarksType> ShippingMarks {
             get {
                 return this.shippingMarksField;
@@ -10983,7 +11424,8 @@ namespace Oasis.Ubl.v21 {
                 this.traceIDField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlArrayAttribute()]
         public ObservableCollection<DespatchLineType> HandlingUnitDespatchLine {
             get {
                 return this.handlingUnitDespatchLineField;
@@ -10992,7 +11434,8 @@ namespace Oasis.Ubl.v21 {
                 this.handlingUnitDespatchLineField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlArrayAttribute()]
         public ObservableCollection<PackageType> ActualPackage {
             get {
                 return this.actualPackageField;
@@ -11001,7 +11444,8 @@ namespace Oasis.Ubl.v21 {
                 this.actualPackageField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlArrayAttribute()]
         public ObservableCollection<ReceiptLineType> ReceivedHandlingUnitReceiptLine {
             get {
                 return this.receivedHandlingUnitReceiptLineField;
@@ -11010,7 +11454,8 @@ namespace Oasis.Ubl.v21 {
                 this.receivedHandlingUnitReceiptLineField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlArrayAttribute()]
         public ObservableCollection<TransportEquipmentType> TransportEquipment {
             get {
                 return this.transportEquipmentField;
@@ -11019,7 +11464,8 @@ namespace Oasis.Ubl.v21 {
                 this.transportEquipmentField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlArrayAttribute()]
         public ObservableCollection<TransportMeansType> TransportMeans {
             get {
                 return this.transportMeansField;
@@ -11028,7 +11474,8 @@ namespace Oasis.Ubl.v21 {
                 this.transportMeansField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlArrayAttribute()]
         public ObservableCollection<HazardousGoodsTransitType> HazardousGoodsTransit {
             get {
                 return this.hazardousGoodsTransitField;
@@ -11037,7 +11484,8 @@ namespace Oasis.Ubl.v21 {
                 this.hazardousGoodsTransitField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlArrayAttribute()]
         public ObservableCollection<DimensionType> MeasurementDimension {
             get {
                 return this.measurementDimensionField;
@@ -11064,7 +11512,8 @@ namespace Oasis.Ubl.v21 {
                 this.maximumTemperatureField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlArrayAttribute()]
         public ObservableCollection<GoodsItemType> GoodsItem {
             get {
                 return this.goodsItemField;
@@ -11091,7 +11540,8 @@ namespace Oasis.Ubl.v21 {
                 this.palletSpaceMeasurementDimensionField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlArrayAttribute()]
         public ObservableCollection<DocumentReferenceType> ShipmentDocumentReference {
             get {
                 return this.shipmentDocumentReferenceField;
@@ -11100,7 +11550,8 @@ namespace Oasis.Ubl.v21 {
                 this.shipmentDocumentReferenceField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlArrayAttribute()]
         public ObservableCollection<StatusType> Status {
             get {
                 return this.statusField;
@@ -11109,7 +11560,8 @@ namespace Oasis.Ubl.v21 {
                 this.statusField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlArrayAttribute()]
         public ObservableCollection<CustomsDeclarationType> CustomsDeclaration {
             get {
                 return this.customsDeclarationField;
@@ -11118,7 +11570,8 @@ namespace Oasis.Ubl.v21 {
                 this.customsDeclarationField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlArrayAttribute()]
         public ObservableCollection<ShipmentType> ReferencedShipment {
             get {
                 return this.referencedShipmentField;
@@ -11127,7 +11580,8 @@ namespace Oasis.Ubl.v21 {
                 this.referencedShipmentField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlArrayAttribute()]
         public ObservableCollection<PackageType> Package {
             get {
                 return this.packageField;
@@ -11168,15 +11622,15 @@ namespace Oasis.Ubl.v21 {
         
         private ObservableCollection<ShipmentType> shipmentField;
         
-        public DespatchLineType() {
-            this.shipmentField = new ObservableCollection<ShipmentType>();
-            this.itemField = new ItemType();
-            this.documentReferenceField = new ObservableCollection<DocumentReferenceType>();
-            this.orderLineReferenceField = new ObservableCollection<OrderLineReferenceType>();
-            this.outstandingReasonField = new ObservableCollection<OutstandingReasonType>();
-            this.backorderReasonField = new ObservableCollection<BackorderReasonType>();
-            this.noteField = new ObservableCollection<NoteType>();
-        }
+        //public DespatchLineType() {
+        //    this.shipmentField = new ObservableCollection<ShipmentType>();
+        //    this.itemField = new ItemType();
+        //    this.documentReferenceField = new ObservableCollection<DocumentReferenceType>();
+        //    this.orderLineReferenceField = new ObservableCollection<OrderLineReferenceType>();
+        //    this.outstandingReasonField = new ObservableCollection<OutstandingReasonType>();
+        //    this.backorderReasonField = new ObservableCollection<BackorderReasonType>();
+        //    this.noteField = new ObservableCollection<NoteType>();
+        //}
         
         public IDType ID {
             get {
@@ -11195,7 +11649,8 @@ namespace Oasis.Ubl.v21 {
                 this.uUIDField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlArrayAttribute()]
         public ObservableCollection<NoteType> Note {
             get {
                 return this.noteField;
@@ -11231,7 +11686,8 @@ namespace Oasis.Ubl.v21 {
                 this.backorderQuantityField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlArrayAttribute()]
         public ObservableCollection<BackorderReasonType> BackorderReason {
             get {
                 return this.backorderReasonField;
@@ -11249,7 +11705,8 @@ namespace Oasis.Ubl.v21 {
                 this.outstandingQuantityField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlArrayAttribute()]
         public ObservableCollection<OutstandingReasonType> OutstandingReason {
             get {
                 return this.outstandingReasonField;
@@ -11267,7 +11724,8 @@ namespace Oasis.Ubl.v21 {
                 this.oversupplyQuantityField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlArrayAttribute()]
         public ObservableCollection<OrderLineReferenceType> OrderLineReference {
             get {
                 return this.orderLineReferenceField;
@@ -11276,7 +11734,8 @@ namespace Oasis.Ubl.v21 {
                 this.orderLineReferenceField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlArrayAttribute()]
         public ObservableCollection<DocumentReferenceType> DocumentReference {
             get {
                 return this.documentReferenceField;
@@ -11294,7 +11753,8 @@ namespace Oasis.Ubl.v21 {
                 this.itemField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlArrayAttribute()]
         public ObservableCollection<ShipmentType> Shipment {
             get {
                 return this.shipmentField;
@@ -11304,7 +11764,11 @@ namespace Oasis.Ubl.v21 {
             }
         }
     }
-    
+
+    [System.SerializableAttribute()]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2")]
+    [System.Xml.Serialization.XmlRootAttribute("ActualPackage", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2", IsNullable = false)]
+ 
     public partial class PackageType {
         
         private IDType idField;
@@ -11337,17 +11801,17 @@ namespace Oasis.Ubl.v21 {
         
         private DespatchType despatchField;
         
-        public PackageType() {
-            this.despatchField = new DespatchType();
-            this.pickupField = new PickupType();
-            this.deliveryField = new DeliveryType();
-            this.deliveryUnitField = new ObservableCollection<DeliveryUnitType>();
-            this.measurementDimensionField = new ObservableCollection<DimensionType>();
-            this.goodsItemField = new ObservableCollection<GoodsItemType>();
-            this.containingTransportEquipmentField = new TransportEquipmentType();
-            this.containedPackageField = new ObservableCollection<PackageType>();
-            this.packingMaterialField = new ObservableCollection<PackingMaterialType>();
-        }
+        //public PackageType() {
+        //    this.despatchField = new DespatchType();
+        //    this.pickupField = new PickupType();
+        //    this.deliveryField = new DeliveryType();
+        //    this.deliveryUnitField = new ObservableCollection<DeliveryUnitType>();
+        //    this.measurementDimensionField = new ObservableCollection<DimensionType>();
+        //    this.goodsItemField = new ObservableCollection<GoodsItemType>();
+        //    this.containingTransportEquipmentField = new TransportEquipmentType();
+        //    this.containedPackageField = new ObservableCollection<PackageType>();
+        //    this.packingMaterialField = new ObservableCollection<PackingMaterialType>();
+        //}
         
         public IDType ID {
             get {
@@ -11393,7 +11857,9 @@ namespace Oasis.Ubl.v21 {
                 this.packagingTypeCodeField = value;
             }
         }
-        
+
+
+        [System.Xml.Serialization.XmlArrayAttribute()]
         public ObservableCollection<PackingMaterialType> PackingMaterial {
             get {
                 return this.packingMaterialField;
@@ -11411,7 +11877,8 @@ namespace Oasis.Ubl.v21 {
                 this.traceIDField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlArrayAttribute()]
         public ObservableCollection<PackageType> ContainedPackage {
             get {
                 return this.containedPackageField;
@@ -11429,7 +11896,8 @@ namespace Oasis.Ubl.v21 {
                 this.containingTransportEquipmentField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlArrayAttribute()]
         public ObservableCollection<GoodsItemType> GoodsItem {
             get {
                 return this.goodsItemField;
@@ -11438,7 +11906,8 @@ namespace Oasis.Ubl.v21 {
                 this.goodsItemField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlArrayAttribute()]
         public ObservableCollection<DimensionType> MeasurementDimension {
             get {
                 return this.measurementDimensionField;
@@ -11447,7 +11916,8 @@ namespace Oasis.Ubl.v21 {
                 this.measurementDimensionField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlArrayAttribute()]
         public ObservableCollection<DeliveryUnitType> DeliveryUnit {
             get {
                 return this.deliveryUnitField;
@@ -11484,7 +11954,11 @@ namespace Oasis.Ubl.v21 {
             }
         }
     }
-    
+
+    [System.SerializableAttribute()]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2")]
+    [System.Xml.Serialization.XmlRootAttribute("ContainedGoodsItem", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2", IsNullable = false)]
+
     public partial class GoodsItemType {
         
         private IDType idField;
@@ -11567,26 +12041,26 @@ namespace Oasis.Ubl.v21 {
         
         private TemperatureType maximumTemperatureField;
         
-        public GoodsItemType() {
-            this.maximumTemperatureField = new TemperatureType();
-            this.minimumTemperatureField = new TemperatureType();
-            this.shipmentDocumentReferenceField = new DocumentReferenceType();
-            this.containingPackageField = new ObservableCollection<PackageType>();
-            this.measurementDimensionField = new ObservableCollection<DimensionType>();
-            this.despatchField = new DespatchType();
-            this.pickupField = new PickupType();
-            this.deliveryField = new DeliveryType();
-            this.originAddressField = new AddressType();
-            this.containedGoodsItemField = new ObservableCollection<GoodsItemType>();
-            this.temperatureField = new ObservableCollection<TemperatureType>();
-            this.invoiceLineField = new ObservableCollection<InvoiceLineType>();
-            this.freightAllowanceChargeField = new ObservableCollection<AllowanceChargeType>();
-            this.goodsItemContainerField = new ObservableCollection<GoodsItemContainerType>();
-            this.itemField = new ObservableCollection<ItemType>();
-            this.requiredCustomsIDField = new RequiredCustomsIDType();
-            this.descriptionField = new ObservableCollection<DescriptionType>();
-            this.sequenceNumberIDField = new SequenceNumberIDType();
-        }
+        //public GoodsItemType() {
+        //    this.maximumTemperatureField = new TemperatureType();
+        //    this.minimumTemperatureField = new TemperatureType();
+        //    this.shipmentDocumentReferenceField = new DocumentReferenceType();
+        //    this.containingPackageField = new ObservableCollection<PackageType>();
+        //    this.measurementDimensionField = new ObservableCollection<DimensionType>();
+        //    this.despatchField = new DespatchType();
+        //    this.pickupField = new PickupType();
+        //    this.deliveryField = new DeliveryType();
+        //    this.originAddressField = new AddressType();
+        //    this.containedGoodsItemField = new ObservableCollection<GoodsItemType>();
+        //    this.temperatureField = new ObservableCollection<TemperatureType>();
+        //    this.invoiceLineField = new ObservableCollection<InvoiceLineType>();
+        //    this.freightAllowanceChargeField = new ObservableCollection<AllowanceChargeType>();
+        //    this.goodsItemContainerField = new ObservableCollection<GoodsItemContainerType>();
+        //    this.itemField = new ObservableCollection<ItemType>();
+        //    this.requiredCustomsIDField = new RequiredCustomsIDType();
+        //    this.descriptionField = new ObservableCollection<DescriptionType>();
+        //    this.sequenceNumberIDField = new SequenceNumberIDType();
+        //}
         
         public IDType ID {
             get {
@@ -11605,7 +12079,9 @@ namespace Oasis.Ubl.v21 {
                 this.sequenceNumberIDField = value;
             }
         }
-        
+
+
+        [System.Xml.Serialization.XmlArrayAttribute()]
         public ObservableCollection<DescriptionType> Description {
             get {
                 return this.descriptionField;
@@ -11812,7 +12288,8 @@ namespace Oasis.Ubl.v21 {
                 this.traceIDField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlArrayAttribute()]
         public ObservableCollection<ItemType> Item {
             get {
                 return this.itemField;
@@ -11821,7 +12298,8 @@ namespace Oasis.Ubl.v21 {
                 this.itemField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlArrayAttribute()]
         public ObservableCollection<GoodsItemContainerType> GoodsItemContainer {
             get {
                 return this.goodsItemContainerField;
@@ -11830,7 +12308,8 @@ namespace Oasis.Ubl.v21 {
                 this.goodsItemContainerField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlArrayAttribute()]
         public ObservableCollection<AllowanceChargeType> FreightAllowanceCharge {
             get {
                 return this.freightAllowanceChargeField;
@@ -11839,7 +12318,8 @@ namespace Oasis.Ubl.v21 {
                 this.freightAllowanceChargeField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlArrayAttribute()]
         public ObservableCollection<InvoiceLineType> InvoiceLine {
             get {
                 return this.invoiceLineField;
@@ -11848,7 +12328,8 @@ namespace Oasis.Ubl.v21 {
                 this.invoiceLineField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlArrayAttribute()]
         public ObservableCollection<TemperatureType> Temperature {
             get {
                 return this.temperatureField;
@@ -11857,7 +12338,8 @@ namespace Oasis.Ubl.v21 {
                 this.temperatureField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlArrayAttribute()]
         public ObservableCollection<GoodsItemType> ContainedGoodsItem {
             get {
                 return this.containedGoodsItemField;
@@ -11902,7 +12384,8 @@ namespace Oasis.Ubl.v21 {
                 this.despatchField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlArrayAttribute()]
         public ObservableCollection<DimensionType> MeasurementDimension {
             get {
                 return this.measurementDimensionField;
@@ -11911,7 +12394,8 @@ namespace Oasis.Ubl.v21 {
                 this.measurementDimensionField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlArrayAttribute()]
         public ObservableCollection<PackageType> ContainingPackage {
             get {
                 return this.containingPackageField;
@@ -11957,9 +12441,9 @@ namespace Oasis.Ubl.v21 {
         
         private ObservableCollection<TransportEquipmentType> transportEquipmentField;
         
-        public GoodsItemContainerType() {
-            this.transportEquipmentField = new ObservableCollection<TransportEquipmentType>();
-        }
+        //public GoodsItemContainerType() {
+        //    this.transportEquipmentField = new ObservableCollection<TransportEquipmentType>();
+        //}
         
         public IDType ID {
             get {
@@ -11978,7 +12462,8 @@ namespace Oasis.Ubl.v21 {
                 this.quantityField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlArrayAttribute()]
         public ObservableCollection<TransportEquipmentType> TransportEquipment {
             get {
                 return this.transportEquipmentField;
@@ -11988,7 +12473,10 @@ namespace Oasis.Ubl.v21 {
             }
         }
     }
+
     
+    [System.SerializableAttribute()]
+    [System.Xml.Serialization.XmlRootAttribute("InvoiceLine", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2", IsNullable = false)]
     public partial class InvoiceLineType {
         
         private IDType idField;
@@ -12047,28 +12535,29 @@ namespace Oasis.Ubl.v21 {
         
         private PriceExtensionType itemPriceExtensionField;
         
-        public InvoiceLineType() {
-            this.itemPriceExtensionField = new PriceExtensionType();
-            this.subInvoiceLineField = new ObservableCollection<InvoiceLineType>();
-            this.deliveryTermsField = new DeliveryTermsType();
-            this.priceField = new PriceType();
-            this.itemField = new ItemType();
-            this.withholdingTaxTotalField = new ObservableCollection<TaxTotalType>();
-            this.taxTotalField = new ObservableCollection<TaxTotalType>();
-            this.allowanceChargeField = new ObservableCollection<AllowanceChargeType>();
-            this.paymentTermsField = new ObservableCollection<PaymentTermsType>();
-            this.deliveryField = new ObservableCollection<DeliveryType>();
-            this.originatorPartyField = new PartyType();
-            this.pricingReferenceField = new PricingReferenceType();
-            this.documentReferenceField = new ObservableCollection<DocumentReferenceType>();
-            this.billingReferenceField = new ObservableCollection<BillingReferenceType>();
-            this.receiptLineReferenceField = new ObservableCollection<LineReferenceType>();
-            this.despatchLineReferenceField = new ObservableCollection<LineReferenceType>();
-            this.orderLineReferenceField = new ObservableCollection<OrderLineReferenceType>();
-            this.invoicePeriodField = new ObservableCollection<PeriodType>();
-            this.noteField = new ObservableCollection<NoteType>();
-        }
-        
+        //public InvoiceLineType() {
+        //    this.itemPriceExtensionField = new PriceExtensionType();
+        //    this.subInvoiceLineField = new ObservableCollection<InvoiceLineType>();
+        //    this.deliveryTermsField = new DeliveryTermsType();
+        //    this.priceField = new PriceType();
+        //    this.itemField = new ItemType();
+        //    this.withholdingTaxTotalField = new ObservableCollection<TaxTotalType>();
+        //    this.taxTotalField = new ObservableCollection<TaxTotalType>();
+        //    this.allowanceChargeField = new ObservableCollection<AllowanceChargeType>();
+        //    this.paymentTermsField = new ObservableCollection<PaymentTermsType>();
+        //    this.deliveryField = new ObservableCollection<DeliveryType>();
+        //    this.originatorPartyField = new PartyType();
+        //    this.pricingReferenceField = new PricingReferenceType();
+        //    this.documentReferenceField = new ObservableCollection<DocumentReferenceType>();
+        //    this.billingReferenceField = new ObservableCollection<BillingReferenceType>();
+        //    this.receiptLineReferenceField = new ObservableCollection<LineReferenceType>();
+        //    this.despatchLineReferenceField = new ObservableCollection<LineReferenceType>();
+        //    this.orderLineReferenceField = new ObservableCollection<OrderLineReferenceType>();
+        //    this.invoicePeriodField = new ObservableCollection<PeriodType>();
+        //    this.noteField = new ObservableCollection<NoteType>();
+        //}
+
+        [System.Xml.Serialization.XmlElementAttribute(Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
         public IDType ID {
             get {
                 return this.idField;
@@ -12077,7 +12566,8 @@ namespace Oasis.Ubl.v21 {
                 this.idField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlElementAttribute(Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
         public UUIDType UUID {
             get {
                 return this.uUIDField;
@@ -12086,7 +12576,8 @@ namespace Oasis.Ubl.v21 {
                 this.uUIDField = value;
             }
         }
-        
+
+       [System.Xml.Serialization.XmlArrayAttribute(Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonExtensionComponents-2")]
         public ObservableCollection<NoteType> Note {
             get {
                 return this.noteField;
@@ -12095,7 +12586,8 @@ namespace Oasis.Ubl.v21 {
                 this.noteField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlElementAttribute(Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
         public InvoicedQuantityType InvoicedQuantity {
             get {
                 return this.invoicedQuantityField;
@@ -12104,7 +12596,8 @@ namespace Oasis.Ubl.v21 {
                 this.invoicedQuantityField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlElementAttribute(Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
         public LineExtensionAmountType LineExtensionAmount {
             get {
                 return this.lineExtensionAmountField;
@@ -12113,7 +12606,8 @@ namespace Oasis.Ubl.v21 {
                 this.lineExtensionAmountField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlElementAttribute(Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
         public TaxPointDateType TaxPointDate {
             get {
                 return this.taxPointDateField;
@@ -12122,7 +12616,8 @@ namespace Oasis.Ubl.v21 {
                 this.taxPointDateField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlElementAttribute(Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
         public AccountingCostCodeType AccountingCostCode {
             get {
                 return this.accountingCostCodeField;
@@ -12131,7 +12626,8 @@ namespace Oasis.Ubl.v21 {
                 this.accountingCostCodeField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlElementAttribute(Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
         public AccountingCostType AccountingCost {
             get {
                 return this.accountingCostField;
@@ -12140,7 +12636,8 @@ namespace Oasis.Ubl.v21 {
                 this.accountingCostField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlElementAttribute(Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
         public PaymentPurposeCodeType PaymentPurposeCode {
             get {
                 return this.paymentPurposeCodeField;
@@ -12149,7 +12646,8 @@ namespace Oasis.Ubl.v21 {
                 this.paymentPurposeCodeField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlElementAttribute(Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
         public FreeOfChargeIndicatorType FreeOfChargeIndicator {
             get {
                 return this.freeOfChargeIndicatorField;
@@ -12158,7 +12656,8 @@ namespace Oasis.Ubl.v21 {
                 this.freeOfChargeIndicatorField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlArrayAttribute(Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2")]
         public ObservableCollection<PeriodType> InvoicePeriod {
             get {
                 return this.invoicePeriodField;
@@ -12167,7 +12666,8 @@ namespace Oasis.Ubl.v21 {
                 this.invoicePeriodField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlElementAttribute(Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2")]
         public ObservableCollection<OrderLineReferenceType> OrderLineReference {
             get {
                 return this.orderLineReferenceField;
@@ -12176,7 +12676,8 @@ namespace Oasis.Ubl.v21 {
                 this.orderLineReferenceField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlArrayAttribute(Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2")]
         public ObservableCollection<LineReferenceType> DespatchLineReference {
             get {
                 return this.despatchLineReferenceField;
@@ -12185,7 +12686,8 @@ namespace Oasis.Ubl.v21 {
                 this.despatchLineReferenceField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlArrayAttribute(Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2")]
         public ObservableCollection<LineReferenceType> ReceiptLineReference {
             get {
                 return this.receiptLineReferenceField;
@@ -12194,7 +12696,8 @@ namespace Oasis.Ubl.v21 {
                 this.receiptLineReferenceField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlArrayAttribute(Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2")]
         public ObservableCollection<BillingReferenceType> BillingReference {
             get {
                 return this.billingReferenceField;
@@ -12203,7 +12706,8 @@ namespace Oasis.Ubl.v21 {
                 this.billingReferenceField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlArrayAttribute(Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2")]
         public ObservableCollection<DocumentReferenceType> DocumentReference {
             get {
                 return this.documentReferenceField;
@@ -12212,7 +12716,8 @@ namespace Oasis.Ubl.v21 {
                 this.documentReferenceField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlElementAttribute(Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2")]
         public PricingReferenceType PricingReference {
             get {
                 return this.pricingReferenceField;
@@ -12221,7 +12726,8 @@ namespace Oasis.Ubl.v21 {
                 this.pricingReferenceField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlElementAttribute(Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2")]
         public PartyType OriginatorParty {
             get {
                 return this.originatorPartyField;
@@ -12230,7 +12736,8 @@ namespace Oasis.Ubl.v21 {
                 this.originatorPartyField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlArrayAttribute(Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2")]
         public ObservableCollection<DeliveryType> Delivery {
             get {
                 return this.deliveryField;
@@ -12239,7 +12746,8 @@ namespace Oasis.Ubl.v21 {
                 this.deliveryField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlArrayAttribute(Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2")]
         public ObservableCollection<PaymentTermsType> PaymentTerms {
             get {
                 return this.paymentTermsField;
@@ -12248,7 +12756,8 @@ namespace Oasis.Ubl.v21 {
                 this.paymentTermsField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlElementAttribute(Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2")]
         public ObservableCollection<AllowanceChargeType> AllowanceCharge {
             get {
                 return this.allowanceChargeField;
@@ -12257,7 +12766,8 @@ namespace Oasis.Ubl.v21 {
                 this.allowanceChargeField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlArrayAttribute(Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2")]
         public ObservableCollection<TaxTotalType> TaxTotal {
             get {
                 return this.taxTotalField;
@@ -12266,7 +12776,8 @@ namespace Oasis.Ubl.v21 {
                 this.taxTotalField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlArrayAttribute(Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2")]
         public ObservableCollection<TaxTotalType> WithholdingTaxTotal {
             get {
                 return this.withholdingTaxTotalField;
@@ -12275,7 +12786,8 @@ namespace Oasis.Ubl.v21 {
                 this.withholdingTaxTotalField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlElementAttribute(Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2")]
         public ItemType Item {
             get {
                 return this.itemField;
@@ -12284,7 +12796,8 @@ namespace Oasis.Ubl.v21 {
                 this.itemField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlElementAttribute(Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2")]
         public PriceType Price {
             get {
                 return this.priceField;
@@ -12293,7 +12806,8 @@ namespace Oasis.Ubl.v21 {
                 this.priceField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlElementAttribute(Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2")]
         public DeliveryTermsType DeliveryTerms {
             get {
                 return this.deliveryTermsField;
@@ -12302,7 +12816,8 @@ namespace Oasis.Ubl.v21 {
                 this.deliveryTermsField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlArrayAttribute(Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2")]
         public ObservableCollection<InvoiceLineType> SubInvoiceLine {
             get {
                 return this.subInvoiceLineField;
@@ -12311,7 +12826,8 @@ namespace Oasis.Ubl.v21 {
                 this.subInvoiceLineField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlElementAttribute(Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2")]
         public PriceExtensionType ItemPriceExtension {
             get {
                 return this.itemPriceExtensionField;
@@ -12340,16 +12856,16 @@ namespace Oasis.Ubl.v21 {
         
         private ObservableCollection<BillingReferenceLineType> billingReferenceLineField;
         
-        public BillingReferenceType() {
-            this.billingReferenceLineField = new ObservableCollection<BillingReferenceLineType>();
-            this.additionalDocumentReferenceField = new DocumentReferenceType();
-            this.reminderDocumentReferenceField = new DocumentReferenceType();
-            this.debitNoteDocumentReferenceField = new DocumentReferenceType();
-            this.selfBilledCreditNoteDocumentReferenceField = new DocumentReferenceType();
-            this.creditNoteDocumentReferenceField = new DocumentReferenceType();
-            this.selfBilledInvoiceDocumentReferenceField = new DocumentReferenceType();
-            this.invoiceDocumentReferenceField = new DocumentReferenceType();
-        }
+        //public BillingReferenceType() {
+        //    this.billingReferenceLineField = new ObservableCollection<BillingReferenceLineType>();
+        //    this.additionalDocumentReferenceField = new DocumentReferenceType();
+        //    this.reminderDocumentReferenceField = new DocumentReferenceType();
+        //    this.debitNoteDocumentReferenceField = new DocumentReferenceType();
+        //    this.selfBilledCreditNoteDocumentReferenceField = new DocumentReferenceType();
+        //    this.creditNoteDocumentReferenceField = new DocumentReferenceType();
+        //    this.selfBilledInvoiceDocumentReferenceField = new DocumentReferenceType();
+        //    this.invoiceDocumentReferenceField = new DocumentReferenceType();
+        //}
         
         public DocumentReferenceType InvoiceDocumentReference {
             get {
@@ -12413,7 +12929,8 @@ namespace Oasis.Ubl.v21 {
                 this.additionalDocumentReferenceField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlArrayAttribute()]
         public ObservableCollection<BillingReferenceLineType> BillingReferenceLine {
             get {
                 return this.billingReferenceLineField;
@@ -12432,9 +12949,9 @@ namespace Oasis.Ubl.v21 {
         
         private ObservableCollection<AllowanceChargeType> allowanceChargeField;
         
-        public BillingReferenceLineType() {
-            this.allowanceChargeField = new ObservableCollection<AllowanceChargeType>();
-        }
+        //public BillingReferenceLineType() {
+        //    this.allowanceChargeField = new ObservableCollection<AllowanceChargeType>();
+        //}
         
         public IDType ID {
             get {
@@ -12453,7 +12970,8 @@ namespace Oasis.Ubl.v21 {
                 this.amountField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlArrayAttribute()]
         public ObservableCollection<AllowanceChargeType> AllowanceCharge {
             get {
                 return this.allowanceChargeField;
@@ -12470,10 +12988,10 @@ namespace Oasis.Ubl.v21 {
         
         private ObservableCollection<PriceType> alternativeConditionPriceField;
         
-        public PricingReferenceType() {
-            this.alternativeConditionPriceField = new ObservableCollection<PriceType>();
-            this.originalItemLocationQuantityField = new ItemLocationQuantityType();
-        }
+        //public PricingReferenceType() {
+        //    this.alternativeConditionPriceField = new ObservableCollection<PriceType>();
+        //    this.originalItemLocationQuantityField = new ItemLocationQuantityType();
+        //}
         
         public ItemLocationQuantityType OriginalItemLocationQuantity {
             get {
@@ -12483,7 +13001,8 @@ namespace Oasis.Ubl.v21 {
                 this.originalItemLocationQuantityField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlArrayAttribute()]
         public ObservableCollection<PriceType> AlternativeConditionPrice {
             get {
                 return this.alternativeConditionPriceField;
@@ -12520,16 +13039,16 @@ namespace Oasis.Ubl.v21 {
         
         private DependentPriceReferenceType dependentPriceReferenceField;
         
-        public ItemLocationQuantityType() {
-            this.dependentPriceReferenceField = new DependentPriceReferenceType();
-            this.allowanceChargeField = new ObservableCollection<AllowanceChargeType>();
-            this.packageField = new PackageType();
-            this.applicableTaxCategoryField = new ObservableCollection<TaxCategoryType>();
-            this.deliveryUnitField = new ObservableCollection<DeliveryUnitType>();
-            this.priceField = new PriceType();
-            this.applicableTerritoryAddressField = new ObservableCollection<AddressType>();
-            this.tradingRestrictionsField = new ObservableCollection<TradingRestrictionsType>();
-        }
+        //public ItemLocationQuantityType() {
+        //    this.dependentPriceReferenceField = new DependentPriceReferenceType();
+        //    this.allowanceChargeField = new ObservableCollection<AllowanceChargeType>();
+        //    this.packageField = new PackageType();
+        //    this.applicableTaxCategoryField = new ObservableCollection<TaxCategoryType>();
+        //    this.deliveryUnitField = new ObservableCollection<DeliveryUnitType>();
+        //    this.priceField = new PriceType();
+        //    this.applicableTerritoryAddressField = new ObservableCollection<AddressType>();
+        //    this.tradingRestrictionsField = new ObservableCollection<TradingRestrictionsType>();
+        //}
         
         public LeadTimeMeasureType LeadTimeMeasure {
             get {
@@ -12566,7 +13085,8 @@ namespace Oasis.Ubl.v21 {
                 this.hazardousRiskIndicatorField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlArrayAttribute()]
         public ObservableCollection<TradingRestrictionsType> TradingRestrictions {
             get {
                 return this.tradingRestrictionsField;
@@ -12575,7 +13095,8 @@ namespace Oasis.Ubl.v21 {
                 this.tradingRestrictionsField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlArrayAttribute()]
         public ObservableCollection<AddressType> ApplicableTerritoryAddress {
             get {
                 return this.applicableTerritoryAddressField;
@@ -12593,7 +13114,8 @@ namespace Oasis.Ubl.v21 {
                 this.priceField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlArrayAttribute()]
         public ObservableCollection<DeliveryUnitType> DeliveryUnit {
             get {
                 return this.deliveryUnitField;
@@ -12602,7 +13124,8 @@ namespace Oasis.Ubl.v21 {
                 this.deliveryUnitField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlArrayAttribute()]
         public ObservableCollection<TaxCategoryType> ApplicableTaxCategory {
             get {
                 return this.applicableTaxCategoryField;
@@ -12620,7 +13143,8 @@ namespace Oasis.Ubl.v21 {
                 this.packageField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlArrayAttribute()]
         public ObservableCollection<AllowanceChargeType> AllowanceCharge {
             get {
                 return this.allowanceChargeField;
@@ -12662,13 +13186,13 @@ namespace Oasis.Ubl.v21 {
         
         private ExchangeRateType pricingExchangeRateField;
         
-        public PriceType() {
-            this.pricingExchangeRateField = new ExchangeRateType();
-            this.allowanceChargeField = new ObservableCollection<AllowanceChargeType>();
-            this.priceListField = new PriceListType();
-            this.validityPeriodField = new ObservableCollection<PeriodType>();
-            this.priceChangeReasonField = new ObservableCollection<PriceChangeReasonType>();
-        }
+        //public PriceType() {
+        //    this.pricingExchangeRateField = new ExchangeRateType();
+        //    this.allowanceChargeField = new ObservableCollection<AllowanceChargeType>();
+        //    this.priceListField = new PriceListType();
+        //    this.validityPeriodField = new ObservableCollection<PeriodType>();
+        //    this.priceChangeReasonField = new ObservableCollection<PriceChangeReasonType>();
+        //}
         
         public PriceAmountType PriceAmount {
             get {
@@ -12687,7 +13211,8 @@ namespace Oasis.Ubl.v21 {
                 this.baseQuantityField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlArrayAttribute()]
         public ObservableCollection<PriceChangeReasonType> PriceChangeReason {
             get {
                 return this.priceChangeReasonField;
@@ -12723,7 +13248,8 @@ namespace Oasis.Ubl.v21 {
                 this.orderableUnitFactorRateField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlArrayAttribute()]
         public ObservableCollection<PeriodType> ValidityPeriod {
             get {
                 return this.validityPeriodField;
@@ -12741,7 +13267,8 @@ namespace Oasis.Ubl.v21 {
                 this.priceListField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlArrayAttribute()]
         public ObservableCollection<AllowanceChargeType> AllowanceCharge {
             get {
                 return this.allowanceChargeField;
@@ -12771,10 +13298,10 @@ namespace Oasis.Ubl.v21 {
         
         private PriceListType previousPriceListField;
         
-        public PriceListType() {
-            this.previousPriceListField = new PriceListType();
-            this.validityPeriodField = new ObservableCollection<PeriodType>();
-        }
+        //public PriceListType() {
+        //    this.previousPriceListField = new PriceListType();
+        //    this.validityPeriodField = new ObservableCollection<PeriodType>();
+        //}
         
         public IDType ID {
             get {
@@ -12793,7 +13320,8 @@ namespace Oasis.Ubl.v21 {
                 this.statusCodeField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlArrayAttribute()]
         public ObservableCollection<PeriodType> ValidityPeriod {
             get {
                 return this.validityPeriodField;
@@ -12833,10 +13361,10 @@ namespace Oasis.Ubl.v21 {
         
         private ContractType foreignExchangeContractField;
         
-        public ExchangeRateType() {
-            this.foreignExchangeContractField = new ContractType();
-            this.exchangeMarketIDField = new ExchangeMarketIDType();
-        }
+        //public ExchangeRateType() {
+        //    this.foreignExchangeContractField = new ContractType();
+        //    this.exchangeMarketIDField = new ExchangeMarketIDType();
+        //}
         
         public SourceCurrencyCodeType SourceCurrencyCode {
             get {
@@ -12928,10 +13456,10 @@ namespace Oasis.Ubl.v21 {
         
         private LineReferenceType dependentLineReferenceField;
         
-        public DependentPriceReferenceType() {
-            this.dependentLineReferenceField = new LineReferenceType();
-            this.locationAddressField = new AddressType();
-        }
+        //public DependentPriceReferenceType() {
+        //    this.dependentLineReferenceField = new LineReferenceType();
+        //    this.locationAddressField = new AddressType();
+        //}
         
         public PercentType1 Percent {
             get {
@@ -13001,16 +13529,16 @@ namespace Oasis.Ubl.v21 {
         
         private PeriodType validityPeriodField;
         
-        public PaymentTermsType() {
-            this.validityPeriodField = new PeriodType();
-            this.exchangeRateField = new ExchangeRateType();
-            this.penaltyPeriodField = new PeriodType();
-            this.settlementPeriodField = new PeriodType();
-            this.paymentTermsDetailsURIField = new PaymentTermsDetailsURIType();
-            this.noteField = new ObservableCollection<NoteType>();
-            this.prepaidPaymentReferenceIDField = new PrepaidPaymentReferenceIDType();
-            this.paymentMeansIDField = new ObservableCollection<PaymentMeansIDType>();
-        }
+        //public PaymentTermsType() {
+        //    this.validityPeriodField = new PeriodType();
+        //    this.exchangeRateField = new ExchangeRateType();
+        //    this.penaltyPeriodField = new PeriodType();
+        //    this.settlementPeriodField = new PeriodType();
+        //    this.paymentTermsDetailsURIField = new PaymentTermsDetailsURIType();
+        //    this.noteField = new ObservableCollection<NoteType>();
+        //    this.prepaidPaymentReferenceIDField = new PrepaidPaymentReferenceIDType();
+        //    this.paymentMeansIDField = new ObservableCollection<PaymentMeansIDType>();
+        //}
         
         public IDType ID {
             get {
@@ -13020,7 +13548,8 @@ namespace Oasis.Ubl.v21 {
                 this.idField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlArrayAttribute()]
         public ObservableCollection<PaymentMeansIDType> PaymentMeansID {
             get {
                 return this.paymentMeansIDField;
@@ -13038,7 +13567,8 @@ namespace Oasis.Ubl.v21 {
                 this.prepaidPaymentReferenceIDField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlArrayAttribute()]
         public ObservableCollection<NoteType> Note {
             get {
                 return this.noteField;
@@ -13190,9 +13720,9 @@ namespace Oasis.Ubl.v21 {
         
         private ObservableCollection<TaxTotalType> taxTotalField;
         
-        public PriceExtensionType() {
-            this.taxTotalField = new ObservableCollection<TaxTotalType>();
-        }
+        //public PriceExtensionType() {
+        //    this.taxTotalField = new ObservableCollection<TaxTotalType>();
+        //}
         
         public AmountType2 Amount {
             get {
@@ -13202,7 +13732,8 @@ namespace Oasis.Ubl.v21 {
                 this.amountField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlArrayAttribute()]
         public ObservableCollection<TaxTotalType> TaxTotal {
             get {
                 return this.taxTotalField;
@@ -13233,10 +13764,10 @@ namespace Oasis.Ubl.v21 {
         
         private PartyType pickupPartyField;
         
-        public PickupType() {
-            this.pickupPartyField = new PartyType();
-            this.pickupLocationField = new LocationType1();
-        }
+        //public PickupType() {
+        //    this.pickupPartyField = new PartyType();
+        //    this.pickupLocationField = new LocationType1();
+        //}
         
         public IDType ID {
             get {
@@ -13328,9 +13859,9 @@ namespace Oasis.Ubl.v21 {
         
         private ObservableCollection<DescriptionType> descriptionField;
         
-        public RelatedItemType() {
-            this.descriptionField = new ObservableCollection<DescriptionType>();
-        }
+        //public RelatedItemType() {
+        //    this.descriptionField = new ObservableCollection<DescriptionType>();
+        //}
         
         public IDType ID {
             get {
@@ -13349,7 +13880,8 @@ namespace Oasis.Ubl.v21 {
                 this.quantityField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlArrayAttribute()]
         public ObservableCollection<DescriptionType> Description {
             get {
                 return this.descriptionField;
@@ -13376,13 +13908,13 @@ namespace Oasis.Ubl.v21 {
         
         private ContactType buyerContactField;
         
-        public CustomerPartyType() {
-            this.buyerContactField = new ContactType();
-            this.accountingContactField = new ContactType();
-            this.deliveryContactField = new ContactType();
-            this.partyField = new PartyType();
-            this.additionalAccountIDField = new ObservableCollection<AdditionalAccountIDType>();
-        }
+        //public CustomerPartyType() {
+        //    this.buyerContactField = new ContactType();
+        //    this.accountingContactField = new ContactType();
+        //    this.deliveryContactField = new ContactType();
+        //    this.partyField = new PartyType();
+        //    this.additionalAccountIDField = new ObservableCollection<AdditionalAccountIDType>();
+        //}
         
         public CustomerAssignedAccountIDType CustomerAssignedAccountID {
             get {
@@ -13401,7 +13933,8 @@ namespace Oasis.Ubl.v21 {
                 this.supplierAssignedAccountIDField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlArrayAttribute()]
         public ObservableCollection<AdditionalAccountIDType> AdditionalAccountID {
             get {
                 return this.additionalAccountIDField;
@@ -13466,14 +13999,14 @@ namespace Oasis.Ubl.v21 {
         
         private ObservableCollection<SalesItemType> salesItemField;
         
-        public ActivityDataLineType() {
-            this.salesItemField = new ObservableCollection<SalesItemType>();
-            this.activityFinalLocationField = new LocationType1();
-            this.activityOriginLocationField = new LocationType1();
-            this.activityPeriodField = new PeriodType();
-            this.sellerSupplierPartyField = new SupplierPartyType();
-            this.buyerCustomerPartyField = new CustomerPartyType();
-        }
+        //public ActivityDataLineType() {
+        //    this.salesItemField = new ObservableCollection<SalesItemType>();
+        //    this.activityFinalLocationField = new LocationType1();
+        //    this.activityOriginLocationField = new LocationType1();
+        //    this.activityPeriodField = new PeriodType();
+        //    this.sellerSupplierPartyField = new SupplierPartyType();
+        //    this.buyerCustomerPartyField = new CustomerPartyType();
+        //}
         
         public IDType ID {
             get {
@@ -13537,7 +14070,8 @@ namespace Oasis.Ubl.v21 {
                 this.activityFinalLocationField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlArrayAttribute()]
         public ObservableCollection<SalesItemType> SalesItem {
             get {
                 return this.salesItemField;
@@ -13560,12 +14094,12 @@ namespace Oasis.Ubl.v21 {
         
         private ItemType itemField;
         
-        public SalesItemType() {
-            this.itemField = new ItemType();
-            this.taxInclusivePriceField = new ObservableCollection<PriceType>();
-            this.taxExclusivePriceField = new ObservableCollection<PriceType>();
-            this.activityPropertyField = new ObservableCollection<ActivityPropertyType>();
-        }
+        //public SalesItemType() {
+        //    this.itemField = new ItemType();
+        //    this.taxInclusivePriceField = new ObservableCollection<PriceType>();
+        //    this.taxExclusivePriceField = new ObservableCollection<PriceType>();
+        //    this.activityPropertyField = new ObservableCollection<ActivityPropertyType>();
+        //}
         
         public QuantityType2 Quantity {
             get {
@@ -13575,7 +14109,8 @@ namespace Oasis.Ubl.v21 {
                 this.quantityField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlArrayAttribute()]
         public ObservableCollection<ActivityPropertyType> ActivityProperty {
             get {
                 return this.activityPropertyField;
@@ -13584,7 +14119,8 @@ namespace Oasis.Ubl.v21 {
                 this.activityPropertyField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlArrayAttribute()]
         public ObservableCollection<PriceType> TaxExclusivePrice {
             get {
                 return this.taxExclusivePriceField;
@@ -13593,7 +14129,8 @@ namespace Oasis.Ubl.v21 {
                 this.taxExclusivePriceField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlArrayAttribute()]
         public ObservableCollection<PriceType> TaxInclusivePrice {
             get {
                 return this.taxInclusivePriceField;
@@ -13650,13 +14187,13 @@ namespace Oasis.Ubl.v21 {
         
         private ObservableCollection<LineResponseType> lineResponseField;
         
-        public DocumentResponseType() {
-            this.lineResponseField = new ObservableCollection<LineResponseType>();
-            this.recipientPartyField = new PartyType();
-            this.issuerPartyField = new PartyType();
-            this.documentReferenceField = new ObservableCollection<DocumentReferenceType>();
-            this.responseField = new ResponseType();
-        }
+        //public DocumentResponseType() {
+        //    this.lineResponseField = new ObservableCollection<LineResponseType>();
+        //    this.recipientPartyField = new PartyType();
+        //    this.issuerPartyField = new PartyType();
+        //    this.documentReferenceField = new ObservableCollection<DocumentReferenceType>();
+        //    this.responseField = new ResponseType();
+        //}
         
         public ResponseType Response {
             get {
@@ -13666,7 +14203,8 @@ namespace Oasis.Ubl.v21 {
                 this.responseField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlArrayAttribute()]
         public ObservableCollection<DocumentReferenceType> DocumentReference {
             get {
                 return this.documentReferenceField;
@@ -13693,7 +14231,8 @@ namespace Oasis.Ubl.v21 {
                 this.recipientPartyField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlArrayAttribute()]
         public ObservableCollection<LineResponseType> LineResponse {
             get {
                 return this.lineResponseField;
@@ -13718,10 +14257,10 @@ namespace Oasis.Ubl.v21 {
         
         private ObservableCollection<StatusType> statusField;
         
-        public ResponseType() {
-            this.statusField = new ObservableCollection<StatusType>();
-            this.descriptionField = new ObservableCollection<DescriptionType>();
-        }
+        //public ResponseType() {
+        //    this.statusField = new ObservableCollection<StatusType>();
+        //    this.descriptionField = new ObservableCollection<DescriptionType>();
+        //}
         
         public ReferenceIDType ReferenceID {
             get {
@@ -13740,7 +14279,8 @@ namespace Oasis.Ubl.v21 {
                 this.responseCodeField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlArrayAttribute()]
         public ObservableCollection<DescriptionType> Description {
             get {
                 return this.descriptionField;
@@ -13767,7 +14307,8 @@ namespace Oasis.Ubl.v21 {
                 this.effectiveTimeField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlArrayAttribute()]
         public ObservableCollection<StatusType> Status {
             get {
                 return this.statusField;
@@ -13784,10 +14325,10 @@ namespace Oasis.Ubl.v21 {
         
         private ObservableCollection<ResponseType> responseField;
         
-        public LineResponseType() {
-            this.responseField = new ObservableCollection<ResponseType>();
-            this.lineReferenceField = new LineReferenceType();
-        }
+        //public LineResponseType() {
+        //    this.responseField = new ObservableCollection<ResponseType>();
+        //    this.lineReferenceField = new LineReferenceType();
+        //}
         
         public LineReferenceType LineReference {
             get {
@@ -13797,7 +14338,8 @@ namespace Oasis.Ubl.v21 {
                 this.lineReferenceField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlArrayAttribute()]
         public ObservableCollection<ResponseType> Response {
             get {
                 return this.responseField;
@@ -13838,16 +14380,16 @@ namespace Oasis.Ubl.v21 {
         
         private EconomicOperatorRoleType economicOperatorRoleField;
         
-        public QualifyingPartyType() {
-            this.economicOperatorRoleField = new EconomicOperatorRoleType();
-            this.partyField = new PartyType();
-            this.declarationField = new ObservableCollection<DeclarationType>();
-            this.completedTaskField = new ObservableCollection<CompletedTaskType>();
-            this.financialCapabilityField = new ObservableCollection<CapabilityType>();
-            this.technicalCapabilityField = new ObservableCollection<CapabilityType>();
-            this.businessClassificationSchemeField = new ClassificationSchemeType();
-            this.personalSituationField = new ObservableCollection<PersonalSituationType>();
-        }
+        //public QualifyingPartyType() {
+        //    this.economicOperatorRoleField = new EconomicOperatorRoleType();
+        //    this.partyField = new PartyType();
+        //    this.declarationField = new ObservableCollection<DeclarationType>();
+        //    this.completedTaskField = new ObservableCollection<CompletedTaskType>();
+        //    this.financialCapabilityField = new ObservableCollection<CapabilityType>();
+        //    this.technicalCapabilityField = new ObservableCollection<CapabilityType>();
+        //    this.businessClassificationSchemeField = new ClassificationSchemeType();
+        //    this.personalSituationField = new ObservableCollection<PersonalSituationType>();
+        //}
         
         public ParticipationPercentType ParticipationPercent {
             get {
@@ -13857,7 +14399,8 @@ namespace Oasis.Ubl.v21 {
                 this.participationPercentField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlArrayAttribute()]
         public ObservableCollection<PersonalSituationType> PersonalSituation {
             get {
                 return this.personalSituationField;
@@ -13920,7 +14463,8 @@ namespace Oasis.Ubl.v21 {
                 this.businessClassificationSchemeField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlArrayAttribute()]
         public ObservableCollection<CapabilityType> TechnicalCapability {
             get {
                 return this.technicalCapabilityField;
@@ -13929,7 +14473,8 @@ namespace Oasis.Ubl.v21 {
                 this.technicalCapabilityField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlArrayAttribute()]
         public ObservableCollection<CapabilityType> FinancialCapability {
             get {
                 return this.financialCapabilityField;
@@ -13938,7 +14483,8 @@ namespace Oasis.Ubl.v21 {
                 this.financialCapabilityField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlArrayAttribute()]
         public ObservableCollection<CompletedTaskType> CompletedTask {
             get {
                 return this.completedTaskField;
@@ -13947,7 +14493,8 @@ namespace Oasis.Ubl.v21 {
                 this.completedTaskField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlArrayAttribute()]
         public ObservableCollection<DeclarationType> Declaration {
             get {
                 return this.declarationField;
@@ -14006,11 +14553,11 @@ namespace Oasis.Ubl.v21 {
         
         private ObservableCollection<ClassificationCategoryType> classificationCategoryField;
         
-        public ClassificationSchemeType() {
-            this.classificationCategoryField = new ObservableCollection<ClassificationCategoryType>();
-            this.descriptionField = new ObservableCollection<DescriptionType>();
-            this.noteField = new ObservableCollection<NoteType>();
-        }
+        //public ClassificationSchemeType() {
+        //    this.classificationCategoryField = new ObservableCollection<ClassificationCategoryType>();
+        //    this.descriptionField = new ObservableCollection<DescriptionType>();
+        //    this.noteField = new ObservableCollection<NoteType>();
+        //}
         
         public IDType ID {
             get {
@@ -14047,7 +14594,8 @@ namespace Oasis.Ubl.v21 {
                 this.lastRevisionTimeField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlArrayAttribute()]
         public ObservableCollection<NoteType> Note {
             get {
                 return this.noteField;
@@ -14065,7 +14613,8 @@ namespace Oasis.Ubl.v21 {
                 this.nameField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlArrayAttribute()]
         public ObservableCollection<DescriptionType> Description {
             get {
                 return this.descriptionField;
@@ -14128,7 +14677,8 @@ namespace Oasis.Ubl.v21 {
                 this.languageIDField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlArrayAttribute()]
         public ObservableCollection<ClassificationCategoryType> ClassificationCategory {
             get {
                 return this.classificationCategoryField;
@@ -14149,10 +14699,10 @@ namespace Oasis.Ubl.v21 {
         
         private ObservableCollection<ClassificationCategoryType> categorizesClassificationCategoryField;
         
-        public ClassificationCategoryType() {
-            this.categorizesClassificationCategoryField = new ObservableCollection<ClassificationCategoryType>();
-            this.descriptionField = new ObservableCollection<DescriptionType>();
-        }
+        //public ClassificationCategoryType() {
+        //    this.categorizesClassificationCategoryField = new ObservableCollection<ClassificationCategoryType>();
+        //    this.descriptionField = new ObservableCollection<DescriptionType>();
+        //}
         
         public NameType1 Name {
             get {
@@ -14171,7 +14721,8 @@ namespace Oasis.Ubl.v21 {
                 this.codeValueField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlArrayAttribute()]
         public ObservableCollection<DescriptionType> Description {
             get {
                 return this.descriptionField;
@@ -14180,7 +14731,8 @@ namespace Oasis.Ubl.v21 {
                 this.descriptionField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlArrayAttribute()]
         public ObservableCollection<ClassificationCategoryType> CategorizesClassificationCategory {
             get {
                 return this.categorizesClassificationCategoryField;
@@ -14205,11 +14757,11 @@ namespace Oasis.Ubl.v21 {
         
         private PeriodType validityPeriodField;
         
-        public CapabilityType() {
-            this.validityPeriodField = new PeriodType();
-            this.evidenceSuppliedField = new ObservableCollection<EvidenceSuppliedType>();
-            this.descriptionField = new ObservableCollection<DescriptionType>();
-        }
+        //public CapabilityType() {
+        //    this.validityPeriodField = new PeriodType();
+        //    this.evidenceSuppliedField = new ObservableCollection<EvidenceSuppliedType>();
+        //    this.descriptionField = new ObservableCollection<DescriptionType>();
+        //}
         
         public CapabilityTypeCodeType CapabilityTypeCode {
             get {
@@ -14219,7 +14771,8 @@ namespace Oasis.Ubl.v21 {
                 this.capabilityTypeCodeField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlArrayAttribute()]
         public ObservableCollection<DescriptionType> Description {
             get {
                 return this.descriptionField;
@@ -14246,7 +14799,8 @@ namespace Oasis.Ubl.v21 {
                 this.valueQuantityField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlArrayAttribute()]
         public ObservableCollection<EvidenceSuppliedType> EvidenceSupplied {
             get {
                 return this.evidenceSuppliedField;
@@ -14296,12 +14850,12 @@ namespace Oasis.Ubl.v21 {
         
         private CustomerPartyType recipientCustomerPartyField;
         
-        public CompletedTaskType() {
-            this.recipientCustomerPartyField = new CustomerPartyType();
-            this.periodField = new PeriodType();
-            this.evidenceSuppliedField = new ObservableCollection<EvidenceSuppliedType>();
-            this.descriptionField = new ObservableCollection<DescriptionType>();
-        }
+        //public CompletedTaskType() {
+        //    this.recipientCustomerPartyField = new CustomerPartyType();
+        //    this.periodField = new PeriodType();
+        //    this.evidenceSuppliedField = new ObservableCollection<EvidenceSuppliedType>();
+        //    this.descriptionField = new ObservableCollection<DescriptionType>();
+        //}
         
         public AnnualAverageAmountType AnnualAverageAmount {
             get {
@@ -14329,7 +14883,8 @@ namespace Oasis.Ubl.v21 {
                 this.partyCapacityAmountField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlArrayAttribute()]
         public ObservableCollection<DescriptionType> Description {
             get {
                 return this.descriptionField;
@@ -14338,7 +14893,8 @@ namespace Oasis.Ubl.v21 {
                 this.descriptionField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlArrayAttribute()]
         public ObservableCollection<EvidenceSuppliedType> EvidenceSupplied {
             get {
                 return this.evidenceSuppliedField;
@@ -14377,12 +14933,13 @@ namespace Oasis.Ubl.v21 {
         
         private ObservableCollection<EvidenceSuppliedType> evidenceSuppliedField;
         
-        public DeclarationType() {
-            this.evidenceSuppliedField = new ObservableCollection<EvidenceSuppliedType>();
-            this.descriptionField = new ObservableCollection<DescriptionType>();
-            this.nameField = new ObservableCollection<NameType1>();
-        }
-        
+        //public DeclarationType() {
+        //    this.evidenceSuppliedField = new ObservableCollection<EvidenceSuppliedType>();
+        //    this.descriptionField = new ObservableCollection<DescriptionType>();
+        //    this.nameField = new ObservableCollection<NameType1>();
+        //}
+
+        [System.Xml.Serialization.XmlArrayAttribute()]
         public ObservableCollection<NameType1> Name {
             get {
                 return this.nameField;
@@ -14400,7 +14957,8 @@ namespace Oasis.Ubl.v21 {
                 this.declarationTypeCodeField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlArrayAttribute()]
         public ObservableCollection<DescriptionType> Description {
             get {
                 return this.descriptionField;
@@ -14409,7 +14967,8 @@ namespace Oasis.Ubl.v21 {
                 this.descriptionField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlArrayAttribute()]
         public ObservableCollection<EvidenceSuppliedType> EvidenceSupplied {
             get {
                 return this.evidenceSuppliedField;
@@ -14426,9 +14985,9 @@ namespace Oasis.Ubl.v21 {
         
         private ObservableCollection<RoleDescriptionType> roleDescriptionField;
         
-        public EconomicOperatorRoleType() {
-            this.roleDescriptionField = new ObservableCollection<RoleDescriptionType>();
-        }
+        //public EconomicOperatorRoleType() {
+        //    this.roleDescriptionField = new ObservableCollection<RoleDescriptionType>();
+        //}
         
         public RoleCodeType RoleCode {
             get {
@@ -14438,7 +14997,8 @@ namespace Oasis.Ubl.v21 {
                 this.roleCodeField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlArrayAttribute()]
         public ObservableCollection<RoleDescriptionType> RoleDescription {
             get {
                 return this.roleDescriptionField;
@@ -14465,9 +15025,9 @@ namespace Oasis.Ubl.v21 {
         
         private MinimumPercentType minimumPercentField;
         
-        public SubcontractTermsType() {
-            this.descriptionField = new ObservableCollection<DescriptionType>();
-        }
+        //public SubcontractTermsType() {
+        //    this.descriptionField = new ObservableCollection<DescriptionType>();
+        //}
         
         public RateType1 Rate {
             get {
@@ -14486,7 +15046,8 @@ namespace Oasis.Ubl.v21 {
                 this.unknownPriceIndicatorField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlArrayAttribute()]
         public ObservableCollection<DescriptionType> Description {
             get {
                 return this.descriptionField;
@@ -14599,24 +15160,24 @@ namespace Oasis.Ubl.v21 {
         
         private ObservableCollection<LineReferenceType> lineReferenceField;
         
-        public LineItemType() {
-            this.lineReferenceField = new ObservableCollection<LineReferenceType>();
-            this.itemPriceExtensionField = new PriceExtensionType();
-            this.taxTotalField = new ObservableCollection<TaxTotalType>();
-            this.warrantyPartyField = new PartyType();
-            this.warrantyValidityPeriodField = new PeriodType();
-            this.subLineItemField = new ObservableCollection<LineItemType>();
-            this.itemField = new ItemType();
-            this.priceField = new PriceType();
-            this.allowanceChargeField = new ObservableCollection<AllowanceChargeType>();
-            this.pricingReferenceField = new PricingReferenceType();
-            this.orderedShipmentField = new ObservableCollection<OrderedShipmentType>();
-            this.originatorPartyField = new PartyType();
-            this.deliveryTermsField = new DeliveryTermsType();
-            this.deliveryField = new ObservableCollection<DeliveryType>();
-            this.warrantyInformationField = new ObservableCollection<WarrantyInformationType>();
-            this.noteField = new ObservableCollection<NoteType>();
-        }
+        //public LineItemType() {
+        //    this.lineReferenceField = new ObservableCollection<LineReferenceType>();
+        //    this.itemPriceExtensionField = new PriceExtensionType();
+        //    this.taxTotalField = new ObservableCollection<TaxTotalType>();
+        //    this.warrantyPartyField = new PartyType();
+        //    this.warrantyValidityPeriodField = new PeriodType();
+        //    this.subLineItemField = new ObservableCollection<LineItemType>();
+        //    this.itemField = new ItemType();
+        //    this.priceField = new PriceType();
+        //    this.allowanceChargeField = new ObservableCollection<AllowanceChargeType>();
+        //    this.pricingReferenceField = new PricingReferenceType();
+        //    this.orderedShipmentField = new ObservableCollection<OrderedShipmentType>();
+        //    this.originatorPartyField = new PartyType();
+        //    this.deliveryTermsField = new DeliveryTermsType();
+        //    this.deliveryField = new ObservableCollection<DeliveryType>();
+        //    this.warrantyInformationField = new ObservableCollection<WarrantyInformationType>();
+        //    this.noteField = new ObservableCollection<NoteType>();
+        //}
         
         public IDType ID {
             get {
@@ -14644,7 +15205,8 @@ namespace Oasis.Ubl.v21 {
                 this.uUIDField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlArrayAttribute()]
         public ObservableCollection<NoteType> Note {
             get {
                 return this.noteField;
@@ -14770,7 +15332,8 @@ namespace Oasis.Ubl.v21 {
                 this.accountingCostField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlArrayAttribute()]
         public ObservableCollection<WarrantyInformationType> WarrantyInformation {
             get {
                 return this.warrantyInformationField;
@@ -14779,7 +15342,8 @@ namespace Oasis.Ubl.v21 {
                 this.warrantyInformationField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlArrayAttribute()]
         public ObservableCollection<DeliveryType> Delivery {
             get {
                 return this.deliveryField;
@@ -14806,7 +15370,8 @@ namespace Oasis.Ubl.v21 {
                 this.originatorPartyField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlArrayAttribute()]
         public ObservableCollection<OrderedShipmentType> OrderedShipment {
             get {
                 return this.orderedShipmentField;
@@ -14824,7 +15389,8 @@ namespace Oasis.Ubl.v21 {
                 this.pricingReferenceField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlArrayAttribute()]
         public ObservableCollection<AllowanceChargeType> AllowanceCharge {
             get {
                 return this.allowanceChargeField;
@@ -14851,7 +15417,8 @@ namespace Oasis.Ubl.v21 {
                 this.itemField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlArrayAttribute()]
         public ObservableCollection<LineItemType> SubLineItem {
             get {
                 return this.subLineItemField;
@@ -14878,7 +15445,8 @@ namespace Oasis.Ubl.v21 {
                 this.warrantyPartyField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlArrayAttribute()]
         public ObservableCollection<TaxTotalType> TaxTotal {
             get {
                 return this.taxTotalField;
@@ -14896,7 +15464,8 @@ namespace Oasis.Ubl.v21 {
                 this.itemPriceExtensionField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlArrayAttribute()]
         public ObservableCollection<LineReferenceType> LineReference {
             get {
                 return this.lineReferenceField;
@@ -14913,10 +15482,10 @@ namespace Oasis.Ubl.v21 {
         
         private ObservableCollection<PackageType> packageField;
         
-        public OrderedShipmentType() {
-            this.packageField = new ObservableCollection<PackageType>();
-            this.shipmentField = new ShipmentType();
-        }
+        //public OrderedShipmentType() {
+        //    this.packageField = new ObservableCollection<PackageType>();
+        //    this.shipmentField = new ShipmentType();
+        //}
         
         public ShipmentType Shipment {
             get {
@@ -14926,7 +15495,8 @@ namespace Oasis.Ubl.v21 {
                 this.shipmentField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlArrayAttribute()]
         public ObservableCollection<PackageType> Package {
             get {
                 return this.packageField;
@@ -15051,14 +15621,15 @@ namespace Oasis.Ubl.v21 {
         
         private PartyType mediationPartyField;
         
-        public AppealTermsType() {
-            this.mediationPartyField = new PartyType();
-            this.appealReceiverPartyField = new PartyType();
-            this.appealInformationPartyField = new PartyType();
-            this.presentationPeriodField = new PeriodType();
-            this.descriptionField = new ObservableCollection<DescriptionType>();
-        }
-        
+        //public AppealTermsType() {
+        //    this.mediationPartyField = new PartyType();
+        //    this.appealReceiverPartyField = new PartyType();
+        //    this.appealInformationPartyField = new PartyType();
+        //    this.presentationPeriodField = new PeriodType();
+        //    this.descriptionField = new ObservableCollection<DescriptionType>();
+        //}
+
+        [System.Xml.Serialization.XmlArrayAttribute()]
         public ObservableCollection<DescriptionType> Description {
             get {
                 return this.descriptionField;
@@ -15157,13 +15728,13 @@ namespace Oasis.Ubl.v21 {
         
         private AuctionURIType auctionURIField;
         
-        public AuctionTermsType() {
-            this.electronicDeviceDescriptionField = new ObservableCollection<ElectronicDeviceDescriptionType>();
-            this.conditionsDescriptionField = new ObservableCollection<ConditionsDescriptionType>();
-            this.processDescriptionField = new ObservableCollection<ProcessDescriptionType>();
-            this.descriptionField = new ObservableCollection<DescriptionType>();
-            this.justificationDescriptionField = new ObservableCollection<JustificationDescriptionType>();
-        }
+        //public AuctionTermsType() {
+        //    this.electronicDeviceDescriptionField = new ObservableCollection<ElectronicDeviceDescriptionType>();
+        //    this.conditionsDescriptionField = new ObservableCollection<ConditionsDescriptionType>();
+        //    this.processDescriptionField = new ObservableCollection<ProcessDescriptionType>();
+        //    this.descriptionField = new ObservableCollection<DescriptionType>();
+        //    this.justificationDescriptionField = new ObservableCollection<JustificationDescriptionType>();
+        //}
         
         public AuctionConstraintIndicatorType AuctionConstraintIndicator {
             get {
@@ -15173,7 +15744,8 @@ namespace Oasis.Ubl.v21 {
                 this.auctionConstraintIndicatorField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlArrayAttribute()]
         public ObservableCollection<JustificationDescriptionType> JustificationDescription {
             get {
                 return this.justificationDescriptionField;
@@ -15182,7 +15754,8 @@ namespace Oasis.Ubl.v21 {
                 this.justificationDescriptionField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlArrayAttribute()]
         public ObservableCollection<DescriptionType> Description {
             get {
                 return this.descriptionField;
@@ -15191,7 +15764,8 @@ namespace Oasis.Ubl.v21 {
                 this.descriptionField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlArrayAttribute()]
         public ObservableCollection<ProcessDescriptionType> ProcessDescription {
             get {
                 return this.processDescriptionField;
@@ -15200,7 +15774,8 @@ namespace Oasis.Ubl.v21 {
                 this.processDescriptionField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlArrayAttribute()]
         public ObservableCollection<ConditionsDescriptionType> ConditionsDescription {
             get {
                 return this.conditionsDescriptionField;
@@ -15209,7 +15784,8 @@ namespace Oasis.Ubl.v21 {
                 this.conditionsDescriptionField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlArrayAttribute()]
         public ObservableCollection<ElectronicDeviceDescriptionType> ElectronicDeviceDescription {
             get {
                 return this.electronicDeviceDescriptionField;
@@ -15253,15 +15829,15 @@ namespace Oasis.Ubl.v21 {
         
         private ObservableCollection<AwardingCriterionResponseType> awardingCriterionResponseField;
         
-        public TenderedProjectType() {
-            this.awardingCriterionResponseField = new ObservableCollection<AwardingCriterionResponseType>();
-            this.tenderLineField = new ObservableCollection<TenderLineType>();
-            this.legalMonetaryTotalField = new MonetaryTotalType();
-            this.taxTotalField = new ObservableCollection<TaxTotalType>();
-            this.evidenceDocumentReferenceField = new ObservableCollection<DocumentReferenceType>();
-            this.procurementProjectLotField = new ProcurementProjectLotType();
-            this.feeDescriptionField = new ObservableCollection<FeeDescriptionType>();
-        }
+        //public TenderedProjectType() {
+        //    this.awardingCriterionResponseField = new ObservableCollection<AwardingCriterionResponseType>();
+        //    this.tenderLineField = new ObservableCollection<TenderLineType>();
+        //    this.legalMonetaryTotalField = new MonetaryTotalType();
+        //    this.taxTotalField = new ObservableCollection<TaxTotalType>();
+        //    this.evidenceDocumentReferenceField = new ObservableCollection<DocumentReferenceType>();
+        //    this.procurementProjectLotField = new ProcurementProjectLotType();
+        //    this.feeDescriptionField = new ObservableCollection<FeeDescriptionType>();
+        //}
         
         public VariantIDType VariantID {
             get {
@@ -15280,7 +15856,8 @@ namespace Oasis.Ubl.v21 {
                 this.feeAmountField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlArrayAttribute()]
         public ObservableCollection<FeeDescriptionType> FeeDescription {
             get {
                 return this.feeDescriptionField;
@@ -15316,7 +15893,8 @@ namespace Oasis.Ubl.v21 {
                 this.procurementProjectLotField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlArrayAttribute()]
         public ObservableCollection<DocumentReferenceType> EvidenceDocumentReference {
             get {
                 return this.evidenceDocumentReferenceField;
@@ -15325,7 +15903,8 @@ namespace Oasis.Ubl.v21 {
                 this.evidenceDocumentReferenceField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlArrayAttribute()]
         public ObservableCollection<TaxTotalType> TaxTotal {
             get {
                 return this.taxTotalField;
@@ -15343,7 +15922,8 @@ namespace Oasis.Ubl.v21 {
                 this.legalMonetaryTotalField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlArrayAttribute()]
         public ObservableCollection<TenderLineType> TenderLine {
             get {
                 return this.tenderLineField;
@@ -15352,7 +15932,8 @@ namespace Oasis.Ubl.v21 {
                 this.tenderLineField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlArrayAttribute()]
         public ObservableCollection<AwardingCriterionResponseType> AwardingCriterionResponse {
             get {
                 return this.awardingCriterionResponseField;
@@ -15371,10 +15952,10 @@ namespace Oasis.Ubl.v21 {
         
         private ProcurementProjectType procurementProjectField;
         
-        public ProcurementProjectLotType() {
-            this.procurementProjectField = new ProcurementProjectType();
-            this.tenderingTermsField = new TenderingTermsType();
-        }
+        //public ProcurementProjectLotType() {
+        //    this.procurementProjectField = new ProcurementProjectType();
+        //    this.tenderingTermsField = new TenderingTermsType();
+        //}
         
         public IDType ID {
             get {
@@ -15492,39 +16073,39 @@ namespace Oasis.Ubl.v21 {
         
         private DocumentReferenceType replacedNoticeDocumentReferenceField;
         
-        public TenderingTermsType() {
-            this.replacedNoticeDocumentReferenceField = new DocumentReferenceType();
-            this.budgetAccountLineField = new ObservableCollection<BudgetAccountLineType>();
-            this.languageField = new ObservableCollection<LanguageType>();
-            this.appealTermsField = new AppealTermsType();
-            this.contractAcceptancePeriodField = new PeriodType();
-            this.tenderValidityPeriodField = new PeriodType();
-            this.tenderEvaluationPartyField = new ObservableCollection<PartyType>();
-            this.contractResponsiblePartyField = new PartyType();
-            this.tenderRecipientPartyField = new PartyType();
-            this.documentProviderPartyField = new PartyType();
-            this.additionalInformationPartyField = new PartyType();
-            this.awardingTermsField = new AwardingTermsType();
-            this.contractExecutionRequirementField = new ObservableCollection<ContractExecutionRequirementType>();
-            this.tenderPreparationField = new ObservableCollection<TenderPreparationType>();
-            this.allowedSubcontractTermsField = new ObservableCollection<SubcontractTermsType>();
-            this.tendererQualificationRequestField = new ObservableCollection<TendererQualificationRequestType>();
-            this.paymentTermsField = new ObservableCollection<PaymentTermsType>();
-            this.warrantyValidityPeriodField = new PeriodType();
-            this.callForTendersDocumentReferenceField = new DocumentReferenceType();
-            this.contractualDocumentReferenceField = new ObservableCollection<DocumentReferenceType>();
-            this.employmentLegislationDocumentReferenceField = new DocumentReferenceType();
-            this.environmentalLegislationDocumentReferenceField = new DocumentReferenceType();
-            this.fiscalLegislationDocumentReferenceField = new DocumentReferenceType();
-            this.procurementLegislationDocumentReferenceField = new DocumentReferenceType();
-            this.requiredFinancialGuaranteeField = new ObservableCollection<FinancialGuaranteeType>();
-            this.penaltyClauseField = new ObservableCollection<ClauseType>();
-            this.additionalConditionsField = new ObservableCollection<AdditionalConditionsType>();
-            this.noteField = new ObservableCollection<NoteType>();
-            this.fundingProgramField = new ObservableCollection<FundingProgramType>();
-            this.priceRevisionFormulaDescriptionField = new ObservableCollection<PriceRevisionFormulaDescriptionType>();
-            this.acceptedVariantsDescriptionField = new ObservableCollection<AcceptedVariantsDescriptionType>();
-        }
+        //public TenderingTermsType() {
+        //    this.replacedNoticeDocumentReferenceField = new DocumentReferenceType();
+        //    this.budgetAccountLineField = new ObservableCollection<BudgetAccountLineType>();
+        //    this.languageField = new ObservableCollection<LanguageType>();
+        //    this.appealTermsField = new AppealTermsType();
+        //    this.contractAcceptancePeriodField = new PeriodType();
+        //    this.tenderValidityPeriodField = new PeriodType();
+        //    this.tenderEvaluationPartyField = new ObservableCollection<PartyType>();
+        //    this.contractResponsiblePartyField = new PartyType();
+        //    this.tenderRecipientPartyField = new PartyType();
+        //    this.documentProviderPartyField = new PartyType();
+        //    this.additionalInformationPartyField = new PartyType();
+        //    this.awardingTermsField = new AwardingTermsType();
+        //    this.contractExecutionRequirementField = new ObservableCollection<ContractExecutionRequirementType>();
+        //    this.tenderPreparationField = new ObservableCollection<TenderPreparationType>();
+        //    this.allowedSubcontractTermsField = new ObservableCollection<SubcontractTermsType>();
+        //    this.tendererQualificationRequestField = new ObservableCollection<TendererQualificationRequestType>();
+        //    this.paymentTermsField = new ObservableCollection<PaymentTermsType>();
+        //    this.warrantyValidityPeriodField = new PeriodType();
+        //    this.callForTendersDocumentReferenceField = new DocumentReferenceType();
+        //    this.contractualDocumentReferenceField = new ObservableCollection<DocumentReferenceType>();
+        //    this.employmentLegislationDocumentReferenceField = new DocumentReferenceType();
+        //    this.environmentalLegislationDocumentReferenceField = new DocumentReferenceType();
+        //    this.fiscalLegislationDocumentReferenceField = new DocumentReferenceType();
+        //    this.procurementLegislationDocumentReferenceField = new DocumentReferenceType();
+        //    this.requiredFinancialGuaranteeField = new ObservableCollection<FinancialGuaranteeType>();
+        //    this.penaltyClauseField = new ObservableCollection<ClauseType>();
+        //    this.additionalConditionsField = new ObservableCollection<AdditionalConditionsType>();
+        //    this.noteField = new ObservableCollection<NoteType>();
+        //    this.fundingProgramField = new ObservableCollection<FundingProgramType>();
+        //    this.priceRevisionFormulaDescriptionField = new ObservableCollection<PriceRevisionFormulaDescriptionType>();
+        //    this.acceptedVariantsDescriptionField = new ObservableCollection<AcceptedVariantsDescriptionType>();
+        //}
         
         public AwardingMethodTypeCodeType AwardingMethodTypeCode {
             get {
@@ -15561,7 +16142,8 @@ namespace Oasis.Ubl.v21 {
                 this.variantConstraintIndicatorField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlArrayAttribute()]
         public ObservableCollection<AcceptedVariantsDescriptionType> AcceptedVariantsDescription {
             get {
                 return this.acceptedVariantsDescriptionField;
@@ -15570,7 +16152,8 @@ namespace Oasis.Ubl.v21 {
                 this.acceptedVariantsDescriptionField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlArrayAttribute()]
         public ObservableCollection<PriceRevisionFormulaDescriptionType> PriceRevisionFormulaDescription {
             get {
                 return this.priceRevisionFormulaDescriptionField;
@@ -15588,7 +16171,8 @@ namespace Oasis.Ubl.v21 {
                 this.fundingProgramCodeField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlArrayAttribute()]
         public ObservableCollection<FundingProgramType> FundingProgram {
             get {
                 return this.fundingProgramField;
@@ -15606,7 +16190,8 @@ namespace Oasis.Ubl.v21 {
                 this.maximumAdvertisementAmountField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlArrayAttribute()]
         public ObservableCollection<NoteType> Note {
             get {
                 return this.noteField;
@@ -15651,7 +16236,8 @@ namespace Oasis.Ubl.v21 {
                 this.otherConditionsIndicatorField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlArrayAttribute()]
         public ObservableCollection<AdditionalConditionsType> AdditionalConditions {
             get {
                 return this.additionalConditionsField;
@@ -15678,7 +16264,8 @@ namespace Oasis.Ubl.v21 {
                 this.documentationFeeAmountField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlArrayAttribute()]
         public ObservableCollection<ClauseType> PenaltyClause {
             get {
                 return this.penaltyClauseField;
@@ -15687,7 +16274,8 @@ namespace Oasis.Ubl.v21 {
                 this.penaltyClauseField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlArrayAttribute()]
         public ObservableCollection<FinancialGuaranteeType> RequiredFinancialGuarantee {
             get {
                 return this.requiredFinancialGuaranteeField;
@@ -15732,7 +16320,8 @@ namespace Oasis.Ubl.v21 {
                 this.employmentLegislationDocumentReferenceField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlArrayAttribute()]
         public ObservableCollection<DocumentReferenceType> ContractualDocumentReference {
             get {
                 return this.contractualDocumentReferenceField;
@@ -15759,7 +16348,8 @@ namespace Oasis.Ubl.v21 {
                 this.warrantyValidityPeriodField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlArrayAttribute()]
         public ObservableCollection<PaymentTermsType> PaymentTerms {
             get {
                 return this.paymentTermsField;
@@ -15768,7 +16358,8 @@ namespace Oasis.Ubl.v21 {
                 this.paymentTermsField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlArrayAttribute()]
         public ObservableCollection<TendererQualificationRequestType> TendererQualificationRequest {
             get {
                 return this.tendererQualificationRequestField;
@@ -15777,7 +16368,8 @@ namespace Oasis.Ubl.v21 {
                 this.tendererQualificationRequestField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlArrayAttribute()]
         public ObservableCollection<SubcontractTermsType> AllowedSubcontractTerms {
             get {
                 return this.allowedSubcontractTermsField;
@@ -15786,7 +16378,8 @@ namespace Oasis.Ubl.v21 {
                 this.allowedSubcontractTermsField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlArrayAttribute()]
         public ObservableCollection<TenderPreparationType> TenderPreparation {
             get {
                 return this.tenderPreparationField;
@@ -15795,7 +16388,8 @@ namespace Oasis.Ubl.v21 {
                 this.tenderPreparationField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlArrayAttribute()]
         public ObservableCollection<ContractExecutionRequirementType> ContractExecutionRequirement {
             get {
                 return this.contractExecutionRequirementField;
@@ -15849,7 +16443,8 @@ namespace Oasis.Ubl.v21 {
                 this.contractResponsiblePartyField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlArrayAttribute()]
         public ObservableCollection<PartyType> TenderEvaluationParty {
             get {
                 return this.tenderEvaluationPartyField;
@@ -15885,7 +16480,8 @@ namespace Oasis.Ubl.v21 {
                 this.appealTermsField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlArrayAttribute()]
         public ObservableCollection<LanguageType> Language {
             get {
                 return this.languageField;
@@ -15894,7 +16490,8 @@ namespace Oasis.Ubl.v21 {
                 this.languageField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlArrayAttribute()]
         public ObservableCollection<BudgetAccountLineType> BudgetAccountLine {
             get {
                 return this.budgetAccountLineField;
@@ -15926,10 +16523,10 @@ namespace Oasis.Ubl.v21 {
         
         private PeriodType constitutionPeriodField;
         
-        public FinancialGuaranteeType() {
-            this.constitutionPeriodField = new PeriodType();
-            this.descriptionField = new ObservableCollection<DescriptionType>();
-        }
+        //public FinancialGuaranteeType() {
+        //    this.constitutionPeriodField = new PeriodType();
+        //    this.descriptionField = new ObservableCollection<DescriptionType>();
+        //}
         
         public GuaranteeTypeCodeType GuaranteeTypeCode {
             get {
@@ -15939,7 +16536,8 @@ namespace Oasis.Ubl.v21 {
                 this.guaranteeTypeCodeField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlArrayAttribute()]
         public ObservableCollection<DescriptionType> Description {
             get {
                 return this.descriptionField;
@@ -16001,15 +16599,15 @@ namespace Oasis.Ubl.v21 {
         
         private ObservableCollection<EconomicOperatorRoleType> economicOperatorRoleField;
         
-        public TendererQualificationRequestType() {
-            this.economicOperatorRoleField = new ObservableCollection<EconomicOperatorRoleType>();
-            this.specificTendererRequirementField = new ObservableCollection<TendererRequirementType>();
-            this.financialEvaluationCriterionField = new ObservableCollection<EvaluationCriterionType>();
-            this.technicalEvaluationCriterionField = new ObservableCollection<EvaluationCriterionType>();
-            this.requiredBusinessClassificationSchemeField = new ObservableCollection<ClassificationSchemeType>();
-            this.descriptionField = new ObservableCollection<DescriptionType>();
-            this.personalSituationField = new ObservableCollection<PersonalSituationType>();
-        }
+        //public TendererQualificationRequestType() {
+        //    this.economicOperatorRoleField = new ObservableCollection<EconomicOperatorRoleType>();
+        //    this.specificTendererRequirementField = new ObservableCollection<TendererRequirementType>();
+        //    this.financialEvaluationCriterionField = new ObservableCollection<EvaluationCriterionType>();
+        //    this.technicalEvaluationCriterionField = new ObservableCollection<EvaluationCriterionType>();
+        //    this.requiredBusinessClassificationSchemeField = new ObservableCollection<ClassificationSchemeType>();
+        //    this.descriptionField = new ObservableCollection<DescriptionType>();
+        //    this.personalSituationField = new ObservableCollection<PersonalSituationType>();
+        //}
         
         public CompanyLegalFormCodeType CompanyLegalFormCode {
             get {
@@ -16028,7 +16626,8 @@ namespace Oasis.Ubl.v21 {
                 this.companyLegalFormField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlArrayAttribute()]
         public ObservableCollection<PersonalSituationType> PersonalSituation {
             get {
                 return this.personalSituationField;
@@ -16055,7 +16654,8 @@ namespace Oasis.Ubl.v21 {
                 this.employeeQuantityField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlArrayAttribute()]
         public ObservableCollection<DescriptionType> Description {
             get {
                 return this.descriptionField;
@@ -16064,7 +16664,8 @@ namespace Oasis.Ubl.v21 {
                 this.descriptionField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlArrayAttribute()]
         public ObservableCollection<ClassificationSchemeType> RequiredBusinessClassificationScheme {
             get {
                 return this.requiredBusinessClassificationSchemeField;
@@ -16082,7 +16683,8 @@ namespace Oasis.Ubl.v21 {
                 this.technicalEvaluationCriterionField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlArrayAttribute()]
         public ObservableCollection<EvaluationCriterionType> FinancialEvaluationCriterion {
             get {
                 return this.financialEvaluationCriterionField;
@@ -16091,7 +16693,8 @@ namespace Oasis.Ubl.v21 {
                 this.financialEvaluationCriterionField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlArrayAttribute()]
         public ObservableCollection<TendererRequirementType> SpecificTendererRequirement {
             get {
                 return this.specificTendererRequirementField;
@@ -16100,7 +16703,8 @@ namespace Oasis.Ubl.v21 {
                 this.specificTendererRequirementField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlArrayAttribute()]
         public ObservableCollection<EconomicOperatorRoleType> EconomicOperatorRole {
             get {
                 return this.economicOperatorRoleField;
@@ -16129,12 +16733,12 @@ namespace Oasis.Ubl.v21 {
         
         private ObservableCollection<EvidenceType> suggestedEvidenceField;
         
-        public EvaluationCriterionType() {
-            this.suggestedEvidenceField = new ObservableCollection<EvidenceType>();
-            this.durationPeriodField = new PeriodType();
-            this.expressionField = new ObservableCollection<ExpressionType>();
-            this.descriptionField = new ObservableCollection<DescriptionType>();
-        }
+        //public EvaluationCriterionType() {
+        //    this.suggestedEvidenceField = new ObservableCollection<EvidenceType>();
+        //    this.durationPeriodField = new PeriodType();
+        //    this.expressionField = new ObservableCollection<ExpressionType>();
+        //    this.descriptionField = new ObservableCollection<DescriptionType>();
+        //}
         
         public EvaluationCriterionTypeCodeType EvaluationCriterionTypeCode {
             get {
@@ -16144,7 +16748,8 @@ namespace Oasis.Ubl.v21 {
                 this.evaluationCriterionTypeCodeField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlArrayAttribute()]
         public ObservableCollection<DescriptionType> Description {
             get {
                 return this.descriptionField;
@@ -16180,7 +16785,8 @@ namespace Oasis.Ubl.v21 {
                 this.expressionCodeField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlArrayAttribute()]
         public ObservableCollection<ExpressionType> Expression {
             get {
                 return this.expressionField;
@@ -16198,7 +16804,8 @@ namespace Oasis.Ubl.v21 {
                 this.durationPeriodField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlArrayAttribute()]
         public ObservableCollection<EvidenceType> SuggestedEvidence {
             get {
                 return this.suggestedEvidenceField;
@@ -16225,13 +16832,13 @@ namespace Oasis.Ubl.v21 {
         
         private LanguageType languageField;
         
-        public EvidenceType() {
-            this.languageField = new LanguageType();
-            this.documentReferenceField = new DocumentReferenceType();
-            this.evidenceIssuingPartyField = new PartyType();
-            this.candidateStatementField = new ObservableCollection<CandidateStatementType>();
-            this.descriptionField = new ObservableCollection<DescriptionType>();
-        }
+        //public EvidenceType() {
+        //    this.languageField = new LanguageType();
+        //    this.documentReferenceField = new DocumentReferenceType();
+        //    this.evidenceIssuingPartyField = new PartyType();
+        //    this.candidateStatementField = new ObservableCollection<CandidateStatementType>();
+        //    this.descriptionField = new ObservableCollection<DescriptionType>();
+        //}
         
         public IDType ID {
             get {
@@ -16250,7 +16857,8 @@ namespace Oasis.Ubl.v21 {
                 this.evidenceTypeCodeField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlArrayAttribute()]
         public ObservableCollection<DescriptionType> Description {
             get {
                 return this.descriptionField;
@@ -16259,7 +16867,8 @@ namespace Oasis.Ubl.v21 {
                 this.descriptionField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlArrayAttribute()]
         public ObservableCollection<CandidateStatementType> CandidateStatement {
             get {
                 return this.candidateStatementField;
@@ -16309,12 +16918,13 @@ namespace Oasis.Ubl.v21 {
         
         private ObservableCollection<EvidenceType> suggestedEvidenceField;
         
-        public TendererRequirementType() {
-            this.suggestedEvidenceField = new ObservableCollection<EvidenceType>();
-            this.descriptionField = new ObservableCollection<DescriptionType>();
-            this.nameField = new ObservableCollection<NameType1>();
-        }
-        
+        //public TendererRequirementType() {
+        //    this.suggestedEvidenceField = new ObservableCollection<EvidenceType>();
+        //    this.descriptionField = new ObservableCollection<DescriptionType>();
+        //    this.nameField = new ObservableCollection<NameType1>();
+        //}
+
+        [System.Xml.Serialization.XmlArrayAttribute()]
         public ObservableCollection<NameType1> Name {
             get {
                 return this.nameField;
@@ -16332,7 +16942,8 @@ namespace Oasis.Ubl.v21 {
                 this.tendererRequirementTypeCodeField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlArrayAttribute()]
         public ObservableCollection<DescriptionType> Description {
             get {
                 return this.descriptionField;
@@ -16350,7 +16961,8 @@ namespace Oasis.Ubl.v21 {
                 this.legalReferenceField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlArrayAttribute()]
         public ObservableCollection<EvidenceType> SuggestedEvidence {
             get {
                 return this.suggestedEvidenceField;
@@ -16375,11 +16987,11 @@ namespace Oasis.Ubl.v21 {
         
         private ObservableCollection<TenderRequirementType> documentTenderRequirementField;
         
-        public TenderPreparationType() {
-            this.documentTenderRequirementField = new ObservableCollection<TenderRequirementType>();
-            this.procurementProjectLotField = new ObservableCollection<ProcurementProjectLotType>();
-            this.descriptionField = new ObservableCollection<DescriptionType>();
-        }
+        //public TenderPreparationType() {
+        //    this.documentTenderRequirementField = new ObservableCollection<TenderRequirementType>();
+        //    this.procurementProjectLotField = new ObservableCollection<ProcurementProjectLotType>();
+        //    this.descriptionField = new ObservableCollection<DescriptionType>();
+        //}
         
         public TenderEnvelopeIDType TenderEnvelopeID {
             get {
@@ -16398,7 +17010,8 @@ namespace Oasis.Ubl.v21 {
                 this.tenderEnvelopeTypeCodeField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlArrayAttribute()]
         public ObservableCollection<DescriptionType> Description {
             get {
                 return this.descriptionField;
@@ -16416,7 +17029,8 @@ namespace Oasis.Ubl.v21 {
                 this.openTenderIDField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlArrayAttribute()]
         public ObservableCollection<ProcurementProjectLotType> ProcurementProjectLot {
             get {
                 return this.procurementProjectLotField;
@@ -16425,7 +17039,8 @@ namespace Oasis.Ubl.v21 {
                 this.procurementProjectLotField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlArrayAttribute()]
         public ObservableCollection<TenderRequirementType> DocumentTenderRequirement {
             get {
                 return this.documentTenderRequirementField;
@@ -16444,10 +17059,10 @@ namespace Oasis.Ubl.v21 {
         
         private DocumentReferenceType templateDocumentReferenceField;
         
-        public TenderRequirementType() {
-            this.templateDocumentReferenceField = new DocumentReferenceType();
-            this.descriptionField = new ObservableCollection<DescriptionType>();
-        }
+        //public TenderRequirementType() {
+        //    this.templateDocumentReferenceField = new DocumentReferenceType();
+        //    this.descriptionField = new ObservableCollection<DescriptionType>();
+        //}
         
         public NameType1 Name {
             get {
@@ -16457,7 +17072,8 @@ namespace Oasis.Ubl.v21 {
                 this.nameField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlArrayAttribute()]
         public ObservableCollection<DescriptionType> Description {
             get {
                 return this.descriptionField;
@@ -16485,11 +17101,12 @@ namespace Oasis.Ubl.v21 {
         
         private ObservableCollection<DescriptionType> descriptionField;
         
-        public ContractExecutionRequirementType() {
-            this.descriptionField = new ObservableCollection<DescriptionType>();
-            this.nameField = new ObservableCollection<NameType1>();
-        }
-        
+        //public ContractExecutionRequirementType() {
+        //    this.descriptionField = new ObservableCollection<DescriptionType>();
+        //    this.nameField = new ObservableCollection<NameType1>();
+        //}
+
+        [System.Xml.Serialization.XmlArrayAttribute()]
         public ObservableCollection<NameType1> Name {
             get {
                 return this.nameField;
@@ -16507,7 +17124,8 @@ namespace Oasis.Ubl.v21 {
                 this.executionRequirementCodeField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlArrayAttribute()]
         public ObservableCollection<DescriptionType> Description {
             get {
                 return this.descriptionField;
@@ -16542,15 +17160,15 @@ namespace Oasis.Ubl.v21 {
         
         private ObservableCollection<PersonType> technicalCommitteePersonField;
         
-        public AwardingTermsType() {
-            this.technicalCommitteePersonField = new ObservableCollection<PersonType>();
-            this.awardingCriterionField = new ObservableCollection<AwardingCriterionType>();
-            this.paymentDescriptionField = new ObservableCollection<PaymentDescriptionType>();
-            this.prizeDescriptionField = new ObservableCollection<PrizeDescriptionType>();
-            this.lowTendersDescriptionField = new ObservableCollection<LowTendersDescriptionType>();
-            this.technicalCommitteeDescriptionField = new ObservableCollection<TechnicalCommitteeDescriptionType>();
-            this.descriptionField = new ObservableCollection<DescriptionType>();
-        }
+        //public AwardingTermsType() {
+        //    this.technicalCommitteePersonField = new ObservableCollection<PersonType>();
+        //    this.awardingCriterionField = new ObservableCollection<AwardingCriterionType>();
+        //    this.paymentDescriptionField = new ObservableCollection<PaymentDescriptionType>();
+        //    this.prizeDescriptionField = new ObservableCollection<PrizeDescriptionType>();
+        //    this.lowTendersDescriptionField = new ObservableCollection<LowTendersDescriptionType>();
+        //    this.technicalCommitteeDescriptionField = new ObservableCollection<TechnicalCommitteeDescriptionType>();
+        //    this.descriptionField = new ObservableCollection<DescriptionType>();
+        //}
         
         public WeightingAlgorithmCodeType WeightingAlgorithmCode {
             get {
@@ -16560,7 +17178,8 @@ namespace Oasis.Ubl.v21 {
                 this.weightingAlgorithmCodeField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlArrayAttribute()]
         public ObservableCollection<DescriptionType> Description {
             get {
                 return this.descriptionField;
@@ -16569,7 +17188,8 @@ namespace Oasis.Ubl.v21 {
                 this.descriptionField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlArrayAttribute()]
         public ObservableCollection<TechnicalCommitteeDescriptionType> TechnicalCommitteeDescription {
             get {
                 return this.technicalCommitteeDescriptionField;
@@ -16578,7 +17198,8 @@ namespace Oasis.Ubl.v21 {
                 this.technicalCommitteeDescriptionField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlArrayAttribute()]
         public ObservableCollection<LowTendersDescriptionType> LowTendersDescription {
             get {
                 return this.lowTendersDescriptionField;
@@ -16596,7 +17217,8 @@ namespace Oasis.Ubl.v21 {
                 this.prizeIndicatorField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlArrayAttribute()]
         public ObservableCollection<PrizeDescriptionType> PrizeDescription {
             get {
                 return this.prizeDescriptionField;
@@ -16605,7 +17227,8 @@ namespace Oasis.Ubl.v21 {
                 this.prizeDescriptionField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlArrayAttribute()]
         public ObservableCollection<PaymentDescriptionType> PaymentDescription {
             get {
                 return this.paymentDescriptionField;
@@ -16632,7 +17255,8 @@ namespace Oasis.Ubl.v21 {
                 this.bindingOnBuyerIndicatorField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlArrayAttribute()]
         public ObservableCollection<AwardingCriterionType> AwardingCriterion {
             get {
                 return this.awardingCriterionField;
@@ -16641,7 +17265,8 @@ namespace Oasis.Ubl.v21 {
                 this.awardingCriterionField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlArrayAttribute()]
         public ObservableCollection<PersonType> TechnicalCommitteePerson {
             get {
                 return this.technicalCommitteePersonField;
@@ -16680,13 +17305,13 @@ namespace Oasis.Ubl.v21 {
         
         private ObservableCollection<AwardingCriterionType> subordinateAwardingCriterionField;
         
-        public AwardingCriterionType() {
-            this.subordinateAwardingCriterionField = new ObservableCollection<AwardingCriterionType>();
-            this.minimumImprovementBidField = new ObservableCollection<MinimumImprovementBidType>();
-            this.calculationExpressionField = new ObservableCollection<CalculationExpressionType>();
-            this.weightField = new ObservableCollection<WeightType>();
-            this.descriptionField = new ObservableCollection<DescriptionType>();
-        }
+        //public AwardingCriterionType() {
+        //    this.subordinateAwardingCriterionField = new ObservableCollection<AwardingCriterionType>();
+        //    this.minimumImprovementBidField = new ObservableCollection<MinimumImprovementBidType>();
+        //    this.calculationExpressionField = new ObservableCollection<CalculationExpressionType>();
+        //    this.weightField = new ObservableCollection<WeightType>();
+        //    this.descriptionField = new ObservableCollection<DescriptionType>();
+        //}
         
         public IDType ID {
             get {
@@ -16705,7 +17330,8 @@ namespace Oasis.Ubl.v21 {
                 this.awardingCriterionTypeCodeField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlArrayAttribute()]
         public ObservableCollection<DescriptionType> Description {
             get {
                 return this.descriptionField;
@@ -16723,7 +17349,8 @@ namespace Oasis.Ubl.v21 {
                 this.weightNumericField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlArrayAttribute()]
         public ObservableCollection<WeightType> Weight {
             get {
                 return this.weightField;
@@ -16732,7 +17359,8 @@ namespace Oasis.Ubl.v21 {
                 this.weightField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlArrayAttribute()]
         public ObservableCollection<CalculationExpressionType> CalculationExpression {
             get {
                 return this.calculationExpressionField;
@@ -16786,7 +17414,8 @@ namespace Oasis.Ubl.v21 {
                 this.maximumAmountField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlArrayAttribute()]
         public ObservableCollection<MinimumImprovementBidType> MinimumImprovementBid {
             get {
                 return this.minimumImprovementBidField;
@@ -16795,7 +17424,8 @@ namespace Oasis.Ubl.v21 {
                 this.minimumImprovementBidField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlArrayAttribute()]
         public ObservableCollection<AwardingCriterionType> SubordinateAwardingCriterion {
             get {
                 return this.subordinateAwardingCriterionField;
@@ -16814,9 +17444,9 @@ namespace Oasis.Ubl.v21 {
         
         private ObservableCollection<BudgetAccountType> budgetAccountField;
         
-        public BudgetAccountLineType() {
-            this.budgetAccountField = new ObservableCollection<BudgetAccountType>();
-        }
+        //public BudgetAccountLineType() {
+        //    this.budgetAccountField = new ObservableCollection<BudgetAccountType>();
+        //}
         
         public IDType ID {
             get {
@@ -16835,7 +17465,8 @@ namespace Oasis.Ubl.v21 {
                 this.totalAmountField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlArrayAttribute()]
         public ObservableCollection<BudgetAccountType> BudgetAccount {
             get {
                 return this.budgetAccountField;
@@ -16854,9 +17485,9 @@ namespace Oasis.Ubl.v21 {
         
         private ClassificationSchemeType requiredClassificationSchemeField;
         
-        public BudgetAccountType() {
-            this.requiredClassificationSchemeField = new ClassificationSchemeType();
-        }
+        //public BudgetAccountType() {
+        //    this.requiredClassificationSchemeField = new ClassificationSchemeType();
+        //}
         
         public IDType ID {
             get {
@@ -16924,19 +17555,19 @@ namespace Oasis.Ubl.v21 {
         
         private ObservableCollection<RequestForTenderLineType> requestForTenderLineField;
         
-        public ProcurementProjectType() {
-            this.requestForTenderLineField = new ObservableCollection<RequestForTenderLineType>();
-            this.contractExtensionField = new ContractExtensionType();
-            this.plannedPeriodField = new PeriodType();
-            this.realizedLocationField = new ObservableCollection<LocationType1>();
-            this.additionalCommodityClassificationField = new ObservableCollection<CommodityClassificationType>();
-            this.mainCommodityClassificationField = new CommodityClassificationType();
-            this.requestedTenderTotalField = new RequestedTenderTotalType();
-            this.noteField = new ObservableCollection<NoteType>();
-            this.feeDescriptionField = new ObservableCollection<FeeDescriptionType>();
-            this.descriptionField = new ObservableCollection<DescriptionType>();
-            this.nameField = new ObservableCollection<NameType1>();
-        }
+        //public ProcurementProjectType() {
+        //    this.requestForTenderLineField = new ObservableCollection<RequestForTenderLineType>();
+        //    this.contractExtensionField = new ContractExtensionType();
+        //    this.plannedPeriodField = new PeriodType();
+        //    this.realizedLocationField = new ObservableCollection<LocationType1>();
+        //    this.additionalCommodityClassificationField = new ObservableCollection<CommodityClassificationType>();
+        //    this.mainCommodityClassificationField = new CommodityClassificationType();
+        //    this.requestedTenderTotalField = new RequestedTenderTotalType();
+        //    this.noteField = new ObservableCollection<NoteType>();
+        //    this.feeDescriptionField = new ObservableCollection<FeeDescriptionType>();
+        //    this.descriptionField = new ObservableCollection<DescriptionType>();
+        //    this.nameField = new ObservableCollection<NameType1>();
+        //}
         
         public IDType ID {
             get {
@@ -16946,7 +17577,8 @@ namespace Oasis.Ubl.v21 {
                 this.idField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlArrayAttribute()]
         public ObservableCollection<NameType1> Name {
             get {
                 return this.nameField;
@@ -16955,7 +17587,8 @@ namespace Oasis.Ubl.v21 {
                 this.nameField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlArrayAttribute()]
         public ObservableCollection<DescriptionType> Description {
             get {
                 return this.descriptionField;
@@ -17000,7 +17633,8 @@ namespace Oasis.Ubl.v21 {
                 this.requiredFeeAmountField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlArrayAttribute()]
         public ObservableCollection<FeeDescriptionType> FeeDescription {
             get {
                 return this.feeDescriptionField;
@@ -17027,7 +17661,8 @@ namespace Oasis.Ubl.v21 {
                 this.estimatedOverallContractQuantityField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlArrayAttribute()]
         public ObservableCollection<NoteType> Note {
             get {
                 return this.noteField;
@@ -17054,7 +17689,8 @@ namespace Oasis.Ubl.v21 {
                 this.mainCommodityClassificationField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlArrayAttribute()]
         public ObservableCollection<CommodityClassificationType> AdditionalCommodityClassification {
             get {
                 return this.additionalCommodityClassificationField;
@@ -17063,7 +17699,8 @@ namespace Oasis.Ubl.v21 {
                 this.additionalCommodityClassificationField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlArrayAttribute()]
         public ObservableCollection<LocationType1> RealizedLocation {
             get {
                 return this.realizedLocationField;
@@ -17090,7 +17727,8 @@ namespace Oasis.Ubl.v21 {
                 this.contractExtensionField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlArrayAttribute()]
         public ObservableCollection<RequestForTenderLineType> RequestForTenderLine {
             get {
                 return this.requestForTenderLineField;
@@ -17119,10 +17757,10 @@ namespace Oasis.Ubl.v21 {
         
         private ObservableCollection<TaxCategoryType> applicableTaxCategoryField;
         
-        public RequestedTenderTotalType() {
-            this.applicableTaxCategoryField = new ObservableCollection<TaxCategoryType>();
-            this.monetaryScopeField = new ObservableCollection<MonetaryScopeType>();
-        }
+        //public RequestedTenderTotalType() {
+        //    this.applicableTaxCategoryField = new ObservableCollection<TaxCategoryType>();
+        //    this.monetaryScopeField = new ObservableCollection<MonetaryScopeType>();
+        //}
         
         public EstimatedOverallContractAmountType EstimatedOverallContractAmount {
             get {
@@ -17168,7 +17806,8 @@ namespace Oasis.Ubl.v21 {
                 this.maximumAmountField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlArrayAttribute()]
         public ObservableCollection<MonetaryScopeType> MonetaryScope {
             get {
                 return this.monetaryScopeField;
@@ -17186,7 +17825,8 @@ namespace Oasis.Ubl.v21 {
                 this.averageSubsequentContractAmountField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlArrayAttribute()]
         public ObservableCollection<TaxCategoryType> ApplicableTaxCategory {
             get {
                 return this.applicableTaxCategoryField;
@@ -17209,12 +17849,13 @@ namespace Oasis.Ubl.v21 {
         
         private ObservableCollection<RenewalType> renewalField;
         
-        public ContractExtensionType() {
-            this.renewalField = new ObservableCollection<RenewalType>();
-            this.optionValidityPeriodField = new PeriodType();
-            this.optionsDescriptionField = new ObservableCollection<OptionsDescriptionType>();
-        }
-        
+        //public ContractExtensionType() {
+        //    this.renewalField = new ObservableCollection<RenewalType>();
+        //    this.optionValidityPeriodField = new PeriodType();
+        //    this.optionsDescriptionField = new ObservableCollection<OptionsDescriptionType>();
+        //}
+
+        [System.Xml.Serialization.XmlArrayAttribute()]
         public ObservableCollection<OptionsDescriptionType> OptionsDescription {
             get {
                 return this.optionsDescriptionField;
@@ -17250,7 +17891,8 @@ namespace Oasis.Ubl.v21 {
                 this.optionValidityPeriodField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlArrayAttribute()]
         public ObservableCollection<RenewalType> Renewal {
             get {
                 return this.renewalField;
@@ -17267,9 +17909,9 @@ namespace Oasis.Ubl.v21 {
         
         private PeriodType periodField;
         
-        public RenewalType() {
-            this.periodField = new PeriodType();
-        }
+        //public RenewalType() {
+        //    this.periodField = new PeriodType();
+        //}
         
         public AmountType2 Amount {
             get {
@@ -17324,15 +17966,15 @@ namespace Oasis.Ubl.v21 {
         
         private ObservableCollection<RequestForTenderLineType> subRequestForTenderLineField;
         
-        public RequestForTenderLineType() {
-            this.subRequestForTenderLineField = new ObservableCollection<RequestForTenderLineType>();
-            this.itemField = new ItemType();
-            this.warrantyValidityPeriodField = new PeriodType();
-            this.requiredItemLocationQuantityField = new ObservableCollection<ItemLocationQuantityType>();
-            this.deliveryPeriodField = new ObservableCollection<PeriodType>();
-            this.documentReferenceField = new ObservableCollection<DocumentReferenceType>();
-            this.noteField = new ObservableCollection<NoteType>();
-        }
+        //public RequestForTenderLineType() {
+        //    this.subRequestForTenderLineField = new ObservableCollection<RequestForTenderLineType>();
+        //    this.itemField = new ItemType();
+        //    this.warrantyValidityPeriodField = new PeriodType();
+        //    this.requiredItemLocationQuantityField = new ObservableCollection<ItemLocationQuantityType>();
+        //    this.deliveryPeriodField = new ObservableCollection<PeriodType>();
+        //    this.documentReferenceField = new ObservableCollection<DocumentReferenceType>();
+        //    this.noteField = new ObservableCollection<NoteType>();
+        //}
         
         public IDType ID {
             get {
@@ -17351,7 +17993,8 @@ namespace Oasis.Ubl.v21 {
                 this.uUIDField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlArrayAttribute()]
         public ObservableCollection<NoteType> Note {
             get {
                 return this.noteField;
@@ -17423,7 +18066,8 @@ namespace Oasis.Ubl.v21 {
                 this.estimatedAmountField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlArrayAttribute()]
         public ObservableCollection<DocumentReferenceType> DocumentReference {
             get {
                 return this.documentReferenceField;
@@ -17432,7 +18076,8 @@ namespace Oasis.Ubl.v21 {
                 this.documentReferenceField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlArrayAttribute()]
         public ObservableCollection<PeriodType> DeliveryPeriod {
             get {
                 return this.deliveryPeriodField;
@@ -17441,7 +18086,8 @@ namespace Oasis.Ubl.v21 {
                 this.deliveryPeriodField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlArrayAttribute()]
         public ObservableCollection<ItemLocationQuantityType> RequiredItemLocationQuantity {
             get {
                 return this.requiredItemLocationQuantityField;
@@ -17468,7 +18114,8 @@ namespace Oasis.Ubl.v21 {
                 this.itemField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlArrayAttribute()]
         public ObservableCollection<RequestForTenderLineType> SubRequestForTenderLine {
             get {
                 return this.subRequestForTenderLineField;
@@ -17523,19 +18170,19 @@ namespace Oasis.Ubl.v21 {
         
         private DocumentReferenceType callForTendersDocumentReferenceField;
         
-        public TenderLineType() {
-            this.callForTendersDocumentReferenceField = new DocumentReferenceType();
-            this.callForTendersLineReferenceField = new LineReferenceType();
-            this.subTenderLineField = new ObservableCollection<TenderLineType>();
-            this.warrantyValidityPeriodField = new PeriodType();
-            this.warrantyPartyField = new PartyType();
-            this.replacementRelatedItemField = new ObservableCollection<RelatedItemType>();
-            this.offeredItemLocationQuantityField = new ObservableCollection<ItemLocationQuantityType>();
-            this.itemField = new ItemType();
-            this.documentReferenceField = new ObservableCollection<DocumentReferenceType>();
-            this.warrantyInformationField = new ObservableCollection<WarrantyInformationType>();
-            this.noteField = new ObservableCollection<NoteType>();
-        }
+        //public TenderLineType() {
+        //    this.callForTendersDocumentReferenceField = new DocumentReferenceType();
+        //    this.callForTendersLineReferenceField = new LineReferenceType();
+        //    this.subTenderLineField = new ObservableCollection<TenderLineType>();
+        //    this.warrantyValidityPeriodField = new PeriodType();
+        //    this.warrantyPartyField = new PartyType();
+        //    this.replacementRelatedItemField = new ObservableCollection<RelatedItemType>();
+        //    this.offeredItemLocationQuantityField = new ObservableCollection<ItemLocationQuantityType>();
+        //    this.itemField = new ItemType();
+        //    this.documentReferenceField = new ObservableCollection<DocumentReferenceType>();
+        //    this.warrantyInformationField = new ObservableCollection<WarrantyInformationType>();
+        //    this.noteField = new ObservableCollection<NoteType>();
+        //}
         
         public IDType ID {
             get {
@@ -17545,7 +18192,8 @@ namespace Oasis.Ubl.v21 {
                 this.idField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlArrayAttribute()]
         public ObservableCollection<NoteType> Note {
             get {
                 return this.noteField;
@@ -17626,7 +18274,8 @@ namespace Oasis.Ubl.v21 {
                 this.maximumOrderQuantityField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlArrayAttribute()]
         public ObservableCollection<WarrantyInformationType> WarrantyInformation {
             get {
                 return this.warrantyInformationField;
@@ -17644,7 +18293,8 @@ namespace Oasis.Ubl.v21 {
                 this.packLevelCodeField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlArrayAttribute()]
         public ObservableCollection<DocumentReferenceType> DocumentReference {
             get {
                 return this.documentReferenceField;
@@ -17662,7 +18312,8 @@ namespace Oasis.Ubl.v21 {
                 this.itemField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlArrayAttribute()]
         public ObservableCollection<ItemLocationQuantityType> OfferedItemLocationQuantity {
             get {
                 return this.offeredItemLocationQuantityField;
@@ -17671,7 +18322,8 @@ namespace Oasis.Ubl.v21 {
                 this.offeredItemLocationQuantityField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlArrayAttribute()]
         public ObservableCollection<RelatedItemType> ReplacementRelatedItem {
             get {
                 return this.replacementRelatedItemField;
@@ -17698,7 +18350,8 @@ namespace Oasis.Ubl.v21 {
                 this.warrantyValidityPeriodField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlArrayAttribute()]
         public ObservableCollection<TenderLineType> SubTenderLine {
             get {
                 return this.subTenderLineField;
@@ -17743,11 +18396,11 @@ namespace Oasis.Ubl.v21 {
         
         private ObservableCollection<AwardingCriterionResponseType> subordinateAwardingCriterionResponseField;
         
-        public AwardingCriterionResponseType() {
-            this.subordinateAwardingCriterionResponseField = new ObservableCollection<AwardingCriterionResponseType>();
-            this.descriptionField = new ObservableCollection<DescriptionType>();
-            this.awardingCriterionDescriptionField = new ObservableCollection<AwardingCriterionDescriptionType>();
-        }
+        //public AwardingCriterionResponseType() {
+        //    this.subordinateAwardingCriterionResponseField = new ObservableCollection<AwardingCriterionResponseType>();
+        //    this.descriptionField = new ObservableCollection<DescriptionType>();
+        //    this.awardingCriterionDescriptionField = new ObservableCollection<AwardingCriterionDescriptionType>();
+        //}
         
         public IDType ID {
             get {
@@ -17766,7 +18419,8 @@ namespace Oasis.Ubl.v21 {
                 this.awardingCriterionIDField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlArrayAttribute()]
         public ObservableCollection<AwardingCriterionDescriptionType> AwardingCriterionDescription {
             get {
                 return this.awardingCriterionDescriptionField;
@@ -17775,7 +18429,8 @@ namespace Oasis.Ubl.v21 {
                 this.awardingCriterionDescriptionField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlArrayAttribute()]
         public ObservableCollection<DescriptionType> Description {
             get {
                 return this.descriptionField;
@@ -17802,7 +18457,8 @@ namespace Oasis.Ubl.v21 {
                 this.amountField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlArrayAttribute()]
         public ObservableCollection<AwardingCriterionResponseType> SubordinateAwardingCriterionResponse {
             get {
                 return this.subordinateAwardingCriterionResponseField;
@@ -17875,11 +18531,11 @@ namespace Oasis.Ubl.v21 {
         
         private ItemType itemField;
         
-        public CatalogueItemSpecificationUpdateLineType() {
-            this.itemField = new ItemType();
-            this.sellerSupplierPartyField = new SupplierPartyType();
-            this.contractorCustomerPartyField = new CustomerPartyType();
-        }
+        //public CatalogueItemSpecificationUpdateLineType() {
+        //    this.itemField = new ItemType();
+        //    this.sellerSupplierPartyField = new SupplierPartyType();
+        //    this.contractorCustomerPartyField = new CustomerPartyType();
+        //}
         
         public IDType ID {
             get {
@@ -17982,28 +18638,28 @@ namespace Oasis.Ubl.v21 {
         
         private DocumentReferenceType callForTendersDocumentReferenceField;
         
-        public CatalogueLineType() {
-            this.callForTendersDocumentReferenceField = new DocumentReferenceType();
-            this.callForTendersLineReferenceField = new LineReferenceType();
-            this.keywordItemPropertyField = new ObservableCollection<ItemPropertyType>();
-            this.itemField = new ItemType();
-            this.documentReferenceField = new ObservableCollection<DocumentReferenceType>();
-            this.requiredItemLocationQuantityField = new ObservableCollection<ItemLocationQuantityType>();
-            this.replacedRelatedItemField = new ObservableCollection<RelatedItemType>();
-            this.complementaryRelatedItemField = new ObservableCollection<RelatedItemType>();
-            this.replacementRelatedItemField = new ObservableCollection<RelatedItemType>();
-            this.requiredRelatedItemField = new ObservableCollection<RelatedItemType>();
-            this.accessoryRelatedItemField = new ObservableCollection<RelatedItemType>();
-            this.componentRelatedItemField = new ObservableCollection<RelatedItemType>();
-            this.itemComparisonField = new ObservableCollection<ItemComparisonType>();
-            this.lineValidityPeriodField = new PeriodType();
-            this.warrantyValidityPeriodField = new PeriodType();
-            this.warrantyPartyField = new PartyType();
-            this.sellerSupplierPartyField = new SupplierPartyType();
-            this.contractorCustomerPartyField = new CustomerPartyType();
-            this.warrantyInformationField = new ObservableCollection<WarrantyInformationType>();
-            this.noteField = new ObservableCollection<NoteType>();
-        }
+        //public CatalogueLineType() {
+        //    this.callForTendersDocumentReferenceField = new DocumentReferenceType();
+        //    this.callForTendersLineReferenceField = new LineReferenceType();
+        //    this.keywordItemPropertyField = new ObservableCollection<ItemPropertyType>();
+        //    this.itemField = new ItemType();
+        //    this.documentReferenceField = new ObservableCollection<DocumentReferenceType>();
+        //    this.requiredItemLocationQuantityField = new ObservableCollection<ItemLocationQuantityType>();
+        //    this.replacedRelatedItemField = new ObservableCollection<RelatedItemType>();
+        //    this.complementaryRelatedItemField = new ObservableCollection<RelatedItemType>();
+        //    this.replacementRelatedItemField = new ObservableCollection<RelatedItemType>();
+        //    this.requiredRelatedItemField = new ObservableCollection<RelatedItemType>();
+        //    this.accessoryRelatedItemField = new ObservableCollection<RelatedItemType>();
+        //    this.componentRelatedItemField = new ObservableCollection<RelatedItemType>();
+        //    this.itemComparisonField = new ObservableCollection<ItemComparisonType>();
+        //    this.lineValidityPeriodField = new PeriodType();
+        //    this.warrantyValidityPeriodField = new PeriodType();
+        //    this.warrantyPartyField = new PartyType();
+        //    this.sellerSupplierPartyField = new SupplierPartyType();
+        //    this.contractorCustomerPartyField = new CustomerPartyType();
+        //    this.warrantyInformationField = new ObservableCollection<WarrantyInformationType>();
+        //    this.noteField = new ObservableCollection<NoteType>();
+        //}
         
         public IDType ID {
             get {
@@ -18040,7 +18696,8 @@ namespace Oasis.Ubl.v21 {
                 this.contractSubdivisionField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlArrayAttribute()]
         public ObservableCollection<NoteType> Note {
             get {
                 return this.noteField;
@@ -18103,7 +18760,8 @@ namespace Oasis.Ubl.v21 {
                 this.maximumOrderQuantityField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlArrayAttribute()]
         public ObservableCollection<WarrantyInformationType> WarrantyInformation {
             get {
                 return this.warrantyInformationField;
@@ -18166,7 +18824,8 @@ namespace Oasis.Ubl.v21 {
                 this.lineValidityPeriodField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlArrayAttribute()]
         public ObservableCollection<ItemComparisonType> ItemComparison {
             get {
                 return this.itemComparisonField;
@@ -18175,7 +18834,8 @@ namespace Oasis.Ubl.v21 {
                 this.itemComparisonField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlArrayAttribute()]
         public ObservableCollection<RelatedItemType> ComponentRelatedItem {
             get {
                 return this.componentRelatedItemField;
@@ -18193,7 +18853,8 @@ namespace Oasis.Ubl.v21 {
                 this.accessoryRelatedItemField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlArrayAttribute()]
         public ObservableCollection<RelatedItemType> RequiredRelatedItem {
             get {
                 return this.requiredRelatedItemField;
@@ -18211,7 +18872,8 @@ namespace Oasis.Ubl.v21 {
                 this.replacementRelatedItemField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlArrayAttribute()]
         public ObservableCollection<RelatedItemType> ComplementaryRelatedItem {
             get {
                 return this.complementaryRelatedItemField;
@@ -18220,7 +18882,8 @@ namespace Oasis.Ubl.v21 {
                 this.complementaryRelatedItemField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlArrayAttribute()]
         public ObservableCollection<RelatedItemType> ReplacedRelatedItem {
             get {
                 return this.replacedRelatedItemField;
@@ -18229,7 +18892,8 @@ namespace Oasis.Ubl.v21 {
                 this.replacedRelatedItemField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlArrayAttribute()]
         public ObservableCollection<ItemLocationQuantityType> RequiredItemLocationQuantity {
             get {
                 return this.requiredItemLocationQuantityField;
@@ -18238,7 +18902,8 @@ namespace Oasis.Ubl.v21 {
                 this.requiredItemLocationQuantityField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlArrayAttribute()]
         public ObservableCollection<DocumentReferenceType> DocumentReference {
             get {
                 return this.documentReferenceField;
@@ -18256,7 +18921,8 @@ namespace Oasis.Ubl.v21 {
                 this.itemField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlArrayAttribute()]
         public ObservableCollection<ItemPropertyType> KeywordItemProperty {
             get {
                 return this.keywordItemPropertyField;
@@ -18320,11 +18986,11 @@ namespace Oasis.Ubl.v21 {
         
         private ObservableCollection<ItemLocationQuantityType> requiredItemLocationQuantityField;
         
-        public CataloguePricingUpdateLineType() {
-            this.requiredItemLocationQuantityField = new ObservableCollection<ItemLocationQuantityType>();
-            this.sellerSupplierPartyField = new SupplierPartyType();
-            this.contractorCustomerPartyField = new CustomerPartyType();
-        }
+        //public CataloguePricingUpdateLineType() {
+        //    this.requiredItemLocationQuantityField = new ObservableCollection<ItemLocationQuantityType>();
+        //    this.sellerSupplierPartyField = new SupplierPartyType();
+        //    this.contractorCustomerPartyField = new CustomerPartyType();
+        //}
         
         public IDType ID {
             get {
@@ -18352,7 +19018,8 @@ namespace Oasis.Ubl.v21 {
                 this.sellerSupplierPartyField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlArrayAttribute()]
         public ObservableCollection<ItemLocationQuantityType> RequiredItemLocationQuantity {
             get {
                 return this.requiredItemLocationQuantityField;
@@ -18385,10 +19052,10 @@ namespace Oasis.Ubl.v21 {
         
         private PreviousVersionIDType previousVersionIDField;
         
-        public CatalogueReferenceType() {
-            this.descriptionField = new ObservableCollection<DescriptionType>();
-            this.noteField = new ObservableCollection<NoteType>();
-        }
+        //public CatalogueReferenceType() {
+        //    this.descriptionField = new ObservableCollection<DescriptionType>();
+        //    this.noteField = new ObservableCollection<NoteType>();
+        //}
         
         public IDType ID {
             get {
@@ -18443,7 +19110,8 @@ namespace Oasis.Ubl.v21 {
                 this.revisionTimeField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlArrayAttribute()]
         public ObservableCollection<NoteType> Note {
             get {
                 return this.noteField;
@@ -18452,7 +19120,8 @@ namespace Oasis.Ubl.v21 {
                 this.noteField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlArrayAttribute()]
         public ObservableCollection<DescriptionType> Description {
             get {
                 return this.descriptionField;
@@ -18495,12 +19164,12 @@ namespace Oasis.Ubl.v21 {
         
         private ItemType itemField;
         
-        public CatalogueRequestLineType() {
-            this.itemField = new ItemType();
-            this.requiredItemLocationQuantityField = new ObservableCollection<ItemLocationQuantityType>();
-            this.lineValidityPeriodField = new PeriodType();
-            this.noteField = new ObservableCollection<NoteType>();
-        }
+        //public CatalogueRequestLineType() {
+        //    this.itemField = new ItemType();
+        //    this.requiredItemLocationQuantityField = new ObservableCollection<ItemLocationQuantityType>();
+        //    this.lineValidityPeriodField = new PeriodType();
+        //    this.noteField = new ObservableCollection<NoteType>();
+        //}
         
         public IDType ID {
             get {
@@ -18519,7 +19188,8 @@ namespace Oasis.Ubl.v21 {
                 this.contractSubdivisionField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlArrayAttribute()]
         public ObservableCollection<NoteType> Note {
             get {
                 return this.noteField;
@@ -18537,7 +19207,8 @@ namespace Oasis.Ubl.v21 {
                 this.lineValidityPeriodField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlArrayAttribute()]
         public ObservableCollection<ItemLocationQuantityType> RequiredItemLocationQuantity {
             get {
                 return this.requiredItemLocationQuantityField;
@@ -18591,19 +19262,19 @@ namespace Oasis.Ubl.v21 {
         
         private ObservableCollection<SignatureType> signatureField;
         
-        public CertificateOfOriginApplicationType() {
-            this.signatureField = new ObservableCollection<SignatureType>();
-            this.supportingDocumentReferenceField = new ObservableCollection<DocumentReferenceType>();
-            this.documentDistributionField = new ObservableCollection<DocumentDistributionType>();
-            this.issuingCountryField = new CountryType();
-            this.importerPartyField = new PartyType();
-            this.exporterPartyField = new PartyType();
-            this.issuerPartyField = new PartyType();
-            this.preparationPartyField = new PartyType();
-            this.endorserPartyField = new ObservableCollection<EndorserPartyType>();
-            this.shipmentField = new ShipmentType();
-            this.remarksField = new ObservableCollection<RemarksType>();
-        }
+        //public CertificateOfOriginApplicationType() {
+        //    this.signatureField = new ObservableCollection<SignatureType>();
+        //    this.supportingDocumentReferenceField = new ObservableCollection<DocumentReferenceType>();
+        //    this.documentDistributionField = new ObservableCollection<DocumentDistributionType>();
+        //    this.issuingCountryField = new CountryType();
+        //    this.importerPartyField = new PartyType();
+        //    this.exporterPartyField = new PartyType();
+        //    this.issuerPartyField = new PartyType();
+        //    this.preparationPartyField = new PartyType();
+        //    this.endorserPartyField = new ObservableCollection<EndorserPartyType>();
+        //    this.shipmentField = new ShipmentType();
+        //    this.remarksField = new ObservableCollection<RemarksType>();
+        //}
         
         public ReferenceIDType ReferenceID {
             get {
@@ -18649,7 +19320,8 @@ namespace Oasis.Ubl.v21 {
                 this.previousJobIDField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlArrayAttribute()]
         public ObservableCollection<RemarksType> Remarks {
             get {
                 return this.remarksField;
@@ -18667,7 +19339,8 @@ namespace Oasis.Ubl.v21 {
                 this.shipmentField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlArrayAttribute()]
         public ObservableCollection<EndorserPartyType> EndorserParty {
             get {
                 return this.endorserPartyField;
@@ -18721,7 +19394,8 @@ namespace Oasis.Ubl.v21 {
                 this.issuingCountryField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlArrayAttribute()]
         public ObservableCollection<DocumentDistributionType> DocumentDistribution {
             get {
                 return this.documentDistributionField;
@@ -18730,7 +19404,8 @@ namespace Oasis.Ubl.v21 {
                 this.documentDistributionField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlArrayAttribute()]
         public ObservableCollection<DocumentReferenceType> SupportingDocumentReference {
             get {
                 return this.supportingDocumentReferenceField;
@@ -18760,10 +19435,10 @@ namespace Oasis.Ubl.v21 {
         
         private ContactType signatoryContactField;
         
-        public EndorserPartyType() {
-            this.signatoryContactField = new ContactType();
-            this.partyField = new PartyType();
-        }
+        //public EndorserPartyType() {
+        //    this.signatoryContactField = new ContactType();
+        //    this.partyField = new PartyType();
+        //}
         
         public RoleCodeType RoleCode {
             get {
@@ -18810,9 +19485,9 @@ namespace Oasis.Ubl.v21 {
         
         private PartyType partyField;
         
-        public DocumentDistributionType() {
-            this.partyField = new PartyType();
-        }
+        //public DocumentDistributionType() {
+        //    this.partyField = new PartyType();
+        //}
         
         public PrintQualifierType PrintQualifier {
             get {
@@ -18927,14 +19602,14 @@ namespace Oasis.Ubl.v21 {
         
         private MonetaryTotalType legalMonetaryTotalField;
         
-        public ConsumptionType() {
-            this.legalMonetaryTotalField = new MonetaryTotalType();
-            this.telecommunicationsSupplyField = new TelecommunicationsSupplyType();
-            this.energyWaterSupplyField = new EnergyWaterSupplyType();
-            this.taxTotalField = new ObservableCollection<TaxTotalType>();
-            this.allowanceChargeField = new ObservableCollection<AllowanceChargeType>();
-            this.mainPeriodField = new PeriodType();
-        }
+        //public ConsumptionType() {
+        //    this.legalMonetaryTotalField = new MonetaryTotalType();
+        //    this.telecommunicationsSupplyField = new TelecommunicationsSupplyType();
+        //    this.energyWaterSupplyField = new EnergyWaterSupplyType();
+        //    this.taxTotalField = new ObservableCollection<TaxTotalType>();
+        //    this.allowanceChargeField = new ObservableCollection<AllowanceChargeType>();
+        //    this.mainPeriodField = new PeriodType();
+        //}
         
         public UtilityStatementTypeCodeType UtilityStatementTypeCode {
             get {
@@ -18953,7 +19628,8 @@ namespace Oasis.Ubl.v21 {
                 this.mainPeriodField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlArrayAttribute()]
         public ObservableCollection<AllowanceChargeType> AllowanceCharge {
             get {
                 return this.allowanceChargeField;
@@ -18962,7 +19638,8 @@ namespace Oasis.Ubl.v21 {
                 this.allowanceChargeField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlArrayAttribute()]
         public ObservableCollection<TaxTotalType> TaxTotal {
             get {
                 return this.taxTotalField;
@@ -19010,13 +19687,14 @@ namespace Oasis.Ubl.v21 {
         
         private ObservableCollection<ConsumptionCorrectionType> energyWaterConsumptionCorrectionField;
         
-        public EnergyWaterSupplyType() {
-            this.energyWaterConsumptionCorrectionField = new ObservableCollection<ConsumptionCorrectionType>();
-            this.consumptionAverageField = new ObservableCollection<ConsumptionAverageType>();
-            this.energyTaxReportField = new ObservableCollection<EnergyTaxReportType>();
-            this.consumptionReportField = new ObservableCollection<ConsumptionReportType>();
-        }
-        
+        //public EnergyWaterSupplyType() {
+        //    this.energyWaterConsumptionCorrectionField = new ObservableCollection<ConsumptionCorrectionType>();
+        //    this.consumptionAverageField = new ObservableCollection<ConsumptionAverageType>();
+        //    this.energyTaxReportField = new ObservableCollection<EnergyTaxReportType>();
+        //    this.consumptionReportField = new ObservableCollection<ConsumptionReportType>();
+        //}
+
+        [System.Xml.Serialization.XmlArrayAttribute()]
         public ObservableCollection<ConsumptionReportType> ConsumptionReport {
             get {
                 return this.consumptionReportField;
@@ -19025,7 +19703,8 @@ namespace Oasis.Ubl.v21 {
                 this.consumptionReportField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlArrayAttribute()]
         public ObservableCollection<EnergyTaxReportType> EnergyTaxReport {
             get {
                 return this.energyTaxReportField;
@@ -19034,7 +19713,8 @@ namespace Oasis.Ubl.v21 {
                 this.energyTaxReportField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlArrayAttribute()]
         public ObservableCollection<ConsumptionAverageType> ConsumptionAverage {
             get {
                 return this.consumptionAverageField;
@@ -19043,7 +19723,8 @@ namespace Oasis.Ubl.v21 {
                 this.consumptionAverageField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlArrayAttribute()]
         public ObservableCollection<ConsumptionCorrectionType> EnergyWaterConsumptionCorrection {
             get {
                 return this.energyWaterConsumptionCorrectionField;
@@ -19092,14 +19773,14 @@ namespace Oasis.Ubl.v21 {
         
         private ObservableCollection<ConsumptionHistoryType> consumptionHistoryField;
         
-        public ConsumptionReportType() {
-            this.consumptionHistoryField = new ObservableCollection<ConsumptionHistoryType>();
-            this.consumptionReportReferenceField = new ObservableCollection<ConsumptionReportReferenceType>();
-            this.documentReferenceField = new DocumentReferenceType();
-            this.guidanceDocumentReferenceField = new DocumentReferenceType();
-            this.periodField = new PeriodType();
-            this.descriptionField = new ObservableCollection<DescriptionType>();
-        }
+        //public ConsumptionReportType() {
+        //    this.consumptionHistoryField = new ObservableCollection<ConsumptionHistoryType>();
+        //    this.consumptionReportReferenceField = new ObservableCollection<ConsumptionReportReferenceType>();
+        //    this.documentReferenceField = new DocumentReferenceType();
+        //    this.guidanceDocumentReferenceField = new DocumentReferenceType();
+        //    this.periodField = new PeriodType();
+        //    this.descriptionField = new ObservableCollection<DescriptionType>();
+        //}
         
         public IDType ID {
             get {
@@ -19127,7 +19808,8 @@ namespace Oasis.Ubl.v21 {
                 this.consumptionTypeCodeField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlArrayAttribute()]
         public ObservableCollection<DescriptionType> Description {
             get {
                 return this.descriptionField;
@@ -19244,7 +19926,8 @@ namespace Oasis.Ubl.v21 {
                 this.documentReferenceField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlArrayAttribute()]
         public ObservableCollection<ConsumptionReportReferenceType> ConsumptionReportReference {
             get {
                 return this.consumptionReportReferenceField;
@@ -19253,7 +19936,8 @@ namespace Oasis.Ubl.v21 {
                 this.consumptionReportReferenceField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlArrayAttribute()]
         public ObservableCollection<ConsumptionHistoryType> ConsumptionHistory {
             get {
                 return this.consumptionHistoryField;
@@ -19276,9 +19960,9 @@ namespace Oasis.Ubl.v21 {
         
         private PeriodType periodField;
         
-        public ConsumptionReportReferenceType() {
-            this.periodField = new PeriodType();
-        }
+        //public ConsumptionReportReferenceType() {
+        //    this.periodField = new PeriodType();
+        //}
         
         public ConsumptionReportIDType ConsumptionReportID {
             get {
@@ -19342,10 +20026,10 @@ namespace Oasis.Ubl.v21 {
         
         private PeriodType periodField;
         
-        public ConsumptionHistoryType() {
-            this.periodField = new PeriodType();
-            this.descriptionField = new ObservableCollection<DescriptionType>();
-        }
+        //public ConsumptionHistoryType() {
+        //    this.periodField = new PeriodType();
+        //    this.descriptionField = new ObservableCollection<DescriptionType>();
+        //}
         
         public MeterNumberType MeterNumber {
             get {
@@ -19391,7 +20075,8 @@ namespace Oasis.Ubl.v21 {
                 this.consumptionLevelField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlArrayAttribute()]
         public ObservableCollection<DescriptionType> Description {
             get {
                 return this.descriptionField;
@@ -19421,9 +20106,9 @@ namespace Oasis.Ubl.v21 {
         
         private TaxSchemeType taxSchemeField;
         
-        public EnergyTaxReportType() {
-            this.taxSchemeField = new TaxSchemeType();
-        }
+        //public EnergyTaxReportType() {
+        //    this.taxSchemeField = new TaxSchemeType();
+        //}
         
         public TaxEnergyAmountType TaxEnergyAmount {
             get {
@@ -19468,9 +20153,9 @@ namespace Oasis.Ubl.v21 {
         
         private ObservableCollection<DescriptionType> descriptionField;
         
-        public ConsumptionAverageType() {
-            this.descriptionField = new ObservableCollection<DescriptionType>();
-        }
+        //public ConsumptionAverageType() {
+        //    this.descriptionField = new ObservableCollection<DescriptionType>();
+        //}
         
         public AverageAmountType AverageAmount {
             get {
@@ -19480,7 +20165,8 @@ namespace Oasis.Ubl.v21 {
                 this.averageAmountField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlArrayAttribute()]
         public ObservableCollection<DescriptionType> Description {
             get {
                 return this.descriptionField;
@@ -19517,9 +20203,9 @@ namespace Oasis.Ubl.v21 {
         
         private CorrectionAmountType correctionAmountField;
         
-        public ConsumptionCorrectionType() {
-            this.descriptionField = new ObservableCollection<DescriptionType>();
-        }
+        //public ConsumptionCorrectionType() {
+        //    this.descriptionField = new ObservableCollection<DescriptionType>();
+        //}
         
         public CorrectionTypeType CorrectionType {
             get {
@@ -19583,7 +20269,8 @@ namespace Oasis.Ubl.v21 {
                 this.differenceTemperatureReductionQuantityField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlArrayAttribute()]
         public ObservableCollection<DescriptionType> Description {
             get {
                 return this.descriptionField;
@@ -19644,10 +20331,10 @@ namespace Oasis.Ubl.v21 {
         
         private ObservableCollection<TelecommunicationsSupplyLineType> telecommunicationsSupplyLineField;
         
-        public TelecommunicationsSupplyType() {
-            this.telecommunicationsSupplyLineField = new ObservableCollection<TelecommunicationsSupplyLineType>();
-            this.descriptionField = new ObservableCollection<DescriptionType>();
-        }
+        //public TelecommunicationsSupplyType() {
+        //    this.telecommunicationsSupplyLineField = new ObservableCollection<TelecommunicationsSupplyLineType>();
+        //    this.descriptionField = new ObservableCollection<DescriptionType>();
+        //}
         
         public TelecommunicationsSupplyTypeType TelecommunicationsSupplyType1 {
             get {
@@ -19675,7 +20362,8 @@ namespace Oasis.Ubl.v21 {
                 this.privacyCodeField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlArrayAttribute()]
         public ObservableCollection<DescriptionType> Description {
             get {
                 return this.descriptionField;
@@ -19693,7 +20381,8 @@ namespace Oasis.Ubl.v21 {
                 this.totalAmountField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlArrayAttribute()]
         public ObservableCollection<TelecommunicationsSupplyLineType> TelecommunicationsSupplyLine {
             get {
                 return this.telecommunicationsSupplyLineField;
@@ -19722,13 +20411,13 @@ namespace Oasis.Ubl.v21 {
         
         private ObservableCollection<TelecommunicationsServiceType> telecommunicationsServiceField;
         
-        public TelecommunicationsSupplyLineType() {
-            this.telecommunicationsServiceField = new ObservableCollection<TelecommunicationsServiceType>();
-            this.taxTotalField = new ObservableCollection<TaxTotalType>();
-            this.allowanceChargeField = new ObservableCollection<AllowanceChargeType>();
-            this.exchangeRateField = new ObservableCollection<ExchangeRateType>();
-            this.descriptionField = new ObservableCollection<DescriptionType>();
-        }
+        //public TelecommunicationsSupplyLineType() {
+        //    this.telecommunicationsServiceField = new ObservableCollection<TelecommunicationsServiceType>();
+        //    this.taxTotalField = new ObservableCollection<TaxTotalType>();
+        //    this.allowanceChargeField = new ObservableCollection<AllowanceChargeType>();
+        //    this.exchangeRateField = new ObservableCollection<ExchangeRateType>();
+        //    this.descriptionField = new ObservableCollection<DescriptionType>();
+        //}
         
         public IDType ID {
             get {
@@ -19747,7 +20436,8 @@ namespace Oasis.Ubl.v21 {
                 this.phoneNumberField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlArrayAttribute()]
         public ObservableCollection<DescriptionType> Description {
             get {
                 return this.descriptionField;
@@ -19765,7 +20455,8 @@ namespace Oasis.Ubl.v21 {
                 this.lineExtensionAmountField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlArrayAttribute()]
         public ObservableCollection<ExchangeRateType> ExchangeRate {
             get {
                 return this.exchangeRateField;
@@ -19783,7 +20474,8 @@ namespace Oasis.Ubl.v21 {
                 this.allowanceChargeField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlArrayAttribute()]
         public ObservableCollection<TaxTotalType> TaxTotal {
             get {
                 return this.taxTotalField;
@@ -19792,7 +20484,8 @@ namespace Oasis.Ubl.v21 {
                 this.taxTotalField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlArrayAttribute()]
         public ObservableCollection<TelecommunicationsServiceType> TelecommunicationsService {
             get {
                 return this.telecommunicationsServiceField;
@@ -19847,15 +20540,15 @@ namespace Oasis.Ubl.v21 {
         
         private ObservableCollection<DutyType1> timeDutyField;
         
-        public TelecommunicationsServiceType() {
-            this.timeDutyField = new ObservableCollection<DutyType1>();
-            this.callDutyField = new ObservableCollection<DutyType1>();
-            this.taxTotalField = new ObservableCollection<TaxTotalType>();
-            this.allowanceChargeField = new ObservableCollection<AllowanceChargeType>();
-            this.exchangeRateField = new ObservableCollection<ExchangeRateType>();
-            this.countryField = new CountryType();
-            this.priceField = new PriceType();
-        }
+        //public TelecommunicationsServiceType() {
+        //    this.timeDutyField = new ObservableCollection<DutyType1>();
+        //    this.callDutyField = new ObservableCollection<DutyType1>();
+        //    this.taxTotalField = new ObservableCollection<TaxTotalType>();
+        //    this.allowanceChargeField = new ObservableCollection<AllowanceChargeType>();
+        //    this.exchangeRateField = new ObservableCollection<ExchangeRateType>();
+        //    this.countryField = new CountryType();
+        //    this.priceField = new PriceType();
+        //}
         
         public IDType ID {
             get {
@@ -20000,7 +20693,8 @@ namespace Oasis.Ubl.v21 {
                 this.countryField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlArrayAttribute()]
         public ObservableCollection<ExchangeRateType> ExchangeRate {
             get {
                 return this.exchangeRateField;
@@ -20009,7 +20703,8 @@ namespace Oasis.Ubl.v21 {
                 this.exchangeRateField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlArrayAttribute()]
         public ObservableCollection<AllowanceChargeType> AllowanceCharge {
             get {
                 return this.allowanceChargeField;
@@ -20018,7 +20713,8 @@ namespace Oasis.Ubl.v21 {
                 this.allowanceChargeField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlArrayAttribute()]
         public ObservableCollection<TaxTotalType> TaxTotal {
             get {
                 return this.taxTotalField;
@@ -20027,7 +20723,8 @@ namespace Oasis.Ubl.v21 {
                 this.taxTotalField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlArrayAttribute()]
         public ObservableCollection<DutyType1> CallDuty {
             get {
                 return this.callDutyField;
@@ -20036,7 +20733,8 @@ namespace Oasis.Ubl.v21 {
                 this.callDutyField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlArrayAttribute()]
         public ObservableCollection<DutyType1> TimeDuty {
             get {
                 return this.timeDutyField;
@@ -20071,15 +20769,15 @@ namespace Oasis.Ubl.v21 {
         
         private UnstructuredPriceType unstructuredPriceField;
         
-        public ConsumptionLineType() {
-            this.unstructuredPriceField = new UnstructuredPriceType();
-            this.priceField = new PriceType();
-            this.utilityItemField = new UtilityItemType();
-            this.taxTotalField = new ObservableCollection<TaxTotalType>();
-            this.allowanceChargeField = new ObservableCollection<AllowanceChargeType>();
-            this.deliveryField = new ObservableCollection<DeliveryType>();
-            this.periodField = new PeriodType();
-        }
+        //public ConsumptionLineType() {
+        //    this.unstructuredPriceField = new UnstructuredPriceType();
+        //    this.priceField = new PriceType();
+        //    this.utilityItemField = new UtilityItemType();
+        //    this.taxTotalField = new ObservableCollection<TaxTotalType>();
+        //    this.allowanceChargeField = new ObservableCollection<AllowanceChargeType>();
+        //    this.deliveryField = new ObservableCollection<DeliveryType>();
+        //    this.periodField = new PeriodType();
+        //}
         
         public IDType ID {
             get {
@@ -20125,7 +20823,8 @@ namespace Oasis.Ubl.v21 {
                 this.periodField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlArrayAttribute()]
         public ObservableCollection<DeliveryType> Delivery {
             get {
                 return this.deliveryField;
@@ -20134,7 +20833,8 @@ namespace Oasis.Ubl.v21 {
                 this.deliveryField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlArrayAttribute()]
         public ObservableCollection<AllowanceChargeType> AllowanceCharge {
             get {
                 return this.allowanceChargeField;
@@ -20143,7 +20843,8 @@ namespace Oasis.Ubl.v21 {
                 this.allowanceChargeField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlArrayAttribute()]
         public ObservableCollection<TaxTotalType> TaxTotal {
             get {
                 return this.taxTotalField;
@@ -20213,11 +20914,11 @@ namespace Oasis.Ubl.v21 {
         
         private ContractType contractField;
         
-        public UtilityItemType() {
-            this.contractField = new ContractType();
-            this.taxCategoryField = new TaxCategoryType();
-            this.descriptionField = new ObservableCollection<DescriptionType>();
-        }
+        //public UtilityItemType() {
+        //    this.contractField = new ContractType();
+        //    this.taxCategoryField = new TaxCategoryType();
+        //    this.descriptionField = new ObservableCollection<DescriptionType>();
+        //}
         
         public IDType ID {
             get {
@@ -20254,7 +20955,8 @@ namespace Oasis.Ubl.v21 {
                 this.subscriberTypeCodeField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlArrayAttribute()]
         public ObservableCollection<DescriptionType> Description {
             get {
                 return this.descriptionField;
@@ -20400,12 +21102,12 @@ namespace Oasis.Ubl.v21 {
         
         private ObservableCollection<MeterType> utilityMeterField;
         
-        public ConsumptionPointType() {
-            this.utilityMeterField = new ObservableCollection<MeterType>();
-            this.webSiteAccessField = new WebSiteAccessType();
-            this.addressField = new AddressType();
-            this.descriptionField = new ObservableCollection<DescriptionType>();
-        }
+        //public ConsumptionPointType() {
+        //    this.utilityMeterField = new ObservableCollection<MeterType>();
+        //    this.webSiteAccessField = new WebSiteAccessType();
+        //    this.addressField = new AddressType();
+        //    this.descriptionField = new ObservableCollection<DescriptionType>();
+        //}
         
         public IDType ID {
             get {
@@ -20415,7 +21117,8 @@ namespace Oasis.Ubl.v21 {
                 this.idField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlArrayAttribute()]
         public ObservableCollection<DescriptionType> Description {
             get {
                 return this.descriptionField;
@@ -20478,7 +21181,8 @@ namespace Oasis.Ubl.v21 {
                 this.webSiteAccessField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlArrayAttribute()]
         public ObservableCollection<MeterType> UtilityMeter {
             get {
                 return this.utilityMeterField;
@@ -20541,10 +21245,10 @@ namespace Oasis.Ubl.v21 {
         
         private ObservableCollection<MeterPropertyType> meterPropertyField;
         
-        public MeterType() {
-            this.meterPropertyField = new ObservableCollection<MeterPropertyType>();
-            this.meterReadingField = new ObservableCollection<MeterReadingType>();
-        }
+        //public MeterType() {
+        //    this.meterPropertyField = new ObservableCollection<MeterPropertyType>();
+        //    this.meterReadingField = new ObservableCollection<MeterReadingType>();
+        //}
         
         public MeterNumberType MeterNumber {
             get {
@@ -20590,7 +21294,8 @@ namespace Oasis.Ubl.v21 {
                 this.totalDeliveredQuantityField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlArrayAttribute()]
         public ObservableCollection<MeterReadingType> MeterReading {
             get {
                 return this.meterReadingField;
@@ -20599,7 +21304,8 @@ namespace Oasis.Ubl.v21 {
                 this.meterReadingField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlArrayAttribute()]
         public ObservableCollection<MeterPropertyType> MeterProperty {
             get {
                 return this.meterPropertyField;
@@ -20638,9 +21344,9 @@ namespace Oasis.Ubl.v21 {
         
         private DeliveredQuantityType deliveredQuantityField;
         
-        public MeterReadingType() {
-            this.meterReadingCommentsField = new ObservableCollection<MeterReadingCommentsType>();
-        }
+        //public MeterReadingType() {
+        //    this.meterReadingCommentsField = new ObservableCollection<MeterReadingCommentsType>();
+        //}
         
         public IDType ID {
             get {
@@ -20740,7 +21446,8 @@ namespace Oasis.Ubl.v21 {
                 this.latestMeterReadingMethodCodeField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlArrayAttribute()]
         public ObservableCollection<MeterReadingCommentsType> MeterReadingComments {
             get {
                 return this.meterReadingCommentsField;
@@ -20772,9 +21479,9 @@ namespace Oasis.Ubl.v21 {
         
         private ObservableCollection<ValueQualifierType> valueQualifierField;
         
-        public MeterPropertyType() {
-            this.valueQualifierField = new ObservableCollection<ValueQualifierType>();
-        }
+        //public MeterPropertyType() {
+        //    this.valueQualifierField = new ObservableCollection<ValueQualifierType>();
+        //}
         
         public NameType1 Name {
             get {
@@ -20811,7 +21518,8 @@ namespace Oasis.Ubl.v21 {
                 this.valueQuantityField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlArrayAttribute()]
         public ObservableCollection<ValueQualifierType> ValueQualifier {
             get {
                 return this.valueQualifierField;
@@ -20857,11 +21565,11 @@ namespace Oasis.Ubl.v21 {
         
         private PartyType partyField;
         
-        public ContractingPartyType() {
-            this.partyField = new PartyType();
-            this.contractingActivityField = new ObservableCollection<ContractingActivityType>();
-            this.contractingPartyType1Field = new ObservableCollection<ContractingPartyTypeType>();
-        }
+        //public ContractingPartyType() {
+        //    this.partyField = new PartyType();
+        //    this.contractingActivityField = new ObservableCollection<ContractingActivityType>();
+        //    this.contractingPartyType1Field = new ObservableCollection<ContractingPartyTypeType>();
+        //}
         
         public BuyerProfileURIType BuyerProfileURI {
             get {
@@ -20871,7 +21579,8 @@ namespace Oasis.Ubl.v21 {
                 this.buyerProfileURIField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlArrayAttribute()]
         public ObservableCollection<ContractingPartyTypeType> ContractingPartyType1 {
             get {
                 return this.contractingPartyType1Field;
@@ -20880,7 +21589,8 @@ namespace Oasis.Ubl.v21 {
                 this.contractingPartyType1Field = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlArrayAttribute()]
         public ObservableCollection<ContractingActivityType> ContractingActivity {
             get {
                 return this.contractingActivityField;
@@ -20983,27 +21693,27 @@ namespace Oasis.Ubl.v21 {
         
         private PriceExtensionType itemPriceExtensionField;
         
-        public CreditNoteLineType() {
-            this.itemPriceExtensionField = new PriceExtensionType();
-            this.subCreditNoteLineField = new ObservableCollection<CreditNoteLineType>();
-            this.deliveryTermsField = new ObservableCollection<DeliveryTermsType>();
-            this.priceField = new PriceType();
-            this.itemField = new ItemType();
-            this.allowanceChargeField = new ObservableCollection<AllowanceChargeType>();
-            this.taxTotalField = new ObservableCollection<TaxTotalType>();
-            this.paymentTermsField = new ObservableCollection<PaymentTermsType>();
-            this.deliveryField = new ObservableCollection<DeliveryType>();
-            this.originatorPartyField = new PartyType();
-            this.pricingReferenceField = new PricingReferenceType();
-            this.documentReferenceField = new ObservableCollection<DocumentReferenceType>();
-            this.billingReferenceField = new ObservableCollection<BillingReferenceType>();
-            this.receiptLineReferenceField = new ObservableCollection<LineReferenceType>();
-            this.despatchLineReferenceField = new ObservableCollection<LineReferenceType>();
-            this.discrepancyResponseField = new ObservableCollection<ResponseType>();
-            this.orderLineReferenceField = new ObservableCollection<OrderLineReferenceType>();
-            this.invoicePeriodField = new ObservableCollection<PeriodType>();
-            this.noteField = new ObservableCollection<NoteType>();
-        }
+        //public CreditNoteLineType() {
+        //    this.itemPriceExtensionField = new PriceExtensionType();
+        //    this.subCreditNoteLineField = new ObservableCollection<CreditNoteLineType>();
+        //    this.deliveryTermsField = new ObservableCollection<DeliveryTermsType>();
+        //    this.priceField = new PriceType();
+        //    this.itemField = new ItemType();
+        //    this.allowanceChargeField = new ObservableCollection<AllowanceChargeType>();
+        //    this.taxTotalField = new ObservableCollection<TaxTotalType>();
+        //    this.paymentTermsField = new ObservableCollection<PaymentTermsType>();
+        //    this.deliveryField = new ObservableCollection<DeliveryType>();
+        //    this.originatorPartyField = new PartyType();
+        //    this.pricingReferenceField = new PricingReferenceType();
+        //    this.documentReferenceField = new ObservableCollection<DocumentReferenceType>();
+        //    this.billingReferenceField = new ObservableCollection<BillingReferenceType>();
+        //    this.receiptLineReferenceField = new ObservableCollection<LineReferenceType>();
+        //    this.despatchLineReferenceField = new ObservableCollection<LineReferenceType>();
+        //    this.discrepancyResponseField = new ObservableCollection<ResponseType>();
+        //    this.orderLineReferenceField = new ObservableCollection<OrderLineReferenceType>();
+        //    this.invoicePeriodField = new ObservableCollection<PeriodType>();
+        //    this.noteField = new ObservableCollection<NoteType>();
+        //}
         
         public IDType ID {
             get {
@@ -21022,7 +21732,8 @@ namespace Oasis.Ubl.v21 {
                 this.uUIDField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlArrayAttribute()]
         public ObservableCollection<NoteType> Note {
             get {
                 return this.noteField;
@@ -21094,7 +21805,8 @@ namespace Oasis.Ubl.v21 {
                 this.freeOfChargeIndicatorField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlArrayAttribute()]
         public ObservableCollection<PeriodType> InvoicePeriod {
             get {
                 return this.invoicePeriodField;
@@ -21103,7 +21815,8 @@ namespace Oasis.Ubl.v21 {
                 this.invoicePeriodField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlArrayAttribute()]
         public ObservableCollection<OrderLineReferenceType> OrderLineReference {
             get {
                 return this.orderLineReferenceField;
@@ -21112,7 +21825,8 @@ namespace Oasis.Ubl.v21 {
                 this.orderLineReferenceField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlArrayAttribute()]
         public ObservableCollection<ResponseType> DiscrepancyResponse {
             get {
                 return this.discrepancyResponseField;
@@ -21121,7 +21835,8 @@ namespace Oasis.Ubl.v21 {
                 this.discrepancyResponseField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlArrayAttribute()]
         public ObservableCollection<LineReferenceType> DespatchLineReference {
             get {
                 return this.despatchLineReferenceField;
@@ -21130,7 +21845,8 @@ namespace Oasis.Ubl.v21 {
                 this.despatchLineReferenceField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlArrayAttribute()]
         public ObservableCollection<LineReferenceType> ReceiptLineReference {
             get {
                 return this.receiptLineReferenceField;
@@ -21139,7 +21855,8 @@ namespace Oasis.Ubl.v21 {
                 this.receiptLineReferenceField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlArrayAttribute()]
         public ObservableCollection<BillingReferenceType> BillingReference {
             get {
                 return this.billingReferenceField;
@@ -21148,7 +21865,8 @@ namespace Oasis.Ubl.v21 {
                 this.billingReferenceField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlArrayAttribute()]
         public ObservableCollection<DocumentReferenceType> DocumentReference {
             get {
                 return this.documentReferenceField;
@@ -21175,7 +21893,8 @@ namespace Oasis.Ubl.v21 {
                 this.originatorPartyField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlArrayAttribute()]
         public ObservableCollection<DeliveryType> Delivery {
             get {
                 return this.deliveryField;
@@ -21184,7 +21903,8 @@ namespace Oasis.Ubl.v21 {
                 this.deliveryField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlArrayAttribute()]
         public ObservableCollection<PaymentTermsType> PaymentTerms {
             get {
                 return this.paymentTermsField;
@@ -21193,7 +21913,8 @@ namespace Oasis.Ubl.v21 {
                 this.paymentTermsField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlArrayAttribute()]
         public ObservableCollection<TaxTotalType> TaxTotal {
             get {
                 return this.taxTotalField;
@@ -21202,7 +21923,8 @@ namespace Oasis.Ubl.v21 {
                 this.taxTotalField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlArrayAttribute()]
         public ObservableCollection<AllowanceChargeType> AllowanceCharge {
             get {
                 return this.allowanceChargeField;
@@ -21229,7 +21951,8 @@ namespace Oasis.Ubl.v21 {
                 this.priceField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlArrayAttribute()]
         public ObservableCollection<DeliveryTermsType> DeliveryTerms {
             get {
                 return this.deliveryTermsField;
@@ -21238,7 +21961,8 @@ namespace Oasis.Ubl.v21 {
                 this.deliveryTermsField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlArrayAttribute()]
         public ObservableCollection<CreditNoteLineType> SubCreditNoteLine {
             get {
                 return this.subCreditNoteLineField;
@@ -21302,21 +22026,21 @@ namespace Oasis.Ubl.v21 {
         
         private ObservableCollection<DebitNoteLineType> subDebitNoteLineField;
         
-        public DebitNoteLineType() {
-            this.subDebitNoteLineField = new ObservableCollection<DebitNoteLineType>();
-            this.priceField = new PriceType();
-            this.itemField = new ItemType();
-            this.allowanceChargeField = new ObservableCollection<AllowanceChargeType>();
-            this.taxTotalField = new ObservableCollection<TaxTotalType>();
-            this.deliveryField = new ObservableCollection<DeliveryType>();
-            this.pricingReferenceField = new PricingReferenceType();
-            this.documentReferenceField = new ObservableCollection<DocumentReferenceType>();
-            this.billingReferenceField = new ObservableCollection<BillingReferenceType>();
-            this.receiptLineReferenceField = new ObservableCollection<LineReferenceType>();
-            this.despatchLineReferenceField = new ObservableCollection<LineReferenceType>();
-            this.discrepancyResponseField = new ObservableCollection<ResponseType>();
-            this.noteField = new ObservableCollection<NoteType>();
-        }
+        //public DebitNoteLineType() {
+        //    this.subDebitNoteLineField = new ObservableCollection<DebitNoteLineType>();
+        //    this.priceField = new PriceType();
+        //    this.itemField = new ItemType();
+        //    this.allowanceChargeField = new ObservableCollection<AllowanceChargeType>();
+        //    this.taxTotalField = new ObservableCollection<TaxTotalType>();
+        //    this.deliveryField = new ObservableCollection<DeliveryType>();
+        //    this.pricingReferenceField = new PricingReferenceType();
+        //    this.documentReferenceField = new ObservableCollection<DocumentReferenceType>();
+        //    this.billingReferenceField = new ObservableCollection<BillingReferenceType>();
+        //    this.receiptLineReferenceField = new ObservableCollection<LineReferenceType>();
+        //    this.despatchLineReferenceField = new ObservableCollection<LineReferenceType>();
+        //    this.discrepancyResponseField = new ObservableCollection<ResponseType>();
+        //    this.noteField = new ObservableCollection<NoteType>();
+        //}
         
         public IDType ID {
             get {
@@ -21335,7 +22059,8 @@ namespace Oasis.Ubl.v21 {
                 this.uUIDField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlArrayAttribute()]
         public ObservableCollection<NoteType> Note {
             get {
                 return this.noteField;
@@ -21398,7 +22123,8 @@ namespace Oasis.Ubl.v21 {
                 this.paymentPurposeCodeField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlArrayAttribute()]
         public ObservableCollection<ResponseType> DiscrepancyResponse {
             get {
                 return this.discrepancyResponseField;
@@ -21407,7 +22133,8 @@ namespace Oasis.Ubl.v21 {
                 this.discrepancyResponseField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlArrayAttribute()]
         public ObservableCollection<LineReferenceType> DespatchLineReference {
             get {
                 return this.despatchLineReferenceField;
@@ -21416,7 +22143,8 @@ namespace Oasis.Ubl.v21 {
                 this.despatchLineReferenceField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlArrayAttribute()]
         public ObservableCollection<LineReferenceType> ReceiptLineReference {
             get {
                 return this.receiptLineReferenceField;
@@ -21425,7 +22153,8 @@ namespace Oasis.Ubl.v21 {
                 this.receiptLineReferenceField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlArrayAttribute()]
         public ObservableCollection<BillingReferenceType> BillingReference {
             get {
                 return this.billingReferenceField;
@@ -21434,7 +22163,8 @@ namespace Oasis.Ubl.v21 {
                 this.billingReferenceField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlArrayAttribute()]
         public ObservableCollection<DocumentReferenceType> DocumentReference {
             get {
                 return this.documentReferenceField;
@@ -21452,7 +22182,8 @@ namespace Oasis.Ubl.v21 {
                 this.pricingReferenceField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlArrayAttribute()]
         public ObservableCollection<DeliveryType> Delivery {
             get {
                 return this.deliveryField;
@@ -21461,7 +22192,8 @@ namespace Oasis.Ubl.v21 {
                 this.deliveryField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlArrayAttribute()]
         public ObservableCollection<TaxTotalType> TaxTotal {
             get {
                 return this.taxTotalField;
@@ -21470,7 +22202,8 @@ namespace Oasis.Ubl.v21 {
                 this.taxTotalField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlArrayAttribute()]
         public ObservableCollection<AllowanceChargeType> AllowanceCharge {
             get {
                 return this.allowanceChargeField;
@@ -21497,7 +22230,8 @@ namespace Oasis.Ubl.v21 {
                 this.priceField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlArrayAttribute()]
         public ObservableCollection<DebitNoteLineType> SubDebitNoteLine {
             get {
                 return this.subDebitNoteLineField;
@@ -21520,11 +22254,12 @@ namespace Oasis.Ubl.v21 {
         
         private ObservableCollection<PartyType> preSelectedPartyField;
         
-        public EconomicOperatorShortListType() {
-            this.preSelectedPartyField = new ObservableCollection<PartyType>();
-            this.limitationDescriptionField = new ObservableCollection<LimitationDescriptionType>();
-        }
-        
+        //public EconomicOperatorShortListType() {
+        //    this.preSelectedPartyField = new ObservableCollection<PartyType>();
+        //    this.limitationDescriptionField = new ObservableCollection<LimitationDescriptionType>();
+        //}
+
+        [System.Xml.Serialization.XmlArrayAttribute()]
         public ObservableCollection<LimitationDescriptionType> LimitationDescription {
             get {
                 return this.limitationDescriptionField;
@@ -21560,7 +22295,8 @@ namespace Oasis.Ubl.v21 {
                 this.minimumQuantityField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlArrayAttribute()]
         public ObservableCollection<PartyType> PreSelectedParty {
             get {
                 return this.preSelectedPartyField;
@@ -21583,11 +22319,11 @@ namespace Oasis.Ubl.v21 {
         
         private ObservableCollection<SignatureType> signatureField;
         
-        public EndorsementType() {
-            this.signatureField = new ObservableCollection<SignatureType>();
-            this.endorserPartyField = new EndorserPartyType();
-            this.remarksField = new ObservableCollection<RemarksType>();
-        }
+        //public EndorsementType() {
+        //    this.signatureField = new ObservableCollection<SignatureType>();
+        //    this.endorserPartyField = new EndorserPartyType();
+        //    this.remarksField = new ObservableCollection<RemarksType>();
+        //}
         
         public DocumentIDType DocumentID {
             get {
@@ -21606,7 +22342,8 @@ namespace Oasis.Ubl.v21 {
                 this.approvalStatusField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlArrayAttribute()]
         public ObservableCollection<RemarksType> Remarks {
             get {
                 return this.remarksField;
@@ -21624,7 +22361,8 @@ namespace Oasis.Ubl.v21 {
                 this.endorserPartyField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlArrayAttribute()]
         public ObservableCollection<SignatureType> Signature {
             get {
                 return this.signatureField;
@@ -21655,12 +22393,12 @@ namespace Oasis.Ubl.v21 {
         
         private LocationType1 occurenceLocationField;
         
-        public EventType() {
-            this.occurenceLocationField = new LocationType1();
-            this.contactField = new ObservableCollection<ContactType>();
-            this.currentStatusField = new ObservableCollection<StatusType>();
-            this.descriptionField = new ObservableCollection<DescriptionType>();
-        }
+        //public EventType() {
+        //    this.occurenceLocationField = new LocationType1();
+        //    this.contactField = new ObservableCollection<ContactType>();
+        //    this.currentStatusField = new ObservableCollection<StatusType>();
+        //    this.descriptionField = new ObservableCollection<DescriptionType>();
+        //}
         
         public IdentificationIDType IdentificationID {
             get {
@@ -21697,7 +22435,8 @@ namespace Oasis.Ubl.v21 {
                 this.typeCodeField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlArrayAttribute()]
         public ObservableCollection<DescriptionType> Description {
             get {
                 return this.descriptionField;
@@ -21715,7 +22454,8 @@ namespace Oasis.Ubl.v21 {
                 this.completionIndicatorField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlArrayAttribute()]
         public ObservableCollection<StatusType> CurrentStatus {
             get {
                 return this.currentStatusField;
@@ -21724,7 +22464,8 @@ namespace Oasis.Ubl.v21 {
                 this.currentStatusField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlArrayAttribute()]
         public ObservableCollection<ContactType> Contact {
             get {
                 return this.contactField;
@@ -21790,11 +22531,11 @@ namespace Oasis.Ubl.v21 {
         
         private ItemType supplyItemField;
         
-        public EventLineItemType() {
-            this.supplyItemField = new ItemType();
-            this.retailPlannedImpactField = new ObservableCollection<RetailPlannedImpactType>();
-            this.participatingLocationsLocationField = new LocationType1();
-        }
+        //public EventLineItemType() {
+        //    this.supplyItemField = new ItemType();
+        //    this.retailPlannedImpactField = new ObservableCollection<RetailPlannedImpactType>();
+        //    this.participatingLocationsLocationField = new LocationType1();
+        //}
         
         public LineNumberNumericType LineNumberNumeric {
             get {
@@ -21813,7 +22554,8 @@ namespace Oasis.Ubl.v21 {
                 this.participatingLocationsLocationField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlArrayAttribute()]
         public ObservableCollection<RetailPlannedImpactType> RetailPlannedImpact {
             get {
                 return this.retailPlannedImpactField;
@@ -21843,9 +22585,9 @@ namespace Oasis.Ubl.v21 {
         
         private PeriodType periodField;
         
-        public RetailPlannedImpactType() {
-            this.periodField = new PeriodType();
-        }
+        //public RetailPlannedImpactType() {
+        //    this.periodField = new PeriodType();
+        //}
         
         public AmountType2 Amount {
             get {
@@ -21894,10 +22636,10 @@ namespace Oasis.Ubl.v21 {
         
         private PeriodType periodField;
         
-        public EventTacticType() {
-            this.periodField = new PeriodType();
-            this.eventTacticEnumerationField = new EventTacticEnumerationType();
-        }
+        //public EventTacticType() {
+        //    this.periodField = new PeriodType();
+        //    this.eventTacticEnumerationField = new EventTacticEnumerationType();
+        //}
         
         public CommentType Comment {
             get {
@@ -22009,12 +22751,12 @@ namespace Oasis.Ubl.v21 {
         
         private ForecastExceptionCriterionLineType forecastExceptionCriterionLineField;
         
-        public ExceptionCriteriaLineType() {
-            this.forecastExceptionCriterionLineField = new ForecastExceptionCriterionLineType();
-            this.supplyItemField = new ObservableCollection<ItemType>();
-            this.effectivePeriodField = new PeriodType();
-            this.noteField = new ObservableCollection<NoteType>();
-        }
+        //public ExceptionCriteriaLineType() {
+        //    this.forecastExceptionCriterionLineField = new ForecastExceptionCriterionLineType();
+        //    this.supplyItemField = new ObservableCollection<ItemType>();
+        //    this.effectivePeriodField = new PeriodType();
+        //    this.noteField = new ObservableCollection<NoteType>();
+        //}
         
         public IDType ID {
             get {
@@ -22024,7 +22766,8 @@ namespace Oasis.Ubl.v21 {
                 this.idField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlArrayAttribute()]
         public ObservableCollection<NoteType> Note {
             get {
                 return this.noteField;
@@ -22105,7 +22848,8 @@ namespace Oasis.Ubl.v21 {
                 this.effectivePeriodField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlArrayAttribute()]
         public ObservableCollection<ItemType> SupplyItem {
             get {
                 return this.supplyItemField;
@@ -22215,14 +22959,14 @@ namespace Oasis.Ubl.v21 {
         
         private ItemType supplyItemField;
         
-        public ExceptionNotificationLineType() {
-            this.supplyItemField = new ItemType();
-            this.forecastExceptionField = new ForecastExceptionType();
-            this.documentReferenceField = new ObservableCollection<DocumentReferenceType>();
-            this.exceptionObservationPeriodField = new PeriodType();
-            this.descriptionField = new ObservableCollection<DescriptionType>();
-            this.noteField = new ObservableCollection<NoteType>();
-        }
+        //public ExceptionNotificationLineType() {
+        //    this.supplyItemField = new ItemType();
+        //    this.forecastExceptionField = new ForecastExceptionType();
+        //    this.documentReferenceField = new ObservableCollection<DocumentReferenceType>();
+        //    this.exceptionObservationPeriodField = new PeriodType();
+        //    this.descriptionField = new ObservableCollection<DescriptionType>();
+        //    this.noteField = new ObservableCollection<NoteType>();
+        //}
         
         public IDType ID {
             get {
@@ -22232,7 +22976,8 @@ namespace Oasis.Ubl.v21 {
                 this.idField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlArrayAttribute()]
         public ObservableCollection<NoteType> Note {
             get {
                 return this.noteField;
@@ -22241,7 +22986,8 @@ namespace Oasis.Ubl.v21 {
                 this.noteField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlArrayAttribute()]
         public ObservableCollection<DescriptionType> Description {
             get {
                 return this.descriptionField;
@@ -22331,7 +23077,8 @@ namespace Oasis.Ubl.v21 {
                 this.exceptionObservationPeriodField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlArrayAttribute()]
         public ObservableCollection<DocumentReferenceType> DocumentReference {
             get {
                 return this.documentReferenceField;
@@ -22465,11 +23212,11 @@ namespace Oasis.Ubl.v21 {
         
         private SalesItemType salesItemField;
         
-        public ForecastLineType() {
-            this.salesItemField = new SalesItemType();
-            this.forecastPeriodField = new PeriodType();
-            this.noteField = new ObservableCollection<NoteType>();
-        }
+        //public ForecastLineType() {
+        //    this.salesItemField = new SalesItemType();
+        //    this.forecastPeriodField = new PeriodType();
+        //    this.noteField = new ObservableCollection<NoteType>();
+        //}
         
         public IDType ID {
             get {
@@ -22479,7 +23226,8 @@ namespace Oasis.Ubl.v21 {
                 this.idField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlArrayAttribute()]
         public ObservableCollection<NoteType> Note {
             get {
                 return this.noteField;
@@ -22546,12 +23294,12 @@ namespace Oasis.Ubl.v21 {
         
         private SalesItemType salesItemField;
         
-        public ForecastRevisionLineType() {
-            this.salesItemField = new SalesItemType();
-            this.forecastPeriodField = new PeriodType();
-            this.descriptionField = new ObservableCollection<DescriptionType>();
-            this.noteField = new ObservableCollection<NoteType>();
-        }
+        //public ForecastRevisionLineType() {
+        //    this.salesItemField = new SalesItemType();
+        //    this.forecastPeriodField = new PeriodType();
+        //    this.descriptionField = new ObservableCollection<DescriptionType>();
+        //    this.noteField = new ObservableCollection<NoteType>();
+        //}
         
         public IDType ID {
             get {
@@ -22561,7 +23309,8 @@ namespace Oasis.Ubl.v21 {
                 this.idField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlArrayAttribute()]
         public ObservableCollection<NoteType> Note {
             get {
                 return this.noteField;
@@ -22570,7 +23319,8 @@ namespace Oasis.Ubl.v21 {
                 this.noteField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlArrayAttribute()]
         public ObservableCollection<DescriptionType> Description {
             get {
                 return this.descriptionField;
@@ -22649,12 +23399,12 @@ namespace Oasis.Ubl.v21 {
         
         private ObservableCollection<TenderRequirementType> subsequentProcessTenderRequirementField;
         
-        public FrameworkAgreementType() {
-            this.subsequentProcessTenderRequirementField = new ObservableCollection<TenderRequirementType>();
-            this.durationPeriodField = new PeriodType();
-            this.frequencyField = new ObservableCollection<FrequencyType>();
-            this.justificationField = new ObservableCollection<JustificationType>();
-        }
+        //public FrameworkAgreementType() {
+        //    this.subsequentProcessTenderRequirementField = new ObservableCollection<TenderRequirementType>();
+        //    this.durationPeriodField = new PeriodType();
+        //    this.frequencyField = new ObservableCollection<FrequencyType>();
+        //    this.justificationField = new ObservableCollection<JustificationType>();
+        //}
         
         public ExpectedOperatorQuantityType ExpectedOperatorQuantity {
             get {
@@ -22673,7 +23423,8 @@ namespace Oasis.Ubl.v21 {
                 this.maximumOperatorQuantityField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlArrayAttribute()]
         public ObservableCollection<JustificationType> Justification {
             get {
                 return this.justificationField;
@@ -22682,7 +23433,8 @@ namespace Oasis.Ubl.v21 {
                 this.justificationField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlArrayAttribute()]
         public ObservableCollection<FrequencyType> Frequency {
             get {
                 return this.frequencyField;
@@ -22700,7 +23452,8 @@ namespace Oasis.Ubl.v21 {
                 this.durationPeriodField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlArrayAttribute()]
         public ObservableCollection<TenderRequirementType> SubsequentProcessTenderRequirement {
             get {
                 return this.subsequentProcessTenderRequirementField;
@@ -22727,9 +23480,9 @@ namespace Oasis.Ubl.v21 {
         
         private PartyType issuerPartyField;
         
-        public ImmobilizedSecurityType() {
-            this.issuerPartyField = new PartyType();
-        }
+        //public ImmobilizedSecurityType() {
+        //    this.issuerPartyField = new PartyType();
+        //}
         
         public ImmobilizationCertificateIDType ImmobilizationCertificateID {
             get {
@@ -22807,11 +23560,11 @@ namespace Oasis.Ubl.v21 {
         
         private ItemType itemField;
         
-        public InstructionForReturnsLineType() {
-            this.itemField = new ItemType();
-            this.manufacturerPartyField = new PartyType();
-            this.noteField = new ObservableCollection<NoteType>();
-        }
+        //public InstructionForReturnsLineType() {
+        //    this.itemField = new ItemType();
+        //    this.manufacturerPartyField = new PartyType();
+        //    this.noteField = new ObservableCollection<NoteType>();
+        //}
         
         public IDType ID {
             get {
@@ -22821,7 +23574,8 @@ namespace Oasis.Ubl.v21 {
                 this.idField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlArrayAttribute()]
         public ObservableCollection<NoteType> Note {
             get {
                 return this.noteField;
@@ -22877,11 +23631,11 @@ namespace Oasis.Ubl.v21 {
         
         private LocationType1 inventoryLocationField;
         
-        public InventoryReportLineType() {
-            this.inventoryLocationField = new LocationType1();
-            this.itemField = new ItemType();
-            this.noteField = new ObservableCollection<NoteType>();
-        }
+        //public InventoryReportLineType() {
+        //    this.inventoryLocationField = new LocationType1();
+        //    this.itemField = new ItemType();
+        //    this.noteField = new ObservableCollection<NoteType>();
+        //}
         
         public IDType ID {
             get {
@@ -22891,7 +23645,8 @@ namespace Oasis.Ubl.v21 {
                 this.idField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlArrayAttribute()]
         public ObservableCollection<NoteType> Note {
             get {
                 return this.noteField;
@@ -22970,10 +23725,10 @@ namespace Oasis.Ubl.v21 {
         
         private ObservableCollection<SalesItemType> salesItemField;
         
-        public ItemInformationRequestLineType() {
-            this.salesItemField = new ObservableCollection<SalesItemType>();
-            this.periodField = new ObservableCollection<PeriodType>();
-        }
+        //public ItemInformationRequestLineType() {
+        //    this.salesItemField = new ObservableCollection<SalesItemType>();
+        //    this.periodField = new ObservableCollection<PeriodType>();
+        //}
         
         public TimeFrequencyCodeType TimeFrequencyCode {
             get {
@@ -23010,7 +23765,8 @@ namespace Oasis.Ubl.v21 {
                 this.performanceMetricTypeCodeField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlArrayAttribute()]
         public ObservableCollection<PeriodType> Period {
             get {
                 return this.periodField;
@@ -23019,7 +23775,8 @@ namespace Oasis.Ubl.v21 {
                 this.periodField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlArrayAttribute()]
         public ObservableCollection<SalesItemType> SalesItem {
             get {
                 return this.salesItemField;
@@ -23052,12 +23809,12 @@ namespace Oasis.Ubl.v21 {
         
         private ItemLocationQuantityType itemLocationQuantityField;
         
-        public ItemManagementProfileType() {
-            this.itemLocationQuantityField = new ItemLocationQuantityType();
-            this.itemField = new ItemType();
-            this.effectivePeriodField = new PeriodType();
-            this.replenishmentOwnerDescriptionField = new ObservableCollection<ReplenishmentOwnerDescriptionType>();
-        }
+        //public ItemManagementProfileType() {
+        //    this.itemLocationQuantityField = new ItemLocationQuantityType();
+        //    this.itemField = new ItemType();
+        //    this.effectivePeriodField = new PeriodType();
+        //    this.replenishmentOwnerDescriptionField = new ObservableCollection<ReplenishmentOwnerDescriptionType>();
+        //}
         
         public FrozenPeriodDaysNumericType FrozenPeriodDaysNumeric {
             get {
@@ -23094,7 +23851,8 @@ namespace Oasis.Ubl.v21 {
                 this.orderIntervalDaysNumericField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlArrayAttribute()]
         public ObservableCollection<ReplenishmentOwnerDescriptionType> ReplenishmentOwnerDescription {
             get {
                 return this.replenishmentOwnerDescriptionField;
@@ -23158,10 +23916,10 @@ namespace Oasis.Ubl.v21 {
         
         private ObservableCollection<PaymentTermsType> paymentTermsField;
         
-        public OnAccountPaymentType() {
-            this.paymentTermsField = new ObservableCollection<PaymentTermsType>();
-            this.noteField = new ObservableCollection<NoteType>();
-        }
+        //public OnAccountPaymentType() {
+        //    this.paymentTermsField = new ObservableCollection<PaymentTermsType>();
+        //    this.noteField = new ObservableCollection<NoteType>();
+        //}
         
         public EstimatedConsumedQuantityType EstimatedConsumedQuantity {
             get {
@@ -23171,7 +23929,8 @@ namespace Oasis.Ubl.v21 {
                 this.estimatedConsumedQuantityField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlArrayAttribute()]
         public ObservableCollection<NoteType> Note {
             get {
                 return this.noteField;
@@ -23180,7 +23939,8 @@ namespace Oasis.Ubl.v21 {
                 this.noteField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlArrayAttribute()]
         public ObservableCollection<PaymentTermsType> PaymentTerms {
             get {
                 return this.paymentTermsField;
@@ -23197,9 +23957,9 @@ namespace Oasis.Ubl.v21 {
         
         private ObservableCollection<EventLineItemType> eventLineItemField;
         
-        public MiscellaneousEventType() {
-            this.eventLineItemField = new ObservableCollection<EventLineItemType>();
-        }
+        //public MiscellaneousEventType() {
+        //    this.eventLineItemField = new ObservableCollection<EventLineItemType>();
+        //}
         
         public MiscellaneousEventTypeCodeType MiscellaneousEventTypeCode {
             get {
@@ -23209,7 +23969,8 @@ namespace Oasis.Ubl.v21 {
                 this.miscellaneousEventTypeCodeField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlArrayAttribute()]
         public ObservableCollection<EventLineItemType> EventLineItem {
             get {
                 return this.eventLineItemField;
@@ -23234,11 +23995,11 @@ namespace Oasis.Ubl.v21 {
         
         private ObservableCollection<LocationType1> notificationLocationField;
         
-        public NotificationRequirementType() {
-            this.notificationLocationField = new ObservableCollection<LocationType1>();
-            this.notificationPeriodField = new ObservableCollection<PeriodType>();
-            this.notifyPartyField = new ObservableCollection<PartyType>();
-        }
+        //public NotificationRequirementType() {
+        //    this.notificationLocationField = new ObservableCollection<LocationType1>();
+        //    this.notificationPeriodField = new ObservableCollection<PeriodType>();
+        //    this.notifyPartyField = new ObservableCollection<PartyType>();
+        //}
         
         public NotificationTypeCodeType NotificationTypeCode {
             get {
@@ -23266,7 +24027,8 @@ namespace Oasis.Ubl.v21 {
                 this.preEventNotificationDurationMeasureField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlArrayAttribute()]
         public ObservableCollection<PartyType> NotifyParty {
             get {
                 return this.notifyPartyField;
@@ -23275,7 +24037,8 @@ namespace Oasis.Ubl.v21 {
                 this.notifyPartyField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlArrayAttribute()]
         public ObservableCollection<PeriodType> NotificationPeriod {
             get {
                 return this.notificationPeriodField;
@@ -23284,7 +24047,8 @@ namespace Oasis.Ubl.v21 {
                 this.notificationPeriodField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlArrayAttribute()]
         public ObservableCollection<LocationType1> NotificationLocation {
             get {
                 return this.notificationLocationField;
@@ -23316,18 +24080,19 @@ namespace Oasis.Ubl.v21 {
         private ObservableCollection<OrderLineReferenceType> orderLineReferenceField;
         
         private ObservableCollection<DocumentReferenceType> documentReferenceField;
-        
-        public OrderLineType() {
-            this.documentReferenceField = new ObservableCollection<DocumentReferenceType>();
-            this.orderLineReferenceField = new ObservableCollection<OrderLineReferenceType>();
-            this.quotationLineReferenceField = new LineReferenceType();
-            this.catalogueLineReferenceField = new LineReferenceType();
-            this.buyerProposedSubstituteLineItemField = new ObservableCollection<LineItemType>();
-            this.sellerSubstitutedLineItemField = new ObservableCollection<LineItemType>();
-            this.sellerProposedSubstituteLineItemField = new ObservableCollection<LineItemType>();
-            this.lineItemField = new LineItemType();
-            this.noteField = new ObservableCollection<NoteType>();
-        }
+
+        //public OrderLineType()
+        //{
+        //    this.documentReferenceField = new ObservableCollection<DocumentReferenceType>();
+        //    this.orderLineReferenceField = new ObservableCollection<OrderLineReferenceType>();
+        //    this.quotationLineReferenceField = new LineReferenceType();
+        //    this.catalogueLineReferenceField = new LineReferenceType();
+        //    this.buyerProposedSubstituteLineItemField = new ObservableCollection<LineItemType>();
+        //    this.sellerSubstitutedLineItemField = new ObservableCollection<LineItemType>();
+        //    this.sellerProposedSubstituteLineItemField = new ObservableCollection<LineItemType>();
+        //    this.lineItemField = new LineItemType();
+        //    this.noteField = new ObservableCollection<NoteType>();
+        //}
         
         public SubstitutionStatusCodeType SubstitutionStatusCode {
             get {
@@ -23337,7 +24102,8 @@ namespace Oasis.Ubl.v21 {
                 this.substitutionStatusCodeField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlArrayAttribute()]
         public ObservableCollection<NoteType> Note {
             get {
                 return this.noteField;
@@ -23355,7 +24121,8 @@ namespace Oasis.Ubl.v21 {
                 this.lineItemField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlArrayAttribute()]
         public ObservableCollection<LineItemType> SellerProposedSubstituteLineItem {
             get {
                 return this.sellerProposedSubstituteLineItemField;
@@ -23364,7 +24131,8 @@ namespace Oasis.Ubl.v21 {
                 this.sellerProposedSubstituteLineItemField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlArrayAttribute()]
         public ObservableCollection<LineItemType> SellerSubstitutedLineItem {
             get {
                 return this.sellerSubstitutedLineItemField;
@@ -23373,7 +24141,8 @@ namespace Oasis.Ubl.v21 {
                 this.sellerSubstitutedLineItemField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlArrayAttribute()]
         public ObservableCollection<LineItemType> BuyerProposedSubstituteLineItem {
             get {
                 return this.buyerProposedSubstituteLineItemField;
@@ -23400,7 +24169,8 @@ namespace Oasis.Ubl.v21 {
                 this.quotationLineReferenceField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlArrayAttribute()]
         public ObservableCollection<OrderLineReferenceType> OrderLineReference {
             get {
                 return this.orderLineReferenceField;
@@ -23409,7 +24179,8 @@ namespace Oasis.Ubl.v21 {
                 this.orderLineReferenceField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlArrayAttribute()]
         public ObservableCollection<DocumentReferenceType> DocumentReference {
             get {
                 return this.documentReferenceField;
@@ -23434,11 +24205,11 @@ namespace Oasis.Ubl.v21 {
         
         private ItemType itemField;
         
-        public PerformanceDataLineType() {
-            this.itemField = new ItemType();
-            this.periodField = new PeriodType();
-            this.noteField = new ObservableCollection<NoteType>();
-        }
+        //public PerformanceDataLineType() {
+        //    this.itemField = new ItemType();
+        //    this.periodField = new PeriodType();
+        //    this.noteField = new ObservableCollection<NoteType>();
+        //}
         
         public IDType ID {
             get {
@@ -23448,7 +24219,8 @@ namespace Oasis.Ubl.v21 {
                 this.idField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlArrayAttribute()]
         public ObservableCollection<NoteType> Note {
             get {
                 return this.noteField;
@@ -23505,10 +24277,10 @@ namespace Oasis.Ubl.v21 {
         
         private ObservableCollection<DescriptionType> descriptionField;
         
-        public ProcessJustificationType() {
-            this.descriptionField = new ObservableCollection<DescriptionType>();
-            this.processReasonField = new ObservableCollection<ProcessReasonType>();
-        }
+        //public ProcessJustificationType() {
+        //    this.descriptionField = new ObservableCollection<DescriptionType>();
+        //    this.processReasonField = new ObservableCollection<ProcessReasonType>();
+        //}
         
         public PreviousCancellationReasonCodeType PreviousCancellationReasonCode {
             get {
@@ -23527,7 +24299,8 @@ namespace Oasis.Ubl.v21 {
                 this.processReasonCodeField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlArrayAttribute()]
         public ObservableCollection<ProcessReasonType> ProcessReason {
             get {
                 return this.processReasonField;
@@ -23536,7 +24309,8 @@ namespace Oasis.Ubl.v21 {
                 this.processReasonField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlArrayAttribute()]
         public ObservableCollection<DescriptionType> Description {
             get {
                 return this.descriptionField;
@@ -23557,9 +24331,9 @@ namespace Oasis.Ubl.v21 {
         
         private ObservableCollection<WorkPhaseReferenceType> workPhaseReferenceField;
         
-        public ProjectReferenceType() {
-            this.workPhaseReferenceField = new ObservableCollection<WorkPhaseReferenceType>();
-        }
+        //public ProjectReferenceType() {
+        //    this.workPhaseReferenceField = new ObservableCollection<WorkPhaseReferenceType>();
+        //}
         
         public IDType ID {
             get {
@@ -23587,7 +24361,8 @@ namespace Oasis.Ubl.v21 {
                 this.issueDateField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlArrayAttribute()]
         public ObservableCollection<WorkPhaseReferenceType> WorkPhaseReference {
             get {
                 return this.workPhaseReferenceField;
@@ -23614,10 +24389,10 @@ namespace Oasis.Ubl.v21 {
         
         private ObservableCollection<DocumentReferenceType> workOrderDocumentReferenceField;
         
-        public WorkPhaseReferenceType() {
-            this.workOrderDocumentReferenceField = new ObservableCollection<DocumentReferenceType>();
-            this.workPhaseField = new ObservableCollection<WorkPhaseType>();
-        }
+        //public WorkPhaseReferenceType() {
+        //    this.workOrderDocumentReferenceField = new ObservableCollection<DocumentReferenceType>();
+        //    this.workPhaseField = new ObservableCollection<WorkPhaseType>();
+        //}
         
         public IDType ID {
             get {
@@ -23636,7 +24411,8 @@ namespace Oasis.Ubl.v21 {
                 this.workPhaseCodeField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlArrayAttribute()]
         public ObservableCollection<WorkPhaseType> WorkPhase {
             get {
                 return this.workPhaseField;
@@ -23672,7 +24448,8 @@ namespace Oasis.Ubl.v21 {
                 this.endDateField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlArrayAttribute()]
         public ObservableCollection<DocumentReferenceType> WorkOrderDocumentReference {
             get {
                 return this.workOrderDocumentReferenceField;
@@ -23695,9 +24472,9 @@ namespace Oasis.Ubl.v21 {
         
         private ObservableCollection<PromotionalSpecificationType> promotionalSpecificationField;
         
-        public PromotionalEventType() {
-            this.promotionalSpecificationField = new ObservableCollection<PromotionalSpecificationType>();
-        }
+        //public PromotionalEventType() {
+        //    this.promotionalSpecificationField = new ObservableCollection<PromotionalSpecificationType>();
+        //}
         
         public PromotionalEventTypeCodeType PromotionalEventTypeCode {
             get {
@@ -23734,7 +24511,8 @@ namespace Oasis.Ubl.v21 {
                 this.latestProposalAcceptanceDateField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlArrayAttribute()]
         public ObservableCollection<PromotionalSpecificationType> PromotionalSpecification {
             get {
                 return this.promotionalSpecificationField;
@@ -23753,10 +24531,10 @@ namespace Oasis.Ubl.v21 {
         
         private ObservableCollection<EventTacticType> eventTacticField;
         
-        public PromotionalSpecificationType() {
-            this.eventTacticField = new ObservableCollection<EventTacticType>();
-            this.promotionalEventLineItemField = new ObservableCollection<PromotionalEventLineItemType>();
-        }
+        //public PromotionalSpecificationType() {
+        //    this.eventTacticField = new ObservableCollection<EventTacticType>();
+        //    this.promotionalEventLineItemField = new ObservableCollection<PromotionalEventLineItemType>();
+        //}
         
         public SpecificationIDType SpecificationID {
             get {
@@ -23766,7 +24544,8 @@ namespace Oasis.Ubl.v21 {
                 this.specificationIDField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlArrayAttribute()]
         public ObservableCollection<PromotionalEventLineItemType> PromotionalEventLineItem {
             get {
                 return this.promotionalEventLineItemField;
@@ -23775,7 +24554,8 @@ namespace Oasis.Ubl.v21 {
                 this.promotionalEventLineItemField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlArrayAttribute()]
         public ObservableCollection<EventTacticType> EventTactic {
             get {
                 return this.eventTacticField;
@@ -23792,9 +24572,9 @@ namespace Oasis.Ubl.v21 {
         
         private EventLineItemType eventLineItemField;
         
-        public PromotionalEventLineItemType() {
-            this.eventLineItemField = new EventLineItemType();
-        }
+        //public PromotionalEventLineItemType() {
+        //    this.eventLineItemField = new EventLineItemType();
+        //}
         
         public AmountType2 Amount {
             get {
@@ -23829,11 +24609,11 @@ namespace Oasis.Ubl.v21 {
         
         private ProcurementProjectLotType procurementProjectLotField;
         
-        public QualificationResolutionType() {
-            this.procurementProjectLotField = new ProcurementProjectLotType();
-            this.resolutionField = new ObservableCollection<ResolutionType>();
-            this.exclusionReasonField = new ObservableCollection<ExclusionReasonType>();
-        }
+        //public QualificationResolutionType() {
+        //    this.procurementProjectLotField = new ProcurementProjectLotType();
+        //    this.resolutionField = new ObservableCollection<ResolutionType>();
+        //    this.exclusionReasonField = new ObservableCollection<ExclusionReasonType>();
+        //}
         
         public AdmissionCodeType AdmissionCode {
             get {
@@ -23843,7 +24623,8 @@ namespace Oasis.Ubl.v21 {
                 this.admissionCodeField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlArrayAttribute()]
         public ObservableCollection<ExclusionReasonType> ExclusionReason {
             get {
                 return this.exclusionReasonField;
@@ -23852,7 +24633,8 @@ namespace Oasis.Ubl.v21 {
                 this.exclusionReasonField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlArrayAttribute()]
         public ObservableCollection<ResolutionType> Resolution {
             get {
                 return this.resolutionField;
@@ -23914,14 +24696,14 @@ namespace Oasis.Ubl.v21 {
         
         private LineReferenceType requestLineReferenceField;
         
-        public QuotationLineType() {
-            this.requestLineReferenceField = new LineReferenceType();
-            this.alternativeLineItemField = new ObservableCollection<LineItemType>();
-            this.sellerProposedSubstituteLineItemField = new ObservableCollection<LineItemType>();
-            this.lineItemField = new LineItemType();
-            this.documentReferenceField = new ObservableCollection<DocumentReferenceType>();
-            this.noteField = new ObservableCollection<NoteType>();
-        }
+        //public QuotationLineType() {
+        //    this.requestLineReferenceField = new LineReferenceType();
+        //    this.alternativeLineItemField = new ObservableCollection<LineItemType>();
+        //    this.sellerProposedSubstituteLineItemField = new ObservableCollection<LineItemType>();
+        //    this.lineItemField = new LineItemType();
+        //    this.documentReferenceField = new ObservableCollection<DocumentReferenceType>();
+        //    this.noteField = new ObservableCollection<NoteType>();
+        //}
         
         public IDType ID {
             get {
@@ -23931,7 +24713,8 @@ namespace Oasis.Ubl.v21 {
                 this.idField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlArrayAttribute()]
         public ObservableCollection<NoteType> Note {
             get {
                 return this.noteField;
@@ -23976,7 +24759,8 @@ namespace Oasis.Ubl.v21 {
                 this.requestForQuotationLineIDField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlArrayAttribute()]
         public ObservableCollection<DocumentReferenceType> DocumentReference {
             get {
                 return this.documentReferenceField;
@@ -23994,7 +24778,8 @@ namespace Oasis.Ubl.v21 {
                 this.lineItemField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlArrayAttribute()]
         public ObservableCollection<LineItemType> SellerProposedSubstituteLineItem {
             get {
                 return this.sellerProposedSubstituteLineItemField;
@@ -24003,7 +24788,8 @@ namespace Oasis.Ubl.v21 {
                 this.sellerProposedSubstituteLineItemField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlArrayAttribute()]
         public ObservableCollection<LineItemType> AlternativeLineItem {
             get {
                 return this.alternativeLineItemField;
@@ -24053,12 +24839,12 @@ namespace Oasis.Ubl.v21 {
         
         private ExchangeRateType exchangeRateField;
         
-        public ReminderLineType() {
-            this.exchangeRateField = new ExchangeRateType();
-            this.billingReferenceField = new ObservableCollection<BillingReferenceType>();
-            this.reminderPeriodField = new ObservableCollection<PeriodType>();
-            this.noteField = new ObservableCollection<NoteType>();
-        }
+        //public ReminderLineType() {
+        //    this.exchangeRateField = new ExchangeRateType();
+        //    this.billingReferenceField = new ObservableCollection<BillingReferenceType>();
+        //    this.reminderPeriodField = new ObservableCollection<PeriodType>();
+        //    this.noteField = new ObservableCollection<NoteType>();
+        //}
         
         public IDType ID {
             get {
@@ -24068,7 +24854,8 @@ namespace Oasis.Ubl.v21 {
                 this.idField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlArrayAttribute()]
         public ObservableCollection<NoteType> Note {
             get {
                 return this.noteField;
@@ -24158,7 +24945,8 @@ namespace Oasis.Ubl.v21 {
                 this.paymentPurposeCodeField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlArrayAttribute()]
         public ObservableCollection<PeriodType> ReminderPeriod {
             get {
                 return this.reminderPeriodField;
@@ -24167,7 +24955,8 @@ namespace Oasis.Ubl.v21 {
                 this.reminderPeriodField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlArrayAttribute()]
         public ObservableCollection<BillingReferenceType> BillingReference {
             get {
                 return this.billingReferenceField;
@@ -24225,19 +25014,19 @@ namespace Oasis.Ubl.v21 {
         
         private ExchangeRateType exchangeRateField;
         
-        public RemittanceAdviceLineType() {
-            this.exchangeRateField = new ExchangeRateType();
-            this.documentReferenceField = new ObservableCollection<DocumentReferenceType>();
-            this.billingReferenceField = new ObservableCollection<BillingReferenceType>();
-            this.invoicePeriodField = new ObservableCollection<PeriodType>();
-            this.payeePartyField = new PartyType();
-            this.originatorCustomerPartyField = new CustomerPartyType();
-            this.sellerSupplierPartyField = new SupplierPartyType();
-            this.buyerCustomerPartyField = new CustomerPartyType();
-            this.accountingCustomerPartyField = new CustomerPartyType();
-            this.accountingSupplierPartyField = new SupplierPartyType();
-            this.noteField = new ObservableCollection<NoteType>();
-        }
+        //public RemittanceAdviceLineType() {
+        //    this.exchangeRateField = new ExchangeRateType();
+        //    this.documentReferenceField = new ObservableCollection<DocumentReferenceType>();
+        //    this.billingReferenceField = new ObservableCollection<BillingReferenceType>();
+        //    this.invoicePeriodField = new ObservableCollection<PeriodType>();
+        //    this.payeePartyField = new PartyType();
+        //    this.originatorCustomerPartyField = new CustomerPartyType();
+        //    this.sellerSupplierPartyField = new SupplierPartyType();
+        //    this.buyerCustomerPartyField = new CustomerPartyType();
+        //    this.accountingCustomerPartyField = new CustomerPartyType();
+        //    this.accountingSupplierPartyField = new SupplierPartyType();
+        //    this.noteField = new ObservableCollection<NoteType>();
+        //}
         
         public IDType ID {
             get {
@@ -24247,7 +25036,8 @@ namespace Oasis.Ubl.v21 {
                 this.idField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlArrayAttribute()]
         public ObservableCollection<NoteType> Note {
             get {
                 return this.noteField;
@@ -24364,7 +25154,8 @@ namespace Oasis.Ubl.v21 {
                 this.payeePartyField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlArrayAttribute()]
         public ObservableCollection<PeriodType> InvoicePeriod {
             get {
                 return this.invoicePeriodField;
@@ -24373,7 +25164,8 @@ namespace Oasis.Ubl.v21 {
                 this.invoicePeriodField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlArrayAttribute()]
         public ObservableCollection<BillingReferenceType> BillingReference {
             get {
                 return this.billingReferenceField;
@@ -24382,7 +25174,8 @@ namespace Oasis.Ubl.v21 {
                 this.billingReferenceField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlArrayAttribute()]
         public ObservableCollection<DocumentReferenceType> DocumentReference {
             get {
                 return this.documentReferenceField;
@@ -24420,11 +25213,11 @@ namespace Oasis.Ubl.v21 {
         
         private LineItemType lineItemField;
         
-        public RequestForQuotationLineType() {
-            this.lineItemField = new LineItemType();
-            this.documentReferenceField = new ObservableCollection<DocumentReferenceType>();
-            this.noteField = new ObservableCollection<NoteType>();
-        }
+        //public RequestForQuotationLineType() {
+        //    this.lineItemField = new LineItemType();
+        //    this.documentReferenceField = new ObservableCollection<DocumentReferenceType>();
+        //    this.noteField = new ObservableCollection<NoteType>();
+        //}
         
         public IDType ID {
             get {
@@ -24443,7 +25236,8 @@ namespace Oasis.Ubl.v21 {
                 this.uUIDField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlArrayAttribute()]
         public ObservableCollection<NoteType> Note {
             get {
                 return this.noteField;
@@ -24479,7 +25273,8 @@ namespace Oasis.Ubl.v21 {
                 this.securityClassificationCodeField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlArrayAttribute()]
         public ObservableCollection<DocumentReferenceType> DocumentReference {
             get {
                 return this.documentReferenceField;
@@ -24545,23 +25340,23 @@ namespace Oasis.Ubl.v21 {
         
         private ObservableCollection<PaymentType> collectedPaymentField;
         
-        public StatementLineType() {
-            this.collectedPaymentField = new ObservableCollection<PaymentType>();
-            this.allowanceChargeField = new ObservableCollection<AllowanceChargeType>();
-            this.exchangeRateField = new ExchangeRateType();
-            this.documentReferenceField = new ObservableCollection<DocumentReferenceType>();
-            this.billingReferenceField = new ObservableCollection<BillingReferenceType>();
-            this.invoicePeriodField = new ObservableCollection<PeriodType>();
-            this.payeePartyField = new PartyType();
-            this.accountingSupplierPartyField = new SupplierPartyType();
-            this.accountingCustomerPartyField = new CustomerPartyType();
-            this.originatorCustomerPartyField = new CustomerPartyType();
-            this.sellerSupplierPartyField = new SupplierPartyType();
-            this.buyerCustomerPartyField = new CustomerPartyType();
-            this.paymentTermsField = new ObservableCollection<PaymentTermsType>();
-            this.paymentMeansField = new PaymentMeansType();
-            this.noteField = new ObservableCollection<NoteType>();
-        }
+        //public StatementLineType() {
+        //    this.collectedPaymentField = new ObservableCollection<PaymentType>();
+        //    this.allowanceChargeField = new ObservableCollection<AllowanceChargeType>();
+        //    this.exchangeRateField = new ExchangeRateType();
+        //    this.documentReferenceField = new ObservableCollection<DocumentReferenceType>();
+        //    this.billingReferenceField = new ObservableCollection<BillingReferenceType>();
+        //    this.invoicePeriodField = new ObservableCollection<PeriodType>();
+        //    this.payeePartyField = new PartyType();
+        //    this.accountingSupplierPartyField = new SupplierPartyType();
+        //    this.accountingCustomerPartyField = new CustomerPartyType();
+        //    this.originatorCustomerPartyField = new CustomerPartyType();
+        //    this.sellerSupplierPartyField = new SupplierPartyType();
+        //    this.buyerCustomerPartyField = new CustomerPartyType();
+        //    this.paymentTermsField = new ObservableCollection<PaymentTermsType>();
+        //    this.paymentMeansField = new PaymentMeansType();
+        //    this.noteField = new ObservableCollection<NoteType>();
+        //}
         
         public IDType ID {
             get {
@@ -24571,7 +25366,8 @@ namespace Oasis.Ubl.v21 {
                 this.idField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlArrayAttribute()]
         public ObservableCollection<NoteType> Note {
             get {
                 return this.noteField;
@@ -24643,7 +25439,8 @@ namespace Oasis.Ubl.v21 {
                 this.paymentMeansField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlArrayAttribute()]
         public ObservableCollection<PaymentTermsType> PaymentTerms {
             get {
                 return this.paymentTermsField;
@@ -24706,7 +25503,8 @@ namespace Oasis.Ubl.v21 {
                 this.payeePartyField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlArrayAttribute()]
         public ObservableCollection<PeriodType> InvoicePeriod {
             get {
                 return this.invoicePeriodField;
@@ -24715,7 +25513,8 @@ namespace Oasis.Ubl.v21 {
                 this.invoicePeriodField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlArrayAttribute()]
         public ObservableCollection<BillingReferenceType> BillingReference {
             get {
                 return this.billingReferenceField;
@@ -24724,7 +25523,8 @@ namespace Oasis.Ubl.v21 {
                 this.billingReferenceField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlArrayAttribute()]
         public ObservableCollection<DocumentReferenceType> DocumentReference {
             get {
                 return this.documentReferenceField;
@@ -24742,7 +25542,8 @@ namespace Oasis.Ubl.v21 {
                 this.exchangeRateField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlArrayAttribute()]
         public ObservableCollection<AllowanceChargeType> AllowanceCharge {
             get {
                 return this.allowanceChargeField;
@@ -24751,7 +25552,8 @@ namespace Oasis.Ubl.v21 {
                 this.allowanceChargeField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlArrayAttribute()]
         public ObservableCollection<PaymentType> CollectedPayment {
             get {
                 return this.collectedPaymentField;
@@ -24778,10 +25580,10 @@ namespace Oasis.Ubl.v21 {
         
         private ItemType itemField;
         
-        public StockAvailabilityReportLineType() {
-            this.itemField = new ItemType();
-            this.noteField = new ObservableCollection<NoteType>();
-        }
+        //public StockAvailabilityReportLineType() {
+        //    this.itemField = new ItemType();
+        //    this.noteField = new ObservableCollection<NoteType>();
+        //}
         
         public IDType ID {
             get {
@@ -24791,7 +25593,8 @@ namespace Oasis.Ubl.v21 {
                 this.idField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlArrayAttribute()]
         public ObservableCollection<NoteType> Note {
             get {
                 return this.noteField;
@@ -24867,14 +25670,14 @@ namespace Oasis.Ubl.v21 {
         
         private ObservableCollection<SupplierConsumptionType> supplierConsumptionField;
         
-        public SubscriberConsumptionType() {
-            this.supplierConsumptionField = new ObservableCollection<SupplierConsumptionType>();
-            this.consumptionField = new ConsumptionType();
-            this.onAccountPaymentField = new ObservableCollection<OnAccountPaymentType>();
-            this.utilityConsumptionPointField = new ConsumptionPointType();
-            this.subscriberPartyField = new PartyType();
-            this.noteField = new ObservableCollection<NoteType>();
-        }
+        //public SubscriberConsumptionType() {
+        //    this.supplierConsumptionField = new ObservableCollection<SupplierConsumptionType>();
+        //    this.consumptionField = new ConsumptionType();
+        //    this.onAccountPaymentField = new ObservableCollection<OnAccountPaymentType>();
+        //    this.utilityConsumptionPointField = new ConsumptionPointType();
+        //    this.subscriberPartyField = new PartyType();
+        //    this.noteField = new ObservableCollection<NoteType>();
+        //}
         
         public ConsumptionIDType ConsumptionID {
             get {
@@ -24893,7 +25696,8 @@ namespace Oasis.Ubl.v21 {
                 this.specificationTypeCodeField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlArrayAttribute()]
         public ObservableCollection<NoteType> Note {
             get {
                 return this.noteField;
@@ -24929,7 +25733,8 @@ namespace Oasis.Ubl.v21 {
                 this.utilityConsumptionPointField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlArrayAttribute()]
         public ObservableCollection<OnAccountPaymentType> OnAccountPayment {
             get {
                 return this.onAccountPaymentField;
@@ -24947,7 +25752,8 @@ namespace Oasis.Ubl.v21 {
                 this.consumptionField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlArrayAttribute()]
         public ObservableCollection<SupplierConsumptionType> SupplierConsumption {
             get {
                 return this.supplierConsumptionField;
@@ -24972,15 +25778,16 @@ namespace Oasis.Ubl.v21 {
         
         private ObservableCollection<ConsumptionLineType> consumptionLineField;
         
-        public SupplierConsumptionType() {
-            this.consumptionLineField = new ObservableCollection<ConsumptionLineType>();
-            this.contractField = new ContractType();
-            this.consumptionField = new ConsumptionType();
-            this.utilityCustomerPartyField = new PartyType();
-            this.utilitySupplierPartyField = new PartyType();
-            this.descriptionField = new ObservableCollection<DescriptionType>();
-        }
-        
+        //public SupplierConsumptionType() {
+        //    this.consumptionLineField = new ObservableCollection<ConsumptionLineType>();
+        //    this.contractField = new ContractType();
+        //    this.consumptionField = new ConsumptionType();
+        //    this.utilityCustomerPartyField = new PartyType();
+        //    this.utilitySupplierPartyField = new PartyType();
+        //    this.descriptionField = new ObservableCollection<DescriptionType>();
+        //}
+
+        [System.Xml.Serialization.XmlArrayAttribute()]
         public ObservableCollection<DescriptionType> Description {
             get {
                 return this.descriptionField;
@@ -25025,7 +25832,8 @@ namespace Oasis.Ubl.v21 {
                 this.contractField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlArrayAttribute()]
         public ObservableCollection<ConsumptionLineType> ConsumptionLine {
             get {
                 return this.consumptionLineField;
@@ -25070,14 +25878,14 @@ namespace Oasis.Ubl.v21 {
         
         private ObservableCollection<WinningPartyType> winningPartyField;
         
-        public TenderResultType() {
-            this.winningPartyField = new ObservableCollection<WinningPartyType>();
-            this.subcontractTermsField = new ObservableCollection<SubcontractTermsType>();
-            this.contractFormalizationPeriodField = new PeriodType();
-            this.awardedTenderedProjectField = new TenderedProjectType();
-            this.contractField = new ContractType();
-            this.descriptionField = new ObservableCollection<DescriptionType>();
-        }
+        //public TenderResultType() {
+        //    this.winningPartyField = new ObservableCollection<WinningPartyType>();
+        //    this.subcontractTermsField = new ObservableCollection<SubcontractTermsType>();
+        //    this.contractFormalizationPeriodField = new PeriodType();
+        //    this.awardedTenderedProjectField = new TenderedProjectType();
+        //    this.contractField = new ContractType();
+        //    this.descriptionField = new ObservableCollection<DescriptionType>();
+        //}
         
         public TenderResultCodeType TenderResultCode {
             get {
@@ -25087,7 +25895,8 @@ namespace Oasis.Ubl.v21 {
                 this.tenderResultCodeField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlArrayAttribute()]
         public ObservableCollection<DescriptionType> Description {
             get {
                 return this.descriptionField;
@@ -25204,7 +26013,8 @@ namespace Oasis.Ubl.v21 {
                 this.contractFormalizationPeriodField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlArrayAttribute()]
         public ObservableCollection<SubcontractTermsType> SubcontractTerms {
             get {
                 return this.subcontractTermsField;
@@ -25213,7 +26023,8 @@ namespace Oasis.Ubl.v21 {
                 this.subcontractTermsField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlArrayAttribute()]
         public ObservableCollection<WinningPartyType> WinningParty {
             get {
                 return this.winningPartyField;
@@ -25230,9 +26041,9 @@ namespace Oasis.Ubl.v21 {
         
         private PartyType partyField;
         
-        public WinningPartyType() {
-            this.partyField = new PartyType();
-        }
+        //public WinningPartyType() {
+        //    this.partyField = new PartyType();
+        //}
         
         public RankType Rank {
             get {
@@ -25261,12 +26072,13 @@ namespace Oasis.Ubl.v21 {
         
         private ObservableCollection<QualifyingPartyType> additionalQualifyingPartyField;
         
-        public TendererPartyQualificationType() {
-            this.additionalQualifyingPartyField = new ObservableCollection<QualifyingPartyType>();
-            this.mainQualifyingPartyField = new QualifyingPartyType();
-            this.interestedProcurementProjectLotField = new ObservableCollection<ProcurementProjectLotType>();
-        }
-        
+        //public TendererPartyQualificationType() {
+        //    this.additionalQualifyingPartyField = new ObservableCollection<QualifyingPartyType>();
+        //    this.mainQualifyingPartyField = new QualifyingPartyType();
+        //    this.interestedProcurementProjectLotField = new ObservableCollection<ProcurementProjectLotType>();
+        //}
+
+        [System.Xml.Serialization.XmlArrayAttribute()]
         public ObservableCollection<ProcurementProjectLotType> InterestedProcurementProjectLot {
             get {
                 return this.interestedProcurementProjectLotField;
@@ -25284,7 +26096,8 @@ namespace Oasis.Ubl.v21 {
                 this.mainQualifyingPartyField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlArrayAttribute()]
         public ObservableCollection<QualifyingPartyType> AdditionalQualifyingParty {
             get {
                 return this.additionalQualifyingPartyField;
@@ -25343,21 +26156,21 @@ namespace Oasis.Ubl.v21 {
         
         private FrameworkAgreementType frameworkAgreementField;
         
-        public TenderingProcessType() {
-            this.frameworkAgreementField = new FrameworkAgreementType();
-            this.auctionTermsField = new AuctionTermsType();
-            this.openTenderEventField = new ObservableCollection<EventType>();
-            this.economicOperatorShortListField = new EconomicOperatorShortListType();
-            this.processJustificationField = new ObservableCollection<ProcessJustificationType>();
-            this.additionalDocumentReferenceField = new ObservableCollection<DocumentReferenceType>();
-            this.noticeDocumentReferenceField = new ObservableCollection<DocumentReferenceType>();
-            this.participationRequestReceptionPeriodField = new PeriodType();
-            this.invitationSubmissionPeriodField = new PeriodType();
-            this.tenderSubmissionDeadlinePeriodField = new PeriodType();
-            this.documentAvailabilityPeriodField = new PeriodType();
-            this.negotiationDescriptionField = new ObservableCollection<NegotiationDescriptionType>();
-            this.descriptionField = new ObservableCollection<DescriptionType>();
-        }
+        //public TenderingProcessType() {
+        //    this.frameworkAgreementField = new FrameworkAgreementType();
+        //    this.auctionTermsField = new AuctionTermsType();
+        //    this.openTenderEventField = new ObservableCollection<EventType>();
+        //    this.economicOperatorShortListField = new EconomicOperatorShortListType();
+        //    this.processJustificationField = new ObservableCollection<ProcessJustificationType>();
+        //    this.additionalDocumentReferenceField = new ObservableCollection<DocumentReferenceType>();
+        //    this.noticeDocumentReferenceField = new ObservableCollection<DocumentReferenceType>();
+        //    this.participationRequestReceptionPeriodField = new PeriodType();
+        //    this.invitationSubmissionPeriodField = new PeriodType();
+        //    this.tenderSubmissionDeadlinePeriodField = new PeriodType();
+        //    this.documentAvailabilityPeriodField = new PeriodType();
+        //    this.negotiationDescriptionField = new ObservableCollection<NegotiationDescriptionType>();
+        //    this.descriptionField = new ObservableCollection<DescriptionType>();
+        //}
         
         public IDType ID {
             get {
@@ -25376,7 +26189,8 @@ namespace Oasis.Ubl.v21 {
                 this.originalContractingSystemIDField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlArrayAttribute()]
         public ObservableCollection<DescriptionType> Description {
             get {
                 return this.descriptionField;
@@ -25385,7 +26199,8 @@ namespace Oasis.Ubl.v21 {
                 this.descriptionField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlArrayAttribute()]
         public ObservableCollection<NegotiationDescriptionType> NegotiationDescription {
             get {
                 return this.negotiationDescriptionField;
@@ -25502,7 +26317,8 @@ namespace Oasis.Ubl.v21 {
                 this.participationRequestReceptionPeriodField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlArrayAttribute()]
         public ObservableCollection<DocumentReferenceType> NoticeDocumentReference {
             get {
                 return this.noticeDocumentReferenceField;
@@ -25511,7 +26327,8 @@ namespace Oasis.Ubl.v21 {
                 this.noticeDocumentReferenceField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlArrayAttribute()]
         public ObservableCollection<DocumentReferenceType> AdditionalDocumentReference {
             get {
                 return this.additionalDocumentReferenceField;
@@ -25520,7 +26337,8 @@ namespace Oasis.Ubl.v21 {
                 this.additionalDocumentReferenceField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlArrayAttribute()]
         public ObservableCollection<ProcessJustificationType> ProcessJustification {
             get {
                 return this.processJustificationField;
@@ -25538,7 +26356,8 @@ namespace Oasis.Ubl.v21 {
                 this.economicOperatorShortListField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlArrayAttribute()]
         public ObservableCollection<EventType> OpenTenderEvent {
             get {
                 return this.openTenderEventField;
@@ -25591,20 +26410,21 @@ namespace Oasis.Ubl.v21 {
         
         private PaymentTermsType serviceChargePaymentTermsField;
         
-        public TransportExecutionTermsType() {
-            this.serviceChargePaymentTermsField = new PaymentTermsType();
-            this.notificationRequirementField = new ObservableCollection<NotificationRequirementType>();
-            this.environmentalEmissionField = new ObservableCollection<EnvironmentalEmissionType>();
-            this.penaltyPaymentTermsField = new PaymentTermsType();
-            this.commissionPaymentTermsField = new PaymentTermsType();
-            this.bonusPaymentTermsField = new PaymentTermsType();
-            this.deliveryTermsField = new ObservableCollection<DeliveryTermsType>();
-            this.paymentTermsField = new ObservableCollection<PaymentTermsType>();
-            this.changeConditionsField = new ObservableCollection<ChangeConditionsType>();
-            this.transportServiceProviderSpecialTermsField = new ObservableCollection<TransportServiceProviderSpecialTermsType>();
-            this.transportUserSpecialTermsField = new ObservableCollection<TransportUserSpecialTermsType>();
-        }
-        
+        //public TransportExecutionTermsType() {
+        //    this.serviceChargePaymentTermsField = new PaymentTermsType();
+        //    this.notificationRequirementField = new ObservableCollection<NotificationRequirementType>();
+        //    this.environmentalEmissionField = new ObservableCollection<EnvironmentalEmissionType>();
+        //    this.penaltyPaymentTermsField = new PaymentTermsType();
+        //    this.commissionPaymentTermsField = new PaymentTermsType();
+        //    this.bonusPaymentTermsField = new PaymentTermsType();
+        //    this.deliveryTermsField = new ObservableCollection<DeliveryTermsType>();
+        //    this.paymentTermsField = new ObservableCollection<PaymentTermsType>();
+        //    this.changeConditionsField = new ObservableCollection<ChangeConditionsType>();
+        //    this.transportServiceProviderSpecialTermsField = new ObservableCollection<TransportServiceProviderSpecialTermsType>();
+        //    this.transportUserSpecialTermsField = new ObservableCollection<TransportUserSpecialTermsType>();
+        //}
+
+        [System.Xml.Serialization.XmlArrayAttribute()]
         public ObservableCollection<TransportUserSpecialTermsType> TransportUserSpecialTerms {
             get {
                 return this.transportUserSpecialTermsField;
@@ -25613,7 +26433,8 @@ namespace Oasis.Ubl.v21 {
                 this.transportUserSpecialTermsField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlArrayAttribute()]
         public ObservableCollection<TransportServiceProviderSpecialTermsType> TransportServiceProviderSpecialTerms {
             get {
                 return this.transportServiceProviderSpecialTermsField;
@@ -25622,7 +26443,8 @@ namespace Oasis.Ubl.v21 {
                 this.transportServiceProviderSpecialTermsField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlArrayAttribute()]
         public ObservableCollection<ChangeConditionsType> ChangeConditions {
             get {
                 return this.changeConditionsField;
@@ -25631,7 +26453,8 @@ namespace Oasis.Ubl.v21 {
                 this.changeConditionsField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlArrayAttribute()]
         public ObservableCollection<PaymentTermsType> PaymentTerms {
             get {
                 return this.paymentTermsField;
@@ -25640,7 +26463,8 @@ namespace Oasis.Ubl.v21 {
                 this.paymentTermsField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlArrayAttribute()]
         public ObservableCollection<DeliveryTermsType> DeliveryTerms {
             get {
                 return this.deliveryTermsField;
@@ -25676,7 +26500,8 @@ namespace Oasis.Ubl.v21 {
                 this.penaltyPaymentTermsField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlArrayAttribute()]
         public ObservableCollection<EnvironmentalEmissionType> EnvironmentalEmission {
             get {
                 return this.environmentalEmissionField;
@@ -25685,7 +26510,8 @@ namespace Oasis.Ubl.v21 {
                 this.environmentalEmissionField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlArrayAttribute()]
         public ObservableCollection<NotificationRequirementType> NotificationRequirement {
             get {
                 return this.notificationRequirementField;
@@ -25731,16 +26557,16 @@ namespace Oasis.Ubl.v21 {
         
         private TransportEventType plannedArrivalTransportEventField;
         
-        public TransportScheduleType() {
-            this.plannedArrivalTransportEventField = new TransportEventType();
-            this.plannedDepartureTransportEventField = new TransportEventType();
-            this.estimatedArrivalTransportEventField = new TransportEventType();
-            this.estimatedDepartureTransportEventField = new TransportEventType();
-            this.actualDepartureTransportEventField = new TransportEventType();
-            this.actualArrivalTransportEventField = new TransportEventType();
-            this.statusLocationField = new LocationType1();
-            this.remarksField = new ObservableCollection<RemarksType>();
-        }
+        //public TransportScheduleType() {
+        //    this.plannedArrivalTransportEventField = new TransportEventType();
+        //    this.plannedDepartureTransportEventField = new TransportEventType();
+        //    this.estimatedArrivalTransportEventField = new TransportEventType();
+        //    this.estimatedDepartureTransportEventField = new TransportEventType();
+        //    this.actualDepartureTransportEventField = new TransportEventType();
+        //    this.actualArrivalTransportEventField = new TransportEventType();
+        //    this.statusLocationField = new LocationType1();
+        //    this.remarksField = new ObservableCollection<RemarksType>();
+        //}
         
         public SequenceNumericType SequenceNumeric {
             get {
@@ -25777,7 +26603,8 @@ namespace Oasis.Ubl.v21 {
                 this.reliabilityPercentField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlArrayAttribute()]
         public ObservableCollection<RemarksType> Remarks {
             get {
                 return this.remarksField;
@@ -25865,12 +26692,12 @@ namespace Oasis.Ubl.v21 {
         
         private ObservableCollection<ShipmentStageType> shipmentStageField;
         
-        public TransportationSegmentType() {
-            this.shipmentStageField = new ObservableCollection<ShipmentStageType>();
-            this.referencedConsignmentField = new ConsignmentType();
-            this.transportServiceProviderPartyField = new PartyType();
-            this.transportationServiceField = new TransportationServiceType();
-        }
+        //public TransportationSegmentType() {
+        //    this.shipmentStageField = new ObservableCollection<ShipmentStageType>();
+        //    this.referencedConsignmentField = new ConsignmentType();
+        //    this.transportServiceProviderPartyField = new PartyType();
+        //    this.transportationServiceField = new TransportationServiceType();
+        //}
         
         public SequenceNumericType SequenceNumeric {
             get {
@@ -25916,7 +26743,8 @@ namespace Oasis.Ubl.v21 {
                 this.referencedConsignmentField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlArrayAttribute()]
         public ObservableCollection<ShipmentStageType> ShipmentStage {
             get {
                 return this.shipmentStageField;

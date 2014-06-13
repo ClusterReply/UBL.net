@@ -134,8 +134,8 @@ namespace Oasis.Ubl.v21 {
                 this.qualifierFieldSpecified = value;
             }
         }
-        
-        [System.Xml.Serialization.XmlAttribute(DataType="anyURI")]
+
+        [System.Xml.Serialization.XmlTextAttribute(DataType = "normalizedString")]
         public string Value {
             get {
                 return this.valueField;
