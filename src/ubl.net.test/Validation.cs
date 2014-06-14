@@ -16,40 +16,38 @@ namespace ubl.net.test
     public class Validation
     {
 
-        [Test]
-        public void ValidateXmlNET()
-        {
-           string pathxml21 = @"D:\Users\d.verardi.REPLYNET\Documents\GitHub\DanyHubGitRep\UBL.net\spec\xml\UBL-Order-2.1-Example.xml";
+        //[Test]
+        //public void ValidateXmlNET()
+        //{
+        //   string pathxml21 = @"D:\Users\d.verardi.REPLYNET\Documents\GitHub\DanyHubGitRep\UBL.net\spec\xml\UBL-Order-2.1-Example.xml";
             
-            string content = File.ReadAllText(pathxml21);
+        //    string content = File.ReadAllText(pathxml21);
 
-            var retvalue = Deserialize<OrderType>(content, new XmlReaderSettings());
-            Assert.IsNotNull(retvalue);
+        //    var retvalue = Deserialize<OrderType>(content, new XmlReaderSettings());
+        //    Assert.IsNotNull(retvalue);
             
 
-            Assert.AreEqual("34", retvalue.ID.ToString());
+        //    Assert.AreEqual("34", retvalue.ID.ToString());
 
-            retvalue.SaveToFile("D:\\Users\\d.verardi.REPLYNET\\Desktop\\TestDeserialize\\TestDeserialize.xml");
+        //    retvalue.SaveToFile("D:\\Users\\d.verardi.REPLYNET\\Desktop\\TestDeserialize\\TestDeserialize.xml");
 
 
-        }
+        //}
 
          [Test]
-        public void ValidateXml2()
+        public void ValidateInvoiceXml()
         {
-            string pathxml21 = @"D:\Users\d.verardi.REPLYNET\Documents\GitHub\DanyHubGitRep\UBL.net\spec\xml\UBL-Order-2.1-Example.xml";
+            string pathxml21 = @"D:\Users\d.verardi.REPLYNET\Documents\GitHub\DanyHubGitRep\UBL.net\spec\xml\UBL-Invoice-2.1-Example.xml";
             
             string content = File.ReadAllText(pathxml21);
 
-            var retvalue = OrderType.LoadFromFile(pathxml21);
+            var retvalue = InvoiceType.Deserialize(content);
 
-            Assert.IsNotNull(retvalue);
+             //inserire condition per controllare il file prodotto
+                    Assert.IsNotNull(retvalue);
+                    Assert.AreEqual("34", retvalue.ID.ToString());
 
-            //var retvalue = OrderType.Deserialize(content);
-
-            Assert.AreEqual("34", retvalue.ID.ToString());
-
-            retvalue.SaveToFile(@"D:\\Users\\d.verardi.REPLYNET\\Desktop\\TestDeserialize\\TestDeserialize.xml");
+            retvalue.SaveToFile(@"D:\\Users\\d.verardi.REPLYNET\\Desktop\\TestDeserialize\\TestDeserializeInvoice.xml");
 
           
 

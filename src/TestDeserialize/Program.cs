@@ -7,6 +7,7 @@ using Oasis.Ubl.v21;
 using Gallio;
 using MbUnit.Framework;
 using System.IO;
+using System.Xml.Linq;
 
 namespace TestDeserialize
 {
@@ -16,31 +17,32 @@ namespace TestDeserialize
         {
             try
             {
-                string pathxml21 = @"D:\Users\d.verardi.REPLYNET\Documents\GitHub\DanyHubGitRep\UBL.net\spec\xml\UBL-Invoice-2.1-Example.xml";
             
-            string content = File.ReadAllText(pathxml21);
+            string pathXmlUBL = @"D:\Users\d.verardi.REPLYNET\Documents\GitHub\DanyHubGitRep\UBL.net\spec\xml\UBL-Invoice-2.1-Example.xml";
 
-            //var retvalue = OrderType.LoadFromFile(pathxml21);
+            string contentUBL = File.ReadAllText(pathXmlUBL);
 
-            //Assert.IsNotNull(retvalue);
+            var retvalue = InvoiceType.Deserialize(contentUBL);
 
-            InvoiceType test1 = new InvoiceType();
-            InvoiceLineType invc1 = new InvoiceLineType();
-            OrderLineReferenceType ord = new OrderLineReferenceType();
-              
-                                      
-            //test1.IssueDate.Value = Convert.ToDateTime("2014-06-10");
+            string pathTestFile = @"D:\\Users\\d.verardi.REPLYNET\\Desktop\\TestDeserialize\\TestDeserializeInvoice.xml";
 
-            //test1.SaveToFile("D:\\Users\\d.verardi.REPLYNET\\Desktop\\TestDeserialize\\test1.xml");
+            retvalue.SaveToFile(pathTestFile);
 
-            
+            string DesSerFile = File.ReadAllText(pathTestFile);
 
+            //checkFile
 
-            var retvalue = InvoiceType.Deserialize(content);
+            XElement x1 = XElement.Parse(contentUBL);
+            XElement x2 = XElement.Parse(DesSerFile);
+
+                XNode xnn1=x1.AncestorsAndSelf().First();
+                XNode xnn2 = x2.AncestorsAndSelf().First();
+
+                bool res = XNode.DeepEquals(xnn1, xnn2);
 
            // Assert.AreEqual("34", retvalue.ID.ToString());
 
-            retvalue.SaveToFile(@"D:\\Users\\d.verardi.REPLYNET\\Desktop\\TestDeserialize\\TestDeserializeInvoice.xml");
+            
 
 
             }

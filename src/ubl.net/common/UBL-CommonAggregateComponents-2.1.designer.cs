@@ -3159,7 +3159,8 @@ namespace Oasis.Ubl.v21 {
             }
         }
     }
-    
+
+
     public partial class DocumentReferenceType {
         
         private IDType idField;
