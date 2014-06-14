@@ -2807,7 +2807,7 @@ namespace Oasis.Ubl.v21 {
         
         private string currencyCodeListVersionIDField;
         
-        private string valueField;
+        private decimal valueField;
 
 
         [System.Xml.Serialization.XmlAttributeAttribute(DataType = "normalizedString")]
@@ -2830,8 +2830,9 @@ namespace Oasis.Ubl.v21 {
             }
         }
 
+        
         [System.Xml.Serialization.XmlTextAttribute()]
-        public string Value {
+        public decimal Value {
             get {
                 return this.valueField;
             }

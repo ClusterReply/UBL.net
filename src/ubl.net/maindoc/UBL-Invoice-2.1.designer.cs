@@ -1156,7 +1156,7 @@ namespace Oasis.Ubl.v21 {
             }
         }
 
-         [System.Xml.Serialization.XmlElementAttribute(Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2")]
+        [System.Xml.Serialization.XmlElementAttribute(Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2")]
         public ObservableCollection<TaxTotalType> TaxTotal {
             get {
                 return this.taxTotalField;

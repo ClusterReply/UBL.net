@@ -505,7 +505,7 @@ namespace Oasis.Ubl.v21 {
         
         private string formatField;
         
-        private decimal valueField;
+        private string valueField;
         
         public string format {
             get {
@@ -516,8 +516,8 @@ namespace Oasis.Ubl.v21 {
             }
         }
         
-        [System.Xml.Serialization.XmlAttribute()]
-        public decimal Value {
+        [System.Xml.Serialization.XmlTextAttribute()]
+        public string Value {
             get {
                 return this.valueField;
             }

@@ -170,7 +170,8 @@ namespace Oasis.Ubl.v21 {
         private string listSchemeURIField;
         
         private string valueField;
-        
+
+        [System.Xml.Serialization.XmlAttributeAttribute(DataType = "normalizedString")]
         public string listID {
             get {
                 return this.listIDField;
@@ -179,7 +180,8 @@ namespace Oasis.Ubl.v21 {
                 this.listIDField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlAttributeAttribute(DataType = "normalizedString")]
         public string listAgencyID {
             get {
                 return this.listAgencyIDField;
@@ -188,7 +190,8 @@ namespace Oasis.Ubl.v21 {
                 this.listAgencyIDField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlAttributeAttribute(DataType = "normalizedString")]
         public string listAgencyName {
             get {
                 return this.listAgencyNameField;
@@ -197,7 +200,8 @@ namespace Oasis.Ubl.v21 {
                 this.listAgencyNameField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlAttributeAttribute(DataType = "string")]
         public string listName {
             get {
                 return this.listNameField;
@@ -206,7 +210,8 @@ namespace Oasis.Ubl.v21 {
                 this.listNameField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlAttributeAttribute(DataType = "string")]
         public string listVersionID {
             get {
                 return this.listVersionIDField;
@@ -215,7 +220,8 @@ namespace Oasis.Ubl.v21 {
                 this.listVersionIDField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlAttributeAttribute(DataType = "normalizedString")]
         public string name {
             get {
                 return this.nameField;
@@ -224,7 +230,8 @@ namespace Oasis.Ubl.v21 {
                 this.nameField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlAttributeAttribute(DataType = "string")]
         public string languageID {
             get {
                 return this.languageIDField;
@@ -233,7 +240,8 @@ namespace Oasis.Ubl.v21 {
                 this.languageIDField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlAttributeAttribute(DataType = "language")]
         public string listURI {
             get {
                 return this.listURIField;
@@ -242,7 +250,8 @@ namespace Oasis.Ubl.v21 {
                 this.listURIField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlAttributeAttribute(DataType = "anyURI")]
         public string listSchemeURI {
             get {
                 return this.listSchemeURIField;
@@ -252,7 +261,7 @@ namespace Oasis.Ubl.v21 {
             }
         }
         
-        [System.Xml.Serialization.XmlTextAttribute(DataType="normalizedString")]
+        [System.Xml.Serialization.XmlTextAttribute(DataType="anyURI")]
         public string Value {
             get {
                 return this.valueField;
