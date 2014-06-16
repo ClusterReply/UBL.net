@@ -42,8 +42,10 @@ namespace Oasis.Ubl.v21 {
         private ObservableCollection<ObjectType> objectField;
         
         private string idField;
-        
-        public SignatureType() {
+
+
+        public SignatureType()
+        {
             this.objectField = new ObservableCollection<ObjectType>();
             this.keyInfoField = new KeyInfoType();
             this.signatureValueField = new SignatureValueType();
@@ -162,6 +164,7 @@ namespace Oasis.Ubl.v21 {
         //[System.Xml.Serialization.XmlAttribute()]
         //[System.Xml.Serialization.XmlAnyElementAttribute()]
         [System.Xml.Serialization.XmlArrayItemAttribute()]
+
         public ObservableCollection<System.Xml.XmlNode> Any {
             get {
                 return this.anyField;

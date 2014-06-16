@@ -426,6 +426,7 @@ namespace Oasis.Ubl.v21 {
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(ActivityTypeType))]
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(AccountingCostType))]
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(AcceptedVariantsDescriptionType))]
+
     public partial class TextType {
         
         private string languageIDField;
@@ -433,7 +434,8 @@ namespace Oasis.Ubl.v21 {
         private string languageLocaleIDField;
         
         private string valueField;
-        
+
+        [System.Xml.Serialization.XmlAttributeAttribute(DataType = "language")]
         public string languageID {
             get {
                 return this.languageIDField;
@@ -442,7 +444,8 @@ namespace Oasis.Ubl.v21 {
                 this.languageIDField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlAttributeAttribute(DataType = "normalizedString")]
         public string languageLocaleID {
             get {
                 return this.languageLocaleIDField;
@@ -461,6 +464,12 @@ namespace Oasis.Ubl.v21 {
                 this.valueField = value;
             }
         }
+
+       //XmlSerializer considers it to be an simpleContent XML element. 
+       //If I add a new property to TextType, it will be serialized 
+       //_dummy property allow to serializer to not consider the class as a simple content
+       public object _dummy;
+    
     }
     
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(VesselNameType))]

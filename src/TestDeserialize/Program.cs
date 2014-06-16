@@ -32,13 +32,18 @@ namespace TestDeserialize
 
             //checkFile
 
-            XElement x1 = XElement.Parse(contentUBL);
-            XElement x2 = XElement.Parse(DesSerFile);
+            //XElement x1 = XElement.Parse(contentUBL);
+            //XElement x2 = XElement.Parse(DesSerFile);
 
-                XNode xnn1=x1.AncestorsAndSelf().First();
-                XNode xnn2 = x2.AncestorsAndSelf().First();
+            //    XNode xnn1=x1.AncestorsAndSelf().First();
+            //    XNode xnn2 = x2.AncestorsAndSelf().First();
 
-                bool res = XNode.DeepEquals(xnn1, xnn2);
+            //    bool res = XNode.DeepEquals(xnn1, xnn2);
+
+               
+                
+
+                //Assert.Xml.AreEqual(contentUBL, DesSerFile);
 
            // Assert.AreEqual("34", retvalue.ID.ToString());
 

@@ -7454,7 +7454,8 @@ namespace Oasis.Ubl.v21 {
         //    }
         //}
 
-        [System.Xml.Serialization.XmlArrayAttribute()]
+        [System.Xml.Serialization.XmlElementAttribute(Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+        //[System.Xml.Serialization.XmlArrayAttribute()]
         public ObservableCollection<NoteType> Note {
             get {
                 return this.noteField;
@@ -7463,7 +7464,8 @@ namespace Oasis.Ubl.v21 {
                 this.noteField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlElementAttribute(Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
         public ValidationDateType ValidationDate {
             get {
                 return this.validationDateField;
@@ -7472,7 +7474,8 @@ namespace Oasis.Ubl.v21 {
                 this.validationDateField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlElementAttribute(Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
         public ValidationTimeType ValidationTime {
             get {
                 return this.validationTimeField;
@@ -7481,7 +7484,8 @@ namespace Oasis.Ubl.v21 {
                 this.validationTimeField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlElementAttribute(Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
         public ValidatorIDType ValidatorID {
             get {
                 return this.validatorIDField;
@@ -7490,7 +7494,8 @@ namespace Oasis.Ubl.v21 {
                 this.validatorIDField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlElementAttribute(Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
         public CanonicalizationMethodType CanonicalizationMethod {
             get {
                 return this.canonicalizationMethodField;
@@ -7499,7 +7504,8 @@ namespace Oasis.Ubl.v21 {
                 this.canonicalizationMethodField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlElementAttribute(Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
         public SignatureMethodType SignatureMethod {
             get {
                 return this.signatureMethodField;
@@ -7508,7 +7514,8 @@ namespace Oasis.Ubl.v21 {
                 this.signatureMethodField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlElementAttribute(Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2")]
         public PartyType SignatoryParty {
             get {
                 return this.signatoryPartyField;
@@ -7517,7 +7524,8 @@ namespace Oasis.Ubl.v21 {
                 this.signatoryPartyField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlElementAttribute(Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2")]
         public AttachmentType DigitalSignatureAttachment {
             get {
                 return this.digitalSignatureAttachmentField;
@@ -7526,7 +7534,8 @@ namespace Oasis.Ubl.v21 {
                 this.digitalSignatureAttachmentField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlElementAttribute(Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2")]
         public DocumentReferenceType OriginalDocumentReference {
             get {
                 return this.originalDocumentReferenceField;
@@ -12802,7 +12811,7 @@ namespace Oasis.Ubl.v21 {
             }
         }
 
-       [System.Xml.Serialization.XmlArrayAttribute(Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonExtensionComponents-2")]
+       [System.Xml.Serialization.XmlElementAttribute(Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
         public ObservableCollection<NoteType> Note {
             get {
                 return this.noteField;
