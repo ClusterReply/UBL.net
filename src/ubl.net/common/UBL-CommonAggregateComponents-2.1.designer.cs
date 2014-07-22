@@ -526,7 +526,7 @@ namespace Oasis.Ubl.v21 {
             }
         }
 
-        [System.Xml.Serialization.XmlArrayAttribute()]
+        [System.Xml.Serialization.XmlElementAttribute(Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
         public ObservableCollection<DescriptionCodeType> DescriptionCode {
             get {
                 return this.descriptionCodeField;
@@ -536,7 +536,7 @@ namespace Oasis.Ubl.v21 {
             }
         }
 
-        [System.Xml.Serialization.XmlArrayAttribute()]
+        [System.Xml.Serialization.XmlElementAttribute(Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
         public ObservableCollection<DescriptionType> Description {
             get {
                 return this.descriptionField;
@@ -2058,7 +2058,7 @@ namespace Oasis.Ubl.v21 {
             }
         }
 
-        [System.Xml.Serialization.XmlArrayAttribute(Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2")]
+        [System.Xml.Serialization.XmlElementAttribute(Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2")]
         public ObservableCollection<ServiceProviderPartyType> ServiceProviderParty {
             get {
                 return this.serviceProviderPartyField;
@@ -2068,7 +2068,7 @@ namespace Oasis.Ubl.v21 {
             }
         }
 
-        [System.Xml.Serialization.XmlArrayAttribute(Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2")]
+        [System.Xml.Serialization.XmlElementAttribute(Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2")]
         public ObservableCollection<PowerOfAttorneyType> PowerOfAttorney {
             get {
                 return this.powerOfAttorneyField;
@@ -2126,7 +2126,8 @@ namespace Oasis.Ubl.v21 {
         private NameType1 nameField;
         
         private LocaleCodeType localeCodeField;
-        
+
+        [System.Xml.Serialization.XmlElementAttribute(Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
         public IDType ID {
             get {
                 return this.idField;
@@ -2135,7 +2136,8 @@ namespace Oasis.Ubl.v21 {
                 this.idField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlElementAttribute(Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
         public NameType1 Name {
             get {
                 return this.nameField;
@@ -2144,7 +2146,8 @@ namespace Oasis.Ubl.v21 {
                 this.nameField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlElementAttribute(Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
         public LocaleCodeType LocaleCode {
             get {
                 return this.localeCodeField;
@@ -3281,7 +3284,7 @@ namespace Oasis.Ubl.v21 {
             }
         }
 
-        [System.Xml.Serialization.XmlArrayAttribute(Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+        [System.Xml.Serialization.XmlElementAttribute(Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
         public ObservableCollection<XPathType> XPath {
             get {
                 return this.xPathField;
@@ -3331,7 +3334,7 @@ namespace Oasis.Ubl.v21 {
             }
         }
 
-        [System.Xml.Serialization.XmlArrayAttribute(Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+        [System.Xml.Serialization.XmlElementAttribute(Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
         public ObservableCollection<DocumentDescriptionType> DocumentDescription {
             get {
                 return this.documentDescriptionField;
@@ -3583,7 +3586,8 @@ namespace Oasis.Ubl.v21 {
             this.validatorIDField = new ValidatorIDType();
         }
          */
-        
+
+        [System.Xml.Serialization.XmlElementAttribute(Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
         public ValidatorIDType ValidatorID {
             get {
                 return this.validatorIDField;
@@ -3592,7 +3596,8 @@ namespace Oasis.Ubl.v21 {
                 this.validatorIDField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlElementAttribute(Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
         public ValidationResultCodeType ValidationResultCode {
             get {
                 return this.validationResultCodeField;
@@ -3601,7 +3606,8 @@ namespace Oasis.Ubl.v21 {
                 this.validationResultCodeField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlElementAttribute(Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
         public ValidationDateType ValidationDate {
             get {
                 return this.validationDateField;
@@ -3610,7 +3616,8 @@ namespace Oasis.Ubl.v21 {
                 this.validationDateField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlElementAttribute(Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
         public ValidationTimeType ValidationTime {
             get {
                 return this.validationTimeField;
@@ -3619,7 +3626,8 @@ namespace Oasis.Ubl.v21 {
                 this.validationTimeField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlElementAttribute(Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
         public ValidateProcessType ValidateProcess {
             get {
                 return this.validateProcessField;
@@ -3628,7 +3636,8 @@ namespace Oasis.Ubl.v21 {
                 this.validateProcessField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlElementAttribute(Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
         public ValidateToolType ValidateTool {
             get {
                 return this.validateToolField;
@@ -3637,7 +3646,8 @@ namespace Oasis.Ubl.v21 {
                 this.validateToolField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlElementAttribute(Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
         public ValidateToolVersionType ValidateToolVersion {
             get {
                 return this.validateToolVersionField;
@@ -3646,7 +3656,8 @@ namespace Oasis.Ubl.v21 {
                 this.validateToolVersionField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlElementAttribute(Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2")]
         public PartyType SignatoryParty {
             get {
                 return this.signatoryPartyField;
@@ -3676,7 +3687,8 @@ namespace Oasis.Ubl.v21 {
             this.serviceTypeField = new ObservableCollection<ServiceTypeType>();
         }
          */
-        
+
+        [System.Xml.Serialization.XmlElementAttribute(Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
         public IDType ID {
             get {
                 return this.idField;
@@ -3685,7 +3697,8 @@ namespace Oasis.Ubl.v21 {
                 this.idField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlElementAttribute(Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
         public ServiceTypeCodeType ServiceTypeCode {
             get {
                 return this.serviceTypeCodeField;
@@ -3695,7 +3708,7 @@ namespace Oasis.Ubl.v21 {
             }
         }
 
-        [System.Xml.Serialization.XmlArrayAttribute()]
+        [System.Xml.Serialization.XmlElementAttribute(Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
         public ObservableCollection<ServiceTypeType> ServiceType {
             get {
                 return this.serviceTypeField;
@@ -3704,7 +3717,8 @@ namespace Oasis.Ubl.v21 {
                 this.serviceTypeField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlElementAttribute(Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2")]
         public PartyType Party {
             get {
                 return this.partyField;
@@ -3713,7 +3727,8 @@ namespace Oasis.Ubl.v21 {
                 this.partyField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlElementAttribute(Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2")]
         public ContactType SellerContact {
             get {
                 return this.sellerContactField;
@@ -3751,7 +3766,8 @@ namespace Oasis.Ubl.v21 {
             this.descriptionField = new ObservableCollection<DescriptionType>();
         }
          */
-        
+
+        [System.Xml.Serialization.XmlElementAttribute(Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
         public IDType ID {
             get {
                 return this.idField;
@@ -3760,7 +3776,8 @@ namespace Oasis.Ubl.v21 {
                 this.idField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlElementAttribute(Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
         public IssueDateType IssueDate {
             get {
                 return this.issueDateField;
@@ -3769,7 +3786,8 @@ namespace Oasis.Ubl.v21 {
                 this.issueDateField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlElementAttribute(Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
         public IssueTimeType IssueTime {
             get {
                 return this.issueTimeField;
@@ -3779,7 +3797,8 @@ namespace Oasis.Ubl.v21 {
             }
         }
 
-        [System.Xml.Serialization.XmlArrayAttribute()]
+
+        [System.Xml.Serialization.XmlElementAttribute(Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
         public ObservableCollection<DescriptionType> Description {
             get {
                 return this.descriptionField;
@@ -3788,7 +3807,8 @@ namespace Oasis.Ubl.v21 {
                 this.descriptionField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlElementAttribute(Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2")]
         public PartyType NotaryParty {
             get {
                 return this.notaryPartyField;
@@ -3797,7 +3817,8 @@ namespace Oasis.Ubl.v21 {
                 this.notaryPartyField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlElementAttribute(Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2")]
         public PartyType AgentParty {
             get {
                 return this.agentPartyField;
@@ -3807,7 +3828,7 @@ namespace Oasis.Ubl.v21 {
             }
         }
 
-        [System.Xml.Serialization.XmlArrayAttribute()]
+        [System.Xml.Serialization.XmlElementAttribute(Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2")]
         public ObservableCollection<PartyType> WitnessParty {
             get {
                 return this.witnessPartyField;
@@ -3817,7 +3838,7 @@ namespace Oasis.Ubl.v21 {
             }
         }
 
-        [System.Xml.Serialization.XmlArrayAttribute()]
+        [System.Xml.Serialization.XmlElementAttribute(Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2")]
         public ObservableCollection<DocumentReferenceType> MandateDocumentReference {
             get {
                 return this.mandateDocumentReferenceField;
@@ -4314,7 +4335,8 @@ namespace Oasis.Ubl.v21 {
         //    this.taxCategoryField = new ObservableCollection<TaxCategoryType>();
         //    this.allowanceChargeReasonField = new ObservableCollection<AllowanceChargeReasonType>();
         //}
-        
+
+        [System.Xml.Serialization.XmlElementAttribute(Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
         public IDType ID {
             get {
                 return this.idField;
@@ -4434,7 +4456,7 @@ namespace Oasis.Ubl.v21 {
             }
         }
 
-        [System.Xml.Serialization.XmlArrayAttribute()]
+        [System.Xml.Serialization.XmlElementAttribute(Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2")]
         public ObservableCollection<TaxCategoryType> TaxCategory {
             get {
                 return this.taxCategoryField;
@@ -4443,7 +4465,8 @@ namespace Oasis.Ubl.v21 {
                 this.taxCategoryField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlElementAttribute(Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2")]
         public TaxTotalType TaxTotal {
             get {
                 return this.taxTotalField;
@@ -4453,7 +4476,7 @@ namespace Oasis.Ubl.v21 {
             }
         }
 
-        [System.Xml.Serialization.XmlArrayAttribute()]
+        [System.Xml.Serialization.XmlElementAttribute(Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2")]
         public ObservableCollection<PaymentMeansType> PaymentMeans {
             get {
                 return this.paymentMeansField;
@@ -14189,7 +14212,8 @@ namespace Oasis.Ubl.v21 {
         //    this.partyField = new PartyType();
         //    this.additionalAccountIDField = new ObservableCollection<AdditionalAccountIDType>();
         //}
-        
+
+        [System.Xml.Serialization.XmlElementAttribute(Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
         public CustomerAssignedAccountIDType CustomerAssignedAccountID {
             get {
                 return this.customerAssignedAccountIDField;
@@ -14198,7 +14222,8 @@ namespace Oasis.Ubl.v21 {
                 this.customerAssignedAccountIDField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlElementAttribute(Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
         public SupplierAssignedAccountIDType SupplierAssignedAccountID {
             get {
                 return this.supplierAssignedAccountIDField;
@@ -14208,7 +14233,7 @@ namespace Oasis.Ubl.v21 {
             }
         }
 
-        [System.Xml.Serialization.XmlArrayAttribute()]
+        [System.Xml.Serialization.XmlElementAttribute(Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
         public ObservableCollection<AdditionalAccountIDType> AdditionalAccountID {
             get {
                 return this.additionalAccountIDField;
@@ -14217,7 +14242,8 @@ namespace Oasis.Ubl.v21 {
                 this.additionalAccountIDField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlElementAttribute(Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2")]
         public PartyType Party {
             get {
                 return this.partyField;
@@ -14226,7 +14252,8 @@ namespace Oasis.Ubl.v21 {
                 this.partyField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlElementAttribute(Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2")]
         public ContactType DeliveryContact {
             get {
                 return this.deliveryContactField;
@@ -14235,7 +14262,8 @@ namespace Oasis.Ubl.v21 {
                 this.deliveryContactField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlElementAttribute(Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2")]
         public ContactType AccountingContact {
             get {
                 return this.accountingContactField;
@@ -14244,7 +14272,8 @@ namespace Oasis.Ubl.v21 {
                 this.accountingContactField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlElementAttribute(Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2")]
         public ContactType BuyerContact {
             get {
                 return this.buyerContactField;
@@ -19893,7 +19922,8 @@ namespace Oasis.Ubl.v21 {
         //    this.allowanceChargeField = new ObservableCollection<AllowanceChargeType>();
         //    this.mainPeriodField = new PeriodType();
         //}
-        
+
+        [System.Xml.Serialization.XmlElementAttribute(Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
         public UtilityStatementTypeCodeType UtilityStatementTypeCode {
             get {
                 return this.utilityStatementTypeCodeField;
@@ -19902,7 +19932,8 @@ namespace Oasis.Ubl.v21 {
                 this.utilityStatementTypeCodeField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlElementAttribute(Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2")]
         public PeriodType MainPeriod {
             get {
                 return this.mainPeriodField;
@@ -19912,7 +19943,8 @@ namespace Oasis.Ubl.v21 {
             }
         }
 
-        [System.Xml.Serialization.XmlArrayAttribute()]
+
+        [System.Xml.Serialization.XmlElementAttribute(Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2")]
         public ObservableCollection<AllowanceChargeType> AllowanceCharge {
             get {
                 return this.allowanceChargeField;
@@ -19922,7 +19954,7 @@ namespace Oasis.Ubl.v21 {
             }
         }
 
-        [System.Xml.Serialization.XmlArrayAttribute()]
+        [System.Xml.Serialization.XmlElementAttribute(Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2")]
         public ObservableCollection<TaxTotalType> TaxTotal {
             get {
                 return this.taxTotalField;
@@ -19931,7 +19963,8 @@ namespace Oasis.Ubl.v21 {
                 this.taxTotalField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlElementAttribute(Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2")]
         public EnergyWaterSupplyType EnergyWaterSupply {
             get {
                 return this.energyWaterSupplyField;
@@ -19940,7 +19973,8 @@ namespace Oasis.Ubl.v21 {
                 this.energyWaterSupplyField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlElementAttribute(Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2")]
         public TelecommunicationsSupplyType TelecommunicationsSupply {
             get {
                 return this.telecommunicationsSupplyField;
@@ -19949,7 +19983,8 @@ namespace Oasis.Ubl.v21 {
                 this.telecommunicationsSupplyField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlElementAttribute(Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2")]
         public MonetaryTotalType LegalMonetaryTotal {
             get {
                 return this.legalMonetaryTotalField;
@@ -19977,7 +20012,7 @@ namespace Oasis.Ubl.v21 {
         //    this.consumptionReportField = new ObservableCollection<ConsumptionReportType>();
         //}
 
-        [System.Xml.Serialization.XmlArrayAttribute()]
+        [System.Xml.Serialization.XmlElementAttribute(Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2")]
         public ObservableCollection<ConsumptionReportType> ConsumptionReport {
             get {
                 return this.consumptionReportField;
@@ -19987,7 +20022,7 @@ namespace Oasis.Ubl.v21 {
             }
         }
 
-        [System.Xml.Serialization.XmlArrayAttribute()]
+        [System.Xml.Serialization.XmlElementAttribute(Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2")]
         public ObservableCollection<EnergyTaxReportType> EnergyTaxReport {
             get {
                 return this.energyTaxReportField;
@@ -19997,7 +20032,7 @@ namespace Oasis.Ubl.v21 {
             }
         }
 
-        [System.Xml.Serialization.XmlArrayAttribute()]
+        [System.Xml.Serialization.XmlElementAttribute(Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2")]
         public ObservableCollection<ConsumptionAverageType> ConsumptionAverage {
             get {
                 return this.consumptionAverageField;
@@ -20007,7 +20042,7 @@ namespace Oasis.Ubl.v21 {
             }
         }
 
-        [System.Xml.Serialization.XmlArrayAttribute()]
+        [System.Xml.Serialization.XmlElementAttribute(Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2")]
         public ObservableCollection<ConsumptionCorrectionType> EnergyWaterConsumptionCorrection {
             get {
                 return this.energyWaterConsumptionCorrectionField;
@@ -20618,7 +20653,8 @@ namespace Oasis.Ubl.v21 {
         //    this.telecommunicationsSupplyLineField = new ObservableCollection<TelecommunicationsSupplyLineType>();
         //    this.descriptionField = new ObservableCollection<DescriptionType>();
         //}
-        
+
+        [System.Xml.Serialization.XmlElementAttribute(Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
         public TelecommunicationsSupplyTypeType TelecommunicationsSupplyType1 {
             get {
                 return this.telecommunicationsSupplyType1Field;
@@ -20627,7 +20663,8 @@ namespace Oasis.Ubl.v21 {
                 this.telecommunicationsSupplyType1Field = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlElementAttribute(Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
         public TelecommunicationsSupplyTypeCodeType TelecommunicationsSupplyTypeCode {
             get {
                 return this.telecommunicationsSupplyTypeCodeField;
@@ -20636,7 +20673,8 @@ namespace Oasis.Ubl.v21 {
                 this.telecommunicationsSupplyTypeCodeField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlElementAttribute(Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
         public PrivacyCodeType PrivacyCode {
             get {
                 return this.privacyCodeField;
@@ -20646,7 +20684,7 @@ namespace Oasis.Ubl.v21 {
             }
         }
 
-        [System.Xml.Serialization.XmlArrayAttribute()]
+        [System.Xml.Serialization.XmlElementAttribute(Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
         public ObservableCollection<DescriptionType> Description {
             get {
                 return this.descriptionField;
@@ -20655,7 +20693,8 @@ namespace Oasis.Ubl.v21 {
                 this.descriptionField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlElementAttribute(Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
         public TotalAmountType TotalAmount {
             get {
                 return this.totalAmountField;
@@ -20665,7 +20704,7 @@ namespace Oasis.Ubl.v21 {
             }
         }
 
-        [System.Xml.Serialization.XmlArrayAttribute()]
+        [System.Xml.Serialization.XmlElementAttribute(Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2")]
         public ObservableCollection<TelecommunicationsSupplyLineType> TelecommunicationsSupplyLine {
             get {
                 return this.telecommunicationsSupplyLineField;
@@ -21391,7 +21430,8 @@ namespace Oasis.Ubl.v21 {
         //    this.addressField = new AddressType();
         //    this.descriptionField = new ObservableCollection<DescriptionType>();
         //}
-        
+
+        [System.Xml.Serialization.XmlElementAttribute(Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
         public IDType ID {
             get {
                 return this.idField;
@@ -21401,7 +21441,7 @@ namespace Oasis.Ubl.v21 {
             }
         }
 
-        [System.Xml.Serialization.XmlArrayAttribute()]
+        [System.Xml.Serialization.XmlElementAttribute(Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
         public ObservableCollection<DescriptionType> Description {
             get {
                 return this.descriptionField;
@@ -21410,7 +21450,8 @@ namespace Oasis.Ubl.v21 {
                 this.descriptionField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlElementAttribute(Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
         public SubscriberIDType SubscriberID {
             get {
                 return this.subscriberIDField;
@@ -21419,7 +21460,8 @@ namespace Oasis.Ubl.v21 {
                 this.subscriberIDField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlElementAttribute(Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
         public SubscriberTypeType SubscriberType {
             get {
                 return this.subscriberTypeField;
@@ -21428,7 +21470,8 @@ namespace Oasis.Ubl.v21 {
                 this.subscriberTypeField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlElementAttribute(Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
         public SubscriberTypeCodeType SubscriberTypeCode {
             get {
                 return this.subscriberTypeCodeField;
@@ -21437,7 +21480,8 @@ namespace Oasis.Ubl.v21 {
                 this.subscriberTypeCodeField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlElementAttribute(Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
         public TotalDeliveredQuantityType TotalDeliveredQuantity {
             get {
                 return this.totalDeliveredQuantityField;
@@ -21446,7 +21490,8 @@ namespace Oasis.Ubl.v21 {
                 this.totalDeliveredQuantityField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlElementAttribute(Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2")]
         public AddressType Address {
             get {
                 return this.addressField;
@@ -21455,7 +21500,8 @@ namespace Oasis.Ubl.v21 {
                 this.addressField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlElementAttribute(Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2")]
         public WebSiteAccessType WebSiteAccess {
             get {
                 return this.webSiteAccessField;
@@ -21465,7 +21511,7 @@ namespace Oasis.Ubl.v21 {
             }
         }
 
-        [System.Xml.Serialization.XmlArrayAttribute()]
+        [System.Xml.Serialization.XmlElementAttribute(Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2")]
         public ObservableCollection<MeterType> UtilityMeter {
             get {
                 return this.utilityMeterField;
@@ -21483,7 +21529,8 @@ namespace Oasis.Ubl.v21 {
         private PasswordType passwordField;
         
         private LoginType loginField;
-        
+
+        [System.Xml.Serialization.XmlElementAttribute(Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
         public URIType URI {
             get {
                 return this.uRIField;
@@ -21492,7 +21539,8 @@ namespace Oasis.Ubl.v21 {
                 this.uRIField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlElementAttribute(Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
         public PasswordType Password {
             get {
                 return this.passwordField;
@@ -21501,7 +21549,8 @@ namespace Oasis.Ubl.v21 {
                 this.passwordField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlElementAttribute(Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
         public LoginType Login {
             get {
                 return this.loginField;
@@ -21532,7 +21581,8 @@ namespace Oasis.Ubl.v21 {
         //    this.meterPropertyField = new ObservableCollection<MeterPropertyType>();
         //    this.meterReadingField = new ObservableCollection<MeterReadingType>();
         //}
-        
+
+        [System.Xml.Serialization.XmlElementAttribute(Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
         public MeterNumberType MeterNumber {
             get {
                 return this.meterNumberField;
@@ -21541,7 +21591,8 @@ namespace Oasis.Ubl.v21 {
                 this.meterNumberField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlElementAttribute(Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
         public MeterNameType MeterName {
             get {
                 return this.meterNameField;
@@ -21550,7 +21601,8 @@ namespace Oasis.Ubl.v21 {
                 this.meterNameField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlElementAttribute(Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
         public MeterConstantType MeterConstant {
             get {
                 return this.meterConstantField;
@@ -21559,7 +21611,8 @@ namespace Oasis.Ubl.v21 {
                 this.meterConstantField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlElementAttribute(Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
         public MeterConstantCodeType MeterConstantCode {
             get {
                 return this.meterConstantCodeField;
@@ -21568,7 +21621,8 @@ namespace Oasis.Ubl.v21 {
                 this.meterConstantCodeField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlElementAttribute(Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
         public TotalDeliveredQuantityType TotalDeliveredQuantity {
             get {
                 return this.totalDeliveredQuantityField;
@@ -21578,7 +21632,7 @@ namespace Oasis.Ubl.v21 {
             }
         }
 
-        [System.Xml.Serialization.XmlArrayAttribute()]
+        [System.Xml.Serialization.XmlElementAttribute(Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2")]
         public ObservableCollection<MeterReadingType> MeterReading {
             get {
                 return this.meterReadingField;
@@ -21588,7 +21642,7 @@ namespace Oasis.Ubl.v21 {
             }
         }
 
-        [System.Xml.Serialization.XmlArrayAttribute()]
+        [System.Xml.Serialization.XmlElementAttribute(Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2")]
         public ObservableCollection<MeterPropertyType> MeterProperty {
             get {
                 return this.meterPropertyField;
@@ -21630,7 +21684,8 @@ namespace Oasis.Ubl.v21 {
         //public MeterReadingType() {
         //    this.meterReadingCommentsField = new ObservableCollection<MeterReadingCommentsType>();
         //}
-        
+
+        [System.Xml.Serialization.XmlElementAttribute(Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
         public IDType ID {
             get {
                 return this.idField;
@@ -21639,7 +21694,8 @@ namespace Oasis.Ubl.v21 {
                 this.idField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlElementAttribute(Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
         public MeterReadingTypeType MeterReadingType1 {
             get {
                 return this.meterReadingType1Field;
@@ -21648,7 +21704,8 @@ namespace Oasis.Ubl.v21 {
                 this.meterReadingType1Field = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlElementAttribute(Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
         public MeterReadingTypeCodeType MeterReadingTypeCode {
             get {
                 return this.meterReadingTypeCodeField;
@@ -21657,7 +21714,8 @@ namespace Oasis.Ubl.v21 {
                 this.meterReadingTypeCodeField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlElementAttribute(Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
         public PreviousMeterReadingDateType PreviousMeterReadingDate {
             get {
                 return this.previousMeterReadingDateField;
@@ -21666,7 +21724,8 @@ namespace Oasis.Ubl.v21 {
                 this.previousMeterReadingDateField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlElementAttribute(Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
         public PreviousMeterQuantityType PreviousMeterQuantity {
             get {
                 return this.previousMeterQuantityField;
@@ -21675,7 +21734,8 @@ namespace Oasis.Ubl.v21 {
                 this.previousMeterQuantityField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlElementAttribute(Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
         public LatestMeterReadingDateType LatestMeterReadingDate {
             get {
                 return this.latestMeterReadingDateField;
@@ -21684,7 +21744,8 @@ namespace Oasis.Ubl.v21 {
                 this.latestMeterReadingDateField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlElementAttribute(Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
         public LatestMeterQuantityType LatestMeterQuantity {
             get {
                 return this.latestMeterQuantityField;
@@ -21693,7 +21754,8 @@ namespace Oasis.Ubl.v21 {
                 this.latestMeterQuantityField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlElementAttribute(Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
         public PreviousMeterReadingMethodType PreviousMeterReadingMethod {
             get {
                 return this.previousMeterReadingMethodField;
@@ -21702,7 +21764,8 @@ namespace Oasis.Ubl.v21 {
                 this.previousMeterReadingMethodField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlElementAttribute(Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
         public PreviousMeterReadingMethodCodeType PreviousMeterReadingMethodCode {
             get {
                 return this.previousMeterReadingMethodCodeField;
@@ -21711,7 +21774,8 @@ namespace Oasis.Ubl.v21 {
                 this.previousMeterReadingMethodCodeField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlElementAttribute(Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
         public LatestMeterReadingMethodType LatestMeterReadingMethod {
             get {
                 return this.latestMeterReadingMethodField;
@@ -21720,7 +21784,8 @@ namespace Oasis.Ubl.v21 {
                 this.latestMeterReadingMethodField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlElementAttribute(Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
         public LatestMeterReadingMethodCodeType LatestMeterReadingMethodCode {
             get {
                 return this.latestMeterReadingMethodCodeField;
@@ -21730,7 +21795,7 @@ namespace Oasis.Ubl.v21 {
             }
         }
 
-        [System.Xml.Serialization.XmlArrayAttribute()]
+        [System.Xml.Serialization.XmlElementAttribute(Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
         public ObservableCollection<MeterReadingCommentsType> MeterReadingComments {
             get {
                 return this.meterReadingCommentsField;
@@ -21739,7 +21804,8 @@ namespace Oasis.Ubl.v21 {
                 this.meterReadingCommentsField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlElementAttribute(Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
         public DeliveredQuantityType DeliveredQuantity {
             get {
                 return this.deliveredQuantityField;
@@ -21765,7 +21831,8 @@ namespace Oasis.Ubl.v21 {
         //public MeterPropertyType() {
         //    this.valueQualifierField = new ObservableCollection<ValueQualifierType>();
         //}
-        
+
+        [System.Xml.Serialization.XmlElementAttribute(Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
         public NameType1 Name {
             get {
                 return this.nameField;
@@ -21774,7 +21841,8 @@ namespace Oasis.Ubl.v21 {
                 this.nameField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlElementAttribute(Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
         public NameCodeType NameCode {
             get {
                 return this.nameCodeField;
@@ -21783,7 +21851,8 @@ namespace Oasis.Ubl.v21 {
                 this.nameCodeField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlElementAttribute(Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
         public ValueType Value {
             get {
                 return this.valueField;
@@ -21792,7 +21861,8 @@ namespace Oasis.Ubl.v21 {
                 this.valueField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlElementAttribute(Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
         public ValueQuantityType ValueQuantity {
             get {
                 return this.valueQuantityField;
@@ -21802,7 +21872,7 @@ namespace Oasis.Ubl.v21 {
             }
         }
 
-        [System.Xml.Serialization.XmlArrayAttribute()]
+        [System.Xml.Serialization.XmlElementAttribute(Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
         public ObservableCollection<ValueQualifierType> ValueQualifier {
             get {
                 return this.valueQualifierField;
@@ -24203,7 +24273,8 @@ namespace Oasis.Ubl.v21 {
         //    this.paymentTermsField = new ObservableCollection<PaymentTermsType>();
         //    this.noteField = new ObservableCollection<NoteType>();
         //}
-        
+
+        [System.Xml.Serialization.XmlElementAttribute(Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
         public EstimatedConsumedQuantityType EstimatedConsumedQuantity {
             get {
                 return this.estimatedConsumedQuantityField;
@@ -24213,7 +24284,7 @@ namespace Oasis.Ubl.v21 {
             }
         }
 
-        [System.Xml.Serialization.XmlArrayAttribute()]
+        [System.Xml.Serialization.XmlElementAttribute(Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
         public ObservableCollection<NoteType> Note {
             get {
                 return this.noteField;
@@ -24223,7 +24294,7 @@ namespace Oasis.Ubl.v21 {
             }
         }
 
-        [System.Xml.Serialization.XmlArrayAttribute()]
+        [System.Xml.Serialization.XmlElementAttribute(Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2")]
         public ObservableCollection<PaymentTermsType> PaymentTerms {
             get {
                 return this.paymentTermsField;
@@ -25961,7 +26032,8 @@ namespace Oasis.Ubl.v21 {
         //    this.subscriberPartyField = new PartyType();
         //    this.noteField = new ObservableCollection<NoteType>();
         //}
-        
+
+        [System.Xml.Serialization.XmlElementAttribute(Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
         public ConsumptionIDType ConsumptionID {
             get {
                 return this.consumptionIDField;
@@ -25970,7 +26042,8 @@ namespace Oasis.Ubl.v21 {
                 this.consumptionIDField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlElementAttribute(Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
         public SpecificationTypeCodeType SpecificationTypeCode {
             get {
                 return this.specificationTypeCodeField;
@@ -25980,7 +26053,7 @@ namespace Oasis.Ubl.v21 {
             }
         }
 
-        [System.Xml.Serialization.XmlArrayAttribute()]
+        [System.Xml.Serialization.XmlElementAttribute(Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
         public ObservableCollection<NoteType> Note {
             get {
                 return this.noteField;
@@ -25989,7 +26062,8 @@ namespace Oasis.Ubl.v21 {
                 this.noteField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlElementAttribute(Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
         public TotalMeteredQuantityType TotalMeteredQuantity {
             get {
                 return this.totalMeteredQuantityField;
@@ -25998,7 +26072,8 @@ namespace Oasis.Ubl.v21 {
                 this.totalMeteredQuantityField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlElementAttribute(Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2")]
         public PartyType SubscriberParty {
             get {
                 return this.subscriberPartyField;
@@ -26007,7 +26082,8 @@ namespace Oasis.Ubl.v21 {
                 this.subscriberPartyField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlElementAttribute(Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2")]
         public ConsumptionPointType UtilityConsumptionPoint {
             get {
                 return this.utilityConsumptionPointField;
@@ -26017,7 +26093,7 @@ namespace Oasis.Ubl.v21 {
             }
         }
 
-        [System.Xml.Serialization.XmlArrayAttribute()]
+        [System.Xml.Serialization.XmlElementAttribute(Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2")]
         public ObservableCollection<OnAccountPaymentType> OnAccountPayment {
             get {
                 return this.onAccountPaymentField;
@@ -26026,7 +26102,8 @@ namespace Oasis.Ubl.v21 {
                 this.onAccountPaymentField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlElementAttribute(Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2")]
         public ConsumptionType Consumption {
             get {
                 return this.consumptionField;
@@ -26036,7 +26113,7 @@ namespace Oasis.Ubl.v21 {
             }
         }
 
-        [System.Xml.Serialization.XmlArrayAttribute()]
+        [System.Xml.Serialization.XmlElementAttribute(Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2")]
         public ObservableCollection<SupplierConsumptionType> SupplierConsumption {
             get {
                 return this.supplierConsumptionField;
@@ -26070,7 +26147,7 @@ namespace Oasis.Ubl.v21 {
         //    this.descriptionField = new ObservableCollection<DescriptionType>();
         //}
 
-        [System.Xml.Serialization.XmlArrayAttribute()]
+        [System.Xml.Serialization.XmlElementAttribute(Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
         public ObservableCollection<DescriptionType> Description {
             get {
                 return this.descriptionField;
@@ -26079,7 +26156,8 @@ namespace Oasis.Ubl.v21 {
                 this.descriptionField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlElementAttribute(Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2")]
         public PartyType UtilitySupplierParty {
             get {
                 return this.utilitySupplierPartyField;
@@ -26088,7 +26166,8 @@ namespace Oasis.Ubl.v21 {
                 this.utilitySupplierPartyField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlElementAttribute(Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2")]
         public PartyType UtilityCustomerParty {
             get {
                 return this.utilityCustomerPartyField;
@@ -26097,7 +26176,8 @@ namespace Oasis.Ubl.v21 {
                 this.utilityCustomerPartyField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlElementAttribute(Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2")]
         public ConsumptionType Consumption {
             get {
                 return this.consumptionField;
@@ -26106,7 +26186,8 @@ namespace Oasis.Ubl.v21 {
                 this.consumptionField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlElementAttribute(Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2")]
         public ContractType Contract {
             get {
                 return this.contractField;
@@ -26116,7 +26197,7 @@ namespace Oasis.Ubl.v21 {
             }
         }
 
-        [System.Xml.Serialization.XmlArrayAttribute()]
+        [System.Xml.Serialization.XmlElementAttribute(Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2")]
         public ObservableCollection<ConsumptionLineType> ConsumptionLine {
             get {
                 return this.consumptionLineField;

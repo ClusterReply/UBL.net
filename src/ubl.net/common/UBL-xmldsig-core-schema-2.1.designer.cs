@@ -162,8 +162,8 @@ namespace Oasis.Ubl.v21 {
         }
         
         //[System.Xml.Serialization.XmlAttribute()]
-        //[System.Xml.Serialization.XmlAnyElementAttribute()]
-        [System.Xml.Serialization.XmlArrayItemAttribute()]
+        [System.Xml.Serialization.XmlAnyElementAttribute()]
+        //[System.Xml.Serialization.XmlArrayItemAttribute()]
 
         public ObservableCollection<System.Xml.XmlNode> Any {
             get {
@@ -882,8 +882,8 @@ namespace Oasis.Ubl.v21 {
         }
         
         //[System.Xml.Serialization.XmlAttribute()]
-        //[System.Xml.Serialization.XmlAnyElementAttribute()]
-        [System.Xml.Serialization.XmlArrayItemAttribute()]
+        [System.Xml.Serialization.XmlAnyElementAttribute()]
+        //[System.Xml.Serialization.XmlArrayItemAttribute()]
 
         public ObservableCollection<System.Xml.XmlNode> Any {
             get {

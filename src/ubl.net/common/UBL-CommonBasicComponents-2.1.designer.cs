@@ -3226,7 +3226,8 @@ namespace Oasis.Ubl.v21 {
         private string unitCodeListVersionIDField;
         
         private decimal valueField;
-        
+
+        [System.Xml.Serialization.XmlAttributeAttribute(DataType = "normalizedString")]
         public string unitCode {
             get {
                 return this.unitCodeField;
@@ -3235,7 +3236,9 @@ namespace Oasis.Ubl.v21 {
                 this.unitCodeField = value;
             }
         }
-        
+
+
+        [System.Xml.Serialization.XmlAttributeAttribute(DataType = "normalizedString")]
         public string unitCodeListVersionID {
             get {
                 return this.unitCodeListVersionIDField;
@@ -3244,8 +3247,8 @@ namespace Oasis.Ubl.v21 {
                 this.unitCodeListVersionIDField = value;
             }
         }
-        
-        [System.Xml.Serialization.XmlAttribute()]
+
+        [System.Xml.Serialization.XmlTextAttribute()]
         public decimal Value {
             get {
                 return this.valueField;

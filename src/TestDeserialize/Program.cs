@@ -17,7 +17,23 @@ namespace TestDeserialize
         {
             try
             {
-            
+                //InvoiceTypeTesting();
+                UtilityStatementTesting();
+                //ApplicationResponseTesting();
+    
+
+            }
+            catch (Exception e)
+            {
+                
+                throw e;
+            }
+
+
+        }
+
+        private static void InvoiceTypeTesting()
+        {
             string pathXmlUBL = @"D:\Users\d.verardi.REPLYNET\Documents\GitHub\DanyHubGitRep\UBL.net\spec\xml\UBL-Invoice-2.1-Example.xml";
 
             string contentUBL = File.ReadAllText(pathXmlUBL);
@@ -40,24 +56,42 @@ namespace TestDeserialize
 
             //    bool res = XNode.DeepEquals(xnn1, xnn2);
 
-               
+
+
+
+            //Assert.Xml.AreEqual(contentUBL, DesSerFile);
+
+            // Assert.AreEqual("34", retvalue.ID.ToString());
+        }
+    
+   
+        private static void UtilityStatementTesting()
+        {
+            string pathXmlUBL = @"D:\Users\d.verardi.REPLYNET\Documents\GitHub\DanyHubGitRep\UBL.net\src\TestDeserialize\UtilityStatement_UBL_21.xml";
+
+            string contentUBL = File.ReadAllText(pathXmlUBL);
+
+            var retvalue = UtilityStatementType.Deserialize(contentUBL);
+
+            string pathTestFile = @"D:\\Users\\d.verardi.REPLYNET\\Desktop\\TestDeserialize\\TestDeserializeUtilityStatement.xml";
+
+            retvalue.SaveToFile(pathTestFile);  
                 
+        }
+        private static void ApplicationResponseTesting()
+        {
+            string pathXmlUBL = @"D:\Users\d.verardi.REPLYNET\Documents\GitHub\DanyHubGitRep\UBL.net\src\TestDeserialize\ApplicationResponse_UBL_21.xml";
 
-                //Assert.Xml.AreEqual(contentUBL, DesSerFile);
+            string contentUBL = File.ReadAllText(pathXmlUBL);
 
-           // Assert.AreEqual("34", retvalue.ID.ToString());
+            var retvalue = ApplicationResponseType.Deserialize(contentUBL);
 
-            
+            string pathTestFile = @"D:\\Users\\d.verardi.REPLYNET\\Desktop\\TestDeserialize\\TestDeserializeAplicationResponse.xml";
 
-
-            }
-            catch (Exception e)
-            {
-                
-                throw e;
-            }
-
+            retvalue.SaveToFile(pathTestFile);  
 
         }
-    }
+
+  }
 }
+
