@@ -18,8 +18,8 @@ namespace TestDeserialize
             try
             {
                 //InvoiceTypeTesting();
-                UtilityStatementTesting();
-                //ApplicationResponseTesting();
+                //UtilityStatementTesting();
+                ApplicationResponseTesting();
     
 
             }
@@ -78,6 +78,7 @@ namespace TestDeserialize
             retvalue.SaveToFile(pathTestFile);  
                 
         }
+        
         private static void ApplicationResponseTesting()
         {
             string pathXmlUBL = @"D:\Users\d.verardi.REPLYNET\Documents\GitHub\DanyHubGitRep\UBL.net\src\TestDeserialize\ApplicationResponse_UBL_21.xml";
