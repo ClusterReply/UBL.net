@@ -73,6 +73,7 @@ namespace Oasis.Ubl.v21 {
         private static System.Xml.Serialization.XmlSerializer serializer;
         
         public ApplicationResponseType() {
+            /*
             this.documentResponseField = new ObservableCollection<DocumentResponseType>();
             this.receiverPartyField = new PartyType();
             this.senderPartyField = new PartyType();
@@ -90,6 +91,7 @@ namespace Oasis.Ubl.v21 {
             this.customizationIDField = new CustomizationIDType();
             this.uBLVersionIDField = new UBLVersionIDType();
             this.uBLExtensionsField = new ObservableCollection<UBLExtensionType>();
+             */
         }
         
         [System.Xml.Serialization.XmlArrayAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonExtensionComponents-2")]

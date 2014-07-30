@@ -2146,6 +2146,7 @@ namespace Oasis.Ubl.v21 {
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(ActualPickupDateType))]
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(ActualDespatchDateType))]
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(ActualDeliveryDateType))]
+    [DefaultValue(false)]
     public partial class DateType {
         
         private System.DateTime valueField;

@@ -86,6 +86,7 @@ namespace Oasis.Ubl.v21 {
         private static System.Xml.Serialization.XmlSerializer serializer;
         
         public UtilityStatementType() {
+            /*
             this.subscriberConsumptionField = new ObservableCollection<SubscriberConsumptionType>();
             this.mainOnAccountPaymentField = new ObservableCollection<OnAccountPaymentType>();
             this.subscriberPartyField = new PartyType();
@@ -110,6 +111,7 @@ namespace Oasis.Ubl.v21 {
             this.customizationIDField = new CustomizationIDType();
             this.uBLVersionIDField = new UBLVersionIDType();
             this.uBLExtensionsField = new ObservableCollection<UBLExtensionType>();
+             */
         }
         
         [System.Xml.Serialization.XmlArrayAttribute(Namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonExtensionComponents-2")]
@@ -287,8 +289,7 @@ namespace Oasis.Ubl.v21 {
             }
         }
 
-         [System.Xml.Serialization.XmlElementAttribute(Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-      
+         [System.Xml.Serialization.XmlElementAttribute(Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2",DataType="time")]
         public IssueTimeType IssueTime {
             get {
                 return this.issueTimeField;

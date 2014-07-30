@@ -148,6 +148,7 @@ namespace Oasis.Ubl.v21 {
         private static System.Xml.Serialization.XmlSerializer serializer;
         
         public InvoiceType() {
+            /*
             this.invoiceLineField = new ObservableCollection<InvoiceLineType>();
             this.legalMonetaryTotalField = new MonetaryTotalType();
             this.withholdingTaxTotalField = new ObservableCollection<TaxTotalType>();
@@ -202,6 +203,7 @@ namespace Oasis.Ubl.v21 {
             this.customizationIDField = new CustomizationIDType();
             this.uBLVersionIDField = new UBLVersionIDType();
             this.uBLExtensionsField = new ObservableCollection<UBLExtensionType>();
+             */
         }
 
         [System.Xml.Serialization.XmlArrayAttribute(Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonExtensionComponents-2")]
@@ -395,8 +397,10 @@ namespace Oasis.Ubl.v21 {
             }
         }
 
-         [System.Xml.Serialization.XmlElementAttribute(Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-        public DueDateType DueDate {
+         
+         [System.Xml.Serialization.XmlElementAttribute(Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2",IsNullable=true)]
+         [DefaultValue(false)]
+         public DueDateType DueDate {
             get {
                 return this.dueDateField;
             }
@@ -1262,7 +1266,7 @@ namespace Oasis.Ubl.v21 {
                 memoryStream = new System.IO.MemoryStream();
                 Serializer.Serialize(memoryStream, this);
                 memoryStream.Seek(0, System.IO.SeekOrigin.Begin);
-                streamReader = new System.IO.StreamReader(memoryStream);
+                streamReader = new System.IO.StreamReader(memoryStream,Encoding.UTF8);
                 return streamReader.ReadToEnd();
             }
             finally {

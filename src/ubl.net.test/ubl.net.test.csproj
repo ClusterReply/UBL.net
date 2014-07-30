@@ -50,6 +50,13 @@
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Data" />
     <Reference Include="System.Xml" />
+    <Reference Include="XmlDiffPatch, Version=1.0.8.28, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+      <Private>True</Private>
+      <HintPath>..\packages\XMLDiffPatch.1.0.8.28\lib\net\XmlDiffPatch.dll</HintPath>
+    </Reference>
+    <Reference Include="XmlDiffPatch.View">
+      <HintPath>..\packages\XMLDiffPatch.1.0.8.28\lib\net\XmlDiffPatch.View.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Validation.cs" />

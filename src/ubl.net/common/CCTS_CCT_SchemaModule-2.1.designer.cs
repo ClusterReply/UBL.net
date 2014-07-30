@@ -260,8 +260,8 @@ namespace Oasis.Ubl.v21 {
                 this.listSchemeURIField = value;
             }
         }
-        
-        [System.Xml.Serialization.XmlTextAttribute(DataType="anyURI")]
+
+        [System.Xml.Serialization.XmlTextAttribute(DataType = "normalizedString")]
         public string Value {
             get {
                 return this.valueField;
