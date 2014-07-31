@@ -13,9 +13,6 @@
       <ext:ExtensionURI>normalizedString</ext:ExtensionURI>
       <ext:ExtensionReasonCode>normalizedString</ext:ExtensionReasonCode>
       <ext:ExtensionReason>string</ext:ExtensionReason>
-      <ext:ExtensionContent>
-        <!--any element-->
-      </ext:ExtensionContent>
     </ext:UBLExtension>
   </ext:UBLExtensions>
   <cbc:UBLVersionID>normalizedString</cbc:UBLVersionID>
@@ -45,51 +42,9 @@
       <cbc:LogoReferenceID>normalizedString</cbc:LogoReferenceID>
       <cbc:EndpointID>normalizedString</cbc:EndpointID>
       <cbc:IndustryClassificationCode>normalizedString</cbc:IndustryClassificationCode>
-      <cac:PartyIdentification>
-        
-      </cac:PartyIdentification>
-      <cac:PartyName>
-        
-      </cac:PartyName>
-      <cac:Language>
-        
-      </cac:Language>
-      <cac:PostalAddress>
-        
-      </cac:PostalAddress>
-      <cac:PhysicalLocation>
-        
-      </cac:PhysicalLocation>
-      <cac:PartyTaxScheme>
-        
-      </cac:PartyTaxScheme>
-      <cac:PartyLegalEntity>
-        
-      </cac:PartyLegalEntity>
-      <cac:Contact>
-        
-      </cac:Contact>
-      <cac:Person>
-        
-      </cac:Person>
-      <cac:AgentParty>
-        
-      </cac:AgentParty>
-      <cac:ServiceProviderParty>
-        
-      </cac:ServiceProviderParty>
-      <cac:PowerOfAttorney>
-        
-      </cac:PowerOfAttorney>
-      <cac:FinancialAccount>
-        
-      </cac:FinancialAccount>
     </cac:SignatoryParty>
     <cac:DigitalSignatureAttachment>
       <cbc:EmbeddedDocumentBinaryObject mimeCode="normalizedString">GpM7</cbc:EmbeddedDocumentBinaryObject>
-      <cac:ExternalReference>
-        
-      </cac:ExternalReference>
     </cac:DigitalSignatureAttachment>
     <cac:OriginalDocumentReference>
       <cbc:ID>normalizedString</cbc:ID>
@@ -105,18 +60,6 @@
       <cbc:VersionID>normalizedString</cbc:VersionID>
       <cbc:DocumentStatusCode>normalizedString</cbc:DocumentStatusCode>
       <cbc:DocumentDescription>string</cbc:DocumentDescription>
-      <cac:Attachment>
-        
-      </cac:Attachment>
-      <cac:ValidityPeriod>
-        
-      </cac:ValidityPeriod>
-      <cac:IssuerParty>
-        
-      </cac:IssuerParty>
-      <cac:ResultOfVerification>
-        
-      </cac:ResultOfVerification>
     </cac:OriginalDocumentReference>
   </cac:Signature>
   <cac:SenderParty>
@@ -162,15 +105,6 @@
       <cbc:Region>string</cbc:Region>
       <cbc:District>string</cbc:District>
       <cbc:TimezoneOffset>string</cbc:TimezoneOffset>
-      <cac:AddressLine>
-        
-      </cac:AddressLine>
-      <cac:Country>
-        
-      </cac:Country>
-      <cac:LocationCoordinate>
-        
-      </cac:LocationCoordinate>
     </cac:PostalAddress>
     <cac:PhysicalLocation>
       <cbc:ID>normalizedString</cbc:ID>
@@ -181,18 +115,6 @@
       <cbc:LocationTypeCode>normalizedString</cbc:LocationTypeCode>
       <cbc:InformationURI>normalizedString</cbc:InformationURI>
       <cbc:Name>string</cbc:Name>
-      <cac:ValidityPeriod>
-        
-      </cac:ValidityPeriod>
-      <cac:Address>
-        
-      </cac:Address>
-      <cac:SubsidiaryLocation>
-        
-      </cac:SubsidiaryLocation>
-      <cac:LocationCoordinate>
-        
-      </cac:LocationCoordinate>
     </cac:PhysicalLocation>
     <cac:PartyTaxScheme>
       <cbc:RegistrationName>string</cbc:RegistrationName>
@@ -200,12 +122,6 @@
       <cbc:TaxLevelCode>normalizedString</cbc:TaxLevelCode>
       <cbc:ExemptionReasonCode>normalizedString</cbc:ExemptionReasonCode>
       <cbc:ExemptionReason>string</cbc:ExemptionReason>
-      <cac:RegistrationAddress>
-        
-      </cac:RegistrationAddress>
-      <cac:TaxScheme>
-        
-      </cac:TaxScheme>
     </cac:PartyTaxScheme>
     <cac:PartyLegalEntity>
       <cbc:RegistrationName>string</cbc:RegistrationName>
@@ -218,18 +134,6 @@
       <cbc:CompanyLiquidationStatusCode>normalizedString</cbc:CompanyLiquidationStatusCode>
       <cbc:CorporateStockAmount currencyID="normalizedString">1.0</cbc:CorporateStockAmount>
       <cbc:FullyPaidSharesIndicator>true</cbc:FullyPaidSharesIndicator>
-      <cac:RegistrationAddress>
-        
-      </cac:RegistrationAddress>
-      <cac:CorporateRegistrationScheme>
-        
-      </cac:CorporateRegistrationScheme>
-      <cac:HeadOfficeParty>
-        
-      </cac:HeadOfficeParty>
-      <cac:ShareholderParty>
-        
-      </cac:ShareholderParty>
     </cac:PartyLegalEntity>
     <cac:Contact>
       <cbc:ID>normalizedString</cbc:ID>
@@ -238,9 +142,6 @@
       <cbc:Telefax>string</cbc:Telefax>
       <cbc:ElectronicMail>string</cbc:ElectronicMail>
       <cbc:Note>string</cbc:Note>
-      <cac:OtherCommunication>
-        
-      </cac:OtherCommunication>
     </cac:Contact>
     <cac:Person>
       <cbc:ID>normalizedString</cbc:ID>
@@ -256,18 +157,6 @@
       <cbc:BirthDate>2000-01-01</cbc:BirthDate>
       <cbc:BirthplaceName>string</cbc:BirthplaceName>
       <cbc:OrganizationDepartment>string</cbc:OrganizationDepartment>
-      <cac:Contact>
-        
-      </cac:Contact>
-      <cac:FinancialAccount>
-        
-      </cac:FinancialAccount>
-      <cac:IdentityDocumentReference>
-        
-      </cac:IdentityDocumentReference>
-      <cac:ResidenceAddress>
-        
-      </cac:ResidenceAddress>
     </cac:Person>
     <cac:AgentParty>
       <cbc:MarkCareIndicator>true</cbc:MarkCareIndicator>
@@ -276,74 +165,17 @@
       <cbc:LogoReferenceID>normalizedString</cbc:LogoReferenceID>
       <cbc:EndpointID>normalizedString</cbc:EndpointID>
       <cbc:IndustryClassificationCode>normalizedString</cbc:IndustryClassificationCode>
-      <cac:PartyIdentification>
-        
-      </cac:PartyIdentification>
-      <cac:PartyName>
-        
-      </cac:PartyName>
-      <cac:Language>
-        
-      </cac:Language>
-      <cac:PostalAddress>
-        
-      </cac:PostalAddress>
-      <cac:PhysicalLocation>
-        
-      </cac:PhysicalLocation>
-      <cac:PartyTaxScheme>
-        
-      </cac:PartyTaxScheme>
-      <cac:PartyLegalEntity>
-        
-      </cac:PartyLegalEntity>
-      <cac:Contact>
-        
-      </cac:Contact>
-      <cac:Person>
-        
-      </cac:Person>
-      <cac:AgentParty>
-        
-      </cac:AgentParty>
-      <cac:ServiceProviderParty>
-        
-      </cac:ServiceProviderParty>
-      <cac:PowerOfAttorney>
-        
-      </cac:PowerOfAttorney>
-      <cac:FinancialAccount>
-        
-      </cac:FinancialAccount>
     </cac:AgentParty>
     <cac:ServiceProviderParty>
       <cbc:ID>normalizedString</cbc:ID>
       <cbc:ServiceTypeCode>normalizedString</cbc:ServiceTypeCode>
       <cbc:ServiceType>string</cbc:ServiceType>
-      <cac:Party>
-        
-      </cac:Party>
-      <cac:SellerContact>
-        
-      </cac:SellerContact>
     </cac:ServiceProviderParty>
     <cac:PowerOfAttorney>
       <cbc:ID>normalizedString</cbc:ID>
       <cbc:IssueDate>2000-01-01</cbc:IssueDate>
       <cbc:IssueTime>12:00:00</cbc:IssueTime>
       <cbc:Description>string</cbc:Description>
-      <cac:NotaryParty>
-        
-      </cac:NotaryParty>
-      <cac:AgentParty>
-        
-      </cac:AgentParty>
-      <cac:WitnessParty>
-        
-      </cac:WitnessParty>
-      <cac:MandateDocumentReference>
-        
-      </cac:MandateDocumentReference>
     </cac:PowerOfAttorney>
     <cac:FinancialAccount>
       <cbc:ID>normalizedString</cbc:ID>
@@ -353,12 +185,6 @@
       <cbc:AccountFormatCode>normalizedString</cbc:AccountFormatCode>
       <cbc:CurrencyCode>normalizedString</cbc:CurrencyCode>
       <cbc:PaymentNote>string</cbc:PaymentNote>
-      <cac:FinancialInstitutionBranch>
-        
-      </cac:FinancialInstitutionBranch>
-      <cac:Country>
-        
-      </cac:Country>
     </cac:FinancialAccount>
   </cac:SenderParty>
   <cac:ReceiverParty>
@@ -404,15 +230,6 @@
       <cbc:Region>string</cbc:Region>
       <cbc:District>string</cbc:District>
       <cbc:TimezoneOffset>string</cbc:TimezoneOffset>
-      <cac:AddressLine>
-        
-      </cac:AddressLine>
-      <cac:Country>
-        
-      </cac:Country>
-      <cac:LocationCoordinate>
-        
-      </cac:LocationCoordinate>
     </cac:PostalAddress>
     <cac:PhysicalLocation>
       <cbc:ID>normalizedString</cbc:ID>
@@ -423,18 +240,6 @@
       <cbc:LocationTypeCode>normalizedString</cbc:LocationTypeCode>
       <cbc:InformationURI>normalizedString</cbc:InformationURI>
       <cbc:Name>string</cbc:Name>
-      <cac:ValidityPeriod>
-        
-      </cac:ValidityPeriod>
-      <cac:Address>
-        
-      </cac:Address>
-      <cac:SubsidiaryLocation>
-        
-      </cac:SubsidiaryLocation>
-      <cac:LocationCoordinate>
-        
-      </cac:LocationCoordinate>
     </cac:PhysicalLocation>
     <cac:PartyTaxScheme>
       <cbc:RegistrationName>string</cbc:RegistrationName>
@@ -442,12 +247,6 @@
       <cbc:TaxLevelCode>normalizedString</cbc:TaxLevelCode>
       <cbc:ExemptionReasonCode>normalizedString</cbc:ExemptionReasonCode>
       <cbc:ExemptionReason>string</cbc:ExemptionReason>
-      <cac:RegistrationAddress>
-        
-      </cac:RegistrationAddress>
-      <cac:TaxScheme>
-        
-      </cac:TaxScheme>
     </cac:PartyTaxScheme>
     <cac:PartyLegalEntity>
       <cbc:RegistrationName>string</cbc:RegistrationName>
@@ -460,18 +259,6 @@
       <cbc:CompanyLiquidationStatusCode>normalizedString</cbc:CompanyLiquidationStatusCode>
       <cbc:CorporateStockAmount currencyID="normalizedString">1.0</cbc:CorporateStockAmount>
       <cbc:FullyPaidSharesIndicator>true</cbc:FullyPaidSharesIndicator>
-      <cac:RegistrationAddress>
-        
-      </cac:RegistrationAddress>
-      <cac:CorporateRegistrationScheme>
-        
-      </cac:CorporateRegistrationScheme>
-      <cac:HeadOfficeParty>
-        
-      </cac:HeadOfficeParty>
-      <cac:ShareholderParty>
-        
-      </cac:ShareholderParty>
     </cac:PartyLegalEntity>
     <cac:Contact>
       <cbc:ID>normalizedString</cbc:ID>
@@ -480,9 +267,6 @@
       <cbc:Telefax>string</cbc:Telefax>
       <cbc:ElectronicMail>string</cbc:ElectronicMail>
       <cbc:Note>string</cbc:Note>
-      <cac:OtherCommunication>
-        
-      </cac:OtherCommunication>
     </cac:Contact>
     <cac:Person>
       <cbc:ID>normalizedString</cbc:ID>
@@ -498,18 +282,6 @@
       <cbc:BirthDate>2000-01-01</cbc:BirthDate>
       <cbc:BirthplaceName>string</cbc:BirthplaceName>
       <cbc:OrganizationDepartment>string</cbc:OrganizationDepartment>
-      <cac:Contact>
-        
-      </cac:Contact>
-      <cac:FinancialAccount>
-        
-      </cac:FinancialAccount>
-      <cac:IdentityDocumentReference>
-        
-      </cac:IdentityDocumentReference>
-      <cac:ResidenceAddress>
-        
-      </cac:ResidenceAddress>
     </cac:Person>
     <cac:AgentParty>
       <cbc:MarkCareIndicator>true</cbc:MarkCareIndicator>
@@ -518,74 +290,17 @@
       <cbc:LogoReferenceID>normalizedString</cbc:LogoReferenceID>
       <cbc:EndpointID>normalizedString</cbc:EndpointID>
       <cbc:IndustryClassificationCode>normalizedString</cbc:IndustryClassificationCode>
-      <cac:PartyIdentification>
-        
-      </cac:PartyIdentification>
-      <cac:PartyName>
-        
-      </cac:PartyName>
-      <cac:Language>
-        
-      </cac:Language>
-      <cac:PostalAddress>
-        
-      </cac:PostalAddress>
-      <cac:PhysicalLocation>
-        
-      </cac:PhysicalLocation>
-      <cac:PartyTaxScheme>
-        
-      </cac:PartyTaxScheme>
-      <cac:PartyLegalEntity>
-        
-      </cac:PartyLegalEntity>
-      <cac:Contact>
-        
-      </cac:Contact>
-      <cac:Person>
-        
-      </cac:Person>
-      <cac:AgentParty>
-        
-      </cac:AgentParty>
-      <cac:ServiceProviderParty>
-        
-      </cac:ServiceProviderParty>
-      <cac:PowerOfAttorney>
-        
-      </cac:PowerOfAttorney>
-      <cac:FinancialAccount>
-        
-      </cac:FinancialAccount>
     </cac:AgentParty>
     <cac:ServiceProviderParty>
       <cbc:ID>normalizedString</cbc:ID>
       <cbc:ServiceTypeCode>normalizedString</cbc:ServiceTypeCode>
       <cbc:ServiceType>string</cbc:ServiceType>
-      <cac:Party>
-        
-      </cac:Party>
-      <cac:SellerContact>
-        
-      </cac:SellerContact>
     </cac:ServiceProviderParty>
     <cac:PowerOfAttorney>
       <cbc:ID>normalizedString</cbc:ID>
       <cbc:IssueDate>2000-01-01</cbc:IssueDate>
       <cbc:IssueTime>12:00:00</cbc:IssueTime>
       <cbc:Description>string</cbc:Description>
-      <cac:NotaryParty>
-        
-      </cac:NotaryParty>
-      <cac:AgentParty>
-        
-      </cac:AgentParty>
-      <cac:WitnessParty>
-        
-      </cac:WitnessParty>
-      <cac:MandateDocumentReference>
-        
-      </cac:MandateDocumentReference>
     </cac:PowerOfAttorney>
     <cac:FinancialAccount>
       <cbc:ID>normalizedString</cbc:ID>
@@ -595,12 +310,6 @@
       <cbc:AccountFormatCode>normalizedString</cbc:AccountFormatCode>
       <cbc:CurrencyCode>normalizedString</cbc:CurrencyCode>
       <cbc:PaymentNote>string</cbc:PaymentNote>
-      <cac:FinancialInstitutionBranch>
-        
-      </cac:FinancialInstitutionBranch>
-      <cac:Country>
-        
-      </cac:Country>
     </cac:FinancialAccount>
   </cac:ReceiverParty>
   <cac:DocumentResponse>
@@ -610,9 +319,6 @@
       <cbc:Description>string</cbc:Description>
       <cbc:EffectiveDate>2000-01-01</cbc:EffectiveDate>
       <cbc:EffectiveTime>12:00:00</cbc:EffectiveTime>
-      <cac:Status>
-        
-      </cac:Status>
     </cac:Response>
     <cac:DocumentReference>
       <cbc:ID>normalizedString</cbc:ID>
@@ -628,18 +334,6 @@
       <cbc:VersionID>normalizedString</cbc:VersionID>
       <cbc:DocumentStatusCode>normalizedString</cbc:DocumentStatusCode>
       <cbc:DocumentDescription>string</cbc:DocumentDescription>
-      <cac:Attachment>
-        
-      </cac:Attachment>
-      <cac:ValidityPeriod>
-        
-      </cac:ValidityPeriod>
-      <cac:IssuerParty>
-        
-      </cac:IssuerParty>
-      <cac:ResultOfVerification>
-        
-      </cac:ResultOfVerification>
     </cac:DocumentReference>
     <cac:IssuerParty>
       <cbc:MarkCareIndicator>true</cbc:MarkCareIndicator>
@@ -648,45 +342,6 @@
       <cbc:LogoReferenceID>normalizedString</cbc:LogoReferenceID>
       <cbc:EndpointID>normalizedString</cbc:EndpointID>
       <cbc:IndustryClassificationCode>normalizedString</cbc:IndustryClassificationCode>
-      <cac:PartyIdentification>
-        
-      </cac:PartyIdentification>
-      <cac:PartyName>
-        
-      </cac:PartyName>
-      <cac:Language>
-        
-      </cac:Language>
-      <cac:PostalAddress>
-        
-      </cac:PostalAddress>
-      <cac:PhysicalLocation>
-        
-      </cac:PhysicalLocation>
-      <cac:PartyTaxScheme>
-        
-      </cac:PartyTaxScheme>
-      <cac:PartyLegalEntity>
-        
-      </cac:PartyLegalEntity>
-      <cac:Contact>
-        
-      </cac:Contact>
-      <cac:Person>
-        
-      </cac:Person>
-      <cac:AgentParty>
-        
-      </cac:AgentParty>
-      <cac:ServiceProviderParty>
-        
-      </cac:ServiceProviderParty>
-      <cac:PowerOfAttorney>
-        
-      </cac:PowerOfAttorney>
-      <cac:FinancialAccount>
-        
-      </cac:FinancialAccount>
     </cac:IssuerParty>
     <cac:RecipientParty>
       <cbc:MarkCareIndicator>true</cbc:MarkCareIndicator>
@@ -695,53 +350,6 @@
       <cbc:LogoReferenceID>normalizedString</cbc:LogoReferenceID>
       <cbc:EndpointID>normalizedString</cbc:EndpointID>
       <cbc:IndustryClassificationCode>normalizedString</cbc:IndustryClassificationCode>
-      <cac:PartyIdentification>
-        
-      </cac:PartyIdentification>
-      <cac:PartyName>
-        
-      </cac:PartyName>
-      <cac:Language>
-        
-      </cac:Language>
-      <cac:PostalAddress>
-        
-      </cac:PostalAddress>
-      <cac:PhysicalLocation>
-        
-      </cac:PhysicalLocation>
-      <cac:PartyTaxScheme>
-        
-      </cac:PartyTaxScheme>
-      <cac:PartyLegalEntity>
-        
-      </cac:PartyLegalEntity>
-      <cac:Contact>
-        
-      </cac:Contact>
-      <cac:Person>
-        
-      </cac:Person>
-      <cac:AgentParty>
-        
-      </cac:AgentParty>
-      <cac:ServiceProviderParty>
-        
-      </cac:ServiceProviderParty>
-      <cac:PowerOfAttorney>
-        
-      </cac:PowerOfAttorney>
-      <cac:FinancialAccount>
-        
-      </cac:FinancialAccount>
     </cac:RecipientParty>
-    <cac:LineResponse>
-      <cac:LineReference>
-        
-      </cac:LineReference>
-      <cac:Response>
-        
-      </cac:Response>
-    </cac:LineResponse>
   </cac:DocumentResponse>
 </ApplicationResponse>

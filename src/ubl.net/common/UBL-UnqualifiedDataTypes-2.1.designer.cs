@@ -331,15 +331,15 @@ namespace Oasis.Ubl.v21 {
     
     public partial class TimeType {
         
-        private System.DateTime valueField;
+        private string valueField;
         
-        [System.Xml.Serialization.XmlTextAttribute(DataType="time")]
-        public System.DateTime Value {
+        [System.Xml.Serialization.XmlTextAttribute()]
+        public string Value {
             get {
                 return this.valueField;
             }
             set {
-                this.valueField = value;
+                this.valueField =value;
             }
         }
     }

@@ -41,7 +41,7 @@ namespace Oasis.Ubl.v21 {
         
         private ObservableCollection<ObjectType> objectField;
         
-        private string idField;
+        //private string idField;
 
 
         public SignatureType()
@@ -87,15 +87,15 @@ namespace Oasis.Ubl.v21 {
                 this.objectField = value;
             }
         }
-        
-        public string Id {
-            get {
-                return this.idField;
-            }
-            set {
-                this.idField = value;
-            }
-        }
+
+        //public string Id {
+        //    get {
+        //        return this.idField;
+        //    }
+        //    set {
+        //        this.idField = value;
+        //    }
+        //}
     }
     
     public partial class SignedInfoType {
