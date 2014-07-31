@@ -426,6 +426,7 @@ namespace Oasis.Ubl.v21 {
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(ActivityTypeType))]
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(AccountingCostType))]
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(AcceptedVariantsDescriptionType))]
+
     public partial class TextType {
         
         private string languageIDField;
@@ -433,7 +434,8 @@ namespace Oasis.Ubl.v21 {
         private string languageLocaleIDField;
         
         private string valueField;
-        
+
+        [System.Xml.Serialization.XmlAttributeAttribute(DataType = "language")]
         public string languageID {
             get {
                 return this.languageIDField;
@@ -442,7 +444,8 @@ namespace Oasis.Ubl.v21 {
                 this.languageIDField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlAttributeAttribute(DataType = "normalizedString")]
         public string languageLocaleID {
             get {
                 return this.languageLocaleIDField;
@@ -451,8 +454,8 @@ namespace Oasis.Ubl.v21 {
                 this.languageLocaleIDField = value;
             }
         }
-        
-        [System.Xml.Serialization.XmlTextAttribute()]
+
+       [System.Xml.Serialization.XmlTextAttribute(DataType = "normalizedString")]
         public string Value {
             get {
                 return this.valueField;
@@ -461,6 +464,12 @@ namespace Oasis.Ubl.v21 {
                 this.valueField = value;
             }
         }
+
+       //XmlSerializer considers it to be an simpleContent XML element. 
+       //If I add a new property to TextType, it will be serialized 
+       //_dummy property allow to serializer to not consider the class as a simple content
+       public object _dummy;
+    
     }
     
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(VesselNameType))]
@@ -1982,6 +1991,7 @@ namespace Oasis.Ubl.v21 {
     
     public partial class IdentificationIDType : IdentifierType1 {
     }
+
     
     public partial class IDType : IdentifierType1 {
     }
@@ -2136,11 +2146,12 @@ namespace Oasis.Ubl.v21 {
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(ActualPickupDateType))]
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(ActualDespatchDateType))]
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(ActualDeliveryDateType))]
+    [DefaultValue(false)]
     public partial class DateType {
         
         private System.DateTime valueField;
-        
-        [System.Xml.Serialization.XmlTextAttribute(DataType="date")]
+
+        [System.Xml.Serialization.XmlTextAttribute(DataType = "date")]
         public System.DateTime Value {
             get {
                 return this.valueField;
@@ -2483,7 +2494,9 @@ namespace Oasis.Ubl.v21 {
         private string unitCodeListAgencyNameField;
         
         private decimal valueField;
-        
+
+
+        [System.Xml.Serialization.XmlAttributeAttribute(DataType = "normalizedString")]
         public string unitCode {
             get {
                 return this.unitCodeField;
@@ -2492,7 +2505,8 @@ namespace Oasis.Ubl.v21 {
                 this.unitCodeField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlAttributeAttribute(DataType = "normalizedString")]
         public string unitCodeListID {
             get {
                 return this.unitCodeListIDField;
@@ -2501,7 +2515,8 @@ namespace Oasis.Ubl.v21 {
                 this.unitCodeListIDField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlAttributeAttribute(DataType = "normalizedString")]
         public string unitCodeListAgencyID {
             get {
                 return this.unitCodeListAgencyIDField;
@@ -2510,7 +2525,8 @@ namespace Oasis.Ubl.v21 {
                 this.unitCodeListAgencyIDField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlAttributeAttribute(DataType = "normalizedString")]
         public string unitCodeListAgencyName {
             get {
                 return this.unitCodeListAgencyNameField;
@@ -2519,7 +2535,7 @@ namespace Oasis.Ubl.v21 {
                 this.unitCodeListAgencyNameField = value;
             }
         }
-        
+
         [System.Xml.Serialization.XmlTextAttribute()]
         public decimal Value {
             get {
@@ -2802,7 +2818,9 @@ namespace Oasis.Ubl.v21 {
         private string currencyCodeListVersionIDField;
         
         private decimal valueField;
-        
+
+
+        [System.Xml.Serialization.XmlAttributeAttribute(DataType = "normalizedString")]
         public string currencyID {
             get {
                 return this.currencyIDField;
@@ -2811,7 +2829,8 @@ namespace Oasis.Ubl.v21 {
                 this.currencyIDField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlAttributeAttribute(DataType = "normalizedString")]
         public string currencyCodeListVersionID {
             get {
                 return this.currencyCodeListVersionIDField;
@@ -2820,6 +2839,7 @@ namespace Oasis.Ubl.v21 {
                 this.currencyCodeListVersionIDField = value;
             }
         }
+
         
         [System.Xml.Serialization.XmlTextAttribute()]
         public decimal Value {
@@ -3207,7 +3227,8 @@ namespace Oasis.Ubl.v21 {
         private string unitCodeListVersionIDField;
         
         private decimal valueField;
-        
+
+        [System.Xml.Serialization.XmlAttributeAttribute(DataType = "normalizedString")]
         public string unitCode {
             get {
                 return this.unitCodeField;
@@ -3216,7 +3237,9 @@ namespace Oasis.Ubl.v21 {
                 this.unitCodeField = value;
             }
         }
-        
+
+
+        [System.Xml.Serialization.XmlAttributeAttribute(DataType = "normalizedString")]
         public string unitCodeListVersionID {
             get {
                 return this.unitCodeListVersionIDField;
@@ -3225,7 +3248,7 @@ namespace Oasis.Ubl.v21 {
                 this.unitCodeListVersionIDField = value;
             }
         }
-        
+
         [System.Xml.Serialization.XmlTextAttribute()]
         public decimal Value {
             get {

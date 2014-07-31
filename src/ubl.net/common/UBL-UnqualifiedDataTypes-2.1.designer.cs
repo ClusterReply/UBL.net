@@ -96,7 +96,8 @@ namespace Oasis.Ubl.v21 {
         private string filenameField;
         
         private byte[] valueField;
-        
+
+        [System.Xml.Serialization.XmlAttributeAttribute(DataType = "string")]
         public string format {
             get {
                 return this.formatField;
@@ -105,7 +106,8 @@ namespace Oasis.Ubl.v21 {
                 this.formatField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlAttributeAttribute(DataType = "normalizedString")]
         public string mimeCode {
             get {
                 return this.mimeCodeField;
@@ -114,7 +116,8 @@ namespace Oasis.Ubl.v21 {
                 this.mimeCodeField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlAttributeAttribute(DataType = "normalizedString")]
         public string encodingCode {
             get {
                 return this.encodingCodeField;
@@ -123,7 +126,8 @@ namespace Oasis.Ubl.v21 {
                 this.encodingCodeField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlAttributeAttribute(DataType = "normalizedString")]
         public string characterSetCode {
             get {
                 return this.characterSetCodeField;
@@ -132,7 +136,8 @@ namespace Oasis.Ubl.v21 {
                 this.characterSetCodeField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlAttributeAttribute(DataType = "anyURI")]
         public string uri {
             get {
                 return this.uriField;
@@ -141,7 +146,8 @@ namespace Oasis.Ubl.v21 {
                 this.uriField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlAttributeAttribute(DataType = "string")]
         public string filename {
             get {
                 return this.filenameField;
@@ -178,6 +184,7 @@ namespace Oasis.Ubl.v21 {
     }
 
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(CodeType1))]
+
     public partial class CodeType { }
     /*    
         private string listIDField;
@@ -296,7 +303,7 @@ namespace Oasis.Ubl.v21 {
         
         private System.DateTime valueField;
         
-        [System.Xml.Serialization.XmlTextAttribute()]
+        [System.Xml.Serialization.XmlAttribute()]
         public System.DateTime Value {
             get {
                 return this.valueField;
@@ -436,10 +443,10 @@ namespace Oasis.Ubl.v21 {
     */
     public partial class IndicatorType {
         
-        private bool valueField;
-        
+        private string valueField;
+
         [System.Xml.Serialization.XmlTextAttribute()]
-        public bool Value {
+        public string Value {
             get {
                 return this.valueField;
             }
@@ -447,6 +454,9 @@ namespace Oasis.Ubl.v21 {
                 this.valueField = value;
             }
         }
+
+
+
     }
     
     public partial class MeasureType1 : MeasureType {
@@ -501,7 +511,7 @@ namespace Oasis.Ubl.v21 {
         
         private string formatField;
         
-        private decimal valueField;
+        private string valueField;
         
         public string format {
             get {
@@ -513,7 +523,7 @@ namespace Oasis.Ubl.v21 {
         }
         
         [System.Xml.Serialization.XmlTextAttribute()]
-        public decimal Value {
+        public string Value {
             get {
                 return this.valueField;
             }
@@ -596,6 +606,7 @@ namespace Oasis.Ubl.v21 {
         }
     }
     */
+    
     public partial class TextType1 : TextType {
     }
 

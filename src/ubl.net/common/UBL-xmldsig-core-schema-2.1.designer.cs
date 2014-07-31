@@ -42,8 +42,10 @@ namespace Oasis.Ubl.v21 {
         private ObservableCollection<ObjectType> objectField;
         
         private string idField;
-        
-        public SignatureType() {
+
+
+        public SignatureType()
+        {
             this.objectField = new ObservableCollection<ObjectType>();
             this.keyInfoField = new KeyInfoType();
             this.signatureValueField = new SignatureValueType();
@@ -159,8 +161,10 @@ namespace Oasis.Ubl.v21 {
             this.anyField = new ObservableCollection<System.Xml.XmlNode>();
         }
         
-        [System.Xml.Serialization.XmlTextAttribute()]
+        //[System.Xml.Serialization.XmlAttribute()]
         [System.Xml.Serialization.XmlAnyElementAttribute()]
+        //[System.Xml.Serialization.XmlArrayItemAttribute()]
+
         public ObservableCollection<System.Xml.XmlNode> Any {
             get {
                 return this.anyField;
@@ -194,8 +198,9 @@ namespace Oasis.Ubl.v21 {
             this.anyField = new ObservableCollection<System.Xml.XmlNode>();
         }
         
-        [System.Xml.Serialization.XmlTextAttribute()]
-        [System.Xml.Serialization.XmlAnyElementAttribute()]
+        //[System.Xml.Serialization.XmlAttribute()]
+        //[System.Xml.Serialization.XmlAnyElementAttribute()]
+        [System.Xml.Serialization.XmlArrayItemAttribute()]
         public ObservableCollection<System.Xml.XmlNode> Any {
             get {
                 return this.anyField;
@@ -260,34 +265,39 @@ namespace Oasis.Ubl.v21 {
     }
     
     public partial class PGPDataType {
-        
-        private ObservableCollection<object> itemsField;
-        
-        private ObservableCollection<ItemsChoiceType1> itemsElementNameField;
-        
-        public PGPDataType() {
-            this.itemsElementNameField = new ObservableCollection<ItemsChoiceType1>();
-            this.itemsField = new ObservableCollection<object>();
-        }
-        
+
+        private object[] _items;
+
+        private ItemsChoiceType1[] _itemsElementName;
+
+      
         [System.Xml.Serialization.XmlAnyElementAttribute()]
+        [System.Xml.Serialization.XmlElementAttribute("PGPKeyID", typeof(byte[]), DataType = "base64Binary")]
+        [System.Xml.Serialization.XmlElementAttribute("PGPKeyPacket", typeof(byte[]), DataType = "base64Binary")]
         [System.Xml.Serialization.XmlChoiceIdentifierAttribute("ItemsElementName")]
-        public ObservableCollection<object> Items {
-            get {
-                return this.itemsField;
+        public object[] Items
+        {
+            get
+            {
+                return this._items;
             }
-            set {
-                this.itemsField = value;
+            set
+            {
+                this._items = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlElementAttribute("ItemsElementName")]
         [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public ObservableCollection<ItemsChoiceType1> ItemsElementName {
-            get {
-                return this.itemsElementNameField;
+        public ItemsChoiceType1[] ItemsElementName
+        {
+            get
+            {
+                return this._itemsElementName;
             }
-            set {
-                this.itemsElementNameField = value;
+            set
+            {
+                this._itemsElementName = value;
             }
         }
     }
@@ -331,34 +341,41 @@ namespace Oasis.Ubl.v21 {
     }
     
     public partial class X509DataType {
-        
-        private ObservableCollection<object> itemsField;
-        
-        private ObservableCollection<ItemsChoiceType> itemsElementNameField;
-        
-        public X509DataType() {
-            this.itemsElementNameField = new ObservableCollection<ItemsChoiceType>();
-            this.itemsField = new ObservableCollection<object>();
-        }
-        
+
+        private object[] _items;
+
+        private ItemsChoiceType[] _itemsElementName;
+
         [System.Xml.Serialization.XmlAnyElementAttribute()]
+        [System.Xml.Serialization.XmlElementAttribute("X509CRL", typeof(byte[]), DataType = "base64Binary")]
+        [System.Xml.Serialization.XmlElementAttribute("X509Certificate", typeof(byte[]), DataType = "base64Binary")]
+        [System.Xml.Serialization.XmlElementAttribute("X509IssuerSerial", typeof(X509IssuerSerialType))]
+        [System.Xml.Serialization.XmlElementAttribute("X509SKI", typeof(byte[]), DataType = "base64Binary")]
+        [System.Xml.Serialization.XmlElementAttribute("X509SubjectName", typeof(string))]
         [System.Xml.Serialization.XmlChoiceIdentifierAttribute("ItemsElementName")]
-        public ObservableCollection<object> Items {
-            get {
-                return this.itemsField;
+        public object[] Items
+        {
+            get
+            {
+                return this._items;
             }
-            set {
-                this.itemsField = value;
+            set
+            {
+                this._items = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlElementAttribute("ItemsElementName")]
         [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public ObservableCollection<ItemsChoiceType> ItemsElementName {
-            get {
-                return this.itemsElementNameField;
+        public ItemsChoiceType[] ItemsElementName
+        {
+            get
+            {
+                return this._itemsElementName;
             }
-            set {
-                this.itemsElementNameField = value;
+            set
+            {
+                this._itemsElementName = value;
             }
         }
     }
@@ -449,7 +466,7 @@ namespace Oasis.Ubl.v21 {
             }
         }
         
-        [System.Xml.Serialization.XmlTextAttribute()]
+        [System.Xml.Serialization.XmlAttribute()]
         public ObservableCollection<string> Text {
             get {
                 return this.textField;
@@ -594,7 +611,7 @@ namespace Oasis.Ubl.v21 {
             }
         }
         
-        [System.Xml.Serialization.XmlTextAttribute()]
+        [System.Xml.Serialization.XmlAttribute()]
         public ObservableCollection<string> Text {
             get {
                 return this.textField;
@@ -607,60 +624,80 @@ namespace Oasis.Ubl.v21 {
     
     public partial class KeyInfoType {
         
-        private ObservableCollection<object> itemsField;
-        
-        private ObservableCollection<ItemsChoiceType2> itemsElementNameField;
-        
-        private ObservableCollection<string> textField;
-        
-        private string idField;
-        
-        public KeyInfoType() {
-            this.textField = new ObservableCollection<string>();
-            this.itemsElementNameField = new ObservableCollection<ItemsChoiceType2>();
-            this.itemsField = new ObservableCollection<object>();
+        private ItemsChoiceType2[] _itemsElementName;
+
+        private ObservableCollection<string> _text;
+
+        private string _id;
+
+        private object[] _items;
+
+        public KeyInfoType()
+        {
+            this._text = new ObservableCollection<string>();
         }
-        
+
         [System.Xml.Serialization.XmlAnyElementAttribute()]
+        [System.Xml.Serialization.XmlElementAttribute("KeyName", typeof(string))]
+        [System.Xml.Serialization.XmlElementAttribute("KeyValue", typeof(KeyValueType))]
+        [System.Xml.Serialization.XmlElementAttribute("MgmtData", typeof(string))]
+        [System.Xml.Serialization.XmlElementAttribute("PGPData", typeof(PGPDataType))]
+        [System.Xml.Serialization.XmlElementAttribute("RetrievalMethod", typeof(RetrievalMethodType))]
+        [System.Xml.Serialization.XmlElementAttribute("SPKIData", typeof(SPKIDataType))]
+        [System.Xml.Serialization.XmlElementAttribute("X509Data", typeof(X509DataType))]
         [System.Xml.Serialization.XmlChoiceIdentifierAttribute("ItemsElementName")]
-        public ObservableCollection<object> Items {
-            get {
-                return this.itemsField;
+        public object[] Items
+        {
+            get
+            {
+                return this._items;
             }
-            set {
-                this.itemsField = value;
+            set
+            {
+                this._items = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlElementAttribute("ItemsElementName")]
         [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public ObservableCollection<ItemsChoiceType2> ItemsElementName {
-            get {
-                return this.itemsElementNameField;
+        public ItemsChoiceType2[] ItemsElementName
+        {
+            get
+            {
+                return this._itemsElementName;
             }
-            set {
-                this.itemsElementNameField = value;
+            set
+            {
+                this._itemsElementName = value;
             }
         }
-        
+
         [System.Xml.Serialization.XmlTextAttribute()]
-        public ObservableCollection<string> Text {
-            get {
-                return this.textField;
+        public ObservableCollection<string> Text
+        {
+            get
+            {
+                return this._text;
             }
-            set {
-                this.textField = value;
-            }
-        }
-        
-        public string Id {
-            get {
-                return this.idField;
-            }
-            set {
-                this.idField = value;
+            set
+            {
+                this._text = value;
             }
         }
-    }
+
+        [System.Xml.Serialization.XmlAttributeAttribute(DataType = "ID")]
+        public string Id
+        {
+            get
+            {
+                return this._id;
+            }
+            set
+            {
+                this._id = value;
+            }
+        }
+        }
     
     public enum ItemsChoiceType2 {
         
@@ -705,7 +742,7 @@ namespace Oasis.Ubl.v21 {
             }
         }
         
-        [System.Xml.Serialization.XmlTextAttribute(DataType="base64Binary")]
+        [System.Xml.Serialization.XmlAttribute(DataType="base64Binary")]
         public byte[] Value {
             get {
                 return this.valueField;
@@ -726,8 +763,9 @@ namespace Oasis.Ubl.v21 {
             this.anyField = new ObservableCollection<System.Xml.XmlNode>();
         }
         
-        [System.Xml.Serialization.XmlTextAttribute()]
-        [System.Xml.Serialization.XmlAnyElementAttribute()]
+        //[System.Xml.Serialization.XmlAttribute()]
+        //[System.Xml.Serialization.XmlAnyElementAttribute()]
+        [System.Xml.Serialization.XmlArrayItemAttribute()]
         public ObservableCollection<System.Xml.XmlNode> Any {
             get {
                 return this.anyField;
@@ -843,8 +881,10 @@ namespace Oasis.Ubl.v21 {
             }
         }
         
-        [System.Xml.Serialization.XmlTextAttribute()]
+        //[System.Xml.Serialization.XmlAttribute()]
         [System.Xml.Serialization.XmlAnyElementAttribute()]
+        //[System.Xml.Serialization.XmlArrayItemAttribute()]
+
         public ObservableCollection<System.Xml.XmlNode> Any {
             get {
                 return this.anyField;
@@ -965,7 +1005,7 @@ namespace Oasis.Ubl.v21 {
             }
         }
         
-        [System.Xml.Serialization.XmlTextAttribute()]
+        [System.Xml.Serialization.XmlAttribute()]
         public ObservableCollection<string> Text {
             get {
                 return this.textField;

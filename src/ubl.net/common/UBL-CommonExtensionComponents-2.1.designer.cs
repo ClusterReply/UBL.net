@@ -82,7 +82,8 @@ namespace Oasis.Ubl.v21 {
             this.nameField = new NameType1();
             this.idField = new IDType();
         }
-        
+
+        [System.Xml.Serialization.XmlElementAttribute(Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
         public IDType ID {
             get {
                 return this.idField;
@@ -91,7 +92,8 @@ namespace Oasis.Ubl.v21 {
                 this.idField = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlElementAttribute(Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
         public NameType1 Name {
             get {
                 return this.nameField;
