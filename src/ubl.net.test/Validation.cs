@@ -18,102 +18,46 @@ namespace ubl.net.test
     [TestFixture] 
     public class Validation
     {
-
-         [Test]
-         private void Test_InvoiceType()
-         {
-             string inputUBLfile = @"D:\Users\d.verardi.REPLYNET\Documents\GitHub\DanyHubGitRep\UBL.net\spec\xml\UBL-Invoice-2.1-Example.xml";
-             string contentUBL = File.ReadAllText(inputUBLfile);
-             string outputFile = @"D:\Users\d.verardi.REPLYNET\Desktop\TestDeserialize\TestDeserializeInvoice.xml";
-             InvoiceType retvalue = null;
-
-             try
-             {
-                  retvalue = Assert.XmlDeserialize<InvoiceType>(contentUBL);
-             }
-             catch (Exception e)
-             {
-                 
-                 throw e;
-             }
-
-             var document = RemoveEmptyNodes(retvalue.Serialize());
-             document.Save(outputFile);
-
-             //Not possible to set others XmlDiffOptions
-             //Assert.Xml.AreEqual(contentUBL, document.ToString(), XmlOptions.Loose);
-
-             XmlDiff xmldiff = new XmlDiff(XmlDiffOptions.IgnoreChildOrder |
-                                           XmlDiffOptions.IgnorePrefixes | XmlDiffOptions.IgnoreNamespaces |
-                                            XmlDiffOptions.IgnoreXmlDecl);
-
-             StringBuilder output = new StringBuilder();
-             XmlWriter diffgramWriter = XmlWriter.Create(output);
-
-             bool bIdentical = xmldiff.Compare(inputUBLfile, outputFile, true, diffgramWriter);
-                             
-             diffgramWriter.Close();
+        [Test]
+        private void Test_InvoiceType()
+        {
+            string inputUBLfile = @"..\..\InputXML\UBL-Invoice-2.1-Example.xml";
              
-             if(bIdentical)
-                 Assert.IsTrue(bIdentical, "XML Deserialized comparison: {0}", output);
-             else
-                 Assert.Fail("XML Deserialized NOT EQUAL! Below comparison details:\n\n {0}",output);
+             string outputFile = @"..\..\OutputXML\TestDeserialize_Invoice.xml";
+             DeserializeGeneric<InvoiceType>(inputUBLfile, outputFile);
 
-         }
+        }
 
+        
          [Test]
          private void Test_UtilityStatement()
          {
-             string inputUBLfile = @"D:\Users\d.verardi.REPLYNET\Documents\GitHub\DanyHubGitRep\UBL.net\src\TestDeserialize\UtilityStatement_UBL_21.xml";
-             string contentUBL = File.ReadAllText(inputUBLfile);
-             string outputFile = @"D:\\Users\\d.verardi.REPLYNET\\Desktop\\TestDeserialize\\TestDeserializeUtilityStatement.xml";
-             UtilityStatementType retvalue = null;
+             string inputUBLfile = @"..\..\InputXML\UtilityStatement_UBL_21.xml";
+             string outputFile = @"..\..\OutputXML\TestDeserialize_UtilityStatement.xml";
 
-             try
-             {
-                 retvalue = Assert.XmlDeserialize<UtilityStatementType>(contentUBL);
-             }
-             catch (Exception e)
-             {
-
-                 throw e;
-             }
-
-             var document = RemoveEmptyNodes(retvalue.Serialize());
-             document.Save(outputFile);
-
-             //Not possible to set others XmlDiffOptions
-             //Assert.Xml.AreEqual(contentUBL, document.ToString(), XmlOptions.Loose);
-
-             XmlDiff xmldiff = new XmlDiff(XmlDiffOptions.IgnoreChildOrder |
-                                           XmlDiffOptions.IgnorePrefixes | XmlDiffOptions.IgnoreNamespaces |
-                                            XmlDiffOptions.IgnoreXmlDecl);
-
-             StringBuilder output = new StringBuilder();
-             XmlWriter diffgramWriter = XmlWriter.Create(output);
-
-             bool bIdentical = xmldiff.Compare(inputUBLfile, outputFile, true, diffgramWriter);
-
-             diffgramWriter.Close();
-
-             if (bIdentical)
-                 Assert.IsTrue(bIdentical, "XML Deserialized comparison: {0}", output);
-             else
-                 Assert.Fail("XML Deserialized NOT EQUAL! Below comparison details:\n\n {0}", output);
+             DeserializeGeneric<UtilityStatementType>(inputUBLfile, outputFile);
 
          }
 
          [Test]
          private void Test_ApplicationResponse()
          {
-             string inputUBLfile = @"D:\Users\d.verardi.REPLYNET\Documents\GitHub\DanyHubGitRep\UBL.net\src\TestDeserialize\ApplicationResponse_UBL_21.xml";
+             string inputUBLfile = @"..\..\InputXML\ApplicationResponse_UBL_21.xml";
+             string outputFile = @"..\..\OutputXML\TestDeserializeAplicationResponse.xml";
+             DeserializeGeneric<ApplicationResponseType>(inputUBLfile, outputFile);
+
+         }
+
+         private void DeserializeGeneric<T>(string inputUBLfile, string outputFile) 
+         {
+             
              string contentUBL = File.ReadAllText(inputUBLfile);
-             string outputFile = @"D:\\Users\\d.verardi.REPLYNET\\Desktop\\TestDeserialize\\TestDeserializeAplicationResponse.xml";
-             ApplicationResponseType retvalue = null;
+             
+             dynamic retvalue = null;
 
              try
              {
-                 retvalue = Assert.XmlDeserialize<ApplicationResponseType>(contentUBL);
+                 retvalue = Assert.XmlDeserialize<T>(contentUBL);
              }
              catch (Exception e)
              {
@@ -144,6 +88,7 @@ namespace ubl.net.test
                  Assert.Fail("XML Deserialized NOT EQUAL! Below comparison details:\n\n {0}", output);
 
          }
+
 
 
          private T Deserialize<T>(string xml, XmlReaderSettings settings)

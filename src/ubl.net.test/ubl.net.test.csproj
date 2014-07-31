@@ -71,6 +71,14 @@
       <Name>ubl.net</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup>
+    <Content Include="InputXML\ApplicationResponse_UBL_21.xml" />
+    <Content Include="InputXML\UBL-Invoice-2.1-Example.xml" />
+    <Content Include="InputXML\UtilityStatement_UBL_21.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="OutputXML\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
