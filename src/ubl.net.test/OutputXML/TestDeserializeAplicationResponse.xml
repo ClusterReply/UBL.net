@@ -1,0 +1,353 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ApplicationResponse xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="urn:oasis:names:specification:ubl:schema:xsd:ApplicationResponse-2">
+  <UBLExtensions xmlns="urn:oasis:names:specification:ubl:schema:xsd:CommonExtensionComponents-2">
+    <UBLExtension>
+      <ID xmlns="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">normalizedString</ID>
+      <Name xmlns="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">string</Name>
+      <ExtensionAgencyID>normalizedString</ExtensionAgencyID>
+      <ExtensionAgencyName>string</ExtensionAgencyName>
+      <ExtensionVersionID>normalizedString</ExtensionVersionID>
+      <ExtensionAgencyURI>normalizedString</ExtensionAgencyURI>
+      <ExtensionURI>normalizedString</ExtensionURI>
+      <ExtensionReasonCode>normalizedString</ExtensionReasonCode>
+      <ExtensionReason>string</ExtensionReason>
+    </UBLExtension>
+  </UBLExtensions>
+  <UBLVersionID xmlns="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">normalizedString</UBLVersionID>
+  <CustomizationID xmlns="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">normalizedString</CustomizationID>
+  <ProfileID xmlns="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">normalizedString</ProfileID>
+  <ProfileExecutionID xmlns="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">normalizedString</ProfileExecutionID>
+  <ID xmlns="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">normalizedString</ID>
+  <UUID xmlns="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">normalizedString</UUID>
+  <IssueDate xmlns="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">2000-01-01</IssueDate>
+  <IssueTime xmlns="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">12:00:00</IssueTime>
+  <ResponseDate xmlns="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">2000-01-01</ResponseDate>
+  <ResponseTime xmlns="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">12:00:00</ResponseTime>
+  <Note xmlns="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">string</Note>
+  <VersionID xmlns="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">normalizedString</VersionID>
+  <Signature xmlns="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2">
+    <ID xmlns="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">normalizedString</ID>
+    <Note xmlns="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">string</Note>
+    <ValidationDate xmlns="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">2000-01-01</ValidationDate>
+    <ValidationTime xmlns="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">12:00:00</ValidationTime>
+    <ValidatorID xmlns="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">normalizedString</ValidatorID>
+    <CanonicalizationMethod xmlns="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">string</CanonicalizationMethod>
+    <SignatureMethod xmlns="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">string</SignatureMethod>
+    <SignatoryParty>
+      <MarkCareIndicator xmlns="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">true</MarkCareIndicator>
+      <MarkAttentionIndicator xmlns="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">true</MarkAttentionIndicator>
+      <WebsiteURI xmlns="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">normalizedString</WebsiteURI>
+      <LogoReferenceID xmlns="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">normalizedString</LogoReferenceID>
+      <EndpointID xmlns="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">normalizedString</EndpointID>
+      <IndustryClassificationCode xmlns="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">normalizedString</IndustryClassificationCode>
+    </SignatoryParty>
+    <DigitalSignatureAttachment>
+      <EmbeddedDocumentBinaryObject mimeCode="normalizedString" xmlns="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">GpM7</EmbeddedDocumentBinaryObject>
+    </DigitalSignatureAttachment>
+    <OriginalDocumentReference>
+      <ID xmlns="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">normalizedString</ID>
+      <CopyIndicator xmlns="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">true</CopyIndicator>
+      <UUID xmlns="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">normalizedString</UUID>
+      <IssueDate xmlns="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">2000-01-01</IssueDate>
+      <IssueTime xmlns="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">12:00:00</IssueTime>
+      <DocumentTypeCode xmlns="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">normalizedString</DocumentTypeCode>
+      <DocumentType xmlns="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">string</DocumentType>
+      <XPath xmlns="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">string</XPath>
+      <LanguageID xmlns="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">normalizedString</LanguageID>
+      <LocaleCode xmlns="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">normalizedString</LocaleCode>
+      <VersionID xmlns="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">normalizedString</VersionID>
+      <DocumentStatusCode xmlns="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">normalizedString</DocumentStatusCode>
+      <DocumentDescription xmlns="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">string</DocumentDescription>
+    </OriginalDocumentReference>
+  </Signature>
+  <SenderParty xmlns="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2">
+    <MarkCareIndicator xmlns="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">true</MarkCareIndicator>
+    <MarkAttentionIndicator xmlns="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">true</MarkAttentionIndicator>
+    <WebsiteURI xmlns="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">normalizedString</WebsiteURI>
+    <LogoReferenceID xmlns="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">normalizedString</LogoReferenceID>
+    <EndpointID xmlns="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">normalizedString</EndpointID>
+    <IndustryClassificationCode xmlns="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">normalizedString</IndustryClassificationCode>
+    <PartyIdentification>
+      <ID xmlns="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">normalizedString</ID>
+    </PartyIdentification>
+    <PartyName>
+      <Name xmlns="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">string</Name>
+    </PartyName>
+    <Language>
+      <ID xmlns="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">normalizedString</ID>
+      <Name xmlns="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">string</Name>
+      <LocaleCode xmlns="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">normalizedString</LocaleCode>
+    </Language>
+    <PostalAddress>
+      <ID xmlns="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">normalizedString</ID>
+      <AddressTypeCode xmlns="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">normalizedString</AddressTypeCode>
+      <AddressFormatCode xmlns="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">normalizedString</AddressFormatCode>
+      <Postbox xmlns="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">string</Postbox>
+      <Floor xmlns="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">string</Floor>
+      <Room xmlns="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">string</Room>
+      <StreetName xmlns="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">string</StreetName>
+      <AdditionalStreetName xmlns="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">string</AdditionalStreetName>
+      <BlockName xmlns="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">string</BlockName>
+      <BuildingName xmlns="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">string</BuildingName>
+      <BuildingNumber xmlns="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">string</BuildingNumber>
+      <InhouseMail xmlns="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">string</InhouseMail>
+      <Department xmlns="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">string</Department>
+      <MarkAttention xmlns="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">string</MarkAttention>
+      <MarkCare xmlns="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">string</MarkCare>
+      <PlotIdentification xmlns="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">string</PlotIdentification>
+      <CitySubdivisionName xmlns="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">string</CitySubdivisionName>
+      <CityName xmlns="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">string</CityName>
+      <PostalZone xmlns="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">string</PostalZone>
+      <CountrySubentity xmlns="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">string</CountrySubentity>
+      <CountrySubentityCode xmlns="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">normalizedString</CountrySubentityCode>
+      <Region xmlns="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">string</Region>
+      <District xmlns="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">string</District>
+      <TimezoneOffset xmlns="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">string</TimezoneOffset>
+    </PostalAddress>
+    <PhysicalLocation>
+      <ID xmlns="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">normalizedString</ID>
+      <Description xmlns="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">string</Description>
+      <Conditions xmlns="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">string</Conditions>
+      <CountrySubentity xmlns="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">string</CountrySubentity>
+      <CountrySubentityCode xmlns="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">normalizedString</CountrySubentityCode>
+      <LocationTypeCode xmlns="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">normalizedString</LocationTypeCode>
+      <InformationURI xmlns="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">normalizedString</InformationURI>
+      <Name xmlns="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">string</Name>
+    </PhysicalLocation>
+    <PartyTaxScheme>
+      <RegistrationName xmlns="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">string</RegistrationName>
+      <CompanyID xmlns="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">normalizedString</CompanyID>
+      <TaxLevelCode xmlns="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">normalizedString</TaxLevelCode>
+      <ExemptionReasonCode xmlns="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">normalizedString</ExemptionReasonCode>
+      <ExemptionReason xmlns="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">string</ExemptionReason>
+    </PartyTaxScheme>
+    <PartyLegalEntity>
+      <RegistrationName xmlns="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">string</RegistrationName>
+      <CompanyID xmlns="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">normalizedString</CompanyID>
+      <RegistrationDate xmlns="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">2000-01-01</RegistrationDate>
+      <RegistrationExpirationDate xmlns="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">2000-01-01</RegistrationExpirationDate>
+      <CompanyLegalFormCode xmlns="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">normalizedString</CompanyLegalFormCode>
+      <CompanyLegalForm xmlns="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">string</CompanyLegalForm>
+      <SoleProprietorshipIndicator xmlns="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">true</SoleProprietorshipIndicator>
+      <CompanyLiquidationStatusCode xmlns="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">normalizedString</CompanyLiquidationStatusCode>
+      <CorporateStockAmount currencyID="normalizedString" xmlns="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">1.0</CorporateStockAmount>
+      <FullyPaidSharesIndicator xmlns="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">true</FullyPaidSharesIndicator>
+    </PartyLegalEntity>
+    <Contact>
+      <ID xmlns="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">normalizedString</ID>
+      <Name xmlns="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">string</Name>
+      <Telephone xmlns="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">string</Telephone>
+      <Telefax xmlns="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">string</Telefax>
+      <ElectronicMail xmlns="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">string</ElectronicMail>
+      <Note xmlns="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">string</Note>
+    </Contact>
+    <Person>
+      <ID xmlns="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">normalizedString</ID>
+      <FirstName xmlns="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">string</FirstName>
+      <FamilyName xmlns="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">string</FamilyName>
+      <Title xmlns="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">string</Title>
+      <MiddleName xmlns="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">string</MiddleName>
+      <OtherName xmlns="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">string</OtherName>
+      <NameSuffix xmlns="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">string</NameSuffix>
+      <JobTitle xmlns="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">string</JobTitle>
+      <NationalityID xmlns="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">normalizedString</NationalityID>
+      <GenderCode xmlns="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">normalizedString</GenderCode>
+      <BirthDate xmlns="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">2000-01-01</BirthDate>
+      <BirthplaceName xmlns="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">string</BirthplaceName>
+      <OrganizationDepartment xmlns="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">string</OrganizationDepartment>
+    </Person>
+    <AgentParty>
+      <MarkCareIndicator xmlns="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">true</MarkCareIndicator>
+      <MarkAttentionIndicator xmlns="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">true</MarkAttentionIndicator>
+      <WebsiteURI xmlns="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">normalizedString</WebsiteURI>
+      <LogoReferenceID xmlns="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">normalizedString</LogoReferenceID>
+      <EndpointID xmlns="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">normalizedString</EndpointID>
+      <IndustryClassificationCode xmlns="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">normalizedString</IndustryClassificationCode>
+    </AgentParty>
+    <ServiceProviderParty>
+      <ID xmlns="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">normalizedString</ID>
+      <ServiceTypeCode xmlns="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">normalizedString</ServiceTypeCode>
+      <ServiceType xmlns="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">string</ServiceType>
+    </ServiceProviderParty>
+    <PowerOfAttorney>
+      <ID xmlns="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">normalizedString</ID>
+      <IssueDate xmlns="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">2000-01-01</IssueDate>
+      <IssueTime xmlns="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">12:00:00</IssueTime>
+      <Description xmlns="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">string</Description>
+    </PowerOfAttorney>
+    <FinancialAccount>
+      <ID xmlns="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">normalizedString</ID>
+      <Name xmlns="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">string</Name>
+      <AliasName xmlns="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">string</AliasName>
+      <AccountTypeCode xmlns="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">normalizedString</AccountTypeCode>
+      <AccountFormatCode xmlns="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">normalizedString</AccountFormatCode>
+      <CurrencyCode xmlns="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">normalizedString</CurrencyCode>
+      <PaymentNote xmlns="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">string</PaymentNote>
+    </FinancialAccount>
+  </SenderParty>
+  <ReceiverParty xmlns="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2">
+    <MarkCareIndicator xmlns="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">true</MarkCareIndicator>
+    <MarkAttentionIndicator xmlns="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">true</MarkAttentionIndicator>
+    <WebsiteURI xmlns="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">normalizedString</WebsiteURI>
+    <LogoReferenceID xmlns="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">normalizedString</LogoReferenceID>
+    <EndpointID xmlns="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">normalizedString</EndpointID>
+    <IndustryClassificationCode xmlns="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">normalizedString</IndustryClassificationCode>
+    <PartyIdentification>
+      <ID xmlns="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">normalizedString</ID>
+    </PartyIdentification>
+    <PartyName>
+      <Name xmlns="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">string</Name>
+    </PartyName>
+    <Language>
+      <ID xmlns="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">normalizedString</ID>
+      <Name xmlns="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">string</Name>
+      <LocaleCode xmlns="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">normalizedString</LocaleCode>
+    </Language>
+    <PostalAddress>
+      <ID xmlns="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">normalizedString</ID>
+      <AddressTypeCode xmlns="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">normalizedString</AddressTypeCode>
+      <AddressFormatCode xmlns="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">normalizedString</AddressFormatCode>
+      <Postbox xmlns="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">string</Postbox>
+      <Floor xmlns="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">string</Floor>
+      <Room xmlns="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">string</Room>
+      <StreetName xmlns="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">string</StreetName>
+      <AdditionalStreetName xmlns="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">string</AdditionalStreetName>
+      <BlockName xmlns="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">string</BlockName>
+      <BuildingName xmlns="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">string</BuildingName>
+      <BuildingNumber xmlns="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">string</BuildingNumber>
+      <InhouseMail xmlns="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">string</InhouseMail>
+      <Department xmlns="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">string</Department>
+      <MarkAttention xmlns="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">string</MarkAttention>
+      <MarkCare xmlns="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">string</MarkCare>
+      <PlotIdentification xmlns="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">string</PlotIdentification>
+      <CitySubdivisionName xmlns="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">string</CitySubdivisionName>
+      <CityName xmlns="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">string</CityName>
+      <PostalZone xmlns="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">string</PostalZone>
+      <CountrySubentity xmlns="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">string</CountrySubentity>
+      <CountrySubentityCode xmlns="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">normalizedString</CountrySubentityCode>
+      <Region xmlns="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">string</Region>
+      <District xmlns="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">string</District>
+      <TimezoneOffset xmlns="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">string</TimezoneOffset>
+    </PostalAddress>
+    <PhysicalLocation>
+      <ID xmlns="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">normalizedString</ID>
+      <Description xmlns="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">string</Description>
+      <Conditions xmlns="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">string</Conditions>
+      <CountrySubentity xmlns="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">string</CountrySubentity>
+      <CountrySubentityCode xmlns="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">normalizedString</CountrySubentityCode>
+      <LocationTypeCode xmlns="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">normalizedString</LocationTypeCode>
+      <InformationURI xmlns="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">normalizedString</InformationURI>
+      <Name xmlns="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">string</Name>
+    </PhysicalLocation>
+    <PartyTaxScheme>
+      <RegistrationName xmlns="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">string</RegistrationName>
+      <CompanyID xmlns="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">normalizedString</CompanyID>
+      <TaxLevelCode xmlns="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">normalizedString</TaxLevelCode>
+      <ExemptionReasonCode xmlns="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">normalizedString</ExemptionReasonCode>
+      <ExemptionReason xmlns="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">string</ExemptionReason>
+    </PartyTaxScheme>
+    <PartyLegalEntity>
+      <RegistrationName xmlns="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">string</RegistrationName>
+      <CompanyID xmlns="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">normalizedString</CompanyID>
+      <RegistrationDate xmlns="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">2000-01-01</RegistrationDate>
+      <RegistrationExpirationDate xmlns="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">2000-01-01</RegistrationExpirationDate>
+      <CompanyLegalFormCode xmlns="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">normalizedString</CompanyLegalFormCode>
+      <CompanyLegalForm xmlns="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">string</CompanyLegalForm>
+      <SoleProprietorshipIndicator xmlns="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">true</SoleProprietorshipIndicator>
+      <CompanyLiquidationStatusCode xmlns="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">normalizedString</CompanyLiquidationStatusCode>
+      <CorporateStockAmount currencyID="normalizedString" xmlns="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">1.0</CorporateStockAmount>
+      <FullyPaidSharesIndicator xmlns="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">true</FullyPaidSharesIndicator>
+    </PartyLegalEntity>
+    <Contact>
+      <ID xmlns="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">normalizedString</ID>
+      <Name xmlns="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">string</Name>
+      <Telephone xmlns="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">string</Telephone>
+      <Telefax xmlns="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">string</Telefax>
+      <ElectronicMail xmlns="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">string</ElectronicMail>
+      <Note xmlns="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">string</Note>
+    </Contact>
+    <Person>
+      <ID xmlns="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">normalizedString</ID>
+      <FirstName xmlns="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">string</FirstName>
+      <FamilyName xmlns="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">string</FamilyName>
+      <Title xmlns="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">string</Title>
+      <MiddleName xmlns="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">string</MiddleName>
+      <OtherName xmlns="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">string</OtherName>
+      <NameSuffix xmlns="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">string</NameSuffix>
+      <JobTitle xmlns="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">string</JobTitle>
+      <NationalityID xmlns="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">normalizedString</NationalityID>
+      <GenderCode xmlns="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">normalizedString</GenderCode>
+      <BirthDate xmlns="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">2000-01-01</BirthDate>
+      <BirthplaceName xmlns="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">string</BirthplaceName>
+      <OrganizationDepartment xmlns="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">string</OrganizationDepartment>
+    </Person>
+    <AgentParty>
+      <MarkCareIndicator xmlns="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">true</MarkCareIndicator>
+      <MarkAttentionIndicator xmlns="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">true</MarkAttentionIndicator>
+      <WebsiteURI xmlns="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">normalizedString</WebsiteURI>
+      <LogoReferenceID xmlns="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">normalizedString</LogoReferenceID>
+      <EndpointID xmlns="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">normalizedString</EndpointID>
+      <IndustryClassificationCode xmlns="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">normalizedString</IndustryClassificationCode>
+    </AgentParty>
+    <ServiceProviderParty>
+      <ID xmlns="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">normalizedString</ID>
+      <ServiceTypeCode xmlns="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">normalizedString</ServiceTypeCode>
+      <ServiceType xmlns="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">string</ServiceType>
+    </ServiceProviderParty>
+    <PowerOfAttorney>
+      <ID xmlns="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">normalizedString</ID>
+      <IssueDate xmlns="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">2000-01-01</IssueDate>
+      <IssueTime xmlns="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">12:00:00</IssueTime>
+      <Description xmlns="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">string</Description>
+    </PowerOfAttorney>
+    <FinancialAccount>
+      <ID xmlns="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">normalizedString</ID>
+      <Name xmlns="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">string</Name>
+      <AliasName xmlns="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">string</AliasName>
+      <AccountTypeCode xmlns="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">normalizedString</AccountTypeCode>
+      <AccountFormatCode xmlns="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">normalizedString</AccountFormatCode>
+      <CurrencyCode xmlns="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">normalizedString</CurrencyCode>
+      <PaymentNote xmlns="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">string</PaymentNote>
+    </FinancialAccount>
+  </ReceiverParty>
+  <DocumentResponse xmlns="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2">
+    <Response>
+      <ReferenceID xmlns="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">normalizedString</ReferenceID>
+      <ResponseCode xmlns="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">normalizedString</ResponseCode>
+      <Description xmlns="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">string</Description>
+      <EffectiveDate xmlns="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">2000-01-01</EffectiveDate>
+      <EffectiveTime xmlns="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">12:00:00</EffectiveTime>
+    </Response>
+    <DocumentReference>
+      <ID xmlns="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">normalizedString</ID>
+      <CopyIndicator xmlns="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">true</CopyIndicator>
+      <UUID xmlns="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">normalizedString</UUID>
+      <IssueDate xmlns="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">2000-01-01</IssueDate>
+      <IssueTime xmlns="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">12:00:00</IssueTime>
+      <DocumentTypeCode xmlns="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">normalizedString</DocumentTypeCode>
+      <DocumentType xmlns="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">string</DocumentType>
+      <XPath xmlns="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">string</XPath>
+      <LanguageID xmlns="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">normalizedString</LanguageID>
+      <LocaleCode xmlns="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">normalizedString</LocaleCode>
+      <VersionID xmlns="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">normalizedString</VersionID>
+      <DocumentStatusCode xmlns="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">normalizedString</DocumentStatusCode>
+      <DocumentDescription xmlns="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">string</DocumentDescription>
+    </DocumentReference>
+    <IssuerParty>
+      <MarkCareIndicator xmlns="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">true</MarkCareIndicator>
+      <MarkAttentionIndicator xmlns="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">true</MarkAttentionIndicator>
+      <WebsiteURI xmlns="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">normalizedString</WebsiteURI>
+      <LogoReferenceID xmlns="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">normalizedString</LogoReferenceID>
+      <EndpointID xmlns="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">normalizedString</EndpointID>
+      <IndustryClassificationCode xmlns="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">normalizedString</IndustryClassificationCode>
+    </IssuerParty>
+    <RecipientParty>
+      <MarkCareIndicator xmlns="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">true</MarkCareIndicator>
+      <MarkAttentionIndicator xmlns="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">true</MarkAttentionIndicator>
+      <WebsiteURI xmlns="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">normalizedString</WebsiteURI>
+      <LogoReferenceID xmlns="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">normalizedString</LogoReferenceID>
+      <EndpointID xmlns="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">normalizedString</EndpointID>
+      <IndustryClassificationCode xmlns="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">normalizedString</IndustryClassificationCode>
+    </RecipientParty>
+  </DocumentResponse>
+</ApplicationResponse>

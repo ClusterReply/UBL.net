@@ -289,8 +289,9 @@ namespace Oasis.Ubl.v21 {
             }
         }
 
-         [System.Xml.Serialization.XmlElementAttribute(Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2",DataType="time")]
+         [System.Xml.Serialization.XmlElementAttribute(Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
         public IssueTimeType IssueTime {
+             //HACK: From DateTime to String for comparison problem XML
             get {
                 return this.issueTimeField;
             }

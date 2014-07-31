@@ -7445,7 +7445,7 @@ namespace Oasis.Ubl.v21 {
     
     public partial class SignatureType {
         
-        //private IDType idField;
+        private IDType idField;
         
         private ObservableCollection<NoteType> noteField;
         
@@ -7471,15 +7471,19 @@ namespace Oasis.Ubl.v21 {
         //    this.signatoryPartyField = new PartyType();
         //    this.noteField = new ObservableCollection<NoteType>();
         //}
-        
-        //public IDType ID {
-        //    get {
-        //        return this.idField;
-        //    }
-        //    set {
-        //        this.idField = value;
-        //    }
-        //}
+
+        [System.Xml.Serialization.XmlElementAttribute(Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+        public IDType ID
+        {
+            get
+            {
+                return this.idField;
+            }
+            set
+            {
+                this.idField = value;
+            }
+        }
 
         [System.Xml.Serialization.XmlElementAttribute(Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
         //[System.Xml.Serialization.XmlArrayAttribute()]
@@ -13976,7 +13980,7 @@ namespace Oasis.Ubl.v21 {
             }
         }
 
-        [System.Xml.Serialization.XmlElementAttribute(Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2")]
+        [System.Xml.Serialization.XmlElementAttribute(Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
         public InvoicingPartyReferenceType InvoicingPartyReference {
             get {
                 return this.invoicingPartyReferenceField;
