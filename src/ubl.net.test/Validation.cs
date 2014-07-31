@@ -18,13 +18,18 @@ namespace ubl.net.test
     [TestFixture] 
     public class Validation
     {
+
+        private XmlDiff xmldiff = new XmlDiff(XmlDiffOptions.IgnoreChildOrder |
+                              XmlDiffOptions.IgnorePrefixes | XmlDiffOptions.IgnoreNamespaces |
+                               XmlDiffOptions.IgnoreXmlDecl);
         [Test]
         private void Test_InvoiceType()
         {
             string inputUBLfile = @"..\..\InputXML\UBL-Invoice-2.1-Example.xml";
              
              string outputFile = @"..\..\OutputXML\TestDeserialize_Invoice.xml";
-             DeserializeGeneric<InvoiceType>(inputUBLfile, outputFile);
+            //You can set different xml diff options 
+            DeserializeGeneric<InvoiceType>(inputUBLfile, outputFile, xmldiff);
 
         }
 
@@ -34,8 +39,8 @@ namespace ubl.net.test
          {
              string inputUBLfile = @"..\..\InputXML\UtilityStatement_UBL_21.xml";
              string outputFile = @"..\..\OutputXML\TestDeserialize_UtilityStatement.xml";
-
-             DeserializeGeneric<UtilityStatementType>(inputUBLfile, outputFile);
+             //You can set different xml diff options
+             DeserializeGeneric<UtilityStatementType>(inputUBLfile, outputFile, xmldiff);
 
          }
 
@@ -44,13 +49,14 @@ namespace ubl.net.test
          {
              string inputUBLfile = @"..\..\InputXML\ApplicationResponse_UBL_21.xml";
              string outputFile = @"..\..\OutputXML\TestDeserializeAplicationResponse.xml";
-             DeserializeGeneric<ApplicationResponseType>(inputUBLfile, outputFile);
+             //You can set different xml diff options
+             DeserializeGeneric<ApplicationResponseType>(inputUBLfile, outputFile, xmldiff);
 
          }
 
-         private void DeserializeGeneric<T>(string inputUBLfile, string outputFile) 
+         private void DeserializeGeneric<T>(string inputUBLfile, string outputFile, XmlDiff xmldiff) 
          {
-             
+        
              string contentUBL = File.ReadAllText(inputUBLfile);
              
              dynamic retvalue = null;
@@ -71,9 +77,7 @@ namespace ubl.net.test
              //Not possible to set others XmlDiffOptions
              //Assert.Xml.AreEqual(contentUBL, document.ToString(), XmlOptions.Loose);
 
-             XmlDiff xmldiff = new XmlDiff(XmlDiffOptions.IgnoreChildOrder |
-                                           XmlDiffOptions.IgnorePrefixes | XmlDiffOptions.IgnoreNamespaces |
-                                            XmlDiffOptions.IgnoreXmlDecl);
+             
 
              StringBuilder output = new StringBuilder();
              XmlWriter diffgramWriter = XmlWriter.Create(output);
@@ -82,11 +86,74 @@ namespace ubl.net.test
 
              diffgramWriter.Close();
 
-             if (bIdentical)
-                 Assert.IsTrue(bIdentical, "XML Deserialized comparison: {0}", output);
-             else
-                 Assert.Fail("XML Deserialized NOT EQUAL! Below comparison details:\n\n {0}", output);
 
+
+             //********* realizzazione report html in cartella di Output con evidenze visive colorate
+
+             string diffFile = @"..\..\OutputXML\" + Guid.NewGuid() + ".out";
+             XmlTextWriter twriter = new XmlTextWriter(new StreamWriter(diffFile));
+             twriter.Formatting = Formatting.Indented;
+
+             bool bIdentical2 = xmldiff.Compare(inputUBLfile, outputFile, true, twriter);
+             twriter.Close();
+
+             string statusreport= (bIdentical.Equals(true)) ? "Identical Xml Files" : "Different Xml Files";
+
+             //Different files: XmlDiffView.
+             XmlDiffView diffview = new XmlDiffView();
+
+             //Load the original file again and the diff file.
+             XmlTextReader originFile = new XmlTextReader(inputUBLfile);
+             XmlTextReader diffGram = new XmlTextReader(diffFile);
+             diffview.Load(originFile, diffGram);
+
+             //Wrap HTML file
+
+             string tempFile = @"..\..\OutputXML\" +"diff_" + Guid.NewGuid() + ".htm";
+             StreamWriter swriter = new StreamWriter(tempFile);
+
+
+             swriter.Write("<html><body><table width='100%'>");
+             // Legend.
+             swriter.Write("<tr><td colspan='2' align='center'><h1>XML Comparison Report: "+statusreport+"</h1><\br/><b>Legend:</b> <font style='background-color: yellow'" +
+                 " color='black'>added</font>&nbsp;&nbsp;<font style='background-color: red'" +
+                 " color='black'>removed</font>&nbsp;&nbsp;<font style='background-color: " +
+                 "lightgreen' color='black'>changed</font>&nbsp;&nbsp;" +
+                 "<font style='background-color: red' color='blue'>moved from</font>" +
+                 "&nbsp;&nbsp;<font style='background-color: yellow' color='blue'>moved to" +
+                 "</font>&nbsp;&nbsp;<font style='background-color: white' color='#AAAAAA'>" +
+                 "ignored</font></td></tr>");
+
+
+             swriter.Write("<tr><td><b> File Name : ");
+             swriter.Write(inputUBLfile);
+             swriter.Write("</b></td><td><b> File Name : ");
+             swriter.Write(outputFile);
+             swriter.Write("</b></td></tr>");
+
+             //Difference in HTML table
+             diffview.GetHtml(swriter);
+
+             //conmplete file HTML
+             swriter.Write("</table></body></html>");
+
+             swriter.Close();
+             diffview = null;
+             originFile.Close();
+             diffGram.Close();
+             File.Delete(diffFile);
+
+             if (bIdentical)
+             {
+                 Console.WriteLine(String.Format("Identical XML File \n\n Src file: {0} \n Trgt file: {1}",inputUBLfile,outputFile));
+                 Assert.IsTrue(bIdentical, "XML Deserialized comparison: {0}", output);
+             }
+             else
+             {
+                 Console.WriteLine("HTML report difference: " + tempFile);
+                 Assert.Fail("XML Deserialized NOT EQUAL! Below comparison details:\n\n {0}", output);
+             }
+                         
          }
 
 
@@ -130,6 +197,9 @@ namespace ubl.net.test
              
 
          }
+
+
+
 
     }
 }
